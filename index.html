@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podruff — Live Hook Assistant for Podcasters</title>
+  <meta name="description" content="Podruff catches your best hooks while you're still talking. A live call assistant that listens, identifies quotable moments, and writes them down so you don't have to.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-cream: #FAF7F2;
+      --bg-oat: #F0EBE1;
+      --text-primary: #1C1917;
+      --text-secondary: #78716C;
+      --accent-burgundy: #7F1D1D;
+      --accent-mustard: #CA8A04;
+      --accent-olive: #4D7C0F;
+      --font-serif: 'Instrument Serif', serif;
+      --font-sans: 'DM Sans', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      background: var(--bg-cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Skip nav */
+    .skip-nav {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: var(--accent-burgundy);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 0 0 4px 4px;
+      z-index: 100;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .skip-nav:focus {
+      top: 0;
+    }
+
+    /* Shared */
+    .section-pad {
+      padding: 96px 24px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-48px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(48px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-left, .reveal-right {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: var(--bg-cream);
+      text-align: center;
+      padding: 128px 24px 80px;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: var(--text-primary);
+    }
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent-burgundy);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    @media (hover: hover) {
+      .btn-primary:hover {
+        background: #991B1B;
+        transform: translateY(-1px);
+      }
+    }
+    .btn-primary:focus-visible {
+      outline: 3px solid var(--accent-mustard);
+      outline-offset: 3px;
+    }
+
+    /* ---- DEMO STRIP ---- */
+    .demo-strip {
+      background: var(--bg-oat);
+      padding: 64px 0;
+      overflow: hidden;
+    }
+    .demo-strip .label {
+      text-align: center;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      padding: 0 24px;
+    }
+    .filmstrip-wrapper {
+      position: relative;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .filmstrip-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .filmstrip {
+      display: flex;
+      gap: 20px;
+      padding: 16px 48px;
+      width: max-content;
+    }
+    .hook-card {
+      flex: 0 0 280px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      scroll-snap-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .hook-card:nth-child(odd) {
+      transform: rotate(-1deg);
+    }
+    .hook-card:nth-child(even) {
+      transform: rotate(1deg);
+    }
+    @media (hover: hover) {
+      .hook-card:hover {
+        transform: rotate(0deg) translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      }
+    }
+    .hook-card .timestamp {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-mustard);
+      margin-bottom: 8px;
+    }
+    .hook-card .hook-text {
+      font-family: var(--font-serif);
+      font-size: 1.0625rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    /* ---- THE PROBLEM ---- */
+    .problem {
+      background: var(--bg-cream);
+    }
+    .problem-inner {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 24px;
+      max-width: 640px;
+      margin-left: auto;
+    }
+    .problem .deco-quote {
+      font-family: var(--font-serif);
+      font-size: 10rem;
+      line-height: 0.8;
+      color: var(--bg-oat);
+      grid-row: 1 / 4;
+      user-select: none;
+      align-self: start;
+    }
+    .problem p {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .problem p:last-child {
+      margin-bottom: 0;
+    }
+    .problem p strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* ---- HOW IT WORKS ---- */
+    .how-it-works {
+      background: var(--bg-oat);
+    }
+    .how-it-works h2 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .timeline {
+      position: relative;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent-mustard);
+      transform: translateX(-50%);
+      transform-origin: top;
+    }
+    .timeline-step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 72px;
+      position: relative;
+    }
+    .timeline-step:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-step .step-number {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 8vw, 5rem);
+      line-height: 1;
+      color: var(--accent-mustard);
+      flex: 0 0 50%;
+      user-select: none;
+    }
+    .timeline-step .step-content {
+      flex: 0 0 50%;
+    }
+    .timeline-step .step-content h3 {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-bottom: 8px;
+    }
+    .timeline-step .step-content p {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Left step: number on left, text on right */
+    .step-left .step-number {
+      text-align: right;
+      padding-right: 40px;
+    }
+    .step-left .step-content {
+      padding-left: 40px;
+    }
+
+    /* Right step: text on left, number on right */
+    .step-right {
+      flex-direction: row-reverse;
+    }
+    .step-right .step-number {
+      text-align: left;
+      padding-left: 40px;
+    }
+    .step-right .step-content {
+      text-align: right;
+      padding-right: 40px;
+    }
+
+    /* ---- FEATURES ---- */
+    .features {
+      background: var(--bg-cream);
+    }
+    .feature-block {
+      max-width: 560px;
+      margin-bottom: 80px;
+    }
+    .feature-block:last-child {
+      margin-bottom: 0;
+    }
+    .feature-block h2 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .feature-block p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .feature-right {
+      margin-left: auto;
+      text-align: right;
+    }
+
+    /* ---- PRICING ---- */
+    .pricing {
+      background: var(--bg-oat);
+    }
+    .pricing h2 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .price-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 32px 28px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    @media (hover: hover) {
+      .price-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+    }
+    .price-card .tier-name {
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .price-card .price {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .price-card .price-period {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .price-card ul {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .price-card ul li {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      padding: 6px 0;
+      line-height: 1.5;
+    }
+    .price-card ul li::before {
+      content: '\2713';
+      color: var(--accent-olive);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+    .price-card .btn-card {
+      display: block;
+      text-align: center;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      border: 2px solid var(--accent-burgundy);
+      color: var(--accent-burgundy);
+      background: transparent;
+      transition: background 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+    @media (hover: hover) {
+      .price-card .btn-card:hover {
+        background: var(--accent-burgundy);
+        color: #fff;
+      }
+    }
+    .price-card .btn-card:focus-visible {
+      outline: 3px solid var(--accent-mustard);
+      outline-offset: 3px;
+    }
+
+    /* Pro card */
+    .price-card-pro {
+      background: var(--accent-burgundy);
+      color: #fff;
+      padding: 40px 32px;
+    }
+    .price-card-pro .tier-name {
+      color: rgba(255,255,255,0.7);
+    }
+    .price-card-pro .price-period {
+      color: rgba(255,255,255,0.6);
+    }
+    .price-card-pro ul li {
+      color: rgba(255,255,255,0.85);
+    }
+    .price-card-pro ul li::before {
+      color: var(--accent-mustard);
+    }
+    .price-card-pro .btn-card {
+      border-color: #fff;
+      color: #fff;
+    }
+    @media (hover: hover) {
+      .price-card-pro .btn-card:hover {
+        background: #fff;
+        color: var(--accent-burgundy);
+      }
+    }
+
+    /* Agency card -- horizontal layout on desktop */
+    .price-card-agency {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 24px;
+      align-items: start;
+    }
+    .price-card-agency .agency-left {
+      grid-row: 1 / 3;
+    }
+    .price-card-agency ul {
+      margin-bottom: 0;
+    }
+    .price-card-agency .btn-card {
+      grid-column: 1 / -1;
+      margin-top: 20px;
+    }
+
+    .pricing-note {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* ---- WAITLIST (dark section) ---- */
+    .waitlist {
+      background: var(--text-primary);
+      color: #fff;
+    }
+    .waitlist-inner {
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .waitlist h2 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin-bottom: 16px;
+    }
+    .waitlist p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .waitlist-form {
+      display: flex;
+      gap: 12px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .waitlist-form input[type="email"] {
+      flex: 1;
+      padding: 14px 16px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .waitlist-form input[type="email"]::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+    .waitlist-form input[type="email"]:focus {
+      border-color: var(--accent-mustard);
+    }
+    .waitlist-form input[type="email"]:invalid:not(:placeholder-shown) {
+      border-color: #EF4444;
+    }
+    .btn-mustard {
+      display: inline-block;
+      background: var(--accent-mustard);
+      color: var(--text-primary);
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      letter-spacing: -0.01em;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    @media (hover: hover) {
+      .btn-mustard:hover {
+        background: #A16207;
+        color: #fff;
+        transform: translateY(-1px);
+      }
+    }
+    .btn-mustard:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+    }
+    .form-feedback {
+      margin-top: 12px;
+      font-size: 0.875rem;
+      min-height: 1.4em;
+    }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      background: var(--text-primary);
+      color: rgba(255,255,255,0.5);
+      padding: 40px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-inner .footer-tagline {
+      font-size: 0.875rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s ease;
+    }
+    @media (hover: hover) {
+      .footer-links a:hover {
+        color: #fff;
+      }
+    }
+    .footer-links a:focus-visible {
+      outline: 2px solid var(--accent-mustard);
+      outline-offset: 2px;
+    }
+    .btn-footer {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    @media (hover: hover) {
+      .btn-footer:hover {
+        border-color: #fff;
+        background: rgba(255,255,255,0.05);
+      }
+    }
+    .btn-footer:focus-visible {
+      outline: 2px solid var(--accent-mustard);
+      outline-offset: 2px;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .section-pad {
+        padding: 72px 20px;
+      }
+      .hero {
+        padding: 96px 20px 64px;
+      }
+
+      /* Problem */
+      .problem-inner {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        margin-left: 0;
+      }
+      .problem .deco-quote {
+        font-size: 6rem;
+        grid-row: auto;
+        margin-bottom: -24px;
+      }
+
+      /* Timeline */
+      .timeline::before {
+        left: 24px;
+      }
+      .timeline-step,
+      .step-right {
+        flex-direction: column;
+        padding-left: 56px;
+      }
+      .timeline-step .step-number,
+      .step-left .step-number,
+      .step-right .step-number {
+        text-align: left;
+        padding: 0;
+        flex: none;
+        font-size: 3rem;
+        margin-bottom: 8px;
+      }
+      .timeline-step .step-content,
+      .step-left .step-content,
+      .step-right .step-content {
+        text-align: left;
+        padding: 0;
+        flex: none;
+      }
+
+      /* Pricing */
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .price-card-agency {
+        grid-template-columns: 1fr;
+      }
+      .price-card-agency .agency-left {
+        grid-row: auto;
+      }
+
+      /* Features */
+      .feature-right {
+        margin-left: 0;
+        text-align: left;
+      }
+
+      /* Waitlist form */
+      .waitlist-form {
+        flex-direction: column;
+      }
+
+      /* Footer */
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      .section-pad {
+        padding: 56px 16px;
+      }
+      .hero {
+        padding: 80px 16px 48px;
+      }
+      .filmstrip {
+        padding: 12px 20px;
+      }
+      .hook-card {
+        flex: 0 0 240px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-nav">Skip to main content</a>
+
+  <!-- HERO -->
+  <main id="main">
+    <section class="hero" aria-label="Introduction">
+      <div class="reveal">
+        <h1>Your best hooks happen mid-sentence. You never write them down.</h1>
+        <p>Podruff listens to your live calls and catches the moments worth clipping. Timestamps, quotes, hooks — captured in real time so you can stay in the conversation.</p>
+        <a href="#waitlist" class="btn-primary">Download the beta</a>
+      </div>
+    </section>
+
+    <!-- DEMO STRIP -->
+    <section class="demo-strip" aria-label="Live demo of captured hooks">
+      <p class="label reveal">From a real 45-minute recording</p>
+      <div class="filmstrip-wrapper" role="region" aria-label="Hook examples, scrollable" tabindex="0">
+        <div class="filmstrip" id="filmstrip">
+          <div class="hook-card">
+            <div class="timestamp">12:04</div>
+            <div class="hook-text">"The moment I stopped editing for algorithms, my downloads tripled."</div>
+          </div>
+          <div class="hook-card">
+            <div class="timestamp">18:37</div>
+            <div class="hook-text">"Nobody subscribes because of your intro. They subscribe because of one sentence in minute twenty."</div>
+          </div>
+          <div class="hook-card">
+            <div class="timestamp">23:11</div>
+            <div class="hook-text">"I was on the phone with my producer and she said: cut everything before the argument."</div>
+          </div>
+          <div class="hook-card">
+            <div class="timestamp">31:45</div>
+            <div class="hook-text">"The episode that hit a million plays? I almost didn't publish it."</div>
+          </div>
+          <div class="hook-card">
+            <div class="timestamp">34:22</div>
+            <div class="hook-text">"If you can't explain your episode in one sentence to a stranger, it's not ready."</div>
+          </div>
+          <div class="hook-card">
+            <div class="timestamp">41:09</div>
+            <div class="hook-text">"Guests don't remember what they said. That's your job."</div>
+          </div>
+          <div class="hook-card">
+            <div class="timestamp">44:58</div>
+            <div class="hook-text">"I record fifty hours a month. Maybe three minutes are worth keeping."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="problem section-pad" aria-label="The problem Podruff solves">
+      <div class="container">
+        <div class="problem-inner reveal">
+          <span class="deco-quote" aria-hidden="true">&ldquo;</span>
+          <p>You know that feeling. Thirty minutes into a conversation, your guest says something that would stop a scroller mid-thumb. A perfect hook. You think: <strong>I'll remember that.</strong></p>
+          <p>You won't. By the time you hit stop, it's gone. Buried under forty minutes of audio you don't have time to re-listen to. You end up scrubbing through a waveform at 2am, looking for eight seconds you half-remember.</p>
+          <p><strong>That's not a workflow. That's a lottery.</strong> Podruff sits in the background and catches those moments in real time. You don't need to pause, scribble, or break eye contact with your guest.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works section-pad" aria-label="How Podruff works">
+      <div class="container">
+        <h2 class="reveal">How it works</h2>
+        <div class="timeline" role="list">
+          <div class="timeline-step step-left reveal-left" role="listitem">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Route your audio</h3>
+              <p>Point Podruff at your call's audio output. Works with Zoom, Riverside, SquadCast — anything with a mic signal.</p>
+            </div>
+          </div>
+          <div class="timeline-step step-right reveal-right" role="listitem">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Hit record</h3>
+              <p>Start your conversation. Podruff transcribes in the background and flags potential hooks as they happen. No tab-switching required.</p>
+            </div>
+          </div>
+          <div class="timeline-step step-left reveal-left" role="listitem">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Grab the good ones</h3>
+              <p>When you're done, your hooks are waiting. Timestamped, quoted, ready to drop into your show notes or social posts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features section-pad" aria-label="Key features">
+      <div class="container">
+        <div class="feature-block reveal">
+          <h2>Hooks while you're still talking</h2>
+          <p>Most tools make you wait until after the recording. By then, you've lost context. Podruff identifies quotable moments during the conversation, so the list is ready the second you hang up. No scrubbing. No re-listening. No guessing which minute had the gold.</p>
+        </div>
+        <div class="feature-block feature-right reveal">
+          <h2>Your data stays on your machine</h2>
+          <p>Audio never leaves your computer. Transcription and hook detection run locally. No cloud uploads, no third-party processing, no wondering who else is listening to your pre-release interview. Your recordings are yours.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing section-pad" aria-label="Pricing plans">
+      <div class="container">
+        <h2 class="reveal">Pick your plan</h2>
+        <div class="pricing-grid reveal">
+          <!-- Solo -->
+          <div class="price-card">
+            <div class="tier-name">Solo</div>
+            <div class="price">$19</div>
+            <div class="price-period">per month</div>
+            <ul>
+              <li>One show, unlimited recordings</li>
+              <li>Real-time hook detection</li>
+              <li>Export to markdown or plain text</li>
+              <li>Local processing only</li>
+            </ul>
+            <a href="#waitlist" class="btn-card">Get started</a>
+          </div>
+
+          <!-- Pro -->
+          <div class="price-card price-card-pro">
+            <div class="tier-name">Pro</div>
+            <div class="price">$49</div>
+            <div class="price-period">per month</div>
+            <ul>
+              <li>Up to 5 shows</li>
+              <li>Priority hook ranking</li>
+              <li>Custom hook criteria</li>
+              <li>Clip-ready audio export</li>
+              <li>Slack and Notion integration</li>
+            </ul>
+            <a href="#waitlist" class="btn-card">Get started</a>
+          </div>
+
+          <!-- Agency -->
+          <div class="price-card price-card-agency">
+            <div class="agency-left">
+              <div class="tier-name">Agency</div>
+              <div class="price">$99</div>
+              <div class="price-period">per month</div>
+            </div>
+            <ul>
+              <li>Unlimited shows</li>
+              <li>Team access (up to 10 seats)</li>
+              <li>Shared hook library</li>
+              <li>API access</li>
+              <li>White-label export</li>
+            </ul>
+            <a href="#waitlist" class="btn-card">Get started</a>
+          </div>
+        </div>
+        <p class="pricing-note reveal">Hosted version coming Q3 2026. All plans include a 14-day free trial.</p>
+      </div>
+    </section>
+
+    <!-- WAITLIST -->
+    <section class="waitlist section-pad" id="waitlist" aria-label="Join the waitlist">
+      <div class="waitlist-inner reveal">
+        <h2>Podruff runs on your Mac today.</h2>
+        <p>We're building a hosted version so you can use it from any browser, on any device. Drop your email and we'll let you know when it's ready. No spam. One email when we launch.</p>
+        <form class="waitlist-form" action="https://formspree.io/f/FORM_ID" method="POST" id="waitlist-form" novalidate>
+          <label for="waitlist-email" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email address</label>
+          <input type="email" id="waitlist-email" name="email" placeholder="you@podcast.com" required autocomplete="email" aria-describedby="form-status">
+          <button type="submit" class="btn-mustard">Join the waitlist</button>
+        </form>
+        <div class="form-feedback" id="form-status" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-tagline">Podruff &mdash; catch what you'd forget.</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#main">Back to top</a>
+        <a href="mailto:hello@podruff.com">Contact</a>
+        <a href="#waitlist" class="btn-footer">Download beta</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered animations via IntersectionObserver
+    (function() {
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      var targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      if (!targets.length) return;
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      targets.forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    // Filmstrip parallax on desktop
+    (function() {
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      var strip = document.querySelector('.demo-strip');
+      var filmstrip = document.getElementById('filmstrip');
+      if (!strip || !filmstrip) return;
+
+      var supportsHover = window.matchMedia('(hover: hover)').matches;
+      if (!supportsHover) return;
+
+      window.addEventListener('scroll', function() {
+        var rect = strip.getBoundingClientRect();
+        var windowH = window.innerHeight;
+        if (rect.bottom < 0 || rect.top > windowH) return;
+        var progress = (windowH - rect.top) / (windowH + rect.height);
+        var offset = (progress - 0.5) * 60;
+        filmstrip.style.transform = 'translateX(' + offset + 'px)';
+      }, { passive: true });
+    })();
+
+    // Email form validation and submission
+    (function() {
+      var form = document.getElementById('waitlist-form');
+      var emailInput = document.getElementById('waitlist-email');
+      var feedback = document.getElementById('form-status');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var email = emailInput.value.trim();
+        if (!email || !emailInput.validity.valid) {
+          feedback.textContent = 'Enter a valid email address.';
+          feedback.style.color = '#EF4444';
+          emailInput.focus();
+          return;
+        }
+
+        feedback.textContent = 'Sending...';
+        feedback.style.color = 'rgba(255,255,255,0.6)';
+
+        var data = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response) {
+          if (response.ok) {
+            feedback.textContent = "You're on the list. We'll be in touch.";
+            feedback.style.color = 'var(--accent-mustard)';
+            emailInput.value = '';
+          } else {
+            feedback.textContent = 'Something went wrong. Try again?';
+            feedback.style.color = '#EF4444';
+          }
+        }).catch(function() {
+          feedback.textContent = 'Something went wrong. Try again?';
+          feedback.style.color = '#EF4444';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
