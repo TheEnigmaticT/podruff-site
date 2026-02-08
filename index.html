@@ -89,6 +89,26 @@
       background: var(--green);
       border: none;
     }
+    .rule-thin {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: var(--border-strong);
+      border: none;
+    }
+    .rule-dashed {
+      display: block;
+      width: 100%;
+      height: 0;
+      border: none;
+      border-top: 1px dashed var(--border-strong);
+    }
+
+    /* Dot pattern background */
+    .dot-bg {
+      background-image: radial-gradient(circle, rgba(26,26,26,0.07) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
 
     /* Animations */
     .reveal {
@@ -186,7 +206,9 @@
     .hero-meta {
       display: flex;
       gap: 32px;
-      margin-bottom: 28px;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
     }
     .hero h1 {
       font-family: var(--font-display);
@@ -408,42 +430,33 @@
     }
     .timeline {
       position: relative;
-      max-width: 640px;
+      max-width: 780px;
       margin: 0 auto;
     }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0; bottom: 0;
-      width: 2px;
-      background: var(--green);
-      transform: translateX(-50%);
-      opacity: 0.3;
-    }
     .timeline-step {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 72px;
       position: relative;
+      margin-bottom: 80px;
+      min-height: 140px;
     }
     .timeline-step:last-child { margin-bottom: 0; }
     .timeline-step .step-number {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 7vw, 4.5rem);
-      line-height: 1;
+      font-size: clamp(6rem, 16vw, 11rem);
+      line-height: 0.85;
       color: var(--green);
-      flex: 0 0 50%;
       user-select: none;
-      opacity: 0.25;
+      opacity: 0.12;
+      position: absolute;
+      top: -16px;
     }
     .timeline-step .step-content {
-      flex: 0 0 50%;
-      padding-top: 8px;
+      position: relative;
+      z-index: 1;
+      max-width: 340px;
     }
     .timeline-step .step-content h3 {
       font-family: var(--font-display);
-      font-size: 0.9375rem;
+      font-size: 1rem;
       text-transform: uppercase;
       margin-bottom: 8px;
     }
@@ -452,14 +465,27 @@
       color: var(--text-secondary);
       line-height: 1.7;
     }
-    .step-left .step-number { text-align: right; padding-right: 36px; }
-    .step-left .step-content { padding-left: 36px; }
-    .step-right { flex-direction: row-reverse; }
-    .step-right .step-number { text-align: left; padding-left: 36px; }
-    .step-right .step-content { text-align: right; padding-right: 36px; }
+    .timeline-step .step-rule {
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--green);
+      border: none;
+      margin-bottom: 16px;
+    }
+    /* Stagger: left, right, left */
+    .step-left .step-number { left: 0; }
+    .step-left .step-content { margin-left: clamp(80px, 18vw, 160px); padding-top: 24px; }
+    .step-right .step-number { right: 0; }
+    .step-right .step-content { margin-left: auto; margin-right: clamp(80px, 18vw, 160px); text-align: right; padding-top: 24px; }
+    .step-right .step-rule { margin-left: auto; }
 
     /* ---- FEATURES ---- */
-    .features { background: var(--bg); }
+    .features {
+      background: var(--bg);
+      background-image: radial-gradient(circle, rgba(26,26,26,0.07) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
     .features > .container > h2 {
       font-family: var(--font-display);
       font-size: clamp(1.5rem, 3.5vw, 2.25rem);
@@ -486,7 +512,14 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+    }
+    .feature-card .feature-rule {
+      display: block;
+      width: 32px;
+      height: 2px;
+      border: none;
+      margin-bottom: 16px;
     }
     .dot-green { background: var(--green); }
     .dot-yellow { background: var(--yellow); }
@@ -552,7 +585,9 @@
       font-family: var(--font-mono);
       font-size: 0.6875rem;
       color: var(--text-muted);
-      margin-bottom: 24px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px dashed var(--border);
     }
     .price-card ul {
       list-style: none;
@@ -611,7 +646,7 @@
       padding: 32px 28px;
     }
     .price-card-pro .tier-name { color: var(--yellow); }
-    .price-card-pro .price-period { color: rgba(232,228,221,0.5); }
+    .price-card-pro .price-period { color: rgba(232,228,221,0.5); border-bottom-color: rgba(232,228,221,0.12); }
     .price-card-pro ul li { color: rgba(232,228,221,0.7); }
     .price-card-pro ul li::before { background: var(--yellow); }
     .price-card-pro .btn-card {
@@ -793,22 +828,21 @@
         grid-row: auto;
         margin-bottom: -8px;
       }
-      .timeline::before { left: 16px; }
-      .timeline-step, .step-right {
-        flex-direction: column;
-        padding-left: 44px;
+      .timeline-step .step-number {
+        font-size: clamp(4rem, 20vw, 7rem);
+        position: absolute;
+        left: 0;
+        top: -8px;
       }
-      .timeline-step .step-number,
-      .step-left .step-number,
-      .step-right .step-number {
-        text-align: left; padding: 0; flex: none;
-        font-size: 2.5rem; margin-bottom: 8px;
-      }
-      .timeline-step .step-content,
+      .step-right .step-number { right: auto; left: 0; }
       .step-left .step-content,
       .step-right .step-content {
-        text-align: left; padding: 0; flex: none;
+        margin-left: clamp(48px, 14vw, 100px);
+        margin-right: 0;
+        text-align: left;
+        padding-top: 16px;
       }
+      .step-right .step-rule { margin-left: 0; }
       .features-grid { grid-template-columns: 1fr; }
       .pricing-grid {
         grid-template-columns: 1fr;
@@ -945,6 +979,8 @@
       </div>
     </section>
 
+    <div class="container"><hr class="rule-dashed" style="margin-top:0;"></div>
+
     <!-- PROBLEM -->
     <section class="problem section-pad" aria-label="The problem Podruff solves">
       <div class="container">
@@ -969,6 +1005,7 @@
           <div class="timeline-step step-left reveal-left" role="listitem">
             <div class="step-number">01</div>
             <div class="step-content">
+              <hr class="step-rule">
               <h3>Open the sidebar</h3>
               <p>Point Podruff at your call audio and open it in a browser tab. Dock it alongside Zoom, Riverside, SquadCast — whatever you record with.</p>
             </div>
@@ -976,6 +1013,7 @@
           <div class="timeline-step step-right reveal-right" role="listitem">
             <div class="step-number">02</div>
             <div class="step-content">
+              <hr class="step-rule">
               <h3>Watch the feed fill up</h3>
               <p>As you talk, hooks, topic flags, and follow-up questions stream into the sidebar. Color-coded. Timestamped. Newest at the top. Glance over when you want a nudge.</p>
             </div>
@@ -983,6 +1021,7 @@
           <div class="timeline-step step-left reveal-left" role="listitem">
             <div class="step-number">03</div>
             <div class="step-content">
+              <hr class="step-rule">
               <h3>Mark, save, or ignore</h3>
               <p>Tap a suggestion to mark it as used. Save the good ones for post. Skip the rest. When you're done, everything exports to Markdown — timestamped, tagged, ready for show notes.</p>
             </div>
@@ -1000,16 +1039,19 @@
         <div class="features-grid">
           <div class="feature-card reveal">
             <div class="feature-dot dot-green"></div>
+            <hr class="feature-rule" style="background:var(--green);">
             <h3>Hooks</h3>
             <p>Under ten words. Punchy. Specific. Podruff generates 2-3 hook ideas every few seconds from what's being said. Not summaries — the kind of one-liner you'd put in a clip caption or episode title.</p>
           </div>
           <div class="feature-card reveal">
             <div class="feature-dot dot-yellow"></div>
+            <hr class="feature-rule" style="background:var(--yellow);">
             <h3>Topics</h3>
             <p>Your guest keeps circling back to a comparison, or drops a tension they don't resolve. Podruff flags it — a thread worth exploring before you move on. A producer tapping the glass: "stay on this one."</p>
           </div>
           <div class="feature-card reveal">
             <div class="feature-dot dot-dark"></div>
+            <hr class="feature-rule" style="background:var(--bg-dark);">
             <h3>Follow-ups</h3>
             <p>They mentioned a co-founder disagreement and kept talking. You were nodding. Podruff writes the follow-up: "Ask what the argument was about." The question you'd think of two hours later — on your screen now.</p>
           </div>
