@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Podruff — Live Hook Assistant for Podcasters</title>
-  <meta name="description" content="Podruff catches your best hooks while you're still talking. A live call assistant that listens, identifies quotable moments, and writes them down so you don't have to.">
+  <title>Podruff — Your Live Producer for Podcasts</title>
+  <meta name="description" content="Podruff is a live producer that listens to your podcast conversations and suggests follow-up questions, better hooks, and sharper angles — in real time, while you're still recording.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -324,6 +324,16 @@
       border-radius: 50%;
       background: var(--cyan);
       opacity: 0.6;
+    }
+    .hook-card .card-type {
+      background: rgba(99,102,241,0.12);
+      color: var(--accent-hover);
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-right: 4px;
     }
     .hook-card .hook-text {
       font-size: 0.9375rem;
@@ -945,45 +955,45 @@
     <section class="hero" aria-label="Introduction">
       <div class="reveal">
         <div class="hero-badge">Now in beta for macOS</div>
-        <h1>Your best hooks happen mid-sentence. You never write them down.</h1>
-        <p>Podruff listens to your live calls and catches the moments worth clipping. Timestamps, quotes, hooks — captured in real time so you can stay in the conversation.</p>
+        <h1>A producer in your ear. While you're still recording.</h1>
+        <p>Podruff listens to your live conversations and feeds you follow-up questions, better hooks, and sharper angles in real time. Like having a producer on the other side of the glass — except it's just you and your guest.</p>
         <a href="#waitlist" class="btn-primary">Download the beta</a>
         <div class="hero-sub">Free during beta &middot; macOS only &middot; No account required</div>
       </div>
     </section>
 
     <!-- DEMO STRIP -->
-    <section class="demo-strip" aria-label="Live demo of captured hooks">
-      <p class="label reveal">From a real 45-minute recording</p>
-      <div class="filmstrip-wrapper" role="region" aria-label="Hook examples, scrollable" tabindex="0">
+    <section class="demo-strip" aria-label="Live producer suggestions from a real session">
+      <p class="label reveal">Suggestions from a real 45-minute session</p>
+      <div class="filmstrip-wrapper" role="region" aria-label="Producer suggestions, scrollable" tabindex="0">
         <div class="filmstrip" id="filmstrip">
           <div class="hook-card">
-            <div class="timestamp">12:04</div>
-            <div class="hook-text">"The moment I stopped editing for algorithms, my downloads tripled."</div>
+            <div class="timestamp"><span class="card-type">follow-up</span> 06:12</div>
+            <div class="hook-text">They just mentioned quitting their day job. Ask what the last straw was.</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp">18:37</div>
-            <div class="hook-text">"Nobody subscribes because of your intro. They subscribe because of one sentence in minute twenty."</div>
+            <div class="timestamp"><span class="card-type">hook rewrite</span> 11:34</div>
+            <div class="hook-text">They said "it was a big deal." Stronger version: "I had $400 left and a lease I couldn't break."</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp">23:11</div>
-            <div class="hook-text">"I was on the phone with my producer and she said: cut everything before the argument."</div>
+            <div class="timestamp"><span class="card-type">follow-up</span> 18:07</div>
+            <div class="hook-text">They skipped the part where the deal fell through. Circle back — that's the real story.</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp">31:45</div>
-            <div class="hook-text">"The episode that hit a million plays? I almost didn't publish it."</div>
+            <div class="timestamp"><span class="card-type">angle</span> 23:41</div>
+            <div class="hook-text">This whole thread about imposter syndrome — it's stronger if you frame it around the first conference talk, not the promotion.</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp">34:22</div>
-            <div class="hook-text">"If you can't explain your episode in one sentence to a stranger, it's not ready."</div>
+            <div class="timestamp"><span class="card-type">follow-up</span> 29:15</div>
+            <div class="hook-text">They said "my co-host didn't agree." Don't let that slide. Ask what the argument was about.</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp">41:09</div>
-            <div class="hook-text">"Guests don't remember what they said. That's your job."</div>
+            <div class="timestamp"><span class="card-type">hook rewrite</span> 36:50</div>
+            <div class="hook-text">"We grew fast" is vague. Push for the number. "From 200 to 10,000 in three months" hits harder.</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp">44:58</div>
-            <div class="hook-text">"I record fifty hours a month. Maybe three minutes are worth keeping."</div>
+            <div class="timestamp"><span class="card-type">follow-up</span> 42:23</div>
+            <div class="hook-text">They mentioned their kids listen to the show. That's your closing moment. Ask what their kids think of this episode.</div>
           </div>
         </div>
       </div>
@@ -994,9 +1004,9 @@
       <div class="container">
         <div class="problem-inner reveal">
           <span class="deco-quote" aria-hidden="true">&ldquo;</span>
-          <p>You know that feeling. Thirty minutes into a conversation, your guest says something that would stop a scroller mid-thumb. A perfect hook. You think: <strong>I'll remember that.</strong></p>
-          <p>You won't. By the time you hit stop, it's gone. Buried under forty minutes of audio you don't have time to re-listen to. You end up scrubbing through a waveform at 2am, looking for eight seconds you half-remember.</p>
-          <p><strong>That's not a workflow. That's a lottery.</strong> Podruff sits in the background and catches those moments in real time. You don't need to pause, scribble, or break eye contact with your guest.</p>
+          <p>You're hosting and producing at the same time. Listening to your guest, thinking about the next question, watching the clock, and trying to remember which story had the better hook. Something always gets dropped.</p>
+          <p>Your guest mentions a detail that would make a perfect clip. But you're mid-conversation and there's no one on the other side of the glass to scribble "go back to that." So you don't. You move on. The moment's gone.</p>
+          <p><strong>Solo podcasters don't need another editing tool. They need a producer.</strong> Podruff watches the conversation in real time and tells you what to ask next, which hooks need sharpening, and when you're sitting on a better story than the one you're telling.</p>
         </div>
       </div>
     </section>
@@ -1016,15 +1026,15 @@
           <div class="timeline-step step-right reveal-right" role="listitem">
             <div class="step-number">02</div>
             <div class="step-content">
-              <h3>Hit record</h3>
-              <p>Start your conversation. Podruff transcribes in the background and flags potential hooks as they happen. No tab-switching required.</p>
+              <h3>Start talking</h3>
+              <p>Have your conversation. Podruff listens in real time and surfaces follow-up questions, hook rewrites, and angle suggestions as they come up. Glance over when you need a nudge.</p>
             </div>
           </div>
           <div class="timeline-step step-left reveal-left" role="listitem">
             <div class="step-number">03</div>
             <div class="step-content">
-              <h3>Grab the good ones</h3>
-              <p>When you're done, your hooks are waiting. Timestamped, quoted, ready to drop into your show notes or social posts.</p>
+              <h3>Use what lands</h3>
+              <p>Some suggestions you'll use mid-conversation. Others you'll save for the edit. Either way, you walked out of that recording with better material than you would have alone.</p>
             </div>
           </div>
         </div>
@@ -1036,14 +1046,14 @@
       <div class="container">
         <div class="features-grid">
           <div class="feature-card reveal">
-            <div class="feature-tag">Real-time</div>
-            <h2>Hooks while you're still talking</h2>
-            <p>Most tools make you wait until after the recording. By then, you've lost context. Podruff identifies quotable moments during the conversation, so the list is ready the second you hang up. No scrubbing. No re-listening. No guessing which minute had the gold.</p>
+            <div class="feature-tag">Follow-ups</div>
+            <h2>It catches what you miss</h2>
+            <p>Your guest drops a detail and keeps talking. You're focused on the next question. Podruff isn't. It flags the thread you should pull on — the half-told story, the glossed-over conflict, the number they didn't finish — and puts a follow-up question on your screen before the moment passes.</p>
           </div>
           <div class="feature-card reveal">
-            <div class="feature-tag">Local-first</div>
-            <h2>Your data stays on your machine</h2>
-            <p>Audio never leaves your computer. Transcription and hook detection run locally. No cloud uploads, no third-party processing, no wondering who else is listening to your pre-release interview. Your recordings are yours.</p>
+            <div class="feature-tag">Hook rewrites</div>
+            <h2>Sharper hooks, suggested live</h2>
+            <p>Your guest says "it was really hard." That's not a clip. Podruff hears the same thing and suggests: "Push for the specifics — what made it hard, and when did they almost quit?" You get the version that stops a scroller. The one that would've taken three re-listens to find in post.</p>
           </div>
         </div>
       </div>
@@ -1060,9 +1070,9 @@
             <div class="price">$19</div>
             <div class="price-period">per month</div>
             <ul>
-              <li>One show, unlimited recordings</li>
-              <li>Real-time hook detection</li>
-              <li>Export to markdown or plain text</li>
+              <li>One show, unlimited sessions</li>
+              <li>Real-time follow-up suggestions</li>
+              <li>Hook rewrites during recording</li>
               <li>Local processing only</li>
             </ul>
             <a href="#waitlist" class="btn-card">Get started</a>
@@ -1075,10 +1085,10 @@
             <div class="price-period">per month</div>
             <ul>
               <li>Up to 5 shows</li>
-              <li>Priority hook ranking</li>
-              <li>Custom hook criteria</li>
-              <li>Clip-ready audio export</li>
-              <li>Slack and Notion integration</li>
+              <li>Custom producer personality</li>
+              <li>Angle and framing suggestions</li>
+              <li>Session history and patterns</li>
+              <li>Export suggestions to Notion</li>
             </ul>
             <a href="#waitlist" class="btn-card">Get started</a>
           </div>
@@ -1091,11 +1101,11 @@
               <div class="price-period">per month</div>
             </div>
             <ul>
-              <li>Unlimited shows</li>
+              <li>Unlimited shows and hosts</li>
               <li>Team access (up to 10 seats)</li>
-              <li>Shared hook library</li>
+              <li>Shared prompt library</li>
               <li>API access</li>
-              <li>White-label export</li>
+              <li>Custom style guides per show</li>
             </ul>
             <a href="#waitlist" class="btn-card">Get started</a>
           </div>
@@ -1108,7 +1118,7 @@
     <section class="waitlist section-pad" id="waitlist" aria-label="Join the waitlist">
       <div class="waitlist-inner reveal">
         <h2>Podruff runs on your Mac today.</h2>
-        <p>We're building a hosted version so you can use it from any browser, on any device. Drop your email and we'll let you know when it's ready. No spam. One email when we launch.</p>
+        <p>The beta is local-only and free. We're building a hosted version so your producer works from any browser, on any device. Drop your email and we'll let you know when it's ready. No spam. One email when we launch.</p>
         <form class="waitlist-form" action="https://formspree.io/f/FORM_ID" method="POST" id="waitlist-form" novalidate>
           <label for="waitlist-email" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email address</label>
           <input type="email" id="waitlist-email" name="email" placeholder="you@podcast.com" required autocomplete="email" aria-describedby="form-status">
@@ -1122,7 +1132,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="footer-tagline">podruff &mdash; catch what you'd forget</span>
+      <span class="footer-tagline">podruff &mdash; your live producer</span>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="#main">Back to top</a>
         <a href="mailto:hello@podruff.com">Contact</a>
