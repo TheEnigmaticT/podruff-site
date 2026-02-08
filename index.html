@@ -7,7 +7,7 @@
   <meta name="description" content="Podruff is a browser sidebar that feeds you hooks, topics, and follow-up questions while you record. Like having a producer on the other side of the glass.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       margin: 0;
@@ -16,32 +16,31 @@
     }
 
     :root {
-      --bg-base: #09090B;
-      --bg-raised: #18181B;
-      --bg-surface: #27272A;
-      --border: rgba(255,255,255,0.06);
-      --border-hover: rgba(255,255,255,0.12);
-      --text-primary: #FAFAFA;
-      --text-secondary: #A1A1AA;
-      --text-muted: #71717A;
-      --accent: #6366F1;
-      --accent-hover: #818CF8;
-      --cyan: #22D3EE;
-      --green: #34D399;
-      --font-heading: 'Space Grotesk', sans-serif;
+      --bg: #E8E4DD;
+      --bg-alt: #DEDAD2;
+      --bg-dark: #1A1A1A;
+      --text: #1A1A1A;
+      --text-secondary: #5C5955;
+      --text-muted: #8A8784;
+      --text-on-dark: #E8E4DD;
+      --yellow: #D4960A;
+      --yellow-bright: #E8B931;
+      --green: #00665E;
+      --green-light: #00857A;
+      --border: rgba(26,26,26,0.12);
+      --border-strong: rgba(26,26,26,0.25);
+      --font-display: 'Archivo Black', sans-serif;
+      --font-mono: 'Space Mono', monospace;
       --font-body: 'Inter', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--font-body);
       font-weight: 400;
-      color: var(--text-primary);
-      background: var(--bg-base);
+      color: var(--text);
+      background: var(--bg);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -51,354 +50,361 @@
       position: absolute;
       top: -100%;
       left: 16px;
-      background: var(--accent);
+      background: var(--green);
       color: #fff;
       padding: 8px 16px;
-      border-radius: 0 0 6px 6px;
+      border-radius: 0 0 4px 4px;
       z-index: 100;
       font-size: 14px;
       text-decoration: none;
-      font-family: var(--font-body);
     }
-    .skip-nav:focus {
-      top: 0;
-    }
+    .skip-nav:focus { top: 0; }
 
     /* Shared */
-    .section-pad {
-      padding: 112px 24px;
+    .section-pad { padding: 100px 32px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+
+    /* Mono label style — used everywhere */
+    .mono-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
     }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
+
+    /* Thin colored rules */
+    .rule-yellow {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--yellow);
+      border: none;
+    }
+    .rule-green {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--green);
+      border: none;
     }
 
     /* Animations */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-left {
       opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: translateX(-32px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
     .reveal-right {
       opacity: 0;
-      transform: translateX(40px);
-      transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: translateX(32px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
     @media (prefers-reduced-motion: reduce) {
       .reveal, .reveal-left, .reveal-right {
-        opacity: 1;
-        transform: none;
-        transition: none;
+        opacity: 1; transform: none; transition: none;
       }
     }
 
     /* ---- NAV ---- */
     .site-nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 50;
-      padding: 16px 24px;
+      padding: 14px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(9,9,11,0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(232,228,221,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.125rem;
-      color: var(--text-primary);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--text);
       text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-    .nav-logo span {
-      color: var(--accent);
+      text-transform: uppercase;
     }
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 28px;
       align-items: center;
     }
     .nav-links a {
-      font-size: 0.875rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--text-secondary);
       text-decoration: none;
-      font-weight: 500;
       transition: color 0.15s ease;
     }
     @media (hover: hover) {
-      .nav-links a:hover {
-        color: var(--text-primary);
-      }
+      .nav-links a:hover { color: var(--text); }
     }
     .nav-links a:focus-visible {
-      outline: 2px solid var(--accent);
+      outline: 2px solid var(--green);
       outline-offset: 4px;
-      border-radius: 2px;
     }
     .nav-cta {
-      font-size: 0.8125rem;
-      padding: 8px 16px;
-      background: var(--accent);
-      color: #fff !important;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background 0.15s ease;
+      padding: 7px 14px;
+      background: var(--green);
+      color: var(--text-on-dark) !important;
+      border-radius: 3px;
     }
     @media (hover: hover) {
-      .nav-cta:hover {
-        background: var(--accent-hover) !important;
-      }
+      .nav-cta:hover { background: var(--green-light) !important; }
     }
 
     /* ---- HERO ---- */
     .hero {
-      background: var(--bg-base);
-      text-align: center;
-      padding: 160px 24px 96px;
+      background: var(--bg);
+      padding: 160px 32px 80px;
       position: relative;
-      overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: 50%;
-      width: 800px;
-      height: 800px;
-      transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
-      pointer-events: none;
+    .hero-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: end;
     }
-    .hero-badge {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--cyan);
-      background: rgba(34,211,238,0.08);
-      border: 1px solid rgba(34,211,238,0.15);
-      padding: 6px 14px;
-      border-radius: 100px;
-      margin-bottom: 32px;
-      letter-spacing: 0.02em;
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 28px;
     }
     .hero h1 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: clamp(2.25rem, 5.5vw, 3.75rem);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      max-width: 720px;
-      margin: 0 auto 24px;
-      color: var(--text-primary);
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      max-width: 700px;
     }
-    .hero p {
-      font-size: 1.125rem;
+    .hero-sub {
+      margin-top: 24px;
+      font-size: 1.0625rem;
       color: var(--text-secondary);
-      max-width: 520px;
-      margin: 0 auto 40px;
+      max-width: 480px;
       line-height: 1.7;
+    }
+    .hero-right {
+      text-align: right;
+      padding-bottom: 8px;
+    }
+    .hero-right .mono-label {
+      margin-bottom: 12px;
+      display: block;
+    }
+    .hero-status {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .hero-cta-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 32px;
     }
     .btn-primary {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
+      background: var(--green);
+      color: var(--text-on-dark);
       padding: 14px 28px;
-      border-radius: 8px;
+      border-radius: 3px;
       text-decoration: none;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.9375rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       border: none;
       cursor: pointer;
-      transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+      transition: background 0.15s ease;
     }
     @media (hover: hover) {
-      .btn-primary:hover {
-        background: var(--accent-hover);
-        box-shadow: 0 0 24px rgba(99,102,241,0.3);
-        transform: translateY(-1px);
-      }
+      .btn-primary:hover { background: var(--green-light); }
     }
     .btn-primary:focus-visible {
-      outline: 3px solid var(--accent);
+      outline: 3px solid var(--yellow);
       outline-offset: 3px;
     }
-    .hero-sub {
-      margin-top: 16px;
-      font-size: 0.8125rem;
-      color: var(--text-muted);
+    .btn-ghost {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 2px solid var(--border-strong);
+      border-radius: 3px;
+      text-decoration: none;
       font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      transition: border-color 0.15s ease;
+    }
+    @media (hover: hover) {
+      .btn-ghost:hover { border-color: var(--text); }
+    }
+    .btn-ghost:focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 3px;
+    }
+    .chevrons {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      color: var(--yellow);
+      line-height: 1;
+      user-select: none;
+      letter-spacing: -0.04em;
     }
 
     /* ---- DEMO STRIP ---- */
     .demo-strip {
-      background: var(--bg-raised);
+      background: var(--bg-alt);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 64px 0;
+      padding: 56px 0;
       overflow: hidden;
     }
     .demo-strip .label {
       text-align: center;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      padding: 0 24px;
+      margin-bottom: 28px;
+      padding: 0 32px;
     }
     .filmstrip-wrapper {
-      position: relative;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
     }
-    .filmstrip-wrapper::-webkit-scrollbar {
-      display: none;
-    }
+    .filmstrip-wrapper::-webkit-scrollbar { display: none; }
     .filmstrip {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       padding: 8px 48px;
       width: max-content;
     }
     .hook-card {
-      flex: 0 0 300px;
-      background: var(--bg-surface);
+      flex: 0 0 290px;
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px;
+      border-radius: 4px;
+      padding: 20px;
       scroll-snap-align: center;
-      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
     }
     @media (hover: hover) {
       .hook-card:hover {
-        border-color: var(--border-hover);
         transform: translateY(-2px);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
       }
+    }
+    .hook-card .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .hook-card .card-type {
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 3px 7px;
+      border-radius: 2px;
+    }
+    .card-type-hook {
+      background: var(--green);
+      color: var(--text-on-dark);
+    }
+    .card-type-topic {
+      background: var(--yellow);
+      color: var(--bg-dark);
+    }
+    .card-type-followup {
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
     }
     .hook-card .timestamp {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--cyan);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .hook-card .timestamp::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--cyan);
-      opacity: 0.6;
-    }
-    .hook-card .card-type {
-      padding: 2px 8px;
-      border-radius: 3px;
-      font-size: 0.625rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-right: 4px;
-    }
-    .card-type-hook {
-      background: rgba(99,102,241,0.12);
-      color: var(--accent-hover);
-    }
-    .card-type-topic {
-      background: rgba(52,211,153,0.12);
-      color: var(--green);
-    }
-    .card-type-followup {
-      background: rgba(251,146,60,0.12);
-      color: #FB923C;
+      font-size: 0.6875rem;
+      color: var(--text-muted);
     }
     .hook-card .hook-text {
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       line-height: 1.6;
       color: var(--text-secondary);
     }
-
-    /* ---- THE PROBLEM ---- */
-    .problem {
-      background: var(--bg-base);
+    .hook-card .hook-text strong {
+      color: var(--text);
+      font-weight: 600;
     }
+
+    /* ---- PROBLEM ---- */
+    .problem { background: var(--bg); }
     .problem-inner {
       display: grid;
-      grid-template-columns: 64px 1fr;
+      grid-template-columns: 56px 1fr;
       gap: 0 20px;
       max-width: 600px;
       margin-left: auto;
     }
-    .problem .deco-quote {
-      font-family: var(--font-heading);
-      font-size: 8rem;
-      font-weight: 700;
-      line-height: 0.85;
-      color: var(--bg-surface);
+    .problem .deco-mark {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      line-height: 0.9;
+      color: var(--yellow);
       grid-row: 1 / 4;
       user-select: none;
-      align-self: start;
     }
     .problem p {
-      font-size: 1rem;
+      font-size: 0.9375rem;
       line-height: 1.8;
       color: var(--text-secondary);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
-    .problem p:last-child {
-      margin-bottom: 0;
-    }
+    .problem p:last-child { margin-bottom: 0; }
     .problem p strong {
-      color: var(--text-primary);
+      color: var(--text);
       font-weight: 600;
     }
 
     /* ---- HOW IT WORKS ---- */
     .how-it-works {
-      background: var(--bg-raised);
+      background: var(--bg-alt);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .how-it-works h2 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      letter-spacing: -0.03em;
-      text-align: center;
-      margin-bottom: 80px;
+    .how-it-works > .container > h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .how-it-works > .container > .mono-label {
+      margin-bottom: 64px;
     }
     .timeline {
       position: relative;
@@ -409,384 +415,328 @@
       content: '';
       position: absolute;
       left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), rgba(99,102,241,0.2));
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--green);
       transform: translateX(-50%);
+      opacity: 0.3;
     }
     .timeline-step {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 80px;
+      margin-bottom: 72px;
       position: relative;
     }
-    .timeline-step:last-child {
-      margin-bottom: 0;
-    }
+    .timeline-step:last-child { margin-bottom: 0; }
     .timeline-step .step-number {
-      font-family: var(--font-heading);
-      font-size: clamp(3.5rem, 8vw, 5rem);
-      font-weight: 700;
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 4.5rem);
       line-height: 1;
-      color: var(--accent);
+      color: var(--green);
       flex: 0 0 50%;
       user-select: none;
-      opacity: 0.3;
+      opacity: 0.25;
     }
     .timeline-step .step-content {
       flex: 0 0 50%;
       padding-top: 8px;
     }
     .timeline-step .step-content h3 {
-      font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: 1.125rem;
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      text-transform: uppercase;
       margin-bottom: 8px;
-      letter-spacing: -0.01em;
     }
     .timeline-step .step-content p {
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       color: var(--text-secondary);
-      line-height: 1.6;
+      line-height: 1.7;
     }
-
-    .step-left .step-number {
-      text-align: right;
-      padding-right: 40px;
-    }
-    .step-left .step-content {
-      padding-left: 40px;
-    }
-
-    .step-right {
-      flex-direction: row-reverse;
-    }
-    .step-right .step-number {
-      text-align: left;
-      padding-left: 40px;
-    }
-    .step-right .step-content {
-      text-align: right;
-      padding-right: 40px;
-    }
+    .step-left .step-number { text-align: right; padding-right: 36px; }
+    .step-left .step-content { padding-left: 36px; }
+    .step-right { flex-direction: row-reverse; }
+    .step-right .step-number { text-align: left; padding-left: 36px; }
+    .step-right .step-content { text-align: right; padding-right: 36px; }
 
     /* ---- FEATURES ---- */
-    .features {
-      background: var(--bg-base);
+    .features { background: var(--bg); }
+    .features > .container > h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
+    .features > .container > .mono-label { margin-bottom: 48px; }
     .features-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px;
+      gap: 20px;
     }
     .feature-card {
-      background: var(--bg-raised);
+      background: var(--bg-alt);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 40px 32px;
-      transition: border-color 0.2s ease;
+      border-radius: 4px;
+      padding: 32px 24px;
+      transition: border-color 0.15s ease;
     }
     @media (hover: hover) {
-      .feature-card:hover {
-        border-color: var(--border-hover);
-      }
+      .feature-card:hover { border-color: var(--border-strong); }
     }
-    .feature-card .feature-tag {
-      font-family: var(--font-mono);
-      font-size: 0.6875rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
+    .feature-card .feature-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
       margin-bottom: 20px;
     }
-    .feature-tag-green { color: var(--green); }
-    .feature-tag-orange { color: #FB923C; }
-    .feature-card h2 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: clamp(1.25rem, 2.5vw, 1.625rem);
-      margin-bottom: 16px;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
+    .dot-green { background: var(--green); }
+    .dot-yellow { background: var(--yellow); }
+    .dot-dark { background: var(--bg-dark); }
+    .feature-card h3 {
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      line-height: 1.3;
     }
     .feature-card p {
-      font-size: 0.9375rem;
+      font-size: 0.8125rem;
       color: var(--text-secondary);
       line-height: 1.7;
     }
 
     /* ---- PRICING ---- */
     .pricing {
-      background: var(--bg-raised);
+      background: var(--bg-alt);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
     .pricing > .container > h2 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      letter-spacing: -0.03em;
-      text-align: center;
-      margin-bottom: 56px;
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
+    .pricing > .container > .mono-label { margin-bottom: 48px; }
     .pricing-grid {
       display: grid;
       grid-template-columns: 1fr 1.15fr 1fr;
-      gap: 20px;
+      gap: 16px;
       align-items: start;
     }
     .price-card {
-      background: var(--bg-surface);
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px 28px;
-      transition: border-color 0.2s ease, transform 0.2s ease;
+      border-radius: 4px;
+      padding: 28px 24px;
+      transition: border-color 0.15s ease;
     }
     @media (hover: hover) {
-      .price-card:hover {
-        border-color: var(--border-hover);
-        transform: translateY(-2px);
-      }
+      .price-card:hover { border-color: var(--border-strong); }
     }
     .price-card .tier-name {
       font-family: var(--font-mono);
-      font-weight: 500;
-      font-size: 0.75rem;
+      font-weight: 700;
+      font-size: 0.625rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       color: var(--text-muted);
       margin-bottom: 12px;
     }
     .price-card .price {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 2.75rem;
+      font-family: var(--font-display);
+      font-size: 2.5rem;
       line-height: 1;
-      margin-bottom: 4px;
-      letter-spacing: -0.03em;
+      margin-bottom: 2px;
     }
     .price-card .price-period {
-      font-size: 0.8125rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
       color: var(--text-muted);
       margin-bottom: 24px;
     }
     .price-card ul {
       list-style: none;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .price-card ul li {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       color: var(--text-secondary);
-      padding: 7px 0;
+      padding: 5px 0;
       line-height: 1.5;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      padding-left: 16px;
+      position: relative;
     }
     .price-card ul li::before {
       content: '';
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      background: rgba(52,211,153,0.1);
-      border: 1px solid rgba(52,211,153,0.25);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 5l2.5 2.5L8 3' stroke='%2334D399' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: center;
+      background: var(--green);
     }
     .price-card .btn-card {
       display: block;
       text-align: center;
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 11px 20px;
+      border-radius: 3px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.875rem;
-      border: 1px solid var(--border-hover);
-      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 2px solid var(--border-strong);
+      color: var(--text);
       background: transparent;
-      transition: background 0.15s ease, border-color 0.15s ease;
+      transition: border-color 0.15s ease, background 0.15s ease;
       cursor: pointer;
-      font-family: var(--font-body);
     }
     @media (hover: hover) {
       .price-card .btn-card:hover {
-        background: rgba(255,255,255,0.05);
-        border-color: rgba(255,255,255,0.2);
+        border-color: var(--text);
       }
     }
     .price-card .btn-card:focus-visible {
-      outline: 3px solid var(--accent);
+      outline: 3px solid var(--green);
       outline-offset: 3px;
     }
 
     /* Pro card */
     .price-card-pro {
-      background: var(--bg-base);
-      border-color: var(--accent);
-      padding: 36px 32px;
-      position: relative;
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
+      border-color: var(--bg-dark);
+      padding: 32px 28px;
     }
-    .price-card-pro::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: 13px;
-      background: linear-gradient(135deg, var(--accent), rgba(99,102,241,0.3));
-      z-index: -1;
-      opacity: 0.5;
-    }
-    .price-card-pro .tier-name {
-      color: var(--accent);
-    }
+    .price-card-pro .tier-name { color: var(--yellow); }
+    .price-card-pro .price-period { color: rgba(232,228,221,0.5); }
+    .price-card-pro ul li { color: rgba(232,228,221,0.7); }
+    .price-card-pro ul li::before { background: var(--yellow); }
     .price-card-pro .btn-card {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--text-on-dark);
     }
     @media (hover: hover) {
       .price-card-pro .btn-card:hover {
-        background: var(--accent-hover);
-        border-color: var(--accent-hover);
-        box-shadow: 0 0 20px rgba(99,102,241,0.25);
+        background: var(--green-light);
+        border-color: var(--green-light);
       }
     }
 
-    /* Agency card -- horizontal layout on desktop */
-    .price-card-agency {
+    /* Studio card */
+    .price-card-studio {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0 20px;
+      gap: 0 16px;
       align-items: start;
     }
-    .price-card-agency .agency-left {
-      grid-row: 1 / 3;
-    }
-    .price-card-agency ul {
-      margin-bottom: 0;
-    }
-    .price-card-agency .btn-card {
+    .price-card-studio .studio-left { grid-row: 1 / 3; }
+    .price-card-studio ul { margin-bottom: 0; }
+    .price-card-studio .btn-card {
       grid-column: 1 / -1;
-      margin-top: 20px;
+      margin-top: 16px;
     }
 
     .pricing-note {
       text-align: center;
-      margin-top: 40px;
-      font-size: 0.8125rem;
-      color: var(--text-muted);
+      margin-top: 36px;
       font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
     }
 
     /* ---- WAITLIST ---- */
     .waitlist {
-      background: var(--bg-base);
-      position: relative;
-      overflow: hidden;
-    }
-    .waitlist::before {
-      content: '';
-      position: absolute;
-      bottom: -40%;
-      left: 50%;
-      width: 700px;
-      height: 700px;
-      transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%);
-      pointer-events: none;
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
     }
     .waitlist-inner {
       text-align: center;
       max-width: 520px;
       margin: 0 auto;
-      position: relative;
     }
     .waitlist h2 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      letter-spacing: -0.03em;
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      text-transform: uppercase;
       margin-bottom: 16px;
     }
     .waitlist p {
-      color: var(--text-secondary);
-      font-size: 1rem;
+      color: rgba(232,228,221,0.6);
+      font-size: 0.9375rem;
       line-height: 1.7;
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
     .waitlist-form {
       display: flex;
       gap: 10px;
-      max-width: 460px;
+      max-width: 440px;
       margin: 0 auto;
     }
     .waitlist-form input[type="email"] {
       flex: 1;
-      padding: 14px 16px;
-      border: 1px solid var(--border-hover);
-      border-radius: 8px;
-      background: var(--bg-raised);
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-size: 0.9375rem;
+      padding: 13px 16px;
+      border: 2px solid rgba(232,228,221,0.15);
+      border-radius: 3px;
+      background: rgba(232,228,221,0.05);
+      color: var(--text-on-dark);
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
       outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      transition: border-color 0.15s ease;
     }
     .waitlist-form input[type="email"]::placeholder {
-      color: var(--text-muted);
+      color: rgba(232,228,221,0.3);
     }
     .waitlist-form input[type="email"]:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+      border-color: var(--yellow);
     }
     .waitlist-form input[type="email"]:invalid:not(:placeholder-shown) {
       border-color: #EF4444;
     }
-    .btn-accent {
+    .btn-yellow {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.875rem;
+      background: var(--yellow);
+      color: var(--bg-dark);
+      padding: 13px 22px;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       border: none;
       cursor: pointer;
       white-space: nowrap;
-      transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+      transition: background 0.15s ease;
     }
     @media (hover: hover) {
-      .btn-accent:hover {
-        background: var(--accent-hover);
-        box-shadow: 0 0 20px rgba(99,102,241,0.25);
-        transform: translateY(-1px);
-      }
+      .btn-yellow:hover { background: var(--yellow-bright); }
     }
-    .btn-accent:focus-visible {
-      outline: 3px solid var(--accent);
+    .btn-yellow:focus-visible {
+      outline: 3px solid var(--text-on-dark);
       outline-offset: 3px;
     }
     .form-feedback {
       margin-top: 12px;
-      font-size: 0.8125rem;
-      min-height: 1.4em;
       font-family: var(--font-mono);
+      font-size: 0.75rem;
+      min-height: 1.4em;
     }
 
     /* ---- FOOTER ---- */
     .site-footer {
-      background: var(--bg-base);
-      color: var(--text-muted);
-      padding: 40px 24px;
-      border-top: 1px solid var(--border);
+      background: var(--bg-dark);
+      color: rgba(232,228,221,0.4);
+      padding: 32px;
+      border-top: 2px solid var(--yellow);
     }
     .footer-inner {
-      max-width: 960px;
+      max-width: 1000px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -794,9 +744,11 @@
       flex-wrap: wrap;
       gap: 16px;
     }
-    .footer-inner .footer-tagline {
-      font-size: 0.8125rem;
+    .footer-tagline {
       font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
     .footer-links {
       display: flex;
@@ -804,148 +756,82 @@
       align-items: center;
     }
     .footer-links a {
-      color: var(--text-muted);
+      color: rgba(232,228,221,0.4);
       text-decoration: none;
-      font-size: 0.8125rem;
-      font-weight: 500;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
       transition: color 0.15s ease;
     }
     @media (hover: hover) {
-      .footer-links a:hover {
-        color: var(--text-primary);
-      }
+      .footer-links a:hover { color: var(--text-on-dark); }
     }
     .footer-links a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
-    }
-    .btn-footer {
-      display: inline-block;
-      padding: 8px 18px;
-      border: 1px solid var(--border-hover);
-      border-radius: 6px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.8125rem;
-      font-weight: 500;
-      transition: border-color 0.15s ease, color 0.15s ease;
-    }
-    @media (hover: hover) {
-      .btn-footer:hover {
-        border-color: rgba(255,255,255,0.3);
-        color: var(--text-primary);
-      }
-    }
-    .btn-footer:focus-visible {
-      outline: 2px solid var(--accent);
+      outline: 2px solid var(--yellow);
       outline-offset: 4px;
     }
 
     /* ---- RESPONSIVE ---- */
     @media (max-width: 768px) {
-      .section-pad {
-        padding: 80px 20px;
+      .section-pad { padding: 72px 20px; }
+      .hero { padding: 120px 20px 64px; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
       }
-      .hero {
-        padding: 120px 20px 72px;
-      }
-      .nav-links a:not(.nav-cta) {
-        display: none;
-      }
-
-      /* Problem */
+      .hero-right { text-align: left; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .chevrons { display: none; }
       .problem-inner {
         grid-template-columns: 1fr;
         max-width: 100%;
         margin-left: 0;
       }
-      .problem .deco-quote {
-        font-size: 5rem;
+      .problem .deco-mark {
+        font-size: 3.5rem;
         grid-row: auto;
-        margin-bottom: -16px;
+        margin-bottom: -8px;
       }
-
-      /* Timeline */
-      .timeline::before {
-        left: 20px;
-      }
-      .timeline-step,
-      .step-right {
+      .timeline::before { left: 16px; }
+      .timeline-step, .step-right {
         flex-direction: column;
-        padding-left: 48px;
+        padding-left: 44px;
       }
       .timeline-step .step-number,
       .step-left .step-number,
       .step-right .step-number {
-        text-align: left;
-        padding: 0;
-        flex: none;
-        font-size: 3rem;
-        margin-bottom: 8px;
+        text-align: left; padding: 0; flex: none;
+        font-size: 2.5rem; margin-bottom: 8px;
       }
       .timeline-step .step-content,
       .step-left .step-content,
       .step-right .step-content {
-        text-align: left;
-        padding: 0;
-        flex: none;
+        text-align: left; padding: 0; flex: none;
       }
-
-      /* Features */
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-      .feature-card {
-        padding: 28px 24px;
-      }
-
-      /* Pricing */
+      .features-grid { grid-template-columns: 1fr; }
       .pricing-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 380px;
         margin: 0 auto;
       }
-      .price-card-agency {
-        grid-template-columns: 1fr;
-      }
-      .price-card-agency .agency-left {
-        grid-row: auto;
-      }
-
-      /* Waitlist form */
-      .waitlist-form {
-        flex-direction: column;
-      }
-
-      /* Footer */
+      .price-card-studio { grid-template-columns: 1fr; }
+      .price-card-studio .studio-left { grid-row: auto; }
+      .waitlist-form { flex-direction: column; }
       .footer-inner {
         flex-direction: column;
         text-align: center;
       }
-      .footer-links {
-        flex-direction: column;
-        gap: 12px;
-      }
+      .footer-links { flex-direction: column; gap: 10px; }
     }
 
     @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.875rem;
-      }
-      .section-pad {
-        padding: 64px 16px;
-      }
-      .hero {
-        padding: 100px 16px 56px;
-      }
-      .filmstrip {
-        padding: 8px 20px;
-        gap: 12px;
-      }
-      .hook-card {
-        flex: 0 0 260px;
-        padding: 20px;
-      }
+      .hero { padding: 100px 16px 48px; }
+      .hero h1 { font-size: 2rem; }
+      .section-pad { padding: 56px 16px; }
+      .filmstrip { padding: 8px 20px; gap: 10px; }
+      .hook-card { flex: 0 0 250px; padding: 16px; }
+      .feature-card { padding: 24px 20px; }
     }
   </style>
 </head>
@@ -954,72 +840,116 @@
 
   <!-- NAV -->
   <nav class="site-nav" aria-label="Primary navigation">
-    <a href="#" class="nav-logo">podruff<span>.</span></a>
+    <a href="#" class="nav-logo">Podruff</a>
     <div class="nav-links">
       <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
-      <a href="#waitlist" class="nav-cta">Get early access</a>
+      <a href="#waitlist" class="nav-cta">Early access</a>
     </div>
   </nav>
 
-  <!-- HERO -->
   <main id="main">
+
+    <!-- HERO -->
     <section class="hero" aria-label="Introduction">
-      <div class="reveal">
-        <div class="hero-badge">Now in beta for macOS</div>
-        <h1>A producer in your sidebar. Hooks, topics, and follow-ups — live.</h1>
-        <p>Podruff is a browser sidebar that listens to your call and feeds you a live text stream of hooks, topic flags, and follow-up questions as the conversation happens. Glance over. Use what's good. Keep talking.</p>
-        <a href="#waitlist" class="btn-primary">Download the beta</a>
-        <div class="hero-sub">Free during beta &middot; macOS only &middot; No account required</div>
+      <div class="hero-grid reveal">
+        <div>
+          <div class="hero-meta">
+            <span class="mono-label">Live sidebar</span>
+            <span class="mono-label">Status: Beta</span>
+          </div>
+          <h1>A producer in your browser.</h1>
+          <p class="hero-sub">Podruff is a sidebar that listens to your call and fills a live feed with hooks, topic flags, and follow-up questions as the conversation happens. Glance over. Use what's good. Keep talking.</p>
+          <div class="hero-cta-row">
+            <a href="#waitlist" class="btn-primary">Download beta</a>
+            <a href="#how-it-works" class="btn-ghost">See how it works</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <span class="chevrons" aria-hidden="true">&raquo;&raquo;&raquo;</span>
+          <span class="mono-label">Classification</span>
+          <div class="hero-status">
+            Function: Live production<br>
+            Platform: macOS / local<br>
+            Dependency: None
+          </div>
+        </div>
+      </div>
+      <div style="max-width:1000px;margin:32px auto 0;">
+        <hr class="rule-yellow">
       </div>
     </section>
 
     <!-- DEMO STRIP -->
     <section class="demo-strip" aria-label="Live sidebar feed from a real session">
-      <p class="label reveal">Live sidebar feed from a real 45-minute recording</p>
+      <p class="label mono-label reveal">Live sidebar feed — from a real 45-minute recording</p>
       <div class="filmstrip-wrapper" role="region" aria-label="Sidebar suggestions, scrollable" tabindex="0">
         <div class="filmstrip" id="filmstrip">
           <div class="hook-card">
-            <div class="timestamp"><span class="card-type card-type-hook">hook</span> 06:12</div>
-            <div class="hook-text">"You're not AI-skeptic. You're AI-stuck."</div>
+            <div class="card-header">
+              <span class="card-type card-type-hook">Hook</span>
+              <span class="timestamp">06:12</span>
+            </div>
+            <div class="hook-text"><strong>"You're not AI-skeptic. You're AI-stuck."</strong></div>
           </div>
           <div class="hook-card">
-            <div class="timestamp"><span class="card-type card-type-topic">topic</span> 08:44</div>
+            <div class="card-header">
+              <span class="card-type card-type-topic">Topic</span>
+              <span class="timestamp">08:44</span>
+            </div>
             <div class="hook-text">MoltBot vs. Notis comparison emerging — guest has opinions on both. Worth digging into.</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp"><span class="card-type card-type-followup">follow-up</span> 11:30</div>
+            <div class="card-header">
+              <span class="card-type card-type-followup">Follow-up</span>
+              <span class="timestamp">11:30</span>
+            </div>
             <div class="hook-text">They mentioned "the context window problem" but moved on. Ask how Notis actually handles it.</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp"><span class="card-type card-type-hook">hook</span> 14:28</div>
-            <div class="hook-text">"AI won't fix a broken business. It'll scale what's working."</div>
+            <div class="card-header">
+              <span class="card-type card-type-hook">Hook</span>
+              <span class="timestamp">14:28</span>
+            </div>
+            <div class="hook-text"><strong>"AI won't fix a broken business. It'll scale what's working."</strong></div>
           </div>
           <div class="hook-card">
-            <div class="timestamp"><span class="card-type card-type-followup">follow-up</span> 19:05</div>
+            <div class="card-header">
+              <span class="card-type card-type-followup">Follow-up</span>
+              <span class="timestamp">19:05</span>
+            </div>
             <div class="hook-text">They said their co-founder disagreed on pricing. Don't let that slide — ask what the argument was.</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp"><span class="card-type card-type-topic">topic</span> 25:33</div>
+            <div class="card-header">
+              <span class="card-type card-type-topic">Topic</span>
+              <span class="timestamp">25:33</span>
+            </div>
             <div class="hook-text">Enterprise vs. consumer focus — guest keeps circling back. This is the real tension in their story.</div>
           </div>
           <div class="hook-card">
-            <div class="timestamp"><span class="card-type card-type-hook">hook</span> 31:45</div>
-            <div class="hook-text">"The best AI use case? The thing you're already good at, multiplied."</div>
+            <div class="card-header">
+              <span class="card-type card-type-hook">Hook</span>
+              <span class="timestamp">31:45</span>
+            </div>
+            <div class="hook-text"><strong>"The best AI use case? The thing you're already good at, multiplied."</strong></div>
           </div>
           <div class="hook-card">
-            <div class="timestamp"><span class="card-type card-type-followup">follow-up</span> 38:12</div>
+            <div class="card-header">
+              <span class="card-type card-type-followup">Follow-up</span>
+              <span class="timestamp">38:12</span>
+            </div>
             <div class="hook-text">They mentioned their kids listen to the show. That's your closing moment — ask what the kids think.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- THE PROBLEM -->
+    <!-- PROBLEM -->
     <section class="problem section-pad" aria-label="The problem Podruff solves">
       <div class="container">
         <div class="problem-inner reveal">
-          <span class="deco-quote" aria-hidden="true">&ldquo;</span>
+          <span class="deco-mark" aria-hidden="true">//</span>
           <p>You're hosting and producing at the same time. Listening to your guest, thinking about the next question, watching the clock. Your guest drops a detail that would make a perfect clip — and you're too deep in the conversation to write it down.</p>
           <p>After the call, you scrub through forty minutes of audio looking for the eight seconds you half-remember. Or worse, you don't look at all. The hook dies in the recording.</p>
           <p><strong>You don't need another post-production tool. You need a sidebar.</strong> Podruff runs in your browser while you record. It watches the conversation and fills a live feed with hooks, topic flags, and follow-up questions. You glance at it the way you'd glance at a producer's notes through the glass.</p>
@@ -1027,10 +957,14 @@
       </div>
     </section>
 
+    <div class="container"><hr class="rule-green"></div>
+
     <!-- HOW IT WORKS -->
     <section class="how-it-works section-pad" id="how-it-works" aria-label="How Podruff works">
       <div class="container">
+        <span class="mono-label">Process</span>
         <h2 class="reveal">How it works</h2>
+        <span class="mono-label reveal">Three steps. No configuration.</span>
         <div class="timeline" role="list">
           <div class="timeline-step step-left reveal-left" role="listitem">
             <div class="step-number">01</div>
@@ -1058,38 +992,45 @@
     </section>
 
     <!-- FEATURES -->
-    <section class="features section-pad" aria-label="Key features">
+    <section class="features section-pad" aria-label="What the sidebar shows you">
       <div class="container">
+        <span class="mono-label">Output types</span>
+        <h2 class="reveal">Three cards. One feed.</h2>
+        <span class="mono-label reveal">Everything is color-coded, timestamped, and scrollable.</span>
         <div class="features-grid">
           <div class="feature-card reveal">
-            <div class="feature-tag">Hooks</div>
-            <h2>Quotable soundbites, live</h2>
-            <p>Under ten words. Punchy. Specific. Podruff generates 2-3 hook ideas every few seconds from what's being said. Not summaries — the kind of one-liner you'd put in a clip caption or episode title. They show up in the sidebar as blue cards, timestamped and ready to use.</p>
+            <div class="feature-dot dot-green"></div>
+            <h3>Hooks</h3>
+            <p>Under ten words. Punchy. Specific. Podruff generates 2-3 hook ideas every few seconds from what's being said. Not summaries — the kind of one-liner you'd put in a clip caption or episode title.</p>
           </div>
           <div class="feature-card reveal">
-            <div class="feature-tag feature-tag-green">Topics</div>
-            <h2>Threads worth pulling</h2>
-            <p>Your guest keeps circling back to a comparison, or drops a tension they don't resolve. Podruff flags it as a topic card — a thread that's worth exploring before you move on. Think of it as a producer tapping the glass: "stay on this one."</p>
+            <div class="feature-dot dot-yellow"></div>
+            <h3>Topics</h3>
+            <p>Your guest keeps circling back to a comparison, or drops a tension they don't resolve. Podruff flags it — a thread worth exploring before you move on. A producer tapping the glass: "stay on this one."</p>
           </div>
           <div class="feature-card reveal">
-            <div class="feature-tag feature-tag-orange">Follow-ups</div>
-            <h2>The question you forgot to ask</h2>
-            <p>They mentioned a co-founder disagreement and kept talking. You were nodding. Podruff was writing down the follow-up: "Ask what the argument was about." It surfaces the questions you'd think of in the shower two hours later — except now they're on your screen mid-call.</p>
+            <div class="feature-dot dot-dark"></div>
+            <h3>Follow-ups</h3>
+            <p>They mentioned a co-founder disagreement and kept talking. You were nodding. Podruff writes the follow-up: "Ask what the argument was about." The question you'd think of two hours later — on your screen now.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <div class="container"><hr class="rule-yellow"></div>
+
     <!-- PRICING -->
     <section class="pricing section-pad" id="pricing" aria-label="Pricing plans">
       <div class="container">
-        <h2 class="reveal">Pick your plan</h2>
-        <div class="pricing-grid reveal">
+        <span class="mono-label">Plans</span>
+        <h2 class="reveal">Pick your tier</h2>
+        <span class="mono-label reveal">All plans include a 14-day free trial.</span>
+        <div class="pricing-grid reveal" style="margin-top:40px;">
           <!-- Starter -->
           <div class="price-card">
             <div class="tier-name">Starter</div>
             <div class="price">$19</div>
-            <div class="price-period">per month &middot; 10 calls</div>
+            <div class="price-period">/ month &middot; 10 calls</div>
             <ul>
               <li>Live hooks, topics, and follow-ups</li>
               <li>Pre-call guest research</li>
@@ -1103,7 +1044,7 @@
           <div class="price-card price-card-pro">
             <div class="tier-name">Pro</div>
             <div class="price">$49</div>
-            <div class="price-period">per month &middot; 30 calls</div>
+            <div class="price-period">/ month &middot; 30 calls</div>
             <ul>
               <li>Everything in Starter</li>
               <li>Calendar sync and auto-join</li>
@@ -1115,11 +1056,11 @@
           </div>
 
           <!-- Studio -->
-          <div class="price-card price-card-agency">
-            <div class="agency-left">
+          <div class="price-card price-card-studio">
+            <div class="studio-left">
               <div class="tier-name">Studio</div>
               <div class="price">$99</div>
-              <div class="price-period">per month &middot; unlimited</div>
+              <div class="price-period">/ month &middot; unlimited</div>
             </div>
             <ul>
               <li>Everything in Pro</li>
@@ -1131,19 +1072,20 @@
             <a href="#waitlist" class="btn-card">Get started</a>
           </div>
         </div>
-        <p class="pricing-note reveal">Hosted version coming Q3 2026. All plans include a 14-day free trial.</p>
+        <p class="pricing-note reveal">Hosted version coming Q3 2026</p>
       </div>
     </section>
 
     <!-- WAITLIST -->
     <section class="waitlist section-pad" id="waitlist" aria-label="Join the waitlist">
       <div class="waitlist-inner reveal">
+        <span class="mono-label" style="color:var(--yellow);display:block;margin-bottom:16px;">Early access</span>
         <h2>The beta runs on your Mac. The hosted version is coming.</h2>
         <p>Right now Podruff runs locally — your audio, your machine, nothing leaves your computer. We're building a hosted version with calendar sync, auto-join, and cross-device access. Drop your email and we'll let you know when it's ready.</p>
         <form class="waitlist-form" action="https://formspree.io/f/FORM_ID" method="POST" id="waitlist-form" novalidate>
           <label for="waitlist-email" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email address</label>
           <input type="email" id="waitlist-email" name="email" placeholder="you@podcast.com" required autocomplete="email" aria-describedby="form-status">
-          <button type="submit" class="btn-accent">Join the waitlist</button>
+          <button type="submit" class="btn-yellow">Join waitlist</button>
         </form>
         <div class="form-feedback" id="form-status" aria-live="polite"></div>
       </div>
@@ -1153,23 +1095,20 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="footer-tagline">podruff &mdash; your live sidebar</span>
+      <span class="footer-tagline">Podruff &mdash; your live sidebar</span>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#main">Back to top</a>
+        <a href="#main">Top</a>
         <a href="mailto:hello@podruff.com">Contact</a>
-        <a href="#waitlist" class="btn-footer">Download beta</a>
+        <a href="#waitlist">Download beta</a>
       </nav>
     </div>
   </footer>
 
   <script>
-    // Scroll-triggered animations via IntersectionObserver
     (function() {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
       var targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
       if (!targets.length) return;
-
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
@@ -1178,58 +1117,47 @@
           }
         });
       }, { threshold: 0.12 });
-
       targets.forEach(function(el) { observer.observe(el); });
     })();
 
-    // Filmstrip parallax on desktop
     (function() {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       if (!window.matchMedia('(hover: hover)').matches) return;
-
       var strip = document.querySelector('.demo-strip');
       var filmstrip = document.getElementById('filmstrip');
       if (!strip || !filmstrip) return;
-
       window.addEventListener('scroll', function() {
         var rect = strip.getBoundingClientRect();
         var windowH = window.innerHeight;
         if (rect.bottom < 0 || rect.top > windowH) return;
         var progress = (windowH - rect.top) / (windowH + rect.height);
-        var offset = (progress - 0.5) * 50;
-        filmstrip.style.transform = 'translateX(' + offset + 'px)';
+        filmstrip.style.transform = 'translateX(' + ((progress - 0.5) * 40) + 'px)';
       }, { passive: true });
     })();
 
-    // Email form validation and submission
     (function() {
       var form = document.getElementById('waitlist-form');
       var emailInput = document.getElementById('waitlist-email');
       var feedback = document.getElementById('form-status');
       if (!form) return;
-
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-
-        var email = emailInput.value.trim();
-        if (!email || !emailInput.validity.valid) {
+        if (!emailInput.value.trim() || !emailInput.validity.valid) {
           feedback.textContent = 'Enter a valid email address.';
           feedback.style.color = '#EF4444';
           emailInput.focus();
           return;
         }
-
         feedback.textContent = 'Sending...';
-        feedback.style.color = 'var(--text-muted)';
-
+        feedback.style.color = 'rgba(232,228,221,0.5)';
         fetch(form.action, {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
-        }).then(function(response) {
-          if (response.ok) {
-            feedback.textContent = "You're on the list. We'll be in touch.";
-            feedback.style.color = 'var(--green)';
+        }).then(function(r) {
+          if (r.ok) {
+            feedback.textContent = "You're on the list.";
+            feedback.style.color = 'var(--yellow)';
             emailInput.value = '';
           } else {
             feedback.textContent = 'Something went wrong. Try again?';
