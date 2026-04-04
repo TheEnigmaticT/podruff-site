@@ -1,0 +1,12 @@
+{
+  "name": "Tava",
+  "slug": "tava",
+  "credential": "analytics",
+  "channels": ["ga4", "search_console"],
+  "ga4_property": "PLACEHOLDER",
+  "gsc_url": "https://tava.ai/",
+  "notion_page_id": "PLACEHOLDER",
+  "slack_channel": "#tava",
+  "impressflow_theme": "Crowd Tamers",
+  "active": true
+}

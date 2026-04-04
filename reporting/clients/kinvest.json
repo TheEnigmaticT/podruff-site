@@ -1,0 +1,12 @@
+{
+  "name": "Kinvest",
+  "slug": "kinvest",
+  "credential": "analytics",
+  "channels": ["ga4", "search_console"],
+  "ga4_property": "PLACEHOLDER",
+  "gsc_url": "PLACEHOLDER",
+  "notion_page_id": "PLACEHOLDER",
+  "slack_channel": "#kinvest",
+  "impressflow_theme": "Crowd Tamers",
+  "active": false
+}

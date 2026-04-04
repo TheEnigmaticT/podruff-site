@@ -1,0 +1,20 @@
+{
+  "name": "heygen-pipeline",
+  "version": "1.0.0",
+  "description": "CrowdTamers HeyGen Video Pipeline - AI Avatar Video Generation",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "cli": "node src/cli.js",
+    "batch": "node src/batch.js",
+    "list-videos": "node src/cli.js list",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["heygen", "video", "ai", "avatar", "crowdtamers"],
+  "author": "CrowdTamers",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0"
+  }
+}

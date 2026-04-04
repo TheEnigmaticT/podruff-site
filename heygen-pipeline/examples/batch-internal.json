@@ -1,0 +1,22 @@
+{
+  "name": "CrowdTamers Internal Training",
+  "client": "crowdtamers",
+  "campaign": "internal-training",
+  "defaultAvatar": "Daisy-SitCasual-20241210",
+  "defaultVoice": "en-US-JennyNeural",
+  "videos": [
+    {
+      "id": "welcome-new-hires",
+      "script": "Welcome to CrowdTamers! We're excited to have you on the team. Over the next few weeks, you'll learn everything you need to know about our processes, tools, and culture. This video series will guide you through each step. Let's get started!",
+      "caption": true
+    },
+    {
+      "id": "client-onboarding-process",
+      "script": "Our client onboarding process is designed to set every project up for success. First, we conduct a discovery call to understand your goals. Then we develop a customized strategy tailored to your needs. Finally, we execute with precision and measure results every step of the way."
+    },
+    {
+      "id": "reporting-best-practices",
+      "script": "Clear reporting is essential for client relationships. Always lead with insights, not just data. Explain what the numbers mean and recommend next steps. Use visualizations to make complex information easy to understand. And most importantly, be proactive in your communication."
+    }
+  ]
+}

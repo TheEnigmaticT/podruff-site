@@ -1,0 +1,38 @@
+{
+  "name": "Product Launch Campaign - Multi-Language",
+  "client": "crowdtamers",
+  "campaign": "product-launch-q1",
+  "defaultAvatar": "Daisy-SitCasual-20241210",
+  "defaultVoice": "en-US-JennyNeural",
+  "targetLanguages": ["en", "es", "fr", "de"],
+  "videos": [
+    {
+      "id": "intro-english",
+      "language": "en",
+      "script": "Introducing the revolutionary new solution that will transform how you work. Our cutting-edge technology combines artificial intelligence with intuitive design to deliver results you've never seen before. Try it today and experience the difference.",
+      "avatar": "Daisy-SitCasual-20241210",
+      "voice": "en-US-JennyNeural"
+    },
+    {
+      "id": "intro-spanish",
+      "language": "es",
+      "script": "Presentamos la nueva solución revolucionaria que transformará su forma de trabajar. Nuestra tecnología de vanguardia combina inteligencia artificial con un diseño intuitivo para ofrecer resultados que nunca ha visto antes. Pruébelo hoy y experimente la diferencia.",
+      "avatar": "Daisy-SitCasual-20241210",
+      "voice": "es-ES-ElviraNeural"
+    },
+    {
+      "id": "intro-french",
+      "language": "fr",
+      "script": "Découvrez la nouvelle solution révolutionnaire qui va transformer votre façon de travailler. Notre technologie de pointe combine l'intelligence artificielle à un design intuitif pour offrir des résultats que vous n'avez jamais vus auparavant. Essayez-le aujourd'hui et ressentez la différence.",
+      "avatar": "Daisy-SitCasual-20241210",
+      "voice": "fr-FR-DeniseNeural"
+    },
+    {
+      "id": "intro-german",
+      "language": "de",
+      "script": "Wir stellen die revolutionäre neue Lösung vor, die Ihre Arbeitsweise verändern wird. Unsere Spitzentechnologie kombiniert künstliche Intelligenz mit intuitiver Gestaltung, um Ergebnisse zu liefern, die Sie noch nie zuvor gesehen haben. Probieren Sie es noch heute aus und erleben Sie den Unterschied.",
+      "avatar": "Daisy-SitCasual-20241210",
+      "voice": "de-DE-KatjaNeural"
+    }
+  ]
+}

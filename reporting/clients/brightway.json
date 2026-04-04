@@ -1,0 +1,12 @@
+{
+  "name": "Brightway (Crestway Global)",
+  "slug": "brightway",
+  "credential": "analytics",
+  "channels": ["ga4", "search_console"],
+  "ga4_property": "PLACEHOLDER",
+  "gsc_url": "https://brightwayguardianship.ca/",
+  "notion_page_id": "PLACEHOLDER",
+  "slack_channel": "#brightway",
+  "impressflow_theme": "Crowd Tamers",
+  "active": true
+}

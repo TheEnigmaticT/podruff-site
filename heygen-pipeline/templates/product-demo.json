@@ -1,0 +1,33 @@
+{
+  "name": "Product Demo",
+  "description": "Standard product demonstration template with intro, demo, and CTA sections",
+  "version": "1.0",
+  "structure": {
+    "intro": {
+      "duration": "5-10s",
+      "content": "Hook the viewer with a problem statement or compelling question"
+    },
+    "demo": {
+      "duration": "30-60s",
+      "content": "Show the product in action, highlight key features"
+    },
+    "benefits": {
+      "duration": "10-15s",
+      "content": "Summarize the main benefits and transformation"
+    },
+    "cta": {
+      "duration": "5s",
+      "content": "Clear call to action with urgency"
+    }
+  },
+  "defaultSettings": {
+    "width": 1920,
+    "height": 1080,
+    "caption": true,
+    "background": {
+      "type": "color",
+      "value": "#FFFFFF"
+    }
+  },
+  "exampleScript": "Are you tired of [problem]? Introducing [product] - the solution that [benefit]. Watch how easy it is to [action]. In just minutes, you'll [transformation]. Join thousands who've already made the switch. Get started today with our special offer."
+}

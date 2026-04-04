@@ -1,0 +1,40 @@
+{
+  "name": "Social Media Hook",
+  "description": "Vertical video format optimized for TikTok, Instagram Reels, and YouTube Shorts",
+  "version": "1.0",
+  "structure": {
+    "hook": {
+      "duration": "0-3s",
+      "content": "Pattern interrupt - stop the scroll with something unexpected"
+    },
+    "value": {
+      "duration": "10-25s",
+      "content": "Deliver the value quickly and clearly"
+    },
+    "proof": {
+      "duration": "3-5s",
+      "optional": true,
+      "content": "Social proof or results"
+    },
+    "cta": {
+      "duration": "2-3s",
+      "content": "Follow, comment, or click - make it actionable"
+    }
+  },
+  "defaultSettings": {
+    "width": 1080,
+    "height": 1920,
+    "caption": true,
+    "background": {
+      "type": "color",
+      "value": "#000000"
+    }
+  },
+  "tips": [
+    "Start with a strong visual or statement",
+    "Use captions - most viewers watch without sound",
+    "Keep pacing fast - attention spans are short",
+    "End with a question to drive comments"
+  ],
+  "exampleScript": "Stop doing [common mistake]! Here's what actually works. [Share insight/tip]. This changed everything for me. Follow for more tips like this!"
+}

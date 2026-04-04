@@ -1,0 +1,39 @@
+{
+  "name": "Social Media Content Series",
+  "client": "crowdtamers",
+  "campaign": "social-q1-2024",
+  "defaultAvatar": "Daisy-SitCasual-20241210",
+  "defaultVoice": "en-US-JennyNeural",
+  "videos": [
+    {
+      "id": "tip-1-hook",
+      "script": "Here's a secret most marketers won't tell you. Your hook matters more than your offer. Spend 80% of your time crafting the perfect opening line. The rest will follow.",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "tip-2-testing",
+      "script": "Stop guessing. Start testing. The best campaigns come from systematic experimentation. Test one variable at a time. Document everything. Double down on what works. Rinse and repeat.",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "tip-3-audience",
+      "script": "Your audience is not everyone. The more specific you get, the better your results. Speak to one person with one problem. That's how you cut through the noise.",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "myth-busting-1",
+      "script": "Myth: You need a big budget to run successful ads. Truth: I've seen $50 campaigns outperform $5000 campaigns. It's about strategy, not spend. Focus on message-market fit first.",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "myth-busting-2",
+      "script": "Myth: More traffic equals more sales. Truth: The right traffic equals more sales. A thousand unqualified visitors are worth less than ten qualified leads. Quality beats quantity every time.",
+      "width": 1080,
+      "height": 1920
+    }
+  ]
+}

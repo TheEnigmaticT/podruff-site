@@ -1,0 +1,14 @@
+{
+  "name": "Certairus",
+  "slug": "certairus",
+  "credential": "analytics",
+  "channels": ["ga4", "search_console", "youtube", "google_ads"],
+  "ga4_property": "PLACEHOLDER",
+  "gsc_url": "https://certairus.com/",
+  "yt_channel_id": "PLACEHOLDER",
+  "ads_customer_id": "PLACEHOLDER",
+  "notion_page_id": "PLACEHOLDER",
+  "slack_channel": "#certairus",
+  "impressflow_theme": "Crowd Tamers",
+  "active": true
+}

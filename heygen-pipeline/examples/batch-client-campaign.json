@@ -1,0 +1,32 @@
+{
+  "name": "Client Ad Campaign - Tech Startup",
+  "client": "techstartup",
+  "campaign": "series-a-announcement",
+  "defaultAvatar": "Daisy-SitCasual-20241210",
+  "defaultVoice": "en-US-GuyNeural",
+  "videos": [
+    {
+      "id": "announcement-ceo",
+      "script": "I'm thrilled to announce that we've just raised our Series A funding. This milestone is a testament to our incredible team and the amazing community that believes in our vision. With this investment, we'll accelerate product development and expand into new markets. Thank you for being part of this journey.",
+      "avatar": "Daisy-SitCasual-20241210",
+      "voice": "en-US-GuyNeural",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "announcement-product",
+      "script": "What does this funding mean for you? It means faster innovation, more features, and better support. We're hiring top talent to build the product you've been asking for. Stay tuned for exciting updates in the coming months.",
+      "avatar": "Daisy-SitCasual-20241210",
+      "voice": "en-US-JennyNeural",
+      "caption": true
+    },
+    {
+      "id": "social-teaser",
+      "script": "Big news dropping tomorrow. Something huge is coming. Can you guess what it is?",
+      "avatar": "Daisy-SitCasual-20241210",
+      "voice": "en-US-JennyNeural",
+      "width": 1080,
+      "height": 1920
+    }
+  ]
+}

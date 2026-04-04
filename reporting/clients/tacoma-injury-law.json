@@ -1,0 +1,14 @@
+{
+  "name": "Tacoma Injury Law",
+  "slug": "tacoma-injury-law",
+  "credential": "analytics",
+  "channels": ["ga4", "search_console", "youtube", "google_ads"],
+  "ga4_property": "PLACEHOLDER",
+  "gsc_url": "https://tacomainjurylaw.com/",
+  "yt_channel_id": "PLACEHOLDER",
+  "ads_customer_id": "PLACEHOLDER",
+  "notion_page_id": "PLACEHOLDER",
+  "slack_channel": "#tacoma-injury-law",
+  "impressflow_theme": "Crowd Tamers",
+  "active": true
+}

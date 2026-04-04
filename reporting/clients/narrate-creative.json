@@ -1,0 +1,12 @@
+{
+  "name": "Narrate Creative",
+  "slug": "narrate-creative",
+  "credential": "analytics",
+  "channels": ["youtube", "google_ads"],
+  "yt_channel_id": "PLACEHOLDER",
+  "ads_customer_id": "PLACEHOLDER",
+  "notion_page_id": "PLACEHOLDER",
+  "slack_channel": "#narrate-creative",
+  "impressflow_theme": "Crowd Tamers",
+  "active": true
+}

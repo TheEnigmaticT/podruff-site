@@ -1,0 +1,33 @@
+{
+  "name": "Announcement",
+  "description": "Template for company announcements, updates, and news",
+  "version": "1.0",
+  "structure": {
+    "attention": {
+      "duration": "3-5s",
+      "content": "Grab attention with the headline news"
+    },
+    "details": {
+      "duration": "20-40s",
+      "content": "Provide the details and context"
+    },
+    "impact": {
+      "duration": "10-15s",
+      "content": "Explain what this means for the audience"
+    },
+    "next_steps": {
+      "duration": "5-10s",
+      "content": "Tell people what to do next"
+    }
+  },
+  "defaultSettings": {
+    "width": 1920,
+    "height": 1080,
+    "caption": false,
+    "background": {
+      "type": "color",
+      "value": "#FFFFFF"
+    }
+  },
+  "exampleScript": "We have some exciting news to share. Today we're announcing [announcement]. This represents [significance]. For our customers, this means [benefit]. We couldn't have done this without your support. Here's what's coming next: [next steps]. Thank you for being part of our journey."
+}

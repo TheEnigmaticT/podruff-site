@@ -1,0 +1,37 @@
+{
+  "name": "Customer Testimonial",
+  "description": "Template for customer testimonial and case study videos",
+  "version": "1.0",
+  "structure": {
+    "intro": {
+      "duration": "3-5s",
+      "content": "Introduce the customer and their situation"
+    },
+    "challenge": {
+      "duration": "10-15s",
+      "content": "Describe the problem they were facing"
+    },
+    "solution": {
+      "duration": "10-15s",
+      "content": "Explain how your product/service helped"
+    },
+    "results": {
+      "duration": "10-15s",
+      "content": "Share specific results and outcomes"
+    },
+    "recommendation": {
+      "duration": "5-10s",
+      "content": "Direct recommendation to the audience"
+    }
+  },
+  "defaultSettings": {
+    "width": 1920,
+    "height": 1080,
+    "caption": true,
+    "background": {
+      "type": "color",
+      "value": "#F5F5F5"
+    }
+  },
+  "exampleScript": "Hi, I'm [name] from [company]. Before using [product], we struggled with [problem]. Everything changed when we found [product]. Within [timeframe], we saw [specific result]. The team at [company] was incredible to work with. I highly recommend [product] to anyone looking to [benefit]."
+}

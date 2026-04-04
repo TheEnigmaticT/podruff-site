@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Output files (generated at runtime)
+output/
+
+# Ralph agent state (session-specific)
+.ralph/.call_count
+.ralph/.circuit_breaker_history
+.ralph/.circuit_breaker_state
+.ralph/.exit_signals
+.ralph/.last_reset
+.ralph/.ralph_session
+.ralph/.ralph_session_history
+.ralph/live.log
+.ralph/logs/
+.ralph/progress.json
+.ralph/status.json
+
+# OS
+.DS_Store
+
+# Whisper model cache
+models/

@@ -1,0 +1,74 @@
+# HeyGen Pipeline Configuration
+# CrowdTamers Video Generation Pipeline
+
+# HeyGen API Settings
+heygen:
+  api_key_path: ~/.config/heygen/api_key
+  base_url: https://api.heygen.com
+  api_version: v2
+  
+# Default Settings
+defaults:
+  # Video quality: "high", "medium", "low"
+  quality: "high"
+  # Default video dimensions
+  width: 1920
+  height: 1080
+  
+# Language Settings
+languages:
+  supported:
+    - code: "en"
+      name: "English"
+      default_voice: "en-US-JennyNeural"
+    - code: "es"
+      name: "Spanish"
+      default_voice: "es-ES-ElviraNeural"
+    - code: "fr"
+      name: "French"
+      default_voice: "fr-FR-DeniseNeural"
+    - code: "de"
+      name: "German"
+      default_voice: "de-DE-KatjaNeural"
+    - code: "pt"
+      name: "Portuguese"
+      default_voice: "pt-BR-FranciscaNeural"
+    - code: "ja"
+      name: "Japanese"
+      default_voice: "ja-JP-NanamiNeural"
+    - code: "zh"
+      name: "Chinese"
+      default_voice: "zh-CN-XiaoxiaoNeural"
+
+# Storage Settings
+storage:
+  # Local video storage directory
+  video_dir: ./videos
+  # Metadata storage directory
+  metadata_dir: ./metadata
+  # Max videos to keep locally (0 = unlimited)
+  max_local_videos: 100
+  
+# Queue Settings
+queue:
+  # Max concurrent jobs
+  concurrency: 2
+  # Retry attempts for failed jobs
+  max_retries: 3
+  # Retry delay in seconds
+  retry_delay: 30
+
+# Client Configurations
+clients:
+  crowdtamers:
+    name: "CrowdTamers"
+    default_voice: "en-US-JennyNeural"
+    brand_colors:
+      primary: "#FF6B35"
+      secondary: "#004E89"
+    
+  # Add client-specific configs here
+  # example_client:
+  #   name: "Example Corp"
+  #   default_voice: "voice-id"
+  #   webhook_url: "https://example.com/webhook"

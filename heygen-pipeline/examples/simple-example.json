@@ -1,0 +1,11 @@
+{
+  "name": "Example: Single Video",
+  "description": "Simple example of creating a single video",
+  "client": "crowdtamers",
+  "videos": [
+    {
+      "id": "example-single",
+      "script": "Welcome to CrowdTamers! We help startups and scale-ups grow through performance marketing. Our data-driven approach ensures every dollar you spend delivers measurable results. Let's talk about how we can accelerate your growth."
+    }
+  ]
+}
