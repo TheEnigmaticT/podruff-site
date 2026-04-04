@@ -1,0 +1,45 @@
+---
+
+kanban-plugin: board
+
+---
+
+## Backlog
+
+- [ ] Multi-aspect-ratio export — add 1:1 and 16:9 crop variants alongside existing 9:16, smart crop based on face position [added::2026-03-10]
+- [ ] Engagement scoring — LLM-scored quality/engagement ranking per topic segment, prioritize best clips for publishing [added::2026-03-10]
+- [ ] Final slides / CTAs — branded end cards for video clips, template per client from SOUL.md (logo, CTA text, colors), FFmpeg overlay at clip end [added::2026-03-10]
+- [ ] Trendy subtitle styling — animated highlight effects, color transitions, bounce/scale animations for short clips [added::2026-03-10]
+
+
+## Next
+
+
+
+## In Progress
+
+
+
+## In Review
+
+
+
+## Done
+
+- [x] Merge shorts pipeline from ~/video-pipeline into ~/dev/video-pipeline [added::2026-03-10]
+- [x] Short clip extraction — topic segmentation, hook detection, face-centered 9:16 crop, per-word karaoke subtitles [added::2026-03-10]
+- [x] Pipeline script iteration [added::2026-02-26]
+- [x] Commit uncommitted pipeline and test changes [added::2026-02-26]
+
+
+## Cancelled
+
+
+
+
+
+%% kanban:settings
+```
+{"kanban-plugin":"board","list-collapse":[null]}
+```
+%%

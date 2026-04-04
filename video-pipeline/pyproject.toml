@@ -1,0 +1,21 @@
+[project]
+name = "video-pipeline"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "click>=8.1",
+    "faster-whisper>=1.1",
+    "requests>=2.31",
+    "boto3>=1.35",
+    "python-dotenv>=1.0",
+    "google-genai>=1.0",
+    "numpy>=2.0",
+    "opencv-python-headless>=4.8",
+]
+
+[project.scripts]
+pipeline = "pipeline.cli:cli"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
