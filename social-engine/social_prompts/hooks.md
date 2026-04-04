@@ -1,0 +1,123 @@
+# 100 Top Hooks — Reference List
+
+Use these as inspiration for opening lines. The best hooks create an information gap the reader must close.
+
+## Contrarian / Counterintuitive
+1. "Most [industry] advice is wrong. Here's why."
+2. "Stop doing [common practice]. It's killing your [metric]."
+3. "The worst marketing advice I ever followed:"
+4. "Everyone says [X]. Nobody mentions [Y]."
+5. "I spent $[amount] learning this the hard way."
+6. "Unpopular opinion: [bold claim]."
+7. "[Common belief] is a myth. Here's the data."
+8. "The #1 mistake [audience] makes with [topic]."
+9. "We did the opposite of what everyone recommended."
+10. "What no one tells you about [topic]:"
+
+## Story / Curiosity
+11. "Last [time period], something unexpected happened."
+12. "I almost [dramatic action]. Then this happened."
+13. "A client asked me [surprising question]."
+14. "3 years ago I was [situation]. Now I'm [result]."
+15. "This one conversation changed everything."
+16. "I was wrong about [topic]. Here's what changed my mind."
+17. "The best [role] I know does [unexpected thing]."
+18. "We lost [significant thing]. It was the best thing that happened to us."
+19. "Nobody talks about the [hidden aspect] of [topic]."
+20. "I didn't believe this until I saw the numbers."
+
+## Data / Proof
+21. "[Specific number] — that's how many [things]."
+22. "We tested [X] for [time]. Results shocked us."
+23. "[X]% of [audience] get this wrong."
+24. "Revenue went from $[X] to $[Y] in [time]. Here's what changed."
+25. "I analyzed [number] [things]. Here's what the best ones have in common."
+26. "The difference between [X] and [Y] is [specific metric]."
+27. "One change. [X]% increase. Here's the change."
+28. "We A/B tested [thing]. The winner wasn't even close."
+29. "After [number] [things], here's what actually works."
+30. "The data says the opposite of what you'd expect."
+
+## Question / Challenge
+31. "What would happen if you [bold action]?"
+32. "When's the last time you [examined assumption]?"
+33. "Can you explain your [strategy/process] in one sentence?"
+34. "What if [accepted wisdom] is holding you back?"
+35. "Are you confusing [X] with [Y]?"
+36. "How much [resource] are you wasting on [thing that doesn't work]?"
+37. "What does your [metric] actually tell you?"
+38. "If [scenario], what would you change first?"
+39. "Why do [audience] keep making the same mistake?"
+40. "What's the ROI on [common activity everyone does]?"
+
+## Framework / How-To
+41. "The [number]-step framework I use for [result]:"
+42. "Here's exactly how we [achieved specific result]:"
+43. "The simplest way to [desirable outcome]:"
+44. "My [time period] process for [result] (steal this):"
+45. "[Number] rules I follow for [topic]. No exceptions."
+46. "The exact [template/script/process] that [result]."
+47. "How to [result] without [common sacrifice]."
+48. "The [thing] that 10x'd our [metric]:"
+49. "Copy this [framework]. It works every time."
+50. "Step 1: [action]. That's it. That's the whole strategy."
+
+## Authority / Experience
+51. "After [years/clients/projects], here's what I know for sure:"
+52. "I've [impressive credential]. The biggest lesson:"
+53. "[Number] [units of experience] and this is still the hardest part."
+54. "The one thing every successful [role] has in common:"
+55. "Working with [notable entity] taught me [lesson]."
+56. "I've built [number] [things]. Here's what breaks every time."
+57. "The advice I give every new [role]:"
+58. "If I had to start over, I'd only do [number] things."
+59. "The gap between good and great [role] is [specific thing]."
+60. "Most people overcomplicate [topic]. Here's the simple version."
+
+## Listicle / Value-Dense
+61. "[Number] things I wish I knew about [topic] [time] ago."
+62. "[Number] signs your [thing] is broken:"
+63. "Bookmark this. [Number] [things] that actually work."
+64. "[Number] lessons from [notable experience]."
+65. "[Number] questions to ask before [decision]."
+66. "Your [topic] checklist (save this):"
+67. "[Number] red flags in [situation]."
+68. "[Number] [things] that are a waste of [resource]."
+69. "[Number] non-obvious [things] about [topic]."
+70. "The only [number] [things] that matter for [result]."
+
+## Emotional / Relatable
+71. "The hardest part of [role/activity] nobody warns you about:"
+72. "Raise your hand if you've ever [relatable frustration]."
+73. "This is for the [audience] who are tired of [frustration]."
+74. "You don't need [impressive thing]. You need [simple thing]."
+75. "It's OK to [thing people feel guilty about]."
+76. "The real reason [audience] struggle with [topic]:"
+77. "You're not bad at [thing]. You're just using the wrong [approach]."
+78. "Nobody talks about the [emotional reality] of [role/activity]."
+79. "If you're feeling [emotion] about [topic], read this."
+80. "The lie [audience] tell themselves about [topic]:"
+
+## Prediction / Trend
+81. "In [timeframe], [bold prediction]."
+82. "[Thing] is dying. Here's what's replacing it."
+83. "The [audience] who ignore [trend] will [consequence]."
+84. "[Number] trends that will change [industry] by [year]."
+85. "What [topic] looks like in [future year]:"
+86. "Early signal: [observation that indicates shift]."
+87. "If you're still doing [old approach], you're already behind."
+88. "This is the year [thing] stops working."
+89. "The next wave of [industry] is [unexpected direction]."
+90. "Pay attention to [overlooked signal]."
+
+## Meta / Pattern-Breaking
+91. "I'm about to say something that might lose me followers."
+92. "This post won't go viral. But it might save you [resource]."
+93. "I debated posting this. Then I remembered [reason]."
+94. "You've scrolled past 100 posts today. This is the one that matters."
+95. "Read this twice."
+96. "Hot take:"
+97. "Thread (worth your time):"
+98. "The post I wish someone had written for me [time] ago:"
+99. "Saving this for myself, but you might find it useful too."
+100. "Honest question (not rhetorical):"

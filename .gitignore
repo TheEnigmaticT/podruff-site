@@ -2,3 +2,4 @@
 *.swp
 *.swo
 .vercel
+__pycache__/

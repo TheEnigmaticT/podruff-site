@@ -1,0 +1,15 @@
+[project]
+name = "podruff-social-engine"
+version = "0.1.0"
+description = "Social media content engine — copywriting, graphics, Notion integration"
+requires-python = ">=3.11"
+dependencies = [
+    "requests",
+    "anthropic",
+    "google-genai",
+    "boto3",
+    "youtube-transcript-api",
+]
+
+[project.scripts]
+social-generate = "social_generate_cli:main"

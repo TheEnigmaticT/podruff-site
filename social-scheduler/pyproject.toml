@@ -1,0 +1,8 @@
+[project]
+name = "podruff-social-scheduler"
+version = "0.1.0"
+description = "Social media scheduling and publication — Zernio/PostBridge integration"
+requires-python = ">=3.11"
+dependencies = [
+    "requests",
+]

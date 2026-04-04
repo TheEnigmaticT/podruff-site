@@ -1,0 +1,31 @@
+{
+    "polling_interval_seconds": 300,
+    "notion_api_key": "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",
+    "late_api_key": "sk_42cf35727f85fdb5f5f0e5f9e21d2adc050e00ac7e4f4463904a9d958be34e7a",
+    "postbridge_api_key": "pb_live_XoFzHSa1ppAHYS5RSi2ZX3",
+    "anthropic_api_key": "",
+    "anthropic_model": "claude-sonnet-4-5-20250929",
+    "google_creds_path": "~/.google_workspace_mcp/credentials/tlongino@crowdtamers.com.json",
+    "notion_bot_id": "",
+    "clients": {
+        "crowdtamers": {
+            "notion_database_id": "313f778746cb81e69eafdfcec8fb6535",
+            "platforms": {
+                "linkedin": { "provider": "late", "account_id": "693b3060f43160a0bc99af56" },
+                "instagram": { "provider": "late", "account_id": "693b31cef43160a0bc99af5c" },
+                "threads": { "provider": "late", "account_id": "693b31f8f43160a0bc99af5e" },
+                "facebook": { "provider": "late", "account_id": "693b3541f43160a0bc99af6f" },
+                "reddit": { "provider": "late", "account_id": "693b3206f43160a0bc99af5f" },
+                "tiktok": { "provider": "late", "account_id": "693b3509f43160a0bc99af6d" },
+                "twitter": { "provider": "postbridge", "account_id": 48695 }
+            }
+        },
+        "typesift": {
+            "notion_database_id": "5ecf331da71044b6a6902331566b69fd",
+            "platforms": {
+                "linkedin": { "provider": "late", "account_id": "69c2a0f06cb7b8cf4c960764" },
+                "youtube": { "provider": "late", "account_id": "69c2a1026cb7b8cf4c9607a3" }
+            }
+        }
+    }
+}

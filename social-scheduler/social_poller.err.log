@@ -1,0 +1,170 @@
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
+Traceback (most recent call last):
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 339, in <module>
+    main()
+  File "/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_poller.py", line 310, in main
+    config = load_config(config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ct-mac-mini/dev/podruff-site/social-engine/social_config.py", line 22, in load_config
+    with open(path, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ct-mac-mini/dev/podruff-site/social-scheduler/social_config.json'
