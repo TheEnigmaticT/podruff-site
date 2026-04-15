@@ -19,14 +19,14 @@ _DEFAULTS = {
     "stories": {
         "base_url": OLLAMA_URL,
         "api_key": OLLAMA_KEY,
-        "model": os.environ.get("EDITORIAL_STORIES_MODEL", "qwen3:30b"),
+        "model": os.environ.get("EDITORIAL_STORIES_MODEL", "qwen3:8b"),
         "timeout": 1800,
         "num_ctx": 32768,
     },
     "editorial": {
         "base_url": OLLAMA_URL,
         "api_key": OLLAMA_KEY,
-        "model": os.environ.get("EDITORIAL_CUT_MODEL", "qwen3:30b"),
+        "model": os.environ.get("EDITORIAL_CUT_MODEL", "qwen3:8b"),
         "timeout": 1800,
         "num_ctx": 16384,
     },

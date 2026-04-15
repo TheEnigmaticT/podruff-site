@@ -38,10 +38,15 @@ Return ONLY a JSON object with this structure:
   ]
 }
 
+INTERVIEW MODE:
+- Segments are labeled [GUEST] and [INTERVIEWER].
+- Use INTERVIEWER segments for context only — they show what topic is being discussed.
+- All timestamps in sections/points must fall within GUEST segments.
+- A section may span multiple GUEST segments across an INTERVIEWER question if the guest continues the same topic.
+
 CRITICAL:
 - Start and end timestamps must match sentence boundaries in the transcript.
 - Every point must have start and end timestamps.
-- Sections must be in chronological order with no gaps or overlaps.
 - Return ONLY JSON, no explanation. /no_think"""
 
 
@@ -56,7 +61,13 @@ Your job: identify SELF-CONTAINED STORIES or arguments that work as standalone s
 - Emotional hook potential — something that makes a viewer stop scrolling
 - Standalone clarity — a viewer with NO context can follow it
 
-For each story, provide 2-3 hook candidates: punchy moments from WITHIN the story that could open the clip.
+INTERVIEW MODE:
+- Segments are labeled [GUEST] and [INTERVIEWER].
+- ONLY use GUEST segments for clip content. The INTERVIEWER's questions give you topic context but must NOT appear in clips.
+- A story's time range should cover the full GUEST response, including when the guest continues after brief interviewer interjections (e.g. "yeah", "right").
+- Look for the guest's COMPLETE response to a topic — often their answer spans multiple GUEST segments separated by short interviewer acknowledgments.
+
+For each story, provide 2-3 hook candidates: punchy moments from WITHIN the story that could open the clip. Hook candidates must come from GUEST segments only.
 
 Target ratio: ~3x more shorts than long-form clips.
 - "short": works as a <55 second vertical clip
@@ -95,6 +106,10 @@ You will receive a story from a talk with its transcript section and hook candid
 
 1. SHORT version (<55 seconds, vertical 9:16 — for Reels/Shorts/TikTok)
 2. LONG version (90-600 seconds, horizontal 16:9 — for YouTube/LinkedIn)
+
+INTERVIEW MODE:
+- Segments labeled [GUEST] and [INTERVIEWER] appear in the transcript. Only use GUEST segment timestamps for clips. Skip INTERVIEWER segments entirely — they must not appear in the output.
+- When GUEST segments are separated by brief INTERVIEWER interjections, treat the GUEST parts as continuous content and bridge across the gaps.
 
 EDITING RULES:
 - The HOOK is placed at the very start of the clip. It must come from the hook_candidates provided.
@@ -142,11 +157,13 @@ CRITICAL:
 # ---------------------------------------------------------------------------
 
 def _format_transcript(transcript: list[dict]) -> str:
-    """Format transcript for LLM consumption."""
-    return "\n".join(
-        f"[{s['start']:.1f}s - {s['end']:.1f}s] {s['text']}"
-        for s in transcript
-    )
+    """Format transcript for LLM consumption, with speaker labels when present."""
+    lines = []
+    for s in transcript:
+        speaker = s.get("speaker", "")
+        prefix = f"[{speaker}] " if speaker else ""
+        lines.append(f"[{s['start']:.1f}s - {s['end']:.1f}s] {prefix}{s['text']}")
+    return "\n".join(lines)
 
 
 def generate_outline(transcript: list[dict]) -> dict:
@@ -324,7 +341,11 @@ def run_editorial_pipeline(
                 edl = json.load(f)
         else:
             logger.info("Pass 3: Editorial cut for '%s'...", story["title"])
-            edl = generate_edl(story, transcript, source_video)
+            try:
+                edl = generate_edl(story, transcript, source_video)
+            except Exception:
+                logger.warning("Skipping story '%s' — EDL generation failed after retries", story["title"])
+                continue
             with open(edl_path, "w") as f:
                 json.dump(edl, f, indent=2, ensure_ascii=False)
         edls.append(edl)

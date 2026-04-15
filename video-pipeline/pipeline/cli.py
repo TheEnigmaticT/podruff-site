@@ -74,16 +74,19 @@ def editorial(url, output_dir, max_clips, min_score):
 
     os.makedirs(output_dir, exist_ok=True)
     cache_dir = os.path.join(output_dir, "cache")
-
-    # Download via yt-dlp
-    click.echo("Downloading video...")
-    import subprocess as sp
     os.makedirs(cache_dir, exist_ok=True)
-    output_template = os.path.join(cache_dir, "%(id)s.%(ext)s")
-    sp.run(["yt-dlp", "-f", "bestvideo+bestaudio/best",
-            "-o", output_template, "--merge-output-format", "mp4", url],
-           check=True, capture_output=True)
-    video_path = next(f for f in [os.path.join(cache_dir, x) for x in os.listdir(cache_dir)] if f.endswith(".mp4"))
+
+    if os.path.isfile(url):
+        click.echo(f"Using local file: {url}")
+        video_path = url
+    else:
+        click.echo("Downloading video...")
+        import subprocess as sp
+        output_template = os.path.join(cache_dir, "%(id)s.%(ext)s")
+        sp.run(["yt-dlp", "-f", "bestvideo+bestaudio/best",
+                "-o", output_template, "--merge-output-format", "mp4", url],
+               check=True, capture_output=True)
+        video_path = next(f for f in [os.path.join(cache_dir, x) for x in os.listdir(cache_dir)] if f.endswith(".mp4"))
 
     # Transcribe
     transcript_path = os.path.join(cache_dir, "transcript.json")
