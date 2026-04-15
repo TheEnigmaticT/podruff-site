@@ -24,3 +24,10 @@ WORK_DIR = os.environ.get("PIPELINE_WORK_DIR", "/tmp/video-pipeline")
 
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN", "")
 SLACK_CHANNEL = os.environ.get("SLACK_CHANNEL", "")
+
+GOOGLE_CREDS_PATH = os.environ.get(
+    "GOOGLE_CREDS_PATH",
+    os.path.expanduser("~/.google_workspace_mcp/credentials/tlongino@crowdtamers.com.json"),
+)
+ZENCASTR_FOLDER_ID = os.environ.get("ZENCASTR_FOLDER_ID", "")
+DRIVE_CLIENTS_ROOT = os.environ.get("DRIVE_CLIENTS_ROOT", "")
