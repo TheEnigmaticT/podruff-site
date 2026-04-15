@@ -87,14 +87,20 @@ def match_client(session_name: str, client_map_path=None) -> str | None:
     Returns the client slug string, or None if no alias matches.
     """
     client_map = _load_client_map(client_map_path)
-    session_lower = session_name.lower()
+    session_norm = _normalize(session_name)
 
     for slug, entry in client_map.items():
         for alias in entry.get("aliases", []):
-            if alias.lower() in session_lower:
+            if _normalize(alias) in session_norm:
                 return slug
+        if _normalize(slug) in session_norm:
+            return slug
 
     return None
+
+
+def _normalize(s):
+    return re.sub(r"[\s\-_]+", "", s).lower()
 
 
 def get_drive_folder(client_slug: str, client_map_path=None) -> str:

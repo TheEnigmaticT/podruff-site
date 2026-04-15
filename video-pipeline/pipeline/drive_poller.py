@@ -132,12 +132,21 @@ def scan_zencastr_sessions(
             logger.debug("Skipping processed session %s (%s)", folder_id, folder["name"])
             continue
 
-        # List video files in this folder
+        # Zencastr nests recordings: session-folder/recording-N/files
+        # Check both the session folder and any subfolders for video files
         all_files = drive_client.list_files(folder_id)
         video_files = [
             f for f in all_files
             if os.path.splitext(f["name"])[1].lower() in VIDEO_EXTENSIONS
         ]
+        if not video_files:
+            subfolders = [f for f in all_files if f.get("mimeType") == "application/vnd.google-apps.folder"]
+            for sf in subfolders:
+                inner_files = drive_client.list_files(sf["id"])
+                video_files.extend(
+                    f for f in inner_files
+                    if os.path.splitext(f["name"])[1].lower() in VIDEO_EXTENSIONS
+                )
 
         if not video_files:
             logger.debug("Skipping folder %s — no video files", folder_id)
