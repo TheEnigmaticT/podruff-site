@@ -68,6 +68,7 @@ def editorial(url, output_dir, max_clips, min_score):
     from pipeline.editorial import run_editorial_pipeline
     from pipeline.edl import render_edl_version, generate_kdenlive_xml, generate_clip_subtitles
     from pipeline.editor import _detect_face_center
+    from pipeline.fcp7 import generate_fcp7_xml
 
     if output_dir is None:
         output_dir = os.path.expanduser(f"~/Documents/editorial-{url.split('/')[-1]}")
@@ -154,5 +155,13 @@ def editorial(url, output_dir, max_clips, min_score):
             project_path = os.path.join(projects_dir, f"{story_id}-{version_name}.kdenlive")
             with open(project_path, "w") as f:
                 f.write(xml)
+
+            # FCP 7 XML project for Premiere users
+            fcp7_xml = generate_fcp7_xml(
+                version, video_path, sequence_name=f"{story_id}-{version_name}",
+            )
+            fcp7_path = os.path.join(projects_dir, f"{story_id}-{version_name}.xml")
+            with open(fcp7_path, "w") as f:
+                f.write(fcp7_xml)
 
     click.echo(f"\nDone! Output in {output_dir}")
