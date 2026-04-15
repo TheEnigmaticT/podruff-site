@@ -1,0 +1,202 @@
+{
+  "stories": [
+    {
+      "id": "ai_autonomy_shadow_ai_challenges",
+      "title": "AI Autonomy vs Shadow AI Risks",
+      "outline_section": "Challenges of AI Autonomy and Shadow AI",
+      "start": 29.2,
+      "end": 113.6,
+      "engagement_score": 9,
+      "standalone_rationale": "Explains the tension between AI autonomy and security risks, with a clear setup (CISO balancing control), tension (shadow AI emergence), and resolution (need for sandboxing).",
+      "format": "both",
+      "hook_candidates": [
+        {
+          "text": "Right. So it's true that the more you give capabilities to AI...",
+          "start": 65.19999999999999,
+          "end": 82.4
+        },
+        {
+          "text": "And so step number one obviously is to put visibility into everything...",
+          "start": 161.68,
+          "end": 176.4
+        }
+      ]
+    },
+    {
+      "id": "accountability_ai_automation",
+      "title": "Accountability in Automated AI Systems",
+      "outline_section": "Accountability in AI Systems",
+      "start": 127.2,
+      "end": 185.36,
+      "engagement_score": 8,
+      "standalone_rationale": "Complete argument about AI accountability, tracing actions to human operators, and iterative guardrail adjustments.",
+      "format": "short",
+      "hook_candidates": [
+        {
+          "text": "The problem today starts with the fact that we connect things to your AI...",
+          "start": 149.12,
+          "end": 161.68
+        },
+        {
+          "text": "And so step number one obviously is to put visibility into everything...",
+          "start": 161.68,
+          "end": 176.4
+        }
+      ]
+    },
+    {
+      "id": "cost_of_blocking_vs_governance",
+      "title": "Blocking AI vs Governed Use Costs",
+      "outline_section": "Cost of Blocking AI vs. Governed Use",
+      "start": 266.0,
+      "end": 348.52,
+      "engagement_score": 9,
+      "standalone_rationale": "Clear narrative arc: setup (blocking AI isn't working), tension (shadow AI risks), resolution (governance as better solution).",
+      "format": "short",
+      "hook_candidates": [
+        {
+          "text": "The worst case scenario is if you block too much...",
+          "start": 316.2,
+          "end": 323.08
+        },
+        {
+          "text": "And so I think right now the the new mentality is like not to go completely risk-free...",
+          "start": 432.12,
+          "end": 435.32
+        }
+      ]
+    },
+    {
+      "id": "ciso_cultural_shift",
+      "title": "CISOs Shift from 'No' to Risk Management",
+      "outline_section": "Cultural Shift for CISOs",
+      "start": 349.0,
+      "end": 381.4,
+      "engagement_score": 7,
+      "standalone_rationale": "Clear shift from traditional 'no' to balanced risk governance, with specific examples of cultural change.",
+      "format": "short",
+      "hook_candidates": [
+        {
+          "text": "The default answer for most IT security professionals has always been no.",
+          "start": 356.36,
+          "end": 358.76000000000005
+        },
+        {
+          "text": "And so you can you know with awareness go into a system where you're like...",
+          "start": 406.76,
+          "end": 416.36
+        }
+      ]
+    },
+    {
+      "id": "governance_as_risk_management",
+      "title": "Governance as Strategic Risk Management",
+      "outline_section": "Governance as Risk Management",
+      "start": 382.04,
+      "end": 435.32,
+      "engagement_score": 9,
+      "standalone_rationale": "Complete argument about calculating risk-reward ratios and implementing governance frameworks.",
+      "format": "long",
+      "hook_candidates": [
+        {
+          "text": "So it means that today you need to compute some sort of risk reward you know ratio...",
+          "start": 397.56,
+          "end": 406.68
+        },
+        {
+          "text": "And so I think right now the the new mentality is like not to go completely risk-free...",
+          "start": 432.12,
+          "end": 435.32
+        }
+      ]
+    },
+    {
+      "id": "eu_us_regulatory_gap",
+      "title": "EU vs US AI Regulation Implications",
+      "outline_section": "EU vs. US Regulatory Landscapes",
+      "start": 673.84,
+      "end": 777.6800000000001,
+      "engagement_score": 8,
+      "standalone_rationale": "Clear contrast between EU and US regulatory approaches with implications for enterprise compliance.",
+      "format": "short",
+      "hook_candidates": [
+        {
+          "text": "The general rule of thumb is is be ready for Europe, so you're ready for the rest of the world.",
+          "start": 772.4,
+          "end": 777.6800000000001
+        },
+        {
+          "text": "And so you need to be ready for it. And I think it is good because uh even though it's strict...",
+          "start": 759.52,
+          "end": 762.0
+        }
+      ]
+    },
+    {
+      "id": "ai_governance_lifecycle",
+      "title": "Governance Lifecycle After AI Experimentation",
+      "outline_section": "AI Governance Lifecycle",
+      "start": 855.56,
+      "end": 995.88,
+      "engagement_score": 8,
+      "standalone_rationale": "Narrative of how governance is adopted reactively after AI experimentation leads to complexity.",
+      "format": "long",
+      "hook_candidates": [
+        {
+          "text": "The typical life cycle we see, and sometimes it's a little bit annoying...",
+          "start": 876.28,
+          "end": 886.28
+        },
+        {
+          "text": "And so we always have this typical um uh lifecycle where a customer starts to think about governance...",
+          "start": 935.0,
+          "end": 954.04
+        }
+      ]
+    },
+    {
+      "id": "certification_vs_real_security",
+      "title": "Certifications vs Real AI Security",
+      "outline_section": "Certification vs. Actual Security",
+      "start": 982.12,
+      "end": 1033.48,
+      "engagement_score": 9,
+      "standalone_rationale": "Clear argument about certifications lagging behind and needing real control mechanisms.",
+      "format": "short",
+      "hook_candidates": [
+        {
+          "text": "Certifications lag behind AI capabilities; governance requires real controls.",
+          "start": 982.12,
+          "end": 1033.48
+        },
+        {
+          "text": "And so the minimal control in places is really um having not only an LLM provider...",
+          "start": 1033.48,
+          "end": 1046.28
+        }
+      ]
+    },
+    {
+      "id": "designing_effective_governance",
+      "title": "Designing Effective Governance Frameworks",
+      "outline_section": "Designing Effective Governance Frameworks",
+      "start": 1033.48,
+      "end": 1117.24,
+      "engagement_score": 8,
+      "standalone_rationale": "Explains how governance frameworks must enforce rules at tool and agent levels to balance innovation and risk.",
+      "format": "long",
+      "hook_candidates": [
+        {
+          "text": "Governance must enforce rules at tool and agent levels.",
+          "start": 1033.48,
+          "end": 1117.24
+        },
+        {
+          "text": "You can have a man in the middle, so it's uh it's a bit of a gateway...",
+          "start": 1061.32,
+          "end": 1071.8
+        }
+      ]
+    }
+  ]
+}

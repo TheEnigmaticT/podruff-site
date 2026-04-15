@@ -1,10 +1,11 @@
-"""EDL rendering: convert edit decision lists to FFmpeg commands and Kdenlive XML."""
+"""EDL rendering: convert edit decision lists to FFmpeg commands, Kdenlive XML, and FCP 7 XML."""
 
 import json
 import logging
 import os
 import subprocess
 import tempfile
+import urllib.parse
 import uuid
 
 logger = logging.getLogger(__name__)
@@ -159,6 +160,7 @@ def generate_clip_subtitles(
     output_path: str,
     style: str = "karaoke",
     actual_durations: list[float] | None = None,
+    subtitle_style: dict | None = None,
 ) -> str:
     """Generate subtitle file for a rendered clip, with timestamps remapped to clip time.
 
@@ -222,18 +224,36 @@ def generate_clip_subtitles(
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
 
     if style == "karaoke":
-        _write_karaoke_ass(clip_segments, output_path)
+        _write_karaoke_ass(clip_segments, output_path, subtitle_style=subtitle_style)
     else:
         _write_srt(clip_segments, output_path)
 
     return output_path
 
 
-_CT_BLUE = "&H00F5981B"  # CrowdTamers blue in ASS BGR
 _WHITE = "&H00FFFFFF"
 _BLACK_BOX = "&H00000000"
 
-_ASS_HEADER = """\
+# Default subtitle style — overridden by client branding
+DEFAULT_SUBTITLE_STYLE = {
+    "font": "Inter",
+    "size": 120,
+    "highlight_color": "#0119FF",  # Used as ASS PrimaryColour (karaoke highlight)
+}
+
+
+def _hex_to_ass_bgr(hex_color: str) -> str:
+    """Convert #RRGGBB hex to ASS &H00BBGGRR format."""
+    h = hex_color.lstrip("#")
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return f"&H00{b:02X}{g:02X}{r:02X}"
+
+
+def _build_ass_header(style: dict | None = None) -> str:
+    """Build ASS subtitle header with client branding."""
+    s = {**DEFAULT_SUBTITLE_STYLE, **(style or {})}
+    primary = _hex_to_ass_bgr(s["highlight_color"])
+    return f"""\
 [Script Info]
 ScriptType: v4.00+
 PlayResX: 1080
@@ -242,11 +262,11 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Raleway,120,{primary},{secondary},{back},{back},-1,0,0,0,100,100,0,0,3,15,0,2,40,40,320,1
+Style: Default,{s['font']},{s['size']},{primary},{_WHITE},{_BLACK_BOX},{_BLACK_BOX},-1,0,0,0,100,100,0,0,3,15,0,2,40,40,320,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-""".format(primary=_CT_BLUE, secondary=_WHITE, back=_BLACK_BOX)
+"""
 
 
 def _format_ass_time(seconds: float) -> str:
@@ -297,7 +317,8 @@ def _align_punctuation(raw_words: list[str], punctuated_text: str) -> list[str]:
     return result
 
 
-def _write_karaoke_ass(segments: list[dict], path: str, max_words: int = 8) -> None:
+def _write_karaoke_ass(segments: list[dict], path: str, max_words: int = 8,
+                       subtitle_style: dict | None = None) -> None:
     """Write karaoke ASS subtitle file with word-level highlighting."""
 
     lines = []
@@ -345,7 +366,7 @@ def _write_karaoke_ass(segments: list[dict], path: str, max_words: int = 8) -> N
             lines.append(f"Dialogue: 0,{start_ts},{end_ts},Default,,0,0,0,,{tagged}")
 
     with open(path, "w", encoding="utf-8") as f:
-        f.write(_ASS_HEADER)
+        f.write(_build_ass_header(subtitle_style))
         f.write("\n".join(lines))
         f.write("\n")
 
@@ -756,5 +777,158 @@ def generate_kdenlive_xml(
     L.append(f'  <track in="00:00:00.000" out="{total_tc}" producer="tractor4"/>')
     L.append(' </tractor>')
     L.append('</mlt>')
+
+    return "\n".join(L)
+
+
+def generate_fcp7_xml(
+    edl_version: dict,
+    source_video: str,
+    sequence_name: str = "RoughCut",
+    fps: int = 30,
+) -> str:
+    """Generate FCP 7 XML (XMEML) for Premiere Pro import.
+
+    Creates a sequence with segments from the source video placed on the
+    timeline. No subtitle or effects — just the raw edit for Jude to refine.
+
+    Args:
+        edl_version: EDL version dict with segments, trims.
+        source_video: Absolute path to source video file.
+        sequence_name: Name for the sequence in Premiere.
+        fps: Frames per second.
+
+    Returns:
+        XMEML string for a .xml file importable by Premiere Pro.
+    """
+    time_ranges = resolve_segments(edl_version["segments"], edl_version.get("trims", []))
+    if not time_ranges:
+        return ""
+
+    # Probe source video for duration and dimensions
+    try:
+        src_duration_s = _probe_duration(source_video)
+    except (ValueError, FileNotFoundError):
+        src_duration_s = 3600.0
+
+    src_dur_frames = int(round(src_duration_s * fps))
+
+    # Probe video dimensions
+    try:
+        result = subprocess.run(
+            [FFPROBE, "-v", "quiet", "-select_streams", "v:0",
+             "-show_entries", "stream=width,height",
+             "-of", "csv=p=0", source_video],
+            capture_output=True, text=True,
+        )
+        w, h = result.stdout.strip().split(",")
+        src_width, src_height = int(w), int(h)
+    except Exception:
+        src_width, src_height = 1280, 720
+
+    # Emit just the filename — Premiere will look next to the XML file first.
+    # Jude's workflow: drop the XML and the source video in the same folder.
+    file_name = os.path.basename(source_video)
+    path_url = "file://localhost/" + urllib.parse.quote(file_name)
+
+    # Convert time ranges to frame numbers and compute timeline positions
+    clips = []
+    timeline_cursor = 0
+    for start_s, end_s in time_ranges:
+        in_frame = int(round(start_s * fps))
+        out_frame = int(round(end_s * fps))
+        clip_len = out_frame - in_frame
+        clips.append({
+            "in": in_frame,
+            "out": out_frame,
+            "start": timeline_cursor,
+            "end": timeline_cursor + clip_len,
+        })
+        timeline_cursor += clip_len
+
+    total_frames = timeline_cursor
+
+    L = []
+    L.append('<?xml version="1.0" encoding="UTF-8"?>')
+    L.append('<!DOCTYPE xmeml>')
+    L.append('<xmeml version="5">')
+    L.append(f'  <sequence id="seq-1">')
+    L.append(f'    <name>{sequence_name}</name>')
+    L.append(f'    <duration>{total_frames}</duration>')
+    L.append(f'    <rate><timebase>{fps}</timebase><ntsc>FALSE</ntsc></rate>')
+    L.append(f'    <timecode>')
+    L.append(f'      <string>00:00:00:00</string>')
+    L.append(f'      <frame>0</frame>')
+    L.append(f'      <displayformat>NDF</displayformat>')
+    L.append(f'      <rate><timebase>{fps}</timebase><ntsc>FALSE</ntsc></rate>')
+    L.append(f'    </timecode>')
+    L.append(f'    <media>')
+
+    # Video track
+    L.append(f'      <video>')
+    L.append(f'        <track>')
+    for i, clip in enumerate(clips):
+        clip_id = f"clip-v{i+1}"
+        L.append(f'          <clipitem id="{clip_id}">')
+        L.append(f'            <name>Segment {i+1}</name>')
+        L.append(f'            <duration>{src_dur_frames}</duration>')
+        L.append(f'            <rate><timebase>{fps}</timebase><ntsc>FALSE</ntsc></rate>')
+        L.append(f'            <start>{clip["start"]}</start>')
+        L.append(f'            <end>{clip["end"]}</end>')
+        L.append(f'            <in>{clip["in"]}</in>')
+        L.append(f'            <out>{clip["out"]}</out>')
+        if i == 0:
+            # Full file definition on first reference
+            L.append(f'            <file id="file-1">')
+            L.append(f'              <name>{file_name}</name>')
+            L.append(f'              <pathurl>{path_url}</pathurl>')
+            L.append(f'              <duration>{src_dur_frames}</duration>')
+            L.append(f'              <rate><timebase>{fps}</timebase><ntsc>FALSE</ntsc></rate>')
+            L.append(f'              <media>')
+            L.append(f'                <video>')
+            L.append(f'                  <samplecharacteristics>')
+            L.append(f'                    <width>{src_width}</width>')
+            L.append(f'                    <height>{src_height}</height>')
+            L.append(f'                  </samplecharacteristics>')
+            L.append(f'                </video>')
+            L.append(f'                <audio>')
+            L.append(f'                  <samplecharacteristics>')
+            L.append(f'                    <depth>16</depth>')
+            L.append(f'                    <samplerate>48000</samplerate>')
+            L.append(f'                  </samplecharacteristics>')
+            L.append(f'                </audio>')
+            L.append(f'              </media>')
+            L.append(f'            </file>')
+        else:
+            L.append(f'            <file id="file-1"/>')
+        L.append(f'          </clipitem>')
+    L.append(f'        </track>')
+    L.append(f'      </video>')
+
+    # Audio track (mirrors video)
+    L.append(f'      <audio>')
+    L.append(f'        <track>')
+    for i, clip in enumerate(clips):
+        clip_id = f"clip-a{i+1}"
+        L.append(f'          <clipitem id="{clip_id}">')
+        L.append(f'            <name>Segment {i+1}</name>')
+        L.append(f'            <duration>{src_dur_frames}</duration>')
+        L.append(f'            <rate><timebase>{fps}</timebase><ntsc>FALSE</ntsc></rate>')
+        L.append(f'            <start>{clip["start"]}</start>')
+        L.append(f'            <end>{clip["end"]}</end>')
+        L.append(f'            <in>{clip["in"]}</in>')
+        L.append(f'            <out>{clip["out"]}</out>')
+        L.append(f'            <file id="file-1"/>')
+        L.append(f'            <sourcetrack>')
+        L.append(f'              <mediatype>audio</mediatype>')
+        L.append(f'              <trackindex>1</trackindex>')
+        L.append(f'            </sourcetrack>')
+        L.append(f'          </clipitem>')
+    L.append(f'        </track>')
+    L.append(f'      </audio>')
+
+    L.append(f'    </media>')
+    L.append(f'  </sequence>')
+    L.append(f'</xmeml>')
 
     return "\n".join(L)

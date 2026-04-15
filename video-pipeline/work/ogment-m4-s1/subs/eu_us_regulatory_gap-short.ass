@@ -1,0 +1,22 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Raleway,120,&H00F5981B,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,3,15,0,2,40,40,320,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.00,Default,,0,0,0,,{\k32}Uh {\k24}so {\k16}the {\k32}general {\k24}rule {\k16}of {\k32}thumb {\k24}is
+Dialogue: 0,0:00:02.00,0:00:04.00,Default,,0,0,0,,{\k24}is {\k24}be {\k24}ready {\k16}for {\k40}Europe, {\k24}so {\k24}you're {\k24}ready
+Dialogue: 0,0:00:04.00,0:00:05.28,Default,,0,0,0,,{\k16}for {\k8}the {\k16}rest {\k16}of {\k16}the {\k56}world.
+Dialogue: 0,0:00:05.29,0:00:07.05,Default,,0,0,0,,{\k16}And {\k24}so {\k24}by {\k56}default, {\k16}you {\k16}need {\k16}to {\k8}be
+Dialogue: 0,0:00:07.05,0:00:07.77,Default,,0,0,0,,{\k24}ready {\k16}for {\k32}it.
+Dialogue: 0,0:00:07.77,0:00:09.37,Default,,0,0,0,,{\k16}And {\k16}I {\k16}think {\k16}it {\k24}is {\k32}good {\k24}because {\k32}uh
+Dialogue: 0,0:00:09.53,0:00:11.69,Default,,0,0,0,,{\k24}even {\k24}though {\k24}it's {\k56}strict, {\k32}they {\k24}have {\k16}I {\k40}think
+Dialogue: 0,0:00:11.93,0:00:15.21,Default,,0,0,0,,{\k32}very {\k96}respectful {\k24}uh {\k56}laws {\k16}for {\k16}the {\k64}consumers, {\k24}which
+Dialogue: 0,0:00:15.21,0:00:16.73,Default,,0,0,0,,{\k16}I {\k16}would {\k16}want {\k16}to {\k16}be {\k40}applied {\k16}to {\k16}my
+Dialogue: 0,0:00:16.73,0:00:18.17,Default,,0,0,0,,{\k32}data {\k24}for {\k32}sure {\k24}as {\k32}well.

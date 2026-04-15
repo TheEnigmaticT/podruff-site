@@ -1,0 +1,63 @@
+{
+  "story_id": "certification_vs_real_security",
+  "versions": {
+    "short": {
+      "target_duration": 55,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 995.88,
+          "end": 1009.48,
+          "narrative_bridge": "Establishes the core conflict between certifications and real security needs"
+        },
+        {
+          "type": "body",
+          "start": 1009.48,
+          "end": 1017.4
+        },
+        {
+          "type": "body",
+          "start": 1017.4,
+          "end": 1033.48
+        }
+      ],
+      "trims": [
+        {
+          "start": 982.12,
+          "end": 995.88,
+          "reason": "Skipped interviewer segments per editing rules"
+        },
+        {
+          "start": 1033.48,
+          "end": 1046.28,
+          "reason": "Excess content beyond original story range"
+        }
+      ],
+      "estimated_duration": 37.6
+    },
+    "long": {
+      "target_duration": null,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 995.88,
+          "end": 1009.48,
+          "narrative_bridge": "Establishes the core conflict between certifications and real security needs"
+        },
+        {
+          "type": "body",
+          "start": 1009.48,
+          "end": 1017.4
+        },
+        {
+          "type": "body",
+          "start": 1017.4,
+          "end": 1033.48
+        }
+      ],
+      "trims": [],
+      "estimated_duration": 37.6
+    }
+  },
+  "source_video": "/Users/ct-mac-mini/dev/podruff-site/video-pipeline/work/ogment-m4-s1/teo.mp3"
+}

@@ -1,0 +1,26 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Raleway,120,&H00F5981B,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,3,15,0,2,40,40,320,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.00,Default,,0,0,0,,{\k24}There's {\k16}no {\k40}visibility {\k16}on {\k16}what {\k16}the {\k32}AI {\k40}does,
+Dialogue: 0,0:00:02.00,0:00:04.56,Default,,0,0,0,,{\k32}there's {\k24}no {\k40}logs, {\k16}there {\k8}is {\k24}no {\k96}traceability, {\k16}and
+Dialogue: 0,0:00:04.56,0:00:06.32,Default,,0,0,0,,{\k32}so {\k24}uh {\k24}it's {\k16}really {\k24}cool {\k16}when {\k16}it {\k24}works,
+Dialogue: 0,0:00:06.32,0:00:07.92,Default,,0,0,0,,{\k16}but {\k16}as {\k16}soon {\k16}as {\k16}it {\k32}stops {\k32}working {\k16}and
+Dialogue: 0,0:00:07.92,0:00:09.84,Default,,0,0,0,,{\k16}it {\k16}does {\k16}something {\k24}wrong, {\k24}you're {\k24}like, {\k32}oh {\k40}shit,
+Dialogue: 0,0:00:09.84,0:00:12.56,Default,,0,0,0,,{\k32}there's {\k16}a {\k32}moment {\k64}where {\k56}things {\k72}crumble.
+Dialogue: 0,0:00:12.57,0:00:14.57,Default,,0,0,0,,{\k24}And {\k24}so {\k32}step {\k24}number {\k24}one {\k40}obviously {\k16}is {\k16}to
+Dialogue: 0,0:00:14.57,0:00:16.81,Default,,0,0,0,,{\k16}put {\k48}visibility {\k16}into {\k40}everything {\k8}the {\k40}agent {\k40}does, {\k16}and
+Dialogue: 0,0:00:16.81,0:00:18.41,Default,,0,0,0,,{\k24}so {\k8}you {\k16}can {\k16}go {\k8}back {\k16}to {\k32}every {\k40}log,
+Dialogue: 0,0:00:18.41,0:00:19.93,Default,,0,0,0,,{\k8}you {\k16}can {\k16}go {\k16}back {\k16}to {\k24}every {\k24}tool {\k40}call
+Dialogue: 0,0:00:20.01,0:00:22.41,Default,,0,0,0,,{\k16}to {\k24}every {\k48}attempt, {\k16}to {\k32}every {\k64}intention, {\k24}and {\k16}then
+Dialogue: 0,0:00:22.41,0:00:24.65,Default,,0,0,0,,{\k16}you {\k16}can {\k32}really {\k24}look {\k24}at {\k56}behaviors {\k32}and {\k24}see,
+Dialogue: 0,0:00:24.65,0:00:26.25,Default,,0,0,0,,{\k16}you {\k16}know, {\k24}where {\k16}it {\k40}failed {\k16}and {\k16}where {\k16}it
+Dialogue: 0,0:00:26.25,0:00:27.29,Default,,0,0,0,,{\k104}succeeded.

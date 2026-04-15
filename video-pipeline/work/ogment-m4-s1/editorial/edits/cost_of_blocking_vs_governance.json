@@ -1,0 +1,93 @@
+{
+  "story_id": "cost_of_blocking_vs_governance",
+  "versions": {
+    "short": {
+      "target_duration": 55,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 316.2,
+          "end": 323.08,
+          "narrative_bridge": "Establishes the central conflict of blocking AI vs. governance"
+        },
+        {
+          "type": "body",
+          "start": 323.32,
+          "end": 332.03999999999996
+        },
+        {
+          "type": "body",
+          "start": 332.03999999999996,
+          "end": 348.52
+        }
+      ],
+      "trims": [
+        {
+          "start": 266.0,
+          "end": 270.0,
+          "reason": "Setup/trailing context cut for brevity"
+        },
+        {
+          "start": 270.0,
+          "end": 288.24,
+          "reason": "Setup/trailing context cut for brevity"
+        },
+        {
+          "start": 292.08,
+          "end": 294.8,
+          "reason": "Redundant filler cut"
+        },
+        {
+          "start": 294.8,
+          "end": 296.72,
+          "reason": "Redundant filler cut"
+        },
+        {
+          "start": 296.72,
+          "end": 300.28000000000003,
+          "reason": "Redundant filler cut"
+        },
+        {
+          "start": 299.84000000000003,
+          "end": 302.20000000000005,
+          "reason": "Redundant filler cut"
+        },
+        {
+          "start": 302.52,
+          "end": 312.91999999999996,
+          "reason": "Redundant filler cut"
+        },
+        {
+          "start": 312.91999999999996,
+          "end": 316.2,
+          "reason": "Setup/trailing context cut"
+        }
+      ],
+      "estimated_duration": 32.08
+    },
+    "long": {
+      "target_duration": null,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 316.2,
+          "end": 323.08,
+          "narrative_bridge": "Establishes the central conflict of blocking AI vs. governance"
+        },
+        {
+          "type": "body",
+          "start": 323.32,
+          "end": 332.03999999999996
+        },
+        {
+          "type": "body",
+          "start": 332.03999999999996,
+          "end": 348.52
+        }
+      ],
+      "trims": [],
+      "estimated_duration": 25.2
+    }
+  },
+  "source_video": "/Users/ct-mac-mini/dev/podruff-site/video-pipeline/work/ogment-m4-s1/teo.mp3"
+}

@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:09,120
+So it means that today you need to compute some sort of risk reward you know ratio, and and you need to be comfortable with a certain level of risk, known risk, right?
+
+2
+00:00:09,146 --> 00:00:22,986
+Yeah, I think you know, I was at RSA conference two weeks ago now at San Francisco, speaking with a lot of uh CSOs and leaders, and I think one of the main messages was that now completely risk-free AI inside the enterprise is not possible.
+
+3
+00:00:22,986 --> 00:00:24,666
+At least we don't have the solution today.
+
+4
+00:00:24,768 --> 00:00:34,368
+So you can you know with awareness go into a system where you're like, I know that this you know, five-10% part might go wrong, but but then you put the right control in place.
+
+5
+00:00:34,368 --> 00:00:38,368
+So if it does go wrong, you can just catch it very quickly and you can just roll it back.
+
+6
+00:00:38,368 --> 00:00:50,128
+And so I think right now the the new mentality is like not to go completely risk-free, but to have the right balance with your leadership, risk reward, what we are allowing the organization to push how far.
+
+7
+00:00:50,128 --> 00:00:53,328
+But uh, but that's the new the new mentality.

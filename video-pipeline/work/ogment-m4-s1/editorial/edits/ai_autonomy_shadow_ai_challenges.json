@@ -1,0 +1,74 @@
+{
+  "story_id": "ai_autonomy_shadow_ai_challenges",
+  "versions": {
+    "short": {
+      "target_duration": 55,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 65.6,
+          "end": 82.4,
+          "narrative_bridge": "sets up the idea that increasing AI autonomy leads to greater utility, which transitions into discussing the risks"
+        },
+        {
+          "type": "body",
+          "start": 88.4,
+          "end": 102.96000000000001
+        }
+      ],
+      "trims": [
+        {
+          "start": 82.4,
+          "end": 88.4,
+          "reason": "segment too short (6s) — removed to meet 7s minimum"
+        }
+      ],
+      "estimated_duration": 31.4
+    },
+    "long": {
+      "target_duration": null,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 65.6,
+          "end": 82.4,
+          "narrative_bridge": "sets up the idea that increasing AI autonomy leads to greater utility, which transitions into discussing the risks"
+        },
+        {
+          "type": "body",
+          "start": 29.2,
+          "end": 42.88
+        },
+        {
+          "type": "body",
+          "start": 42.88,
+          "end": 50.160000000000004
+        },
+        {
+          "type": "body",
+          "start": 50.160000000000004,
+          "end": 65.19999999999999
+        },
+        {
+          "type": "body",
+          "start": 82.4,
+          "end": 102.96000000000001
+        }
+      ],
+      "trims": [
+        {
+          "start": 71.6,
+          "end": 82.4,
+          "reason": "segment too short (10.8s) — merged with subsequent segment to create 20.6s continuous content"
+        },
+        {
+          "start": 82.4,
+          "end": 88.4,
+          "reason": "segment too short (6s) — merged with subsequent segment to create 20.6s continuous content"
+        }
+      ],
+      "estimated_duration": 73.4
+    }
+  },
+  "source_video": "/Users/ct-mac-mini/dev/podruff-site/video-pipeline/work/ogment-m4-s1/teo.mp3"
+}

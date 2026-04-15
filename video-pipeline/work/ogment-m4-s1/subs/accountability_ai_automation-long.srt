@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:12,560
+There's no visibility on what the AI does, there's no logs, there is no traceability, and so uh it's really cool when it works, but as soon as it stops working and it does something wrong, you're like, oh shit, there's a moment where things crumble.
+
+2
+00:00:12,568 --> 00:00:25,128
+There's no visibility on what the AI does, there's no logs, there is no traceability, and so uh it's really cool when it works, but as soon as it stops working and it does something wrong, you're like, oh shit, there's a moment where things crumble.
+
+3
+00:00:25,128 --> 00:00:39,848
+And so step number one obviously is to put visibility into everything the agent does, and so you can go back to every log, you can go back to every tool call to every attempt, to every intention, and then you can really look at behaviors and see, you know, where it failed and where it succeeded.
+
+4
+00:00:39,848 --> 00:00:43,448
+Um of course is visibility.
+
+5
+00:00:43,448 --> 00:00:46,888
+And uh I'm super sorry, I forgot the the initial part of the answer.

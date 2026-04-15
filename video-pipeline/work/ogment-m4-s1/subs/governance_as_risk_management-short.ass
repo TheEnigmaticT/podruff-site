@@ -1,0 +1,27 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Raleway,120,&H00F5981B,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,3,15,0,2,40,40,320,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.36,Default,,0,0,0,,{\k24}So {\k8}it {\k24}means {\k16}that {\k24}today {\k16}you {\k16}need {\k8}to
+Dialogue: 0,0:00:01.36,0:00:03.84,Default,,0,0,0,,{\k56}compute {\k16}some {\k24}sort {\k24}of {\k40}risk {\k56}reward {\k16}you {\k32}know
+Dialogue: 0,0:00:04.00,0:00:06.72,Default,,0,0,0,,{\k72}ratio, {\k40}and {\k32}and {\k32}you {\k16}need {\k16}to {\k16}be {\k48}comfortable
+Dialogue: 0,0:00:06.72,0:00:08.88,Default,,0,0,0,,{\k24}with {\k8}a {\k32}certain {\k24}level {\k16}of {\k40}risk, {\k40}known {\k32}risk,
+Dialogue: 0,0:00:08.88,0:00:09.12,Default,,0,0,0,,{\k24}right?
+Dialogue: 0,0:00:09.15,0:00:11.55,Default,,0,0,0,,{\k16}So {\k16}you {\k24}can {\k16}you {\k48}know {\k32}with {\k64}awareness {\k24}go
+Dialogue: 0,0:00:11.55,0:00:12.99,Default,,0,0,0,,{\k16}into {\k16}a {\k24}system {\k16}where {\k16}you're {\k24}like, {\k16}I {\k16}know
+Dialogue: 0,0:00:12.99,0:00:15.63,Default,,0,0,0,,{\k16}that {\k24}this {\k8}you {\k24}know, {\k112}five-10% {\k32}part {\k24}might {\k24}go
+Dialogue: 0,0:00:15.63,0:00:17.87,Default,,0,0,0,,{\k40}wrong, {\k40}but {\k24}but {\k24}then {\k32}you {\k16}put {\k16}the {\k32}right
+Dialogue: 0,0:00:17.87,0:00:18.75,Default,,0,0,0,,{\k32}control {\k24}in {\k32}place.
+Dialogue: 0,0:00:18.77,0:00:20.20,Default,,0,0,0,,{\k24}And {\k16}so {\k16}I {\k16}think {\k16}right {\k24}now {\k24}the {\k8}the
+Dialogue: 0,0:00:20.20,0:00:22.45,Default,,0,0,0,,{\k24}new {\k48}mentality {\k24}is {\k24}like {\k24}not {\k16}to {\k16}go {\k48}completely
+Dialogue: 0,0:00:22.44,0:00:24.92,Default,,0,0,0,,{\k80}risk-free, {\k24}but {\k16}to {\k16}have {\k16}the {\k24}right {\k48}balance {\k24}with
+Dialogue: 0,0:00:24.92,0:00:28.13,Default,,0,0,0,,{\k16}your {\k88}leadership, {\k48}risk {\k64}reward, {\k24}what {\k24}we {\k16}are {\k40}allowing
+Dialogue: 0,0:00:28.13,0:00:30.52,Default,,0,0,0,,{\k16}the {\k48}organization {\k24}to {\k48}push {\k32}how {\k72}far.

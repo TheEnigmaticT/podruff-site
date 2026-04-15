@@ -253,6 +253,8 @@ class TestListFiles:
                 client.list_files("folder-abc", modified_after=cutoff)
 
         assert "modifiedTime" in captured_urls[0]
+        # Verify that the timestamp includes timezone offset (RFC 3339 format)
+        assert "%2B00%3A00" in captured_urls[0] or "+00:00" in captured_urls[0]
 
     def test_list_files_returns_empty_on_no_results(self, tmp_path):
         client = self._make_client(tmp_path)

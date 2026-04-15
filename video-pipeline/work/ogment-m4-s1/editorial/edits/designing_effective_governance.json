@@ -1,0 +1,48 @@
+{
+  "story_id": "designing_effective_governance",
+  "versions": {
+    "short": {
+      "target_duration": 55,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 1061.32,
+          "end": 1071.8,
+          "narrative_bridge": "establishes the gateway concept as the core mechanism"
+        },
+        {
+          "type": "body",
+          "start": 1071.8,
+          "end": 1117.24
+        }
+      ],
+      "trims": [
+        {
+          "start": 1117.24,
+          "end": 1117.24,
+          "reason": "cut trailing 0.9s to meet 55s limit"
+        }
+      ],
+      "estimated_duration": 54.9
+    },
+    "long": {
+      "target_duration": null,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 1033.48,
+          "end": 1117.24,
+          "narrative_bridge": "comprehensive summary of governance framework principles"
+        },
+        {
+          "type": "body",
+          "start": 1033.48,
+          "end": 1117.24
+        }
+      ],
+      "trims": [],
+      "estimated_duration": 83.7
+    }
+  },
+  "source_video": "/Users/ct-mac-mini/dev/podruff-site/video-pipeline/work/ogment-m4-s1/teo.mp3"
+}

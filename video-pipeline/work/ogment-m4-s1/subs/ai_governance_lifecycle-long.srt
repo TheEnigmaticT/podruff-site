@@ -1,0 +1,35 @@
+1
+00:00:19,046 --> 00:00:20,166
+Right.
+
+2
+00:00:20,166 --> 00:00:29,046
+The typical life cycle we see, and sometimes it's a little bit annoying, but um, you know, governance of course requires a little bit of setup.
+
+3
+00:00:29,046 --> 00:00:32,406
+It's not dramatic, but it does require a little bit of setup.
+
+4
+00:00:32,406 --> 00:00:44,246
+And uh, and so the the lifecycle we see of enterprise starting to work with AI is governance comes a bit later as an afterthought, and the first thing is okay, how you know what the hell do we even do?
+
+5
+00:00:44,246 --> 00:00:45,126
+What do we start with?
+
+6
+00:00:45,126 --> 00:00:47,446
+And this is priority number one in enterprise line.
+
+7
+00:00:47,446 --> 00:01:00,886
+And so what they end up doing is they usually spin up a small team, uh, they give it you know cloud or open AI, and then they will give it one or two connectors and and try to to prove that with one use case they can already deliver some value.
+
+8
+00:01:00,886 --> 00:01:17,766
+Now the th the issue is that you start with this little experiment, and then essentially it grows into a larger experiment, and eventually you start to see that it becomes a pretty big mess, and some issues start to arise, and then you need to roll back and you're like, okay, how the hell do we frame this into a governed way?
+
+9
+00:01:17,766 --> 00:02:18,646
+And so we always have this typical um uh lifecycle where a customer starts to think about governance when they really feel the pain and the messiness that it gets when you start to unleash those systems without you know, some frameworks, some rules, some some sandbox that people can play into.

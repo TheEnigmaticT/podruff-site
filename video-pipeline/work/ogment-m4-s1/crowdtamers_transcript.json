@@ -1,0 +1,9963 @@
+[
+  {
+    "start": 0.24,
+    "end": 0.64,
+    "text": "Yeah.",
+    "words": [
+      {
+        "word": "Yeah.",
+        "start": 0.24,
+        "end": 0.64
+      }
+    ]
+  },
+  {
+    "start": 1.36,
+    "end": 3.2,
+    "text": "All right, I've started the recording here.",
+    "words": [
+      {
+        "word": "All",
+        "start": 1.36,
+        "end": 1.4400000000000002
+      },
+      {
+        "word": "right,",
+        "start": 1.44,
+        "end": 1.6800000000000002
+      },
+      {
+        "word": "I've",
+        "start": 1.68,
+        "end": 1.84
+      },
+      {
+        "word": "started",
+        "start": 1.84,
+        "end": 2.16
+      },
+      {
+        "word": "the",
+        "start": 2.16,
+        "end": 2.24
+      },
+      {
+        "word": "recording",
+        "start": 2.24,
+        "end": 2.8
+      },
+      {
+        "word": "here.",
+        "start": 2.8000000000000003,
+        "end": 3.2
+      }
+    ]
+  },
+  {
+    "start": 3.2,
+    "end": 6.24,
+    "text": "Um let me let's let's begin.",
+    "words": [
+      {
+        "word": "Um",
+        "start": 3.2,
+        "end": 3.4400000000000004
+      },
+      {
+        "word": "let",
+        "start": 3.68,
+        "end": 4.0
+      },
+      {
+        "word": "me",
+        "start": 4.24,
+        "end": 4.5600000000000005
+      },
+      {
+        "word": "let's",
+        "start": 5.12,
+        "end": 5.5200000000000005
+      },
+      {
+        "word": "let's",
+        "start": 5.6000000000000005,
+        "end": 5.84
+      },
+      {
+        "word": "begin.",
+        "start": 5.84,
+        "end": 6.24
+      }
+    ]
+  },
+  {
+    "start": 6.24,
+    "end": 14.16,
+    "text": "I think um so with the shift from governed MCP to governed AI, right?",
+    "words": [
+      {
+        "word": "I",
+        "start": 6.24,
+        "end": 6.5600000000000005
+      },
+      {
+        "word": "think",
+        "start": 6.5600000000000005,
+        "end": 6.880000000000001
+      },
+      {
+        "word": "um",
+        "start": 7.12,
+        "end": 7.44
+      },
+      {
+        "word": "so",
+        "start": 9.6,
+        "end": 9.84
+      },
+      {
+        "word": "with",
+        "start": 10.0,
+        "end": 10.24
+      },
+      {
+        "word": "the",
+        "start": 10.24,
+        "end": 10.4
+      },
+      {
+        "word": "shift",
+        "start": 10.4,
+        "end": 10.88
+      },
+      {
+        "word": "from",
+        "start": 10.88,
+        "end": 11.200000000000001
+      },
+      {
+        "word": "governed",
+        "start": 11.200000000000001,
+        "end": 11.76
+      },
+      {
+        "word": "MCP",
+        "start": 11.76,
+        "end": 12.32
+      },
+      {
+        "word": "to",
+        "start": 12.32,
+        "end": 12.4
+      },
+      {
+        "word": "governed",
+        "start": 12.4,
+        "end": 12.88
+      },
+      {
+        "word": "AI,",
+        "start": 12.88,
+        "end": 13.520000000000001
+      },
+      {
+        "word": "right?",
+        "start": 13.52,
+        "end": 14.16
+      }
+    ]
+  },
+  {
+    "start": 14.16,
+    "end": 25.439999999999998,
+    "text": "Uh one of the big problems for your CISO types is the people who want to use AI want to maximize their autonomy.",
+    "words": [
+      {
+        "word": "Uh",
+        "start": 14.16,
+        "end": 14.8
+      },
+      {
+        "word": "one",
+        "start": 15.120000000000001,
+        "end": 15.440000000000001
+      },
+      {
+        "word": "of",
+        "start": 15.44,
+        "end": 15.6
+      },
+      {
+        "word": "the",
+        "start": 15.6,
+        "end": 15.84
+      },
+      {
+        "word": "big",
+        "start": 15.84,
+        "end": 16.32
+      },
+      {
+        "word": "problems",
+        "start": 16.32,
+        "end": 16.88
+      },
+      {
+        "word": "for",
+        "start": 16.88,
+        "end": 17.119999999999997
+      },
+      {
+        "word": "your",
+        "start": 17.12,
+        "end": 17.44
+      },
+      {
+        "word": "CISO",
+        "start": 17.44,
+        "end": 18.4
+      },
+      {
+        "word": "types",
+        "start": 19.68,
+        "end": 20.32
+      },
+      {
+        "word": "is",
+        "start": 20.8,
+        "end": 21.12
+      },
+      {
+        "word": "the",
+        "start": 22.32,
+        "end": 22.64
+      },
+      {
+        "word": "people",
+        "start": 22.64,
+        "end": 22.88
+      },
+      {
+        "word": "who",
+        "start": 22.88,
+        "end": 23.119999999999997
+      },
+      {
+        "word": "want",
+        "start": 23.12,
+        "end": 23.28
+      },
+      {
+        "word": "to",
+        "start": 23.28,
+        "end": 23.36
+      },
+      {
+        "word": "use",
+        "start": 23.36,
+        "end": 23.599999999999998
+      },
+      {
+        "word": "AI",
+        "start": 23.6,
+        "end": 23.92
+      },
+      {
+        "word": "want",
+        "start": 24.0,
+        "end": 24.16
+      },
+      {
+        "word": "to",
+        "start": 24.16,
+        "end": 24.24
+      },
+      {
+        "word": "maximize",
+        "start": 24.240000000000002,
+        "end": 24.8
+      },
+      {
+        "word": "their",
+        "start": 24.8,
+        "end": 24.96
+      },
+      {
+        "word": "autonomy.",
+        "start": 24.96,
+        "end": 25.439999999999998
+      }
+    ]
+  },
+  {
+    "start": 25.44,
+    "end": 29.76,
+    "text": "That's why there's shadow AI, shadow IT, all of this happening.",
+    "words": [
+      {
+        "word": "That's",
+        "start": 25.44,
+        "end": 25.6
+      },
+      {
+        "word": "why",
+        "start": 25.6,
+        "end": 25.759999999999998
+      },
+      {
+        "word": "there's",
+        "start": 25.76,
+        "end": 26.0
+      },
+      {
+        "word": "shadow",
+        "start": 26.0,
+        "end": 26.400000000000002
+      },
+      {
+        "word": "AI,",
+        "start": 26.400000000000002,
+        "end": 27.119999999999997
+      },
+      {
+        "word": "shadow",
+        "start": 27.12,
+        "end": 27.52
+      },
+      {
+        "word": "IT,",
+        "start": 27.68,
+        "end": 28.16
+      },
+      {
+        "word": "all",
+        "start": 28.16,
+        "end": 28.24
+      },
+      {
+        "word": "of",
+        "start": 28.240000000000002,
+        "end": 28.400000000000002
+      },
+      {
+        "word": "this",
+        "start": 28.400000000000002,
+        "end": 28.48
+      },
+      {
+        "word": "happening.",
+        "start": 28.64,
+        "end": 29.76
+      }
+    ]
+  },
+  {
+    "start": 29.76,
+    "end": 55.12,
+    "text": "Um your CISO needs to be flexible enough to give them some of that autonomy because agents must have some freedom, but you also have to be able to control, if not what happens, then at least be able to look back and see what occurred so you can audit and also prevent future mistakes from happening.",
+    "words": [
+      {
+        "word": "Um",
+        "start": 29.76,
+        "end": 30.080000000000002
+      },
+      {
+        "word": "your",
+        "start": 33.2,
+        "end": 33.52
+      },
+      {
+        "word": "CISO",
+        "start": 34.08,
+        "end": 35.120000000000005
+      },
+      {
+        "word": "needs",
+        "start": 35.44,
+        "end": 36.0
+      },
+      {
+        "word": "to",
+        "start": 36.0,
+        "end": 36.32
+      },
+      {
+        "word": "be",
+        "start": 36.32,
+        "end": 36.64
+      },
+      {
+        "word": "flexible",
+        "start": 37.52,
+        "end": 38.239999999999995
+      },
+      {
+        "word": "enough",
+        "start": 38.24,
+        "end": 38.48
+      },
+      {
+        "word": "to",
+        "start": 38.480000000000004,
+        "end": 38.64
+      },
+      {
+        "word": "give",
+        "start": 38.64,
+        "end": 38.879999999999995
+      },
+      {
+        "word": "them",
+        "start": 38.88,
+        "end": 39.04
+      },
+      {
+        "word": "some",
+        "start": 39.04,
+        "end": 39.199999999999996
+      },
+      {
+        "word": "of",
+        "start": 39.2,
+        "end": 39.36
+      },
+      {
+        "word": "that",
+        "start": 39.36,
+        "end": 39.6
+      },
+      {
+        "word": "autonomy",
+        "start": 39.6,
+        "end": 40.16
+      },
+      {
+        "word": "because",
+        "start": 40.24,
+        "end": 40.56
+      },
+      {
+        "word": "agents",
+        "start": 40.56,
+        "end": 41.120000000000005
+      },
+      {
+        "word": "must",
+        "start": 41.12,
+        "end": 41.52
+      },
+      {
+        "word": "have",
+        "start": 41.52,
+        "end": 41.760000000000005
+      },
+      {
+        "word": "some",
+        "start": 41.76,
+        "end": 42.08
+      },
+      {
+        "word": "freedom,",
+        "start": 42.08,
+        "end": 43.52
+      },
+      {
+        "word": "but",
+        "start": 43.52,
+        "end": 43.84
+      },
+      {
+        "word": "you",
+        "start": 43.84,
+        "end": 44.0
+      },
+      {
+        "word": "also",
+        "start": 44.0,
+        "end": 44.24
+      },
+      {
+        "word": "have",
+        "start": 44.24,
+        "end": 44.4
+      },
+      {
+        "word": "to",
+        "start": 44.4,
+        "end": 44.48
+      },
+      {
+        "word": "be",
+        "start": 44.480000000000004,
+        "end": 44.56
+      },
+      {
+        "word": "able",
+        "start": 44.56,
+        "end": 44.8
+      },
+      {
+        "word": "to",
+        "start": 44.800000000000004,
+        "end": 45.120000000000005
+      },
+      {
+        "word": "control,",
+        "start": 45.12,
+        "end": 46.08
+      },
+      {
+        "word": "if",
+        "start": 46.08,
+        "end": 46.4
+      },
+      {
+        "word": "not",
+        "start": 46.4,
+        "end": 46.64
+      },
+      {
+        "word": "what",
+        "start": 46.88,
+        "end": 47.120000000000005
+      },
+      {
+        "word": "happens,",
+        "start": 47.12,
+        "end": 47.6
+      },
+      {
+        "word": "then",
+        "start": 47.6,
+        "end": 47.68
+      },
+      {
+        "word": "at",
+        "start": 47.76,
+        "end": 47.839999999999996
+      },
+      {
+        "word": "least",
+        "start": 47.84,
+        "end": 47.92
+      },
+      {
+        "word": "be",
+        "start": 48.0,
+        "end": 48.16
+      },
+      {
+        "word": "able",
+        "start": 48.160000000000004,
+        "end": 48.32
+      },
+      {
+        "word": "to",
+        "start": 48.32,
+        "end": 48.4
+      },
+      {
+        "word": "look",
+        "start": 48.4,
+        "end": 48.559999999999995
+      },
+      {
+        "word": "back",
+        "start": 48.56,
+        "end": 48.72
+      },
+      {
+        "word": "and",
+        "start": 48.72,
+        "end": 48.879999999999995
+      },
+      {
+        "word": "see",
+        "start": 48.88,
+        "end": 49.04
+      },
+      {
+        "word": "what",
+        "start": 49.04,
+        "end": 49.28
+      },
+      {
+        "word": "occurred",
+        "start": 49.28,
+        "end": 49.919999999999995
+      },
+      {
+        "word": "so",
+        "start": 50.160000000000004,
+        "end": 50.480000000000004
+      },
+      {
+        "word": "you",
+        "start": 50.480000000000004,
+        "end": 50.800000000000004
+      },
+      {
+        "word": "can",
+        "start": 50.800000000000004,
+        "end": 51.120000000000005
+      },
+      {
+        "word": "audit",
+        "start": 51.120000000000005,
+        "end": 51.76
+      },
+      {
+        "word": "and",
+        "start": 51.84,
+        "end": 52.160000000000004
+      },
+      {
+        "word": "also",
+        "start": 52.160000000000004,
+        "end": 52.480000000000004
+      },
+      {
+        "word": "prevent",
+        "start": 52.480000000000004,
+        "end": 53.120000000000005
+      },
+      {
+        "word": "future",
+        "start": 53.120000000000005,
+        "end": 53.519999999999996
+      },
+      {
+        "word": "mistakes",
+        "start": 53.52,
+        "end": 54.08
+      },
+      {
+        "word": "from",
+        "start": 54.08,
+        "end": 54.239999999999995
+      },
+      {
+        "word": "happening.",
+        "start": 54.24,
+        "end": 55.12
+      }
+    ]
+  },
+  {
+    "start": 55.120000000000005,
+    "end": 113.6,
+    "text": "Um what does an AI workflow that's been designed for humans in the loop look like from a security point of view?",
+    "words": [
+      {
+        "word": "Um",
+        "start": 55.120000000000005,
+        "end": 55.440000000000005
+      },
+      {
+        "word": "what",
+        "start": 55.76,
+        "end": 55.839999999999996
+      },
+      {
+        "word": "does",
+        "start": 56.08,
+        "end": 56.32
+      },
+      {
+        "word": "an",
+        "start": 56.32,
+        "end": 56.56
+      },
+      {
+        "word": "AI",
+        "start": 56.56,
+        "end": 57.2
+      },
+      {
+        "word": "workflow",
+        "start": 57.84,
+        "end": 58.56
+      },
+      {
+        "word": "that's",
+        "start": 58.72,
+        "end": 58.96
+      },
+      {
+        "word": "been",
+        "start": 58.96,
+        "end": 59.2
+      },
+      {
+        "word": "designed",
+        "start": 59.2,
+        "end": 59.760000000000005
+      },
+      {
+        "word": "for",
+        "start": 59.76,
+        "end": 60.0
+      },
+      {
+        "word": "humans",
+        "start": 60.0,
+        "end": 60.400000000000006
+      },
+      {
+        "word": "in",
+        "start": 60.4,
+        "end": 60.559999999999995
+      },
+      {
+        "word": "the",
+        "start": 60.56,
+        "end": 60.88
+      },
+      {
+        "word": "loop",
+        "start": 60.88,
+        "end": 61.52
+      },
+      {
+        "word": "look",
+        "start": 62.160000000000004,
+        "end": 62.480000000000004
+      },
+      {
+        "word": "like",
+        "start": 62.480000000000004,
+        "end": 62.800000000000004
+      },
+      {
+        "word": "from",
+        "start": 62.800000000000004,
+        "end": 62.96
+      },
+      {
+        "word": "a",
+        "start": 62.96,
+        "end": 63.12
+      },
+      {
+        "word": "security",
+        "start": 63.120000000000005,
+        "end": 63.68000000000001
+      },
+      {
+        "word": "point",
+        "start": 63.68,
+        "end": 63.92
+      },
+      {
+        "word": "of",
+        "start": 63.92,
+        "end": 64.24
+      },
+      {
+        "word": "view?",
+        "start": 64.24,
+        "end": 113.6
+      }
+    ]
+  },
+  {
+    "start": 113.60000000000001,
+    "end": 114.64,
+    "text": "Okay.",
+    "words": [
+      {
+        "word": "Okay.",
+        "start": 113.60000000000001,
+        "end": 114.64
+      }
+    ]
+  },
+  {
+    "start": 114.64,
+    "end": 127.2,
+    "text": "Uh a CISO who I work with once told me the scariest thing about AI is that when something goes wrong, no one knows whose fault it is.",
+    "words": [
+      {
+        "word": "Uh",
+        "start": 114.64,
+        "end": 114.96000000000001
+      },
+      {
+        "word": "a",
+        "start": 115.28,
+        "end": 115.6
+      },
+      {
+        "word": "CISO",
+        "start": 115.60000000000001,
+        "end": 116.32
+      },
+      {
+        "word": "who",
+        "start": 116.4,
+        "end": 116.64
+      },
+      {
+        "word": "I",
+        "start": 116.64,
+        "end": 116.8
+      },
+      {
+        "word": "work",
+        "start": 116.8,
+        "end": 117.03999999999999
+      },
+      {
+        "word": "with",
+        "start": 117.04,
+        "end": 117.28
+      },
+      {
+        "word": "once",
+        "start": 117.44,
+        "end": 117.76
+      },
+      {
+        "word": "told",
+        "start": 117.76,
+        "end": 118.0
+      },
+      {
+        "word": "me",
+        "start": 118.0,
+        "end": 118.16
+      },
+      {
+        "word": "the",
+        "start": 118.24000000000001,
+        "end": 118.4
+      },
+      {
+        "word": "scariest",
+        "start": 118.4,
+        "end": 119.2
+      },
+      {
+        "word": "thing",
+        "start": 119.2,
+        "end": 119.83999999999999
+      },
+      {
+        "word": "about",
+        "start": 120.48,
+        "end": 120.8
+      },
+      {
+        "word": "AI",
+        "start": 120.96000000000001,
+        "end": 121.44
+      },
+      {
+        "word": "is",
+        "start": 121.60000000000001,
+        "end": 121.76
+      },
+      {
+        "word": "that",
+        "start": 121.76,
+        "end": 122.0
+      },
+      {
+        "word": "when",
+        "start": 122.0,
+        "end": 122.16
+      },
+      {
+        "word": "something",
+        "start": 122.16,
+        "end": 122.48
+      },
+      {
+        "word": "goes",
+        "start": 122.48,
+        "end": 122.72
+      },
+      {
+        "word": "wrong,",
+        "start": 122.72,
+        "end": 123.12
+      },
+      {
+        "word": "no",
+        "start": 123.12,
+        "end": 123.28
+      },
+      {
+        "word": "one",
+        "start": 123.28,
+        "end": 123.44
+      },
+      {
+        "word": "knows",
+        "start": 123.44,
+        "end": 123.67999999999999
+      },
+      {
+        "word": "whose",
+        "start": 123.68,
+        "end": 124.08
+      },
+      {
+        "word": "fault",
+        "start": 124.08,
+        "end": 124.56
+      },
+      {
+        "word": "it",
+        "start": 124.56,
+        "end": 124.88
+      },
+      {
+        "word": "is.",
+        "start": 124.88000000000001,
+        "end": 127.2
+      }
+    ]
+  },
+  {
+    "start": 127.2,
+    "end": 132.96,
+    "text": "How does a CISO design for accountability?",
+    "words": [
+      {
+        "word": "How",
+        "start": 127.2,
+        "end": 127.75999999999999
+      },
+      {
+        "word": "does",
+        "start": 127.76,
+        "end": 128.4
+      },
+      {
+        "word": "a",
+        "start": 129.04,
+        "end": 129.28
+      },
+      {
+        "word": "CISO",
+        "start": 129.52,
+        "end": 130.4
+      },
+      {
+        "word": "design",
+        "start": 130.56,
+        "end": 130.96
+      },
+      {
+        "word": "for",
+        "start": 131.28,
+        "end": 131.6
+      },
+      {
+        "word": "accountability?",
+        "start": 131.84,
+        "end": 132.96
+      }
+    ]
+  },
+  {
+    "start": 132.96,
+    "end": 141.36,
+    "text": "Also with the knowledge, right, that unlike when a human does something wrong, it is very possible you don't know what why the AI did the wrong thing.",
+    "words": [
+      {
+        "word": "Also",
+        "start": 132.96,
+        "end": 133.2
+      },
+      {
+        "word": "with",
+        "start": 133.28,
+        "end": 133.44
+      },
+      {
+        "word": "the",
+        "start": 133.44,
+        "end": 133.6
+      },
+      {
+        "word": "knowledge,",
+        "start": 133.6,
+        "end": 134.16
+      },
+      {
+        "word": "right,",
+        "start": 134.16,
+        "end": 134.48000000000002
+      },
+      {
+        "word": "that",
+        "start": 134.48,
+        "end": 134.64
+      },
+      {
+        "word": "unlike",
+        "start": 134.8,
+        "end": 135.28
+      },
+      {
+        "word": "when",
+        "start": 135.28,
+        "end": 135.52
+      },
+      {
+        "word": "a",
+        "start": 135.52,
+        "end": 135.68
+      },
+      {
+        "word": "human",
+        "start": 135.68,
+        "end": 136.0
+      },
+      {
+        "word": "does",
+        "start": 136.0,
+        "end": 136.32
+      },
+      {
+        "word": "something",
+        "start": 136.32,
+        "end": 136.72
+      },
+      {
+        "word": "wrong,",
+        "start": 136.72,
+        "end": 138.0
+      },
+      {
+        "word": "it",
+        "start": 138.0,
+        "end": 138.24
+      },
+      {
+        "word": "is",
+        "start": 138.24,
+        "end": 138.48000000000002
+      },
+      {
+        "word": "very",
+        "start": 138.48,
+        "end": 138.72
+      },
+      {
+        "word": "possible",
+        "start": 138.72,
+        "end": 139.04
+      },
+      {
+        "word": "you",
+        "start": 139.12,
+        "end": 139.28
+      },
+      {
+        "word": "don't",
+        "start": 139.28,
+        "end": 139.44
+      },
+      {
+        "word": "know",
+        "start": 139.44,
+        "end": 139.6
+      },
+      {
+        "word": "what",
+        "start": 139.6,
+        "end": 139.84
+      },
+      {
+        "word": "why",
+        "start": 140.0,
+        "end": 140.24
+      },
+      {
+        "word": "the",
+        "start": 140.24,
+        "end": 140.32000000000002
+      },
+      {
+        "word": "AI",
+        "start": 140.32,
+        "end": 140.64
+      },
+      {
+        "word": "did",
+        "start": 140.64000000000001,
+        "end": 140.8
+      },
+      {
+        "word": "the",
+        "start": 140.8,
+        "end": 140.88000000000002
+      },
+      {
+        "word": "wrong",
+        "start": 140.88,
+        "end": 141.12
+      },
+      {
+        "word": "thing.",
+        "start": 141.12,
+        "end": 141.36
+      }
+    ]
+  },
+  {
+    "start": 141.36,
+    "end": 185.36,
+    "text": "It's hard to blame the human.",
+    "words": [
+      {
+        "word": "It's",
+        "start": 141.36,
+        "end": 141.52
+      },
+      {
+        "word": "hard",
+        "start": 141.52,
+        "end": 141.68
+      },
+      {
+        "word": "to",
+        "start": 141.68,
+        "end": 141.76000000000002
+      },
+      {
+        "word": "blame",
+        "start": 141.76,
+        "end": 142.08
+      },
+      {
+        "word": "the",
+        "start": 142.08,
+        "end": 142.32000000000002
+      },
+      {
+        "word": "human.",
+        "start": 142.32,
+        "end": 185.36
+      }
+    ]
+  },
+  {
+    "start": 185.36,
+    "end": 254.88,
+    "text": "So it is, how do you like, how do you set up accountability so that you know who to blame, but also how do you understand that humans aren't necessarily aware that they did something wrong to be blamed?",
+    "words": [
+      {
+        "word": "So",
+        "start": 185.36,
+        "end": 185.60000000000002
+      },
+      {
+        "word": "it",
+        "start": 185.76,
+        "end": 185.92
+      },
+      {
+        "word": "is,",
+        "start": 185.92000000000002,
+        "end": 186.24
+      },
+      {
+        "word": "how",
+        "start": 186.24,
+        "end": 186.4
+      },
+      {
+        "word": "do",
+        "start": 186.4,
+        "end": 186.64000000000001
+      },
+      {
+        "word": "you",
+        "start": 186.64000000000001,
+        "end": 186.8
+      },
+      {
+        "word": "like,",
+        "start": 186.88,
+        "end": 187.44000000000003
+      },
+      {
+        "word": "how",
+        "start": 187.44,
+        "end": 187.68
+      },
+      {
+        "word": "do",
+        "start": 187.68,
+        "end": 187.84
+      },
+      {
+        "word": "you",
+        "start": 187.84,
+        "end": 188.0
+      },
+      {
+        "word": "set",
+        "start": 188.0,
+        "end": 188.24
+      },
+      {
+        "word": "up",
+        "start": 188.24,
+        "end": 188.4
+      },
+      {
+        "word": "accountability",
+        "start": 188.4,
+        "end": 189.52
+      },
+      {
+        "word": "so",
+        "start": 189.84,
+        "end": 190.16
+      },
+      {
+        "word": "that",
+        "start": 190.4,
+        "end": 190.72
+      },
+      {
+        "word": "you",
+        "start": 190.72,
+        "end": 191.04
+      },
+      {
+        "word": "know",
+        "start": 192.0,
+        "end": 192.32
+      },
+      {
+        "word": "who",
+        "start": 192.96,
+        "end": 193.20000000000002
+      },
+      {
+        "word": "to",
+        "start": 193.20000000000002,
+        "end": 193.36
+      },
+      {
+        "word": "blame,",
+        "start": 193.36,
+        "end": 193.84
+      },
+      {
+        "word": "but",
+        "start": 193.84,
+        "end": 194.0
+      },
+      {
+        "word": "also",
+        "start": 194.0,
+        "end": 194.16
+      },
+      {
+        "word": "how",
+        "start": 194.24,
+        "end": 194.4
+      },
+      {
+        "word": "do",
+        "start": 194.4,
+        "end": 194.48000000000002
+      },
+      {
+        "word": "you",
+        "start": 194.48000000000002,
+        "end": 194.64000000000001
+      },
+      {
+        "word": "understand",
+        "start": 194.64000000000001,
+        "end": 194.96
+      },
+      {
+        "word": "that",
+        "start": 194.96,
+        "end": 195.20000000000002
+      },
+      {
+        "word": "humans",
+        "start": 195.20000000000002,
+        "end": 195.52
+      },
+      {
+        "word": "aren't",
+        "start": 195.52,
+        "end": 195.76
+      },
+      {
+        "word": "necessarily",
+        "start": 195.76,
+        "end": 196.4
+      },
+      {
+        "word": "aware",
+        "start": 196.4,
+        "end": 196.96
+      },
+      {
+        "word": "that",
+        "start": 196.96,
+        "end": 197.28
+      },
+      {
+        "word": "they",
+        "start": 197.28,
+        "end": 197.52
+      },
+      {
+        "word": "did",
+        "start": 197.52,
+        "end": 197.68
+      },
+      {
+        "word": "something",
+        "start": 197.68,
+        "end": 198.0
+      },
+      {
+        "word": "wrong",
+        "start": 198.0,
+        "end": 198.4
+      },
+      {
+        "word": "to",
+        "start": 198.4,
+        "end": 198.56
+      },
+      {
+        "word": "be",
+        "start": 198.56,
+        "end": 198.8
+      },
+      {
+        "word": "blamed?",
+        "start": 198.8,
+        "end": 254.88
+      }
+    ]
+  },
+  {
+    "start": 254.88,
+    "end": 256.24,
+    "text": "Gotcha.",
+    "words": [
+      {
+        "word": "Gotcha.",
+        "start": 254.88,
+        "end": 256.24
+      }
+    ]
+  },
+  {
+    "start": 256.24,
+    "end": 260.56,
+    "text": "So I saw a stat just recently.",
+    "words": [
+      {
+        "word": "So",
+        "start": 256.24,
+        "end": 256.56
+      },
+      {
+        "word": "I",
+        "start": 257.68,
+        "end": 258.0
+      },
+      {
+        "word": "saw",
+        "start": 258.0,
+        "end": 258.32000000000005
+      },
+      {
+        "word": "a",
+        "start": 258.32,
+        "end": 258.64
+      },
+      {
+        "word": "stat",
+        "start": 258.64,
+        "end": 258.96
+      },
+      {
+        "word": "just",
+        "start": 259.2,
+        "end": 259.52
+      },
+      {
+        "word": "recently.",
+        "start": 259.52,
+        "end": 260.56
+      }
+    ]
+  },
+  {
+    "start": 260.56,
+    "end": 266.40000000000003,
+    "text": "Three out of four CISOs have already discovered unsanctioned AI.",
+    "words": [
+      {
+        "word": "Three",
+        "start": 260.56,
+        "end": 261.04
+      },
+      {
+        "word": "out",
+        "start": 261.04,
+        "end": 261.20000000000005
+      },
+      {
+        "word": "of",
+        "start": 261.2,
+        "end": 261.36
+      },
+      {
+        "word": "four",
+        "start": 261.36,
+        "end": 261.76
+      },
+      {
+        "word": "CISOs",
+        "start": 261.76,
+        "end": 262.64000000000004
+      },
+      {
+        "word": "have",
+        "start": 262.8,
+        "end": 262.96000000000004
+      },
+      {
+        "word": "already",
+        "start": 262.96,
+        "end": 263.44
+      },
+      {
+        "word": "discovered",
+        "start": 263.44,
+        "end": 264.16
+      },
+      {
+        "word": "unsanctioned",
+        "start": 264.16,
+        "end": 265.36
+      },
+      {
+        "word": "AI.",
+        "start": 265.36,
+        "end": 266.40000000000003
+      }
+    ]
+  },
+  {
+    "start": 266.4,
+    "end": 279.28,
+    "text": "And another sixteen percent aren't sure, which means that's eighty-six percent, no, eighty nine ninety-one percent of CISOs um probably have this issue.",
+    "words": [
+      {
+        "word": "And",
+        "start": 266.4,
+        "end": 266.71999999999997
+      },
+      {
+        "word": "another",
+        "start": 266.72,
+        "end": 267.28000000000003
+      },
+      {
+        "word": "sixteen",
+        "start": 267.28000000000003,
+        "end": 267.76000000000005
+      },
+      {
+        "word": "percent",
+        "start": 267.76,
+        "end": 268.48
+      },
+      {
+        "word": "aren't",
+        "start": 268.48,
+        "end": 269.04
+      },
+      {
+        "word": "sure,",
+        "start": 269.04,
+        "end": 269.76
+      },
+      {
+        "word": "which",
+        "start": 269.76,
+        "end": 270.0
+      },
+      {
+        "word": "means",
+        "start": 270.0,
+        "end": 270.40000000000003
+      },
+      {
+        "word": "that's",
+        "start": 270.4,
+        "end": 270.64
+      },
+      {
+        "word": "eighty-six",
+        "start": 270.8,
+        "end": 271.76
+      },
+      {
+        "word": "percent,",
+        "start": 271.76,
+        "end": 272.40000000000003
+      },
+      {
+        "word": "no,",
+        "start": 272.4,
+        "end": 272.8
+      },
+      {
+        "word": "eighty",
+        "start": 272.8,
+        "end": 273.03999999999996
+      },
+      {
+        "word": "nine",
+        "start": 273.2,
+        "end": 273.36
+      },
+      {
+        "word": "ninety-one",
+        "start": 273.52,
+        "end": 273.92
+      },
+      {
+        "word": "percent",
+        "start": 274.0,
+        "end": 274.24
+      },
+      {
+        "word": "of",
+        "start": 274.24,
+        "end": 274.48
+      },
+      {
+        "word": "CISOs",
+        "start": 274.48,
+        "end": 275.52000000000004
+      },
+      {
+        "word": "um",
+        "start": 275.76,
+        "end": 276.08
+      },
+      {
+        "word": "probably",
+        "start": 277.04,
+        "end": 277.52000000000004
+      },
+      {
+        "word": "have",
+        "start": 277.52,
+        "end": 277.76
+      },
+      {
+        "word": "this",
+        "start": 277.76,
+        "end": 278.0
+      },
+      {
+        "word": "issue.",
+        "start": 278.0,
+        "end": 279.28
+      }
+    ]
+  },
+  {
+    "start": 279.28000000000003,
+    "end": 342.84,
+    "text": "What's the actual cost of trying to block AI and have one hundred percent control as opposed to putting up guardrails and governing it.",
+    "words": [
+      {
+        "word": "What's",
+        "start": 279.28000000000003,
+        "end": 280.0
+      },
+      {
+        "word": "the",
+        "start": 280.0,
+        "end": 280.24
+      },
+      {
+        "word": "actual",
+        "start": 280.24,
+        "end": 280.88
+      },
+      {
+        "word": "cost",
+        "start": 280.88,
+        "end": 281.2
+      },
+      {
+        "word": "of",
+        "start": 281.44,
+        "end": 281.76
+      },
+      {
+        "word": "trying",
+        "start": 281.76,
+        "end": 282.32
+      },
+      {
+        "word": "to",
+        "start": 282.32,
+        "end": 282.56
+      },
+      {
+        "word": "block",
+        "start": 282.56,
+        "end": 283.04
+      },
+      {
+        "word": "AI",
+        "start": 283.04,
+        "end": 283.44000000000005
+      },
+      {
+        "word": "and",
+        "start": 283.44,
+        "end": 283.68
+      },
+      {
+        "word": "have",
+        "start": 283.68,
+        "end": 283.92
+      },
+      {
+        "word": "one",
+        "start": 283.92,
+        "end": 284.08000000000004
+      },
+      {
+        "word": "hundred",
+        "start": 284.08,
+        "end": 284.40000000000003
+      },
+      {
+        "word": "percent",
+        "start": 284.40000000000003,
+        "end": 284.96
+      },
+      {
+        "word": "control",
+        "start": 284.96,
+        "end": 285.28
+      },
+      {
+        "word": "as",
+        "start": 285.68,
+        "end": 285.92
+      },
+      {
+        "word": "opposed",
+        "start": 285.92,
+        "end": 286.40000000000003
+      },
+      {
+        "word": "to",
+        "start": 286.40000000000003,
+        "end": 286.56000000000006
+      },
+      {
+        "word": "putting",
+        "start": 286.56,
+        "end": 286.8
+      },
+      {
+        "word": "up",
+        "start": 286.88,
+        "end": 287.04
+      },
+      {
+        "word": "guardrails",
+        "start": 287.04,
+        "end": 287.68
+      },
+      {
+        "word": "and",
+        "start": 287.76,
+        "end": 287.84
+      },
+      {
+        "word": "governing",
+        "start": 287.84000000000003,
+        "end": 288.56
+      },
+      {
+        "word": "it.",
+        "start": 288.56,
+        "end": 342.84
+      }
+    ]
+  },
+  {
+    "start": 343.0,
+    "end": 343.8,
+    "text": "Okay.",
+    "words": [
+      {
+        "word": "Okay.",
+        "start": 343.0,
+        "end": 343.8
+      }
+    ]
+  },
+  {
+    "start": 343.8,
+    "end": 349.0,
+    "text": "This is actually a meta shift for CISOs, right?",
+    "words": [
+      {
+        "word": "This",
+        "start": 343.8,
+        "end": 344.12
+      },
+      {
+        "word": "is",
+        "start": 344.12,
+        "end": 344.44
+      },
+      {
+        "word": "actually",
+        "start": 344.44,
+        "end": 345.08
+      },
+      {
+        "word": "a",
+        "start": 345.72,
+        "end": 346.04
+      },
+      {
+        "word": "meta",
+        "start": 346.04,
+        "end": 346.20000000000005
+      },
+      {
+        "word": "shift",
+        "start": 346.68,
+        "end": 347.0
+      },
+      {
+        "word": "for",
+        "start": 347.0,
+        "end": 347.24
+      },
+      {
+        "word": "CISOs,",
+        "start": 347.24,
+        "end": 348.36
+      },
+      {
+        "word": "right?",
+        "start": 348.36,
+        "end": 349.0
+      }
+    ]
+  },
+  {
+    "start": 349.0,
+    "end": 356.36,
+    "text": "Like the default answer for most IT security professionals has always been no.",
+    "words": [
+      {
+        "word": "Like",
+        "start": 349.0,
+        "end": 349.4
+      },
+      {
+        "word": "the",
+        "start": 349.72,
+        "end": 350.04
+      },
+      {
+        "word": "default",
+        "start": 350.28,
+        "end": 351.08
+      },
+      {
+        "word": "answer",
+        "start": 351.08,
+        "end": 351.71999999999997
+      },
+      {
+        "word": "for",
+        "start": 352.04,
+        "end": 352.36
+      },
+      {
+        "word": "most",
+        "start": 352.36,
+        "end": 352.68
+      },
+      {
+        "word": "IT",
+        "start": 352.92,
+        "end": 353.48
+      },
+      {
+        "word": "security",
+        "start": 353.48,
+        "end": 353.96000000000004
+      },
+      {
+        "word": "professionals",
+        "start": 353.96000000000004,
+        "end": 354.35999999999996
+      },
+      {
+        "word": "has",
+        "start": 354.44,
+        "end": 354.6
+      },
+      {
+        "word": "always",
+        "start": 354.6,
+        "end": 354.76
+      },
+      {
+        "word": "been",
+        "start": 354.92,
+        "end": 355.0
+      },
+      {
+        "word": "no.",
+        "start": 355.15999999999997,
+        "end": 356.36
+      }
+    ]
+  },
+  {
+    "start": 356.36,
+    "end": 357.47999999999996,
+    "text": "Can you know?",
+    "words": [
+      {
+        "word": "Can",
+        "start": 356.36,
+        "end": 356.68
+      },
+      {
+        "word": "you",
+        "start": 356.68,
+        "end": 356.92
+      },
+      {
+        "word": "know?",
+        "start": 357.15999999999997,
+        "end": 357.47999999999996
+      }
+    ]
+  },
+  {
+    "start": 357.64,
+    "end": 358.76000000000005,
+    "text": "May I no?",
+    "words": [
+      {
+        "word": "May",
+        "start": 357.64,
+        "end": 357.88000000000005
+      },
+      {
+        "word": "I",
+        "start": 357.88,
+        "end": 358.12
+      },
+      {
+        "word": "no?",
+        "start": 358.28,
+        "end": 358.76000000000005
+      }
+    ]
+  },
+  {
+    "start": 358.76,
+    "end": 361.0,
+    "text": "And then maybe I'll get back to you.",
+    "words": [
+      {
+        "word": "And",
+        "start": 358.76,
+        "end": 359.0
+      },
+      {
+        "word": "then",
+        "start": 359.0,
+        "end": 359.16
+      },
+      {
+        "word": "maybe",
+        "start": 359.15999999999997,
+        "end": 359.48
+      },
+      {
+        "word": "I'll",
+        "start": 359.48,
+        "end": 359.71999999999997
+      },
+      {
+        "word": "get",
+        "start": 359.72,
+        "end": 359.96000000000004
+      },
+      {
+        "word": "back",
+        "start": 359.96000000000004,
+        "end": 360.12000000000006
+      },
+      {
+        "word": "to",
+        "start": 360.12,
+        "end": 360.44
+      },
+      {
+        "word": "you.",
+        "start": 360.44,
+        "end": 361.0
+      }
+    ]
+  },
+  {
+    "start": 361.64,
+    "end": 364.28000000000003,
+    "text": "This is a cultural change.",
+    "words": [
+      {
+        "word": "This",
+        "start": 361.64,
+        "end": 361.88
+      },
+      {
+        "word": "is",
+        "start": 361.88,
+        "end": 362.12
+      },
+      {
+        "word": "a",
+        "start": 362.12,
+        "end": 362.36
+      },
+      {
+        "word": "cultural",
+        "start": 362.36,
+        "end": 363.16
+      },
+      {
+        "word": "change.",
+        "start": 363.15999999999997,
+        "end": 364.28000000000003
+      }
+    ]
+  },
+  {
+    "start": 364.28,
+    "end": 375.23999999999995,
+    "text": "What do you say to CISOs and all of their, you know, other roles in that same same space about how they make the shift and feel comfortable about it?",
+    "words": [
+      {
+        "word": "What",
+        "start": 364.28,
+        "end": 364.68
+      },
+      {
+        "word": "do",
+        "start": 364.68,
+        "end": 364.84000000000003
+      },
+      {
+        "word": "you",
+        "start": 364.84000000000003,
+        "end": 365.16
+      },
+      {
+        "word": "say",
+        "start": 365.15999999999997,
+        "end": 365.4
+      },
+      {
+        "word": "to",
+        "start": 365.4,
+        "end": 365.64
+      },
+      {
+        "word": "CISOs",
+        "start": 365.64,
+        "end": 366.84000000000003
+      },
+      {
+        "word": "and",
+        "start": 367.56,
+        "end": 367.88
+      },
+      {
+        "word": "all",
+        "start": 367.88,
+        "end": 368.04
+      },
+      {
+        "word": "of",
+        "start": 368.04,
+        "end": 368.28000000000003
+      },
+      {
+        "word": "their,",
+        "start": 368.28,
+        "end": 368.68
+      },
+      {
+        "word": "you",
+        "start": 368.68,
+        "end": 368.92
+      },
+      {
+        "word": "know,",
+        "start": 368.92,
+        "end": 369.4
+      },
+      {
+        "word": "other",
+        "start": 369.4,
+        "end": 369.64
+      },
+      {
+        "word": "roles",
+        "start": 369.64,
+        "end": 370.04
+      },
+      {
+        "word": "in",
+        "start": 370.04,
+        "end": 370.12
+      },
+      {
+        "word": "that",
+        "start": 370.12,
+        "end": 370.28000000000003
+      },
+      {
+        "word": "same",
+        "start": 370.28,
+        "end": 370.52000000000004
+      },
+      {
+        "word": "same",
+        "start": 370.52,
+        "end": 370.92
+      },
+      {
+        "word": "space",
+        "start": 370.92,
+        "end": 371.32
+      },
+      {
+        "word": "about",
+        "start": 371.56,
+        "end": 371.88
+      },
+      {
+        "word": "how",
+        "start": 371.88,
+        "end": 372.2
+      },
+      {
+        "word": "they",
+        "start": 372.2,
+        "end": 372.44
+      },
+      {
+        "word": "make",
+        "start": 372.44,
+        "end": 372.68
+      },
+      {
+        "word": "the",
+        "start": 372.68,
+        "end": 372.92
+      },
+      {
+        "word": "shift",
+        "start": 372.92,
+        "end": 373.40000000000003
+      },
+      {
+        "word": "and",
+        "start": 373.56,
+        "end": 373.88
+      },
+      {
+        "word": "feel",
+        "start": 373.88,
+        "end": 374.20000000000005
+      },
+      {
+        "word": "comfortable",
+        "start": 374.2,
+        "end": 374.84000000000003
+      },
+      {
+        "word": "about",
+        "start": 374.84000000000003,
+        "end": 375.00000000000006
+      },
+      {
+        "word": "it?",
+        "start": 375.0,
+        "end": 375.23999999999995
+      }
+    ]
+  },
+  {
+    "start": 375.24,
+    "end": 455.64,
+    "text": "Everyone's upskilling, but CISOs don't have to upskill, they also have to change their approach to security.",
+    "words": [
+      {
+        "word": "Everyone's",
+        "start": 375.24,
+        "end": 375.71999999999997
+      },
+      {
+        "word": "upskilling,",
+        "start": 375.72,
+        "end": 376.68
+      },
+      {
+        "word": "but",
+        "start": 376.68,
+        "end": 376.92
+      },
+      {
+        "word": "CISOs",
+        "start": 376.92,
+        "end": 377.71999999999997
+      },
+      {
+        "word": "don't",
+        "start": 377.8,
+        "end": 377.96000000000004
+      },
+      {
+        "word": "have",
+        "start": 377.96000000000004,
+        "end": 378.04
+      },
+      {
+        "word": "to",
+        "start": 378.04,
+        "end": 378.20000000000005
+      },
+      {
+        "word": "upskill,",
+        "start": 378.2,
+        "end": 378.68
+      },
+      {
+        "word": "they",
+        "start": 378.68,
+        "end": 378.76
+      },
+      {
+        "word": "also",
+        "start": 378.92,
+        "end": 379.08000000000004
+      },
+      {
+        "word": "have",
+        "start": 379.08,
+        "end": 379.24
+      },
+      {
+        "word": "to",
+        "start": 379.24,
+        "end": 379.40000000000003
+      },
+      {
+        "word": "change",
+        "start": 379.4,
+        "end": 379.8
+      },
+      {
+        "word": "their",
+        "start": 379.8,
+        "end": 379.96000000000004
+      },
+      {
+        "word": "approach",
+        "start": 379.96000000000004,
+        "end": 380.44
+      },
+      {
+        "word": "to",
+        "start": 380.44,
+        "end": 380.68
+      },
+      {
+        "word": "security.",
+        "start": 380.68,
+        "end": 455.64
+      }
+    ]
+  },
+  {
+    "start": 462.44,
+    "end": 463.0,
+    "text": "Right.",
+    "words": [
+      {
+        "word": "Right.",
+        "start": 462.44,
+        "end": 463.0
+      }
+    ]
+  },
+  {
+    "start": 463.0,
+    "end": 472.12,
+    "text": "Here's checklists that everyone just powers through as fast as they can without reducing actual risk.",
+    "words": [
+      {
+        "word": "Here's",
+        "start": 463.0,
+        "end": 463.48
+      },
+      {
+        "word": "checklists",
+        "start": 463.48,
+        "end": 464.04
+      },
+      {
+        "word": "that",
+        "start": 464.12,
+        "end": 464.36
+      },
+      {
+        "word": "everyone",
+        "start": 464.36,
+        "end": 464.76000000000005
+      },
+      {
+        "word": "just",
+        "start": 464.76,
+        "end": 465.0
+      },
+      {
+        "word": "powers",
+        "start": 465.0,
+        "end": 465.40000000000003
+      },
+      {
+        "word": "through",
+        "start": 465.56,
+        "end": 465.88000000000005
+      },
+      {
+        "word": "as",
+        "start": 465.88,
+        "end": 466.2
+      },
+      {
+        "word": "fast",
+        "start": 466.20000000000005,
+        "end": 466.44000000000005
+      },
+      {
+        "word": "as",
+        "start": 466.44,
+        "end": 466.76
+      },
+      {
+        "word": "they",
+        "start": 466.76,
+        "end": 467.08
+      },
+      {
+        "word": "can",
+        "start": 467.08000000000004,
+        "end": 467.40000000000003
+      },
+      {
+        "word": "without",
+        "start": 467.8,
+        "end": 468.84
+      },
+      {
+        "word": "reducing",
+        "start": 469.0,
+        "end": 469.8
+      },
+      {
+        "word": "actual",
+        "start": 469.8,
+        "end": 470.44
+      },
+      {
+        "word": "risk.",
+        "start": 470.44,
+        "end": 472.12
+      }
+    ]
+  },
+  {
+    "start": 472.12,
+    "end": 475.96000000000004,
+    "text": "What separates good governance?",
+    "words": [
+      {
+        "word": "What",
+        "start": 472.12,
+        "end": 472.68
+      },
+      {
+        "word": "separates",
+        "start": 472.68,
+        "end": 473.56
+      },
+      {
+        "word": "good",
+        "start": 474.20000000000005,
+        "end": 474.52000000000004
+      },
+      {
+        "word": "governance?",
+        "start": 474.84000000000003,
+        "end": 475.96000000000004
+      }
+    ]
+  },
+  {
+    "start": 475.96000000000004,
+    "end": 483.71999999999997,
+    "text": "That's not just the form, like, you know, when you go to the TS TSA in the US, and they're like, take off your shoes to get on the airplane.",
+    "words": [
+      {
+        "word": "That's",
+        "start": 475.96000000000004,
+        "end": 476.52
+      },
+      {
+        "word": "not",
+        "start": 476.52,
+        "end": 476.76
+      },
+      {
+        "word": "just",
+        "start": 476.76,
+        "end": 477.08
+      },
+      {
+        "word": "the",
+        "start": 477.08000000000004,
+        "end": 477.40000000000003
+      },
+      {
+        "word": "form,",
+        "start": 477.4,
+        "end": 478.04
+      },
+      {
+        "word": "like,",
+        "start": 478.03999999999996,
+        "end": 478.28000000000003
+      },
+      {
+        "word": "you",
+        "start": 478.28,
+        "end": 478.44
+      },
+      {
+        "word": "know,",
+        "start": 478.44,
+        "end": 478.59999999999997
+      },
+      {
+        "word": "when",
+        "start": 478.6,
+        "end": 478.68
+      },
+      {
+        "word": "you",
+        "start": 478.68,
+        "end": 478.84000000000003
+      },
+      {
+        "word": "go",
+        "start": 478.84000000000003,
+        "end": 478.92
+      },
+      {
+        "word": "to",
+        "start": 478.92,
+        "end": 479.0
+      },
+      {
+        "word": "the",
+        "start": 479.0,
+        "end": 479.08
+      },
+      {
+        "word": "TS",
+        "start": 479.08000000000004,
+        "end": 479.40000000000003
+      },
+      {
+        "word": "TSA",
+        "start": 479.56,
+        "end": 480.04
+      },
+      {
+        "word": "in",
+        "start": 480.36,
+        "end": 480.52000000000004
+      },
+      {
+        "word": "the",
+        "start": 480.52,
+        "end": 480.68
+      },
+      {
+        "word": "US,",
+        "start": 480.68,
+        "end": 481.23999999999995
+      },
+      {
+        "word": "and",
+        "start": 481.24,
+        "end": 481.40000000000003
+      },
+      {
+        "word": "they're",
+        "start": 481.4,
+        "end": 481.56
+      },
+      {
+        "word": "like,",
+        "start": 481.64,
+        "end": 481.8
+      },
+      {
+        "word": "take",
+        "start": 481.88,
+        "end": 482.11999999999995
+      },
+      {
+        "word": "off",
+        "start": 482.12,
+        "end": 482.28000000000003
+      },
+      {
+        "word": "your",
+        "start": 482.28,
+        "end": 482.35999999999996
+      },
+      {
+        "word": "shoes",
+        "start": 482.36,
+        "end": 482.68
+      },
+      {
+        "word": "to",
+        "start": 482.68,
+        "end": 482.76
+      },
+      {
+        "word": "get",
+        "start": 482.76,
+        "end": 482.92
+      },
+      {
+        "word": "on",
+        "start": 482.92,
+        "end": 483.0
+      },
+      {
+        "word": "the",
+        "start": 483.08000000000004,
+        "end": 483.16
+      },
+      {
+        "word": "airplane.",
+        "start": 483.15999999999997,
+        "end": 483.71999999999997
+      }
+    ]
+  },
+  {
+    "start": 483.72,
+    "end": 485.88,
+    "text": "You're like, this is not making us safer, right?",
+    "words": [
+      {
+        "word": "You're",
+        "start": 483.72,
+        "end": 483.88
+      },
+      {
+        "word": "like,",
+        "start": 483.88,
+        "end": 484.04
+      },
+      {
+        "word": "this",
+        "start": 484.03999999999996,
+        "end": 484.28
+      },
+      {
+        "word": "is",
+        "start": 484.28,
+        "end": 484.44
+      },
+      {
+        "word": "not",
+        "start": 484.44,
+        "end": 484.6
+      },
+      {
+        "word": "making",
+        "start": 484.6,
+        "end": 484.92
+      },
+      {
+        "word": "us",
+        "start": 484.92,
+        "end": 485.08000000000004
+      },
+      {
+        "word": "safer,",
+        "start": 485.08000000000004,
+        "end": 485.56
+      },
+      {
+        "word": "right?",
+        "start": 485.56,
+        "end": 485.88
+      }
+    ]
+  },
+  {
+    "start": 485.88,
+    "end": 488.92,
+    "text": "And you end up with the same thing with AI governance.",
+    "words": [
+      {
+        "word": "And",
+        "start": 485.88,
+        "end": 486.12
+      },
+      {
+        "word": "you",
+        "start": 486.12,
+        "end": 486.2
+      },
+      {
+        "word": "end",
+        "start": 486.28,
+        "end": 486.35999999999996
+      },
+      {
+        "word": "up",
+        "start": 486.44,
+        "end": 486.52
+      },
+      {
+        "word": "with",
+        "start": 486.6,
+        "end": 486.68
+      },
+      {
+        "word": "the",
+        "start": 486.84000000000003,
+        "end": 486.92
+      },
+      {
+        "word": "same",
+        "start": 486.92,
+        "end": 487.16
+      },
+      {
+        "word": "thing",
+        "start": 487.15999999999997,
+        "end": 487.48
+      },
+      {
+        "word": "with",
+        "start": 487.48,
+        "end": 487.72
+      },
+      {
+        "word": "AI",
+        "start": 487.72,
+        "end": 488.12000000000006
+      },
+      {
+        "word": "governance.",
+        "start": 488.12,
+        "end": 488.92
+      }
+    ]
+  },
+  {
+    "start": 488.92,
+    "end": 530.5200000000001,
+    "text": "Sometimes, what makes good governance versus the stupid take off your shoes version?",
+    "words": [
+      {
+        "word": "Sometimes,",
+        "start": 488.92,
+        "end": 489.8
+      },
+      {
+        "word": "what",
+        "start": 489.8,
+        "end": 490.04
+      },
+      {
+        "word": "makes",
+        "start": 490.12,
+        "end": 490.52
+      },
+      {
+        "word": "good",
+        "start": 490.52,
+        "end": 490.68
+      },
+      {
+        "word": "governance",
+        "start": 490.68,
+        "end": 491.32000000000005
+      },
+      {
+        "word": "versus",
+        "start": 491.32,
+        "end": 491.64000000000004
+      },
+      {
+        "word": "the",
+        "start": 491.64,
+        "end": 491.8
+      },
+      {
+        "word": "stupid",
+        "start": 491.8,
+        "end": 492.11999999999995
+      },
+      {
+        "word": "take",
+        "start": 492.28,
+        "end": 492.6
+      },
+      {
+        "word": "off",
+        "start": 492.6,
+        "end": 492.68
+      },
+      {
+        "word": "your",
+        "start": 492.84000000000003,
+        "end": 492.92
+      },
+      {
+        "word": "shoes",
+        "start": 493.0,
+        "end": 493.32
+      },
+      {
+        "word": "version?",
+        "start": 493.48,
+        "end": 530.5200000000001
+      }
+    ]
+  },
+  {
+    "start": 532.28,
+    "end": 544.52,
+    "text": "Another stat that I saw from recently was that ninety-five percent of security leaders doubt they could detect or contain AI misuse in their org.",
+    "words": [
+      {
+        "word": "Another",
+        "start": 532.28,
+        "end": 532.9200000000001
+      },
+      {
+        "word": "stat",
+        "start": 532.9200000000001,
+        "end": 533.2400000000001
+      },
+      {
+        "word": "that",
+        "start": 533.24,
+        "end": 533.4
+      },
+      {
+        "word": "I",
+        "start": 533.4,
+        "end": 533.64
+      },
+      {
+        "word": "saw",
+        "start": 533.64,
+        "end": 534.2800000000001
+      },
+      {
+        "word": "from",
+        "start": 534.28,
+        "end": 534.6
+      },
+      {
+        "word": "recently",
+        "start": 536.04,
+        "end": 536.76
+      },
+      {
+        "word": "was",
+        "start": 536.9200000000001,
+        "end": 537.1600000000001
+      },
+      {
+        "word": "that",
+        "start": 537.16,
+        "end": 537.4
+      },
+      {
+        "word": "ninety-five",
+        "start": 537.4,
+        "end": 538.04
+      },
+      {
+        "word": "percent",
+        "start": 538.04,
+        "end": 538.36
+      },
+      {
+        "word": "of",
+        "start": 538.36,
+        "end": 538.6
+      },
+      {
+        "word": "security",
+        "start": 538.6,
+        "end": 539.08
+      },
+      {
+        "word": "leaders",
+        "start": 539.08,
+        "end": 539.72
+      },
+      {
+        "word": "doubt",
+        "start": 539.72,
+        "end": 540.12
+      },
+      {
+        "word": "they",
+        "start": 540.12,
+        "end": 540.44
+      },
+      {
+        "word": "could",
+        "start": 540.44,
+        "end": 540.7600000000001
+      },
+      {
+        "word": "detect",
+        "start": 540.76,
+        "end": 541.4
+      },
+      {
+        "word": "or",
+        "start": 541.64,
+        "end": 541.88
+      },
+      {
+        "word": "contain",
+        "start": 541.88,
+        "end": 542.44
+      },
+      {
+        "word": "AI",
+        "start": 542.44,
+        "end": 542.9200000000001
+      },
+      {
+        "word": "misuse",
+        "start": 542.9200000000001,
+        "end": 543.4000000000001
+      },
+      {
+        "word": "in",
+        "start": 543.4,
+        "end": 543.56
+      },
+      {
+        "word": "their",
+        "start": 543.56,
+        "end": 543.88
+      },
+      {
+        "word": "org.",
+        "start": 543.88,
+        "end": 544.52
+      }
+    ]
+  },
+  {
+    "start": 544.52,
+    "end": 549.48,
+    "text": "That basically means everybody but the folks who click the long answer by mistake.",
+    "words": [
+      {
+        "word": "That",
+        "start": 544.52,
+        "end": 544.84
+      },
+      {
+        "word": "basically",
+        "start": 544.84,
+        "end": 545.4000000000001
+      },
+      {
+        "word": "means",
+        "start": 545.4,
+        "end": 545.8
+      },
+      {
+        "word": "everybody",
+        "start": 545.8,
+        "end": 546.2
+      },
+      {
+        "word": "but",
+        "start": 546.28,
+        "end": 546.4399999999999
+      },
+      {
+        "word": "the",
+        "start": 546.44,
+        "end": 546.5200000000001
+      },
+      {
+        "word": "folks",
+        "start": 546.52,
+        "end": 546.76
+      },
+      {
+        "word": "who",
+        "start": 546.76,
+        "end": 546.92
+      },
+      {
+        "word": "click",
+        "start": 546.9200000000001,
+        "end": 547.2399999999999
+      },
+      {
+        "word": "the",
+        "start": 547.3199999999999,
+        "end": 547.4799999999999
+      },
+      {
+        "word": "long",
+        "start": 547.48,
+        "end": 547.5600000000001
+      },
+      {
+        "word": "answer",
+        "start": 547.72,
+        "end": 548.12
+      },
+      {
+        "word": "by",
+        "start": 548.12,
+        "end": 548.36
+      },
+      {
+        "word": "mistake.",
+        "start": 548.36,
+        "end": 549.48
+      }
+    ]
+  },
+  {
+    "start": 549.48,
+    "end": 555.8000000000001,
+    "text": "Um the core issue is that AI agents act too fast, right?",
+    "words": [
+      {
+        "word": "Um",
+        "start": 549.48,
+        "end": 549.8000000000001
+      },
+      {
+        "word": "the",
+        "start": 550.2,
+        "end": 550.5200000000001
+      },
+      {
+        "word": "core",
+        "start": 550.52,
+        "end": 550.84
+      },
+      {
+        "word": "issue",
+        "start": 550.84,
+        "end": 551.16
+      },
+      {
+        "word": "is",
+        "start": 551.1600000000001,
+        "end": 551.32
+      },
+      {
+        "word": "that",
+        "start": 551.3199999999999,
+        "end": 551.4799999999999
+      },
+      {
+        "word": "AI",
+        "start": 551.48,
+        "end": 551.88
+      },
+      {
+        "word": "agents",
+        "start": 551.88,
+        "end": 552.5200000000001
+      },
+      {
+        "word": "act",
+        "start": 553.1600000000001,
+        "end": 553.8000000000001
+      },
+      {
+        "word": "too",
+        "start": 554.04,
+        "end": 554.6
+      },
+      {
+        "word": "fast,",
+        "start": 554.6,
+        "end": 555.4000000000001
+      },
+      {
+        "word": "right?",
+        "start": 555.4,
+        "end": 555.8000000000001
+      }
+    ]
+  },
+  {
+    "start": 555.8,
+    "end": 557.8,
+    "text": "It's machine speed.",
+    "words": [
+      {
+        "word": "It's",
+        "start": 555.8,
+        "end": 556.2
+      },
+      {
+        "word": "machine",
+        "start": 556.2,
+        "end": 556.84
+      },
+      {
+        "word": "speed.",
+        "start": 556.84,
+        "end": 557.8
+      }
+    ]
+  },
+  {
+    "start": 560.04,
+    "end": 584.9200000000001,
+    "text": "What does actually truly auditable AI look like so you can at least contain the problem after it's happened?",
+    "words": [
+      {
+        "word": "What",
+        "start": 560.04,
+        "end": 560.6
+      },
+      {
+        "word": "does",
+        "start": 560.6,
+        "end": 561.2400000000001
+      },
+      {
+        "word": "actually",
+        "start": 561.56,
+        "end": 562.12
+      },
+      {
+        "word": "truly",
+        "start": 562.44,
+        "end": 563.0
+      },
+      {
+        "word": "auditable",
+        "start": 563.0,
+        "end": 563.96
+      },
+      {
+        "word": "AI",
+        "start": 563.96,
+        "end": 564.6
+      },
+      {
+        "word": "look",
+        "start": 564.6,
+        "end": 564.9200000000001
+      },
+      {
+        "word": "like",
+        "start": 564.9200000000001,
+        "end": 565.2400000000001
+      },
+      {
+        "word": "so",
+        "start": 565.4000000000001,
+        "end": 565.7200000000001
+      },
+      {
+        "word": "you",
+        "start": 565.72,
+        "end": 565.96
+      },
+      {
+        "word": "can",
+        "start": 565.96,
+        "end": 566.2
+      },
+      {
+        "word": "at",
+        "start": 566.2,
+        "end": 566.44
+      },
+      {
+        "word": "least",
+        "start": 566.44,
+        "end": 567.0000000000001
+      },
+      {
+        "word": "contain",
+        "start": 567.0,
+        "end": 567.64
+      },
+      {
+        "word": "the",
+        "start": 567.64,
+        "end": 567.96
+      },
+      {
+        "word": "problem",
+        "start": 567.96,
+        "end": 568.2800000000001
+      },
+      {
+        "word": "after",
+        "start": 568.28,
+        "end": 568.6800000000001
+      },
+      {
+        "word": "it's",
+        "start": 568.6800000000001,
+        "end": 569.0000000000001
+      },
+      {
+        "word": "happened?",
+        "start": 569.0,
+        "end": 584.9200000000001
+      }
+    ]
+  },
+  {
+    "start": 640.0,
+    "end": 644.5600000000001,
+    "text": "Um you actually mentioned you were at RSAC twenty twenty six.",
+    "words": [
+      {
+        "word": "Um",
+        "start": 640.0,
+        "end": 640.32
+      },
+      {
+        "word": "you",
+        "start": 640.96,
+        "end": 641.2800000000001
+      },
+      {
+        "word": "actually",
+        "start": 641.28,
+        "end": 641.6
+      },
+      {
+        "word": "mentioned",
+        "start": 641.6,
+        "end": 642.0
+      },
+      {
+        "word": "you",
+        "start": 642.0,
+        "end": 642.08
+      },
+      {
+        "word": "were",
+        "start": 642.08,
+        "end": 642.24
+      },
+      {
+        "word": "at",
+        "start": 642.24,
+        "end": 642.4
+      },
+      {
+        "word": "RSAC",
+        "start": 642.4,
+        "end": 643.1999999999999
+      },
+      {
+        "word": "twenty",
+        "start": 643.2,
+        "end": 643.36
+      },
+      {
+        "word": "twenty",
+        "start": 643.52,
+        "end": 643.84
+      },
+      {
+        "word": "six.",
+        "start": 643.84,
+        "end": 644.5600000000001
+      }
+    ]
+  },
+  {
+    "start": 644.56,
+    "end": 653.2,
+    "text": "Um I noticed that was interesting is there was almost no US government presence, right?",
+    "words": [
+      {
+        "word": "Um",
+        "start": 644.56,
+        "end": 644.88
+      },
+      {
+        "word": "I",
+        "start": 646.4,
+        "end": 646.56
+      },
+      {
+        "word": "noticed",
+        "start": 646.56,
+        "end": 647.04
+      },
+      {
+        "word": "that",
+        "start": 647.04,
+        "end": 647.36
+      },
+      {
+        "word": "was",
+        "start": 647.36,
+        "end": 647.6800000000001
+      },
+      {
+        "word": "interesting",
+        "start": 647.6800000000001,
+        "end": 648.6400000000001
+      },
+      {
+        "word": "is",
+        "start": 649.76,
+        "end": 650.08
+      },
+      {
+        "word": "there",
+        "start": 650.72,
+        "end": 651.0400000000001
+      },
+      {
+        "word": "was",
+        "start": 651.04,
+        "end": 651.1999999999999
+      },
+      {
+        "word": "almost",
+        "start": 651.2,
+        "end": 651.52
+      },
+      {
+        "word": "no",
+        "start": 651.52,
+        "end": 651.68
+      },
+      {
+        "word": "US",
+        "start": 651.6800000000001,
+        "end": 652.0799999999999
+      },
+      {
+        "word": "government",
+        "start": 652.08,
+        "end": 652.56
+      },
+      {
+        "word": "presence,",
+        "start": 652.56,
+        "end": 652.96
+      },
+      {
+        "word": "right?",
+        "start": 652.96,
+        "end": 653.2
+      }
+    ]
+  },
+  {
+    "start": 653.2,
+    "end": 659.2,
+    "text": "You saw some EU entities and ENSA entities there.",
+    "words": [
+      {
+        "word": "You",
+        "start": 653.2,
+        "end": 653.36
+      },
+      {
+        "word": "saw",
+        "start": 653.36,
+        "end": 653.76
+      },
+      {
+        "word": "some",
+        "start": 653.76,
+        "end": 654.08
+      },
+      {
+        "word": "EU",
+        "start": 654.08,
+        "end": 654.4000000000001
+      },
+      {
+        "word": "entities",
+        "start": 654.72,
+        "end": 655.6
+      },
+      {
+        "word": "and",
+        "start": 655.84,
+        "end": 656.1600000000001
+      },
+      {
+        "word": "ENSA",
+        "start": 656.16,
+        "end": 656.64
+      },
+      {
+        "word": "entities",
+        "start": 657.04,
+        "end": 657.6
+      },
+      {
+        "word": "there.",
+        "start": 657.84,
+        "end": 659.2
+      }
+    ]
+  },
+  {
+    "start": 659.2,
+    "end": 673.84,
+    "text": "What does it mean for your enterprise clients, the big folks, when you see EU visible taking a lead, US doesn't seem to care, the regulatory environment is fractured?",
+    "words": [
+      {
+        "word": "What",
+        "start": 659.2,
+        "end": 659.52
+      },
+      {
+        "word": "does",
+        "start": 659.52,
+        "end": 659.92
+      },
+      {
+        "word": "it",
+        "start": 659.92,
+        "end": 660.24
+      },
+      {
+        "word": "mean",
+        "start": 660.24,
+        "end": 660.88
+      },
+      {
+        "word": "for",
+        "start": 661.76,
+        "end": 662.08
+      },
+      {
+        "word": "your",
+        "start": 662.08,
+        "end": 662.32
+      },
+      {
+        "word": "enterprise",
+        "start": 662.32,
+        "end": 662.8
+      },
+      {
+        "word": "clients,",
+        "start": 662.8,
+        "end": 663.2
+      },
+      {
+        "word": "the",
+        "start": 663.2,
+        "end": 663.36
+      },
+      {
+        "word": "big",
+        "start": 663.36,
+        "end": 663.76
+      },
+      {
+        "word": "folks,",
+        "start": 663.76,
+        "end": 664.4
+      },
+      {
+        "word": "when",
+        "start": 664.4,
+        "end": 664.64
+      },
+      {
+        "word": "you",
+        "start": 664.64,
+        "end": 664.96
+      },
+      {
+        "word": "see",
+        "start": 664.96,
+        "end": 665.2800000000001
+      },
+      {
+        "word": "EU",
+        "start": 666.88,
+        "end": 667.2
+      },
+      {
+        "word": "visible",
+        "start": 667.6,
+        "end": 668.16
+      },
+      {
+        "word": "taking",
+        "start": 668.24,
+        "end": 668.56
+      },
+      {
+        "word": "a",
+        "start": 668.56,
+        "end": 668.7199999999999
+      },
+      {
+        "word": "lead,",
+        "start": 668.72,
+        "end": 669.0400000000001
+      },
+      {
+        "word": "US",
+        "start": 669.12,
+        "end": 669.6
+      },
+      {
+        "word": "doesn't",
+        "start": 669.76,
+        "end": 670.16
+      },
+      {
+        "word": "seem",
+        "start": 670.16,
+        "end": 670.4
+      },
+      {
+        "word": "to",
+        "start": 670.4,
+        "end": 670.64
+      },
+      {
+        "word": "care,",
+        "start": 670.64,
+        "end": 670.9599999999999
+      },
+      {
+        "word": "the",
+        "start": 670.96,
+        "end": 671.2
+      },
+      {
+        "word": "regulatory",
+        "start": 671.2,
+        "end": 671.84
+      },
+      {
+        "word": "environment",
+        "start": 671.84,
+        "end": 672.24
+      },
+      {
+        "word": "is",
+        "start": 672.24,
+        "end": 672.48
+      },
+      {
+        "word": "fractured?",
+        "start": 672.48,
+        "end": 673.84
+      }
+    ]
+  },
+  {
+    "start": 673.84,
+    "end": 682.3199999999999,
+    "text": "Uh the what you might expect compliance to look like at a statutory level is anybody's guess.",
+    "words": [
+      {
+        "word": "Uh",
+        "start": 673.84,
+        "end": 674.48
+      },
+      {
+        "word": "the",
+        "start": 675.36,
+        "end": 675.6800000000001
+      },
+      {
+        "word": "what",
+        "start": 676.0,
+        "end": 676.32
+      },
+      {
+        "word": "you",
+        "start": 676.32,
+        "end": 676.6400000000001
+      },
+      {
+        "word": "might",
+        "start": 676.64,
+        "end": 677.04
+      },
+      {
+        "word": "expect",
+        "start": 677.04,
+        "end": 677.6800000000001
+      },
+      {
+        "word": "compliance",
+        "start": 677.6800000000001,
+        "end": 678.3199999999999
+      },
+      {
+        "word": "to",
+        "start": 678.32,
+        "end": 678.48
+      },
+      {
+        "word": "look",
+        "start": 678.48,
+        "end": 678.72
+      },
+      {
+        "word": "like",
+        "start": 678.72,
+        "end": 678.88
+      },
+      {
+        "word": "at",
+        "start": 678.88,
+        "end": 679.04
+      },
+      {
+        "word": "a",
+        "start": 679.04,
+        "end": 679.28
+      },
+      {
+        "word": "statutory",
+        "start": 679.28,
+        "end": 680.32
+      },
+      {
+        "word": "level",
+        "start": 680.32,
+        "end": 680.7199999999999
+      },
+      {
+        "word": "is",
+        "start": 680.96,
+        "end": 681.2
+      },
+      {
+        "word": "anybody's",
+        "start": 681.2,
+        "end": 681.84
+      },
+      {
+        "word": "guess.",
+        "start": 681.84,
+        "end": 682.3199999999999
+      }
+    ]
+  },
+  {
+    "start": 682.32,
+    "end": 696.5600000000001,
+    "text": "What do you have to do for governed AI to be intelligent in the wake of there's no guidance coming from the states yet?",
+    "words": [
+      {
+        "word": "What",
+        "start": 682.32,
+        "end": 682.64
+      },
+      {
+        "word": "do",
+        "start": 682.64,
+        "end": 682.72
+      },
+      {
+        "word": "you",
+        "start": 682.72,
+        "end": 682.96
+      },
+      {
+        "word": "have",
+        "start": 682.96,
+        "end": 683.2800000000001
+      },
+      {
+        "word": "to",
+        "start": 683.28,
+        "end": 683.6
+      },
+      {
+        "word": "do",
+        "start": 683.6,
+        "end": 683.9200000000001
+      },
+      {
+        "word": "for",
+        "start": 684.56,
+        "end": 684.88
+      },
+      {
+        "word": "governed",
+        "start": 684.88,
+        "end": 685.52
+      },
+      {
+        "word": "AI",
+        "start": 685.52,
+        "end": 686.08
+      },
+      {
+        "word": "to",
+        "start": 686.24,
+        "end": 686.5600000000001
+      },
+      {
+        "word": "be",
+        "start": 686.56,
+        "end": 686.8
+      },
+      {
+        "word": "intelligent",
+        "start": 686.8,
+        "end": 687.36
+      },
+      {
+        "word": "in",
+        "start": 687.44,
+        "end": 687.6
+      },
+      {
+        "word": "the",
+        "start": 687.6,
+        "end": 687.84
+      },
+      {
+        "word": "wake",
+        "start": 687.84,
+        "end": 688.32
+      },
+      {
+        "word": "of",
+        "start": 688.32,
+        "end": 688.5600000000001
+      },
+      {
+        "word": "there's",
+        "start": 688.8,
+        "end": 689.2
+      },
+      {
+        "word": "no",
+        "start": 689.2,
+        "end": 689.44
+      },
+      {
+        "word": "guidance",
+        "start": 689.44,
+        "end": 690.0
+      },
+      {
+        "word": "coming",
+        "start": 690.0,
+        "end": 690.3199999999999
+      },
+      {
+        "word": "from",
+        "start": 690.32,
+        "end": 690.48
+      },
+      {
+        "word": "the",
+        "start": 690.48,
+        "end": 690.64
+      },
+      {
+        "word": "states",
+        "start": 690.64,
+        "end": 691.36
+      },
+      {
+        "word": "yet?",
+        "start": 691.36,
+        "end": 696.5600000000001
+      }
+    ]
+  },
+  {
+    "start": 696.56,
+    "end": 707.7600000000001,
+    "text": "So there's basically very little government indication in what le like and how you should be using AI within the bounds of a legal framework.",
+    "words": [
+      {
+        "word": "So",
+        "start": 696.56,
+        "end": 696.8
+      },
+      {
+        "word": "there's",
+        "start": 696.88,
+        "end": 697.36
+      },
+      {
+        "word": "basically",
+        "start": 697.36,
+        "end": 697.84
+      },
+      {
+        "word": "very",
+        "start": 697.84,
+        "end": 698.0
+      },
+      {
+        "word": "little",
+        "start": 698.0,
+        "end": 698.24
+      },
+      {
+        "word": "government",
+        "start": 698.24,
+        "end": 698.88
+      },
+      {
+        "word": "indication",
+        "start": 698.88,
+        "end": 699.36
+      },
+      {
+        "word": "in",
+        "start": 699.52,
+        "end": 699.84
+      },
+      {
+        "word": "what",
+        "start": 699.84,
+        "end": 700.1600000000001
+      },
+      {
+        "word": "le",
+        "start": 701.44,
+        "end": 701.6
+      },
+      {
+        "word": "like",
+        "start": 702.0,
+        "end": 702.24
+      },
+      {
+        "word": "and",
+        "start": 702.64,
+        "end": 702.96
+      },
+      {
+        "word": "how",
+        "start": 702.96,
+        "end": 703.2
+      },
+      {
+        "word": "you",
+        "start": 703.2,
+        "end": 703.36
+      },
+      {
+        "word": "should",
+        "start": 703.36,
+        "end": 703.6
+      },
+      {
+        "word": "be",
+        "start": 703.6,
+        "end": 703.76
+      },
+      {
+        "word": "using",
+        "start": 703.76,
+        "end": 704.1600000000001
+      },
+      {
+        "word": "AI",
+        "start": 704.16,
+        "end": 704.8000000000001
+      },
+      {
+        "word": "within",
+        "start": 705.84,
+        "end": 706.24
+      },
+      {
+        "word": "the",
+        "start": 706.24,
+        "end": 706.32
+      },
+      {
+        "word": "bounds",
+        "start": 706.3199999999999,
+        "end": 706.64
+      },
+      {
+        "word": "of",
+        "start": 706.64,
+        "end": 706.8
+      },
+      {
+        "word": "a",
+        "start": 706.8,
+        "end": 706.88
+      },
+      {
+        "word": "legal",
+        "start": 706.88,
+        "end": 707.1999999999999
+      },
+      {
+        "word": "framework.",
+        "start": 707.2,
+        "end": 707.7600000000001
+      }
+    ]
+  },
+  {
+    "start": 707.76,
+    "end": 709.28,
+    "text": "There's not a lot there.",
+    "words": [
+      {
+        "word": "There's",
+        "start": 707.76,
+        "end": 708.08
+      },
+      {
+        "word": "not",
+        "start": 708.08,
+        "end": 708.24
+      },
+      {
+        "word": "a",
+        "start": 708.24,
+        "end": 708.4
+      },
+      {
+        "word": "lot",
+        "start": 708.4,
+        "end": 708.72
+      },
+      {
+        "word": "there.",
+        "start": 708.72,
+        "end": 709.28
+      }
+    ]
+  },
+  {
+    "start": 855.56,
+    "end": 954.0400000000001,
+    "text": "Team conditioned to not do these workarounds, to not go behind your back, but to work within your governed framework, even if it does put some rules up where they're used to just like a cowboy going at it and then, you know, not telling anybody or not even asking for permission?",
+    "words": [
+      {
+        "word": "Team",
+        "start": 855.56,
+        "end": 856.2
+      },
+      {
+        "word": "conditioned",
+        "start": 856.52,
+        "end": 857.3199999999999
+      },
+      {
+        "word": "to",
+        "start": 857.32,
+        "end": 857.6400000000001
+      },
+      {
+        "word": "not",
+        "start": 857.64,
+        "end": 857.88
+      },
+      {
+        "word": "do",
+        "start": 857.88,
+        "end": 858.2
+      },
+      {
+        "word": "these",
+        "start": 858.2,
+        "end": 858.44
+      },
+      {
+        "word": "workarounds,",
+        "start": 858.44,
+        "end": 860.12
+      },
+      {
+        "word": "to",
+        "start": 860.12,
+        "end": 860.44
+      },
+      {
+        "word": "not",
+        "start": 860.44,
+        "end": 860.6800000000001
+      },
+      {
+        "word": "go",
+        "start": 860.68,
+        "end": 860.8399999999999
+      },
+      {
+        "word": "behind",
+        "start": 860.84,
+        "end": 861.32
+      },
+      {
+        "word": "your",
+        "start": 861.32,
+        "end": 861.6400000000001
+      },
+      {
+        "word": "back,",
+        "start": 861.64,
+        "end": 862.5200000000001
+      },
+      {
+        "word": "but",
+        "start": 862.52,
+        "end": 862.84
+      },
+      {
+        "word": "to",
+        "start": 862.84,
+        "end": 863.1600000000001
+      },
+      {
+        "word": "work",
+        "start": 863.16,
+        "end": 863.48
+      },
+      {
+        "word": "within",
+        "start": 863.48,
+        "end": 864.12
+      },
+      {
+        "word": "your",
+        "start": 864.12,
+        "end": 864.44
+      },
+      {
+        "word": "governed",
+        "start": 864.44,
+        "end": 865.24
+      },
+      {
+        "word": "framework,",
+        "start": 865.24,
+        "end": 866.44
+      },
+      {
+        "word": "even",
+        "start": 866.44,
+        "end": 866.7600000000001
+      },
+      {
+        "word": "if",
+        "start": 866.76,
+        "end": 867.0
+      },
+      {
+        "word": "it",
+        "start": 867.0,
+        "end": 867.24
+      },
+      {
+        "word": "does",
+        "start": 867.24,
+        "end": 867.8000000000001
+      },
+      {
+        "word": "put",
+        "start": 867.8,
+        "end": 868.12
+      },
+      {
+        "word": "some",
+        "start": 868.12,
+        "end": 868.44
+      },
+      {
+        "word": "rules",
+        "start": 868.6,
+        "end": 869.24
+      },
+      {
+        "word": "up",
+        "start": 869.24,
+        "end": 869.48
+      },
+      {
+        "word": "where",
+        "start": 869.64,
+        "end": 869.96
+      },
+      {
+        "word": "they're",
+        "start": 869.96,
+        "end": 870.2
+      },
+      {
+        "word": "used",
+        "start": 870.2,
+        "end": 870.44
+      },
+      {
+        "word": "to",
+        "start": 870.44,
+        "end": 870.5200000000001
+      },
+      {
+        "word": "just",
+        "start": 870.6,
+        "end": 870.84
+      },
+      {
+        "word": "like",
+        "start": 870.84,
+        "end": 871.0
+      },
+      {
+        "word": "a",
+        "start": 871.0,
+        "end": 871.08
+      },
+      {
+        "word": "cowboy",
+        "start": 871.08,
+        "end": 871.64
+      },
+      {
+        "word": "going",
+        "start": 871.64,
+        "end": 871.96
+      },
+      {
+        "word": "at",
+        "start": 871.96,
+        "end": 872.12
+      },
+      {
+        "word": "it",
+        "start": 872.12,
+        "end": 872.28
+      },
+      {
+        "word": "and",
+        "start": 872.36,
+        "end": 872.6800000000001
+      },
+      {
+        "word": "then,",
+        "start": 872.68,
+        "end": 872.9200000000001
+      },
+      {
+        "word": "you",
+        "start": 872.92,
+        "end": 873.0799999999999
+      },
+      {
+        "word": "know,",
+        "start": 873.08,
+        "end": 873.32
+      },
+      {
+        "word": "not",
+        "start": 873.32,
+        "end": 873.5600000000001
+      },
+      {
+        "word": "telling",
+        "start": 873.56,
+        "end": 873.88
+      },
+      {
+        "word": "anybody",
+        "start": 873.88,
+        "end": 874.2
+      },
+      {
+        "word": "or",
+        "start": 874.28,
+        "end": 874.4399999999999
+      },
+      {
+        "word": "not",
+        "start": 874.44,
+        "end": 874.6
+      },
+      {
+        "word": "even",
+        "start": 874.6,
+        "end": 874.84
+      },
+      {
+        "word": "asking",
+        "start": 874.84,
+        "end": 875.24
+      },
+      {
+        "word": "for",
+        "start": 875.24,
+        "end": 875.48
+      },
+      {
+        "word": "permission?",
+        "start": 875.48,
+        "end": 954.0400000000001
+      }
+    ]
+  },
+  {
+    "start": 954.04,
+    "end": 955.24,
+    "text": "Gotcha.",
+    "words": [
+      {
+        "word": "Gotcha.",
+        "start": 954.04,
+        "end": 955.24
+      }
+    ]
+  },
+  {
+    "start": 955.24,
+    "end": 962.5200000000001,
+    "text": "Um seventy percent of CISOs now say that AI governance is part of their job.",
+    "words": [
+      {
+        "word": "Um",
+        "start": 955.24,
+        "end": 955.5600000000001
+      },
+      {
+        "word": "seventy",
+        "start": 956.44,
+        "end": 957.16
+      },
+      {
+        "word": "percent",
+        "start": 957.16,
+        "end": 957.64
+      },
+      {
+        "word": "of",
+        "start": 957.64,
+        "end": 957.96
+      },
+      {
+        "word": "CISOs",
+        "start": 957.96,
+        "end": 958.84
+      },
+      {
+        "word": "now",
+        "start": 958.92,
+        "end": 959.24
+      },
+      {
+        "word": "say",
+        "start": 959.24,
+        "end": 959.4
+      },
+      {
+        "word": "that",
+        "start": 959.4,
+        "end": 959.64
+      },
+      {
+        "word": "AI",
+        "start": 959.64,
+        "end": 960.04
+      },
+      {
+        "word": "governance",
+        "start": 960.04,
+        "end": 960.6800000000001
+      },
+      {
+        "word": "is",
+        "start": 960.6800000000001,
+        "end": 960.9200000000001
+      },
+      {
+        "word": "part",
+        "start": 960.92,
+        "end": 961.0799999999999
+      },
+      {
+        "word": "of",
+        "start": 961.08,
+        "end": 961.32
+      },
+      {
+        "word": "their",
+        "start": 961.32,
+        "end": 961.5600000000001
+      },
+      {
+        "word": "job.",
+        "start": 961.56,
+        "end": 962.5200000000001
+      }
+    ]
+  },
+  {
+    "start": 962.52,
+    "end": 964.12,
+    "text": "But we just mentioned, right?",
+    "words": [
+      {
+        "word": "But",
+        "start": 962.52,
+        "end": 962.84
+      },
+      {
+        "word": "we",
+        "start": 962.84,
+        "end": 963.0
+      },
+      {
+        "word": "just",
+        "start": 963.0,
+        "end": 963.16
+      },
+      {
+        "word": "mentioned,",
+        "start": 963.16,
+        "end": 963.7199999999999
+      },
+      {
+        "word": "right?",
+        "start": 963.72,
+        "end": 964.12
+      }
+    ]
+  },
+  {
+    "start": 964.12,
+    "end": 969.4000000000001,
+    "text": "Ninety-one percent don't think they have proper visibility.",
+    "words": [
+      {
+        "word": "Ninety-one",
+        "start": 964.12,
+        "end": 964.6800000000001
+      },
+      {
+        "word": "percent",
+        "start": 965.0,
+        "end": 965.6400000000001
+      },
+      {
+        "word": "don't",
+        "start": 966.12,
+        "end": 966.52
+      },
+      {
+        "word": "think",
+        "start": 966.52,
+        "end": 966.76
+      },
+      {
+        "word": "they",
+        "start": 966.76,
+        "end": 967.08
+      },
+      {
+        "word": "have",
+        "start": 967.08,
+        "end": 967.24
+      },
+      {
+        "word": "proper",
+        "start": 967.24,
+        "end": 967.72
+      },
+      {
+        "word": "visibility.",
+        "start": 967.72,
+        "end": 969.4000000000001
+      }
+    ]
+  },
+  {
+    "start": 969.4,
+    "end": 982.12,
+    "text": "Most security frameworks, ISO nine thousand one compliance, SOC two, whatever, they're not really keeping up with the speed at which I think AI is moving.",
+    "words": [
+      {
+        "word": "Most",
+        "start": 969.4,
+        "end": 969.96
+      },
+      {
+        "word": "security",
+        "start": 969.96,
+        "end": 970.52
+      },
+      {
+        "word": "frameworks,",
+        "start": 970.52,
+        "end": 971.72
+      },
+      {
+        "word": "ISO",
+        "start": 971.72,
+        "end": 972.28
+      },
+      {
+        "word": "nine",
+        "start": 972.28,
+        "end": 972.52
+      },
+      {
+        "word": "thousand",
+        "start": 972.52,
+        "end": 972.7600000000001
+      },
+      {
+        "word": "one",
+        "start": 972.92,
+        "end": 973.0
+      },
+      {
+        "word": "compliance,",
+        "start": 973.16,
+        "end": 973.88
+      },
+      {
+        "word": "SOC",
+        "start": 973.88,
+        "end": 974.12
+      },
+      {
+        "word": "two,",
+        "start": 974.28,
+        "end": 974.6800000000001
+      },
+      {
+        "word": "whatever,",
+        "start": 974.6800000000001,
+        "end": 975.8000000000001
+      },
+      {
+        "word": "they're",
+        "start": 975.8,
+        "end": 976.44
+      },
+      {
+        "word": "not",
+        "start": 976.44,
+        "end": 976.7600000000001
+      },
+      {
+        "word": "really",
+        "start": 976.76,
+        "end": 977.08
+      },
+      {
+        "word": "keeping",
+        "start": 977.56,
+        "end": 978.2
+      },
+      {
+        "word": "up",
+        "start": 978.2,
+        "end": 978.5200000000001
+      },
+      {
+        "word": "with",
+        "start": 978.52,
+        "end": 978.68
+      },
+      {
+        "word": "the",
+        "start": 978.6800000000001,
+        "end": 978.9200000000001
+      },
+      {
+        "word": "speed",
+        "start": 978.92,
+        "end": 979.24
+      },
+      {
+        "word": "at",
+        "start": 979.24,
+        "end": 979.32
+      },
+      {
+        "word": "which",
+        "start": 979.32,
+        "end": 979.48
+      },
+      {
+        "word": "I",
+        "start": 979.56,
+        "end": 979.7199999999999
+      },
+      {
+        "word": "think",
+        "start": 979.88,
+        "end": 979.96
+      },
+      {
+        "word": "AI",
+        "start": 980.04,
+        "end": 980.4399999999999
+      },
+      {
+        "word": "is",
+        "start": 980.44,
+        "end": 980.6
+      },
+      {
+        "word": "moving.",
+        "start": 980.6,
+        "end": 982.12
+      }
+    ]
+  },
+  {
+    "start": 982.12,
+    "end": 1029.0,
+    "text": "Uh how does the CISO need to move beyond that credentialism for security to actually be safe for their organs?",
+    "words": [
+      {
+        "word": "Uh",
+        "start": 982.12,
+        "end": 982.7600000000001
+      },
+      {
+        "word": "how",
+        "start": 983.48,
+        "end": 983.8000000000001
+      },
+      {
+        "word": "does",
+        "start": 984.04,
+        "end": 984.6800000000001
+      },
+      {
+        "word": "the",
+        "start": 985.64,
+        "end": 985.88
+      },
+      {
+        "word": "CISO",
+        "start": 986.12,
+        "end": 987.24
+      },
+      {
+        "word": "need",
+        "start": 988.2,
+        "end": 988.5200000000001
+      },
+      {
+        "word": "to",
+        "start": 988.52,
+        "end": 988.84
+      },
+      {
+        "word": "move",
+        "start": 988.84,
+        "end": 989.32
+      },
+      {
+        "word": "beyond",
+        "start": 989.3199999999999,
+        "end": 990.12
+      },
+      {
+        "word": "that",
+        "start": 990.12,
+        "end": 990.44
+      },
+      {
+        "word": "credentialism",
+        "start": 990.44,
+        "end": 991.72
+      },
+      {
+        "word": "for",
+        "start": 991.72,
+        "end": 992.0400000000001
+      },
+      {
+        "word": "security",
+        "start": 992.04,
+        "end": 992.84
+      },
+      {
+        "word": "to",
+        "start": 993.08,
+        "end": 993.32
+      },
+      {
+        "word": "actually",
+        "start": 993.3199999999999,
+        "end": 993.7199999999999
+      },
+      {
+        "word": "be",
+        "start": 993.72,
+        "end": 993.96
+      },
+      {
+        "word": "safe",
+        "start": 993.96,
+        "end": 994.28
+      },
+      {
+        "word": "for",
+        "start": 994.28,
+        "end": 994.52
+      },
+      {
+        "word": "their",
+        "start": 994.52,
+        "end": 994.84
+      },
+      {
+        "word": "organs?",
+        "start": 994.84,
+        "end": 1029.0
+      }
+    ]
+  },
+  {
+    "start": 1105.4,
+    "end": 1121.08,
+    "text": "Uh as people use agents, they are like the humans in your org are not used to the speed with which agents operate and the speed with which errors propagate.",
+    "words": [
+      {
+        "word": "Uh",
+        "start": 1105.4,
+        "end": 1106.04
+      },
+      {
+        "word": "as",
+        "start": 1106.68,
+        "end": 1107.0
+      },
+      {
+        "word": "people",
+        "start": 1107.24,
+        "end": 1107.56
+      },
+      {
+        "word": "use",
+        "start": 1107.56,
+        "end": 1107.8
+      },
+      {
+        "word": "agents,",
+        "start": 1107.8,
+        "end": 1109.32
+      },
+      {
+        "word": "they",
+        "start": 1109.32,
+        "end": 1109.6399999999999
+      },
+      {
+        "word": "are",
+        "start": 1109.96,
+        "end": 1110.28
+      },
+      {
+        "word": "like",
+        "start": 1110.52,
+        "end": 1110.84
+      },
+      {
+        "word": "the",
+        "start": 1111.24,
+        "end": 1111.56
+      },
+      {
+        "word": "humans",
+        "start": 1111.56,
+        "end": 1112.1200000000001
+      },
+      {
+        "word": "in",
+        "start": 1112.12,
+        "end": 1112.4399999999998
+      },
+      {
+        "word": "your",
+        "start": 1112.44,
+        "end": 1112.76
+      },
+      {
+        "word": "org",
+        "start": 1112.76,
+        "end": 1113.16
+      },
+      {
+        "word": "are",
+        "start": 1113.32,
+        "end": 1113.56
+      },
+      {
+        "word": "not",
+        "start": 1113.56,
+        "end": 1113.8
+      },
+      {
+        "word": "used",
+        "start": 1113.8,
+        "end": 1114.1200000000001
+      },
+      {
+        "word": "to",
+        "start": 1114.12,
+        "end": 1114.36
+      },
+      {
+        "word": "the",
+        "start": 1114.3600000000001,
+        "end": 1114.68
+      },
+      {
+        "word": "speed",
+        "start": 1114.68,
+        "end": 1115.32
+      },
+      {
+        "word": "with",
+        "start": 1115.32,
+        "end": 1115.6399999999999
+      },
+      {
+        "word": "which",
+        "start": 1115.6399999999999,
+        "end": 1115.9599999999998
+      },
+      {
+        "word": "agents",
+        "start": 1116.12,
+        "end": 1116.76
+      },
+      {
+        "word": "operate",
+        "start": 1116.76,
+        "end": 1117.3999999999999
+      },
+      {
+        "word": "and",
+        "start": 1117.8,
+        "end": 1118.04
+      },
+      {
+        "word": "the",
+        "start": 1118.04,
+        "end": 1118.28
+      },
+      {
+        "word": "speed",
+        "start": 1118.28,
+        "end": 1118.68
+      },
+      {
+        "word": "with",
+        "start": 1118.68,
+        "end": 1118.92
+      },
+      {
+        "word": "which",
+        "start": 1118.92,
+        "end": 1119.24
+      },
+      {
+        "word": "errors",
+        "start": 1119.24,
+        "end": 1119.8799999999999
+      },
+      {
+        "word": "propagate.",
+        "start": 1119.88,
+        "end": 1121.08
+      }
+    ]
+  },
+  {
+    "start": 1121.08,
+    "end": 1127.7199999999998,
+    "text": "So when something goes wrong, it used to be you'd say, Oh, you didn't follow the spear fishing training, whatever, right?",
+    "words": [
+      {
+        "word": "So",
+        "start": 1121.08,
+        "end": 1121.32
+      },
+      {
+        "word": "when",
+        "start": 1121.4,
+        "end": 1121.64
+      },
+      {
+        "word": "something",
+        "start": 1121.6399999999999,
+        "end": 1121.96
+      },
+      {
+        "word": "goes",
+        "start": 1121.96,
+        "end": 1122.12
+      },
+      {
+        "word": "wrong,",
+        "start": 1122.12,
+        "end": 1122.52
+      },
+      {
+        "word": "it",
+        "start": 1122.52,
+        "end": 1122.68
+      },
+      {
+        "word": "used",
+        "start": 1122.68,
+        "end": 1122.92
+      },
+      {
+        "word": "to",
+        "start": 1122.92,
+        "end": 1123.0
+      },
+      {
+        "word": "be",
+        "start": 1123.0,
+        "end": 1123.08
+      },
+      {
+        "word": "you'd",
+        "start": 1123.16,
+        "end": 1123.3999999999999
+      },
+      {
+        "word": "say,",
+        "start": 1123.4,
+        "end": 1123.6399999999999
+      },
+      {
+        "word": "Oh,",
+        "start": 1123.6399999999999,
+        "end": 1123.96
+      },
+      {
+        "word": "you",
+        "start": 1123.96,
+        "end": 1124.1200000000001
+      },
+      {
+        "word": "didn't",
+        "start": 1124.12,
+        "end": 1124.3600000000001
+      },
+      {
+        "word": "follow",
+        "start": 1124.3600000000001,
+        "end": 1124.92
+      },
+      {
+        "word": "the",
+        "start": 1124.92,
+        "end": 1125.24
+      },
+      {
+        "word": "spear",
+        "start": 1125.24,
+        "end": 1125.96
+      },
+      {
+        "word": "fishing",
+        "start": 1125.96,
+        "end": 1126.3600000000001
+      },
+      {
+        "word": "training,",
+        "start": 1126.3600000000001,
+        "end": 1126.8400000000001
+      },
+      {
+        "word": "whatever,",
+        "start": 1126.8400000000001,
+        "end": 1127.4
+      },
+      {
+        "word": "right?",
+        "start": 1127.4,
+        "end": 1127.7199999999998
+      }
+    ]
+  },
+  {
+    "start": 1127.72,
+    "end": 1131.24,
+    "text": "Like, it's oh, we're gonna we're gonna blame you.",
+    "words": [
+      {
+        "word": "Like,",
+        "start": 1127.72,
+        "end": 1128.28
+      },
+      {
+        "word": "it's",
+        "start": 1128.28,
+        "end": 1128.68
+      },
+      {
+        "word": "oh,",
+        "start": 1128.8400000000001,
+        "end": 1129.08
+      },
+      {
+        "word": "we're",
+        "start": 1129.08,
+        "end": 1129.32
+      },
+      {
+        "word": "gonna",
+        "start": 1129.32,
+        "end": 1129.5600000000002
+      },
+      {
+        "word": "we're",
+        "start": 1129.6399999999999,
+        "end": 1129.8
+      },
+      {
+        "word": "gonna",
+        "start": 1129.8,
+        "end": 1130.04
+      },
+      {
+        "word": "blame",
+        "start": 1130.04,
+        "end": 1130.6
+      },
+      {
+        "word": "you.",
+        "start": 1130.6,
+        "end": 1131.24
+      }
+    ]
+  },
+  {
+    "start": 1131.24,
+    "end": 1155.0000000000002,
+    "text": "Are you really able to blame a human if an AI runs amuck in an ungoverned space?",
+    "words": [
+      {
+        "word": "Are",
+        "start": 1131.24,
+        "end": 1131.48
+      },
+      {
+        "word": "you",
+        "start": 1131.48,
+        "end": 1131.72
+      },
+      {
+        "word": "really",
+        "start": 1131.72,
+        "end": 1131.88
+      },
+      {
+        "word": "able",
+        "start": 1131.88,
+        "end": 1132.1200000000001
+      },
+      {
+        "word": "to",
+        "start": 1132.12,
+        "end": 1132.28
+      },
+      {
+        "word": "blame",
+        "start": 1132.28,
+        "end": 1132.6000000000001
+      },
+      {
+        "word": "a",
+        "start": 1132.6,
+        "end": 1132.76
+      },
+      {
+        "word": "human",
+        "start": 1132.76,
+        "end": 1133.0800000000002
+      },
+      {
+        "word": "if",
+        "start": 1133.08,
+        "end": 1133.32
+      },
+      {
+        "word": "an",
+        "start": 1133.32,
+        "end": 1133.56
+      },
+      {
+        "word": "AI",
+        "start": 1133.56,
+        "end": 1134.04
+      },
+      {
+        "word": "runs",
+        "start": 1134.04,
+        "end": 1134.3600000000001
+      },
+      {
+        "word": "amuck",
+        "start": 1134.3600000000001,
+        "end": 1135.0800000000002
+      },
+      {
+        "word": "in",
+        "start": 1135.08,
+        "end": 1135.24
+      },
+      {
+        "word": "an",
+        "start": 1135.24,
+        "end": 1135.4
+      },
+      {
+        "word": "ungoverned",
+        "start": 1135.4,
+        "end": 1136.36
+      },
+      {
+        "word": "space?",
+        "start": 1136.3600000000001,
+        "end": 1155.0000000000002
+      }
+    ]
+  },
+  {
+    "start": 1188.96,
+    "end": 1194.32,
+    "text": "You were talking about how systems were designed to flood you with notifications, right?",
+    "words": [
+      {
+        "word": "You",
+        "start": 1188.96,
+        "end": 1189.28
+      },
+      {
+        "word": "were",
+        "start": 1189.28,
+        "end": 1189.52
+      },
+      {
+        "word": "talking",
+        "start": 1189.52,
+        "end": 1189.92
+      },
+      {
+        "word": "about",
+        "start": 1189.92,
+        "end": 1190.16
+      },
+      {
+        "word": "how",
+        "start": 1190.16,
+        "end": 1190.48
+      },
+      {
+        "word": "systems",
+        "start": 1190.48,
+        "end": 1191.04
+      },
+      {
+        "word": "were",
+        "start": 1191.04,
+        "end": 1191.28
+      },
+      {
+        "word": "designed",
+        "start": 1191.28,
+        "end": 1192.08
+      },
+      {
+        "word": "to",
+        "start": 1192.08,
+        "end": 1192.32
+      },
+      {
+        "word": "flood",
+        "start": 1192.32,
+        "end": 1192.8000000000002
+      },
+      {
+        "word": "you",
+        "start": 1192.8,
+        "end": 1192.96
+      },
+      {
+        "word": "with",
+        "start": 1192.96,
+        "end": 1193.2
+      },
+      {
+        "word": "notifications,",
+        "start": 1193.2,
+        "end": 1194.0
+      },
+      {
+        "word": "right?",
+        "start": 1194.0,
+        "end": 1194.32
+      }
+    ]
+  },
+  {
+    "start": 1194.32,
+    "end": 1249.52,
+    "text": "And so you stop paying attention.",
+    "words": [
+      {
+        "word": "And",
+        "start": 1194.32,
+        "end": 1194.56
+      },
+      {
+        "word": "so",
+        "start": 1194.56,
+        "end": 1194.72
+      },
+      {
+        "word": "you",
+        "start": 1194.72,
+        "end": 1194.88
+      },
+      {
+        "word": "stop",
+        "start": 1194.88,
+        "end": 1195.0400000000002
+      },
+      {
+        "word": "paying",
+        "start": 1195.2,
+        "end": 1195.52
+      },
+      {
+        "word": "attention.",
+        "start": 1195.52,
+        "end": 1249.52
+      }
+    ]
+  },
+  {
+    "start": 1249.52,
+    "end": 1270.8799999999999,
+    "text": "I think it's an analogy that might be interesting to talk about is if you think of how the cockpit of a passenger jet looks, there are literally five hundred different buttons and knobs and dials, and they put millions of dollars into making sure the pilot only has to listen to one thing at a time.",
+    "words": [
+      {
+        "word": "I",
+        "start": 1249.52,
+        "end": 1249.84
+      },
+      {
+        "word": "think",
+        "start": 1249.84,
+        "end": 1250.1599999999999
+      },
+      {
+        "word": "it's",
+        "start": 1250.16,
+        "end": 1251.04
+      },
+      {
+        "word": "an",
+        "start": 1251.6,
+        "end": 1251.9199999999998
+      },
+      {
+        "word": "analogy",
+        "start": 1251.92,
+        "end": 1252.48
+      },
+      {
+        "word": "that",
+        "start": 1252.48,
+        "end": 1252.64
+      },
+      {
+        "word": "might",
+        "start": 1252.64,
+        "end": 1252.8
+      },
+      {
+        "word": "be",
+        "start": 1252.8,
+        "end": 1252.8799999999999
+      },
+      {
+        "word": "interesting",
+        "start": 1252.88,
+        "end": 1253.28
+      },
+      {
+        "word": "to",
+        "start": 1253.28,
+        "end": 1253.44
+      },
+      {
+        "word": "talk",
+        "start": 1253.44,
+        "end": 1253.68
+      },
+      {
+        "word": "about",
+        "start": 1253.68,
+        "end": 1253.8400000000001
+      },
+      {
+        "word": "is",
+        "start": 1253.92,
+        "end": 1254.16
+      },
+      {
+        "word": "if",
+        "start": 1254.16,
+        "end": 1254.3200000000002
+      },
+      {
+        "word": "you",
+        "start": 1254.32,
+        "end": 1254.56
+      },
+      {
+        "word": "think",
+        "start": 1254.56,
+        "end": 1254.72
+      },
+      {
+        "word": "of",
+        "start": 1254.72,
+        "end": 1254.96
+      },
+      {
+        "word": "how",
+        "start": 1254.96,
+        "end": 1255.28
+      },
+      {
+        "word": "the",
+        "start": 1255.28,
+        "end": 1255.6
+      },
+      {
+        "word": "cockpit",
+        "start": 1255.6,
+        "end": 1256.4
+      },
+      {
+        "word": "of",
+        "start": 1256.4,
+        "end": 1256.5600000000002
+      },
+      {
+        "word": "a",
+        "start": 1256.56,
+        "end": 1256.6399999999999
+      },
+      {
+        "word": "passenger",
+        "start": 1256.64,
+        "end": 1257.28
+      },
+      {
+        "word": "jet",
+        "start": 1257.28,
+        "end": 1257.68
+      },
+      {
+        "word": "looks,",
+        "start": 1257.68,
+        "end": 1258.6399999999999
+      },
+      {
+        "word": "there",
+        "start": 1258.64,
+        "end": 1258.96
+      },
+      {
+        "word": "are",
+        "start": 1259.28,
+        "end": 1259.6
+      },
+      {
+        "word": "literally",
+        "start": 1259.84,
+        "end": 1260.6399999999999
+      },
+      {
+        "word": "five",
+        "start": 1260.64,
+        "end": 1261.1200000000001
+      },
+      {
+        "word": "hundred",
+        "start": 1261.12,
+        "end": 1261.44
+      },
+      {
+        "word": "different",
+        "start": 1261.44,
+        "end": 1261.8400000000001
+      },
+      {
+        "word": "buttons",
+        "start": 1261.84,
+        "end": 1262.24
+      },
+      {
+        "word": "and",
+        "start": 1262.24,
+        "end": 1262.4
+      },
+      {
+        "word": "knobs",
+        "start": 1262.4,
+        "end": 1262.72
+      },
+      {
+        "word": "and",
+        "start": 1262.8,
+        "end": 1263.04
+      },
+      {
+        "word": "dials,",
+        "start": 1263.04,
+        "end": 1263.76
+      },
+      {
+        "word": "and",
+        "start": 1263.76,
+        "end": 1264.08
+      },
+      {
+        "word": "they",
+        "start": 1264.08,
+        "end": 1264.3999999999999
+      },
+      {
+        "word": "put",
+        "start": 1264.4,
+        "end": 1264.72
+      },
+      {
+        "word": "millions",
+        "start": 1264.96,
+        "end": 1265.44
+      },
+      {
+        "word": "of",
+        "start": 1265.44,
+        "end": 1265.68
+      },
+      {
+        "word": "dollars",
+        "start": 1265.68,
+        "end": 1266.08
+      },
+      {
+        "word": "into",
+        "start": 1266.08,
+        "end": 1266.32
+      },
+      {
+        "word": "making",
+        "start": 1266.32,
+        "end": 1266.56
+      },
+      {
+        "word": "sure",
+        "start": 1266.56,
+        "end": 1266.8000000000002
+      },
+      {
+        "word": "the",
+        "start": 1266.8,
+        "end": 1266.8799999999999
+      },
+      {
+        "word": "pilot",
+        "start": 1266.88,
+        "end": 1267.28
+      },
+      {
+        "word": "only",
+        "start": 1267.28,
+        "end": 1267.52
+      },
+      {
+        "word": "has",
+        "start": 1267.52,
+        "end": 1267.68
+      },
+      {
+        "word": "to",
+        "start": 1267.68,
+        "end": 1267.92
+      },
+      {
+        "word": "listen",
+        "start": 1267.92,
+        "end": 1268.32
+      },
+      {
+        "word": "to",
+        "start": 1268.32,
+        "end": 1268.6399999999999
+      },
+      {
+        "word": "one",
+        "start": 1268.64,
+        "end": 1268.88
+      },
+      {
+        "word": "thing",
+        "start": 1268.88,
+        "end": 1269.2
+      },
+      {
+        "word": "at",
+        "start": 1269.2,
+        "end": 1269.52
+      },
+      {
+        "word": "a",
+        "start": 1269.52,
+        "end": 1269.84
+      },
+      {
+        "word": "time.",
+        "start": 1269.84,
+        "end": 1270.8799999999999
+      }
+    ]
+  },
+  {
+    "start": 1270.88,
+    "end": 1272.24,
+    "text": "And that's right.",
+    "words": [
+      {
+        "word": "And",
+        "start": 1270.88,
+        "end": 1271.2
+      },
+      {
+        "word": "that's",
+        "start": 1271.2,
+        "end": 1271.68
+      },
+      {
+        "word": "right.",
+        "start": 1271.84,
+        "end": 1272.24
+      }
+    ]
+  },
+  {
+    "start": 1272.24,
+    "end": 1275.8400000000001,
+    "text": "You can do anything, but you must pay attention to this.",
+    "words": [
+      {
+        "word": "You",
+        "start": 1272.24,
+        "end": 1272.56
+      },
+      {
+        "word": "can",
+        "start": 1272.56,
+        "end": 1272.72
+      },
+      {
+        "word": "do",
+        "start": 1272.72,
+        "end": 1272.96
+      },
+      {
+        "word": "anything,",
+        "start": 1272.96,
+        "end": 1273.76
+      },
+      {
+        "word": "but",
+        "start": 1273.76,
+        "end": 1274.0
+      },
+      {
+        "word": "you",
+        "start": 1274.0,
+        "end": 1274.16
+      },
+      {
+        "word": "must",
+        "start": 1274.16,
+        "end": 1274.48
+      },
+      {
+        "word": "pay",
+        "start": 1274.48,
+        "end": 1274.72
+      },
+      {
+        "word": "attention",
+        "start": 1274.72,
+        "end": 1275.2
+      },
+      {
+        "word": "to",
+        "start": 1275.2,
+        "end": 1275.44
+      },
+      {
+        "word": "this.",
+        "start": 1275.44,
+        "end": 1275.8400000000001
+      }
+    ]
+  },
+  {
+    "start": 1275.84,
+    "end": 1278.64,
+    "text": "And too many AI loops don't look that way.",
+    "words": [
+      {
+        "word": "And",
+        "start": 1275.84,
+        "end": 1276.08
+      },
+      {
+        "word": "too",
+        "start": 1276.08,
+        "end": 1276.32
+      },
+      {
+        "word": "many",
+        "start": 1276.32,
+        "end": 1276.5600000000002
+      },
+      {
+        "word": "AI",
+        "start": 1276.56,
+        "end": 1276.96
+      },
+      {
+        "word": "loops",
+        "start": 1276.96,
+        "end": 1277.52
+      },
+      {
+        "word": "don't",
+        "start": 1277.52,
+        "end": 1277.92
+      },
+      {
+        "word": "look",
+        "start": 1277.92,
+        "end": 1278.0800000000002
+      },
+      {
+        "word": "that",
+        "start": 1278.08,
+        "end": 1278.32
+      },
+      {
+        "word": "way.",
+        "start": 1278.32,
+        "end": 1278.64
+      }
+    ]
+  },
+  {
+    "start": 1278.64,
+    "end": 1290.3999999999999,
+    "text": "I think that might be uh an interesting analogy to talk about for how your CISO should design permissions, is if you ask your users for permissions too much, they're not going to pay attention.",
+    "words": [
+      {
+        "word": "I",
+        "start": 1278.64,
+        "end": 1278.8000000000002
+      },
+      {
+        "word": "think",
+        "start": 1278.8,
+        "end": 1279.04
+      },
+      {
+        "word": "that",
+        "start": 1279.04,
+        "end": 1279.28
+      },
+      {
+        "word": "might",
+        "start": 1279.28,
+        "end": 1279.76
+      },
+      {
+        "word": "be",
+        "start": 1279.76,
+        "end": 1280.08
+      },
+      {
+        "word": "uh",
+        "start": 1280.32,
+        "end": 1280.6399999999999
+      },
+      {
+        "word": "an",
+        "start": 1280.96,
+        "end": 1281.28
+      },
+      {
+        "word": "interesting",
+        "start": 1281.28,
+        "end": 1281.84
+      },
+      {
+        "word": "analogy",
+        "start": 1281.84,
+        "end": 1282.3200000000002
+      },
+      {
+        "word": "to",
+        "start": 1282.32,
+        "end": 1282.48
+      },
+      {
+        "word": "talk",
+        "start": 1282.48,
+        "end": 1282.72
+      },
+      {
+        "word": "about",
+        "start": 1282.72,
+        "end": 1282.8
+      },
+      {
+        "word": "for",
+        "start": 1282.88,
+        "end": 1283.0400000000002
+      },
+      {
+        "word": "how",
+        "start": 1283.04,
+        "end": 1283.28
+      },
+      {
+        "word": "your",
+        "start": 1283.28,
+        "end": 1283.44
+      },
+      {
+        "word": "CISO",
+        "start": 1283.84,
+        "end": 1284.64
+      },
+      {
+        "word": "should",
+        "start": 1284.88,
+        "end": 1285.2
+      },
+      {
+        "word": "design",
+        "start": 1285.2,
+        "end": 1285.84
+      },
+      {
+        "word": "permissions,",
+        "start": 1285.84,
+        "end": 1287.04
+      },
+      {
+        "word": "is",
+        "start": 1287.04,
+        "end": 1287.28
+      },
+      {
+        "word": "if",
+        "start": 1287.52,
+        "end": 1287.68
+      },
+      {
+        "word": "you",
+        "start": 1287.68,
+        "end": 1287.8400000000001
+      },
+      {
+        "word": "ask",
+        "start": 1287.84,
+        "end": 1288.0800000000002
+      },
+      {
+        "word": "your",
+        "start": 1288.08,
+        "end": 1288.24
+      },
+      {
+        "word": "users",
+        "start": 1288.24,
+        "end": 1288.5600000000002
+      },
+      {
+        "word": "for",
+        "start": 1288.56,
+        "end": 1288.72
+      },
+      {
+        "word": "permissions",
+        "start": 1288.72,
+        "end": 1289.1200000000001
+      },
+      {
+        "word": "too",
+        "start": 1289.12,
+        "end": 1289.28
+      },
+      {
+        "word": "much,",
+        "start": 1289.28,
+        "end": 1289.44
+      },
+      {
+        "word": "they're",
+        "start": 1289.44,
+        "end": 1289.6
+      },
+      {
+        "word": "not",
+        "start": 1289.6,
+        "end": 1289.76
+      },
+      {
+        "word": "going",
+        "start": 1289.76,
+        "end": 1289.84
+      },
+      {
+        "word": "to",
+        "start": 1289.84,
+        "end": 1289.9199999999998
+      },
+      {
+        "word": "pay",
+        "start": 1289.92,
+        "end": 1290.08
+      },
+      {
+        "word": "attention.",
+        "start": 1290.08,
+        "end": 1290.3999999999999
+      }
+    ]
+  },
+  {
+    "start": 1290.4,
+    "end": 1292.56,
+    "text": "So this is what you do instead.",
+    "words": [
+      {
+        "word": "So",
+        "start": 1290.4,
+        "end": 1290.5600000000002
+      },
+      {
+        "word": "this",
+        "start": 1290.64,
+        "end": 1290.8000000000002
+      },
+      {
+        "word": "is",
+        "start": 1290.8,
+        "end": 1290.8799999999999
+      },
+      {
+        "word": "what",
+        "start": 1290.88,
+        "end": 1291.0400000000002
+      },
+      {
+        "word": "you",
+        "start": 1291.04,
+        "end": 1291.28
+      },
+      {
+        "word": "do",
+        "start": 1291.28,
+        "end": 1291.36
+      },
+      {
+        "word": "instead.",
+        "start": 1291.52,
+        "end": 1292.56
+      }
+    ]
+  },
+  {
+    "start": 1292.56,
+    "end": 1328.8799999999999,
+    "text": "Um give it a try, yeah.",
+    "words": [
+      {
+        "word": "Um",
+        "start": 1292.56,
+        "end": 1292.8799999999999
+      },
+      {
+        "word": "give",
+        "start": 1294.96,
+        "end": 1295.28
+      },
+      {
+        "word": "it",
+        "start": 1295.28,
+        "end": 1295.52
+      },
+      {
+        "word": "a",
+        "start": 1295.52,
+        "end": 1295.6
+      },
+      {
+        "word": "try,",
+        "start": 1295.6,
+        "end": 1295.92
+      },
+      {
+        "word": "yeah.",
+        "start": 1295.92,
+        "end": 1328.8799999999999
+      }
+    ]
+  },
+  {
+    "start": 1343.84,
+    "end": 1344.3200000000002,
+    "text": "All right.",
+    "words": [
+      {
+        "word": "All",
+        "start": 1343.84,
+        "end": 1344.0
+      },
+      {
+        "word": "right.",
+        "start": 1344.0,
+        "end": 1344.3200000000002
+      }
+    ]
+  },
+  {
+    "start": 1344.32,
+    "end": 1351.68,
+    "text": "Now let's think about uh using some emotional language with our CISOs, right?",
+    "words": [
+      {
+        "word": "Now",
+        "start": 1344.32,
+        "end": 1344.48
+      },
+      {
+        "word": "let's",
+        "start": 1344.56,
+        "end": 1344.96
+      },
+      {
+        "word": "think",
+        "start": 1344.96,
+        "end": 1345.28
+      },
+      {
+        "word": "about",
+        "start": 1345.28,
+        "end": 1345.52
+      },
+      {
+        "word": "uh",
+        "start": 1345.68,
+        "end": 1346.0
+      },
+      {
+        "word": "using",
+        "start": 1348.16,
+        "end": 1348.72
+      },
+      {
+        "word": "some",
+        "start": 1348.72,
+        "end": 1349.04
+      },
+      {
+        "word": "emotional",
+        "start": 1349.04,
+        "end": 1349.68
+      },
+      {
+        "word": "language",
+        "start": 1349.68,
+        "end": 1350.0800000000002
+      },
+      {
+        "word": "with",
+        "start": 1350.08,
+        "end": 1350.24
+      },
+      {
+        "word": "our",
+        "start": 1350.24,
+        "end": 1350.4
+      },
+      {
+        "word": "CISOs,",
+        "start": 1350.4,
+        "end": 1351.28
+      },
+      {
+        "word": "right?",
+        "start": 1351.28,
+        "end": 1351.68
+      }
+    ]
+  },
+  {
+    "start": 1351.68,
+    "end": 1356.8000000000002,
+    "text": "If you feel like you don't have control of AI in your workspace, you're not alone.",
+    "words": [
+      {
+        "word": "If",
+        "start": 1351.68,
+        "end": 1351.92
+      },
+      {
+        "word": "you",
+        "start": 1351.92,
+        "end": 1352.0800000000002
+      },
+      {
+        "word": "feel",
+        "start": 1352.08,
+        "end": 1352.4
+      },
+      {
+        "word": "like",
+        "start": 1352.4,
+        "end": 1352.5600000000002
+      },
+      {
+        "word": "you",
+        "start": 1352.56,
+        "end": 1352.72
+      },
+      {
+        "word": "don't",
+        "start": 1352.72,
+        "end": 1353.0400000000002
+      },
+      {
+        "word": "have",
+        "start": 1353.04,
+        "end": 1353.36
+      },
+      {
+        "word": "control",
+        "start": 1353.3600000000001,
+        "end": 1353.68
+      },
+      {
+        "word": "of",
+        "start": 1354.0,
+        "end": 1354.32
+      },
+      {
+        "word": "AI",
+        "start": 1354.32,
+        "end": 1354.8
+      },
+      {
+        "word": "in",
+        "start": 1354.8,
+        "end": 1354.8799999999999
+      },
+      {
+        "word": "your",
+        "start": 1354.88,
+        "end": 1355.0400000000002
+      },
+      {
+        "word": "workspace,",
+        "start": 1355.04,
+        "end": 1355.8400000000001
+      },
+      {
+        "word": "you're",
+        "start": 1355.84,
+        "end": 1356.1599999999999
+      },
+      {
+        "word": "not",
+        "start": 1356.16,
+        "end": 1356.3200000000002
+      },
+      {
+        "word": "alone.",
+        "start": 1356.32,
+        "end": 1356.8000000000002
+      }
+    ]
+  },
+  {
+    "start": 1356.8,
+    "end": 1360.96,
+    "text": "Ninety-one percent of CISOs don't.",
+    "words": [
+      {
+        "word": "Ninety-one",
+        "start": 1356.8,
+        "end": 1357.36
+      },
+      {
+        "word": "percent",
+        "start": 1357.52,
+        "end": 1358.1599999999999
+      },
+      {
+        "word": "of",
+        "start": 1358.8,
+        "end": 1358.96
+      },
+      {
+        "word": "CISOs",
+        "start": 1359.2,
+        "end": 1360.08
+      },
+      {
+        "word": "don't.",
+        "start": 1360.24,
+        "end": 1360.96
+      }
+    ]
+  },
+  {
+    "start": 1360.96,
+    "end": 1362.3999999999999,
+    "text": "And this is why, right?",
+    "words": [
+      {
+        "word": "And",
+        "start": 1360.96,
+        "end": 1361.2
+      },
+      {
+        "word": "this",
+        "start": 1361.2,
+        "end": 1361.44
+      },
+      {
+        "word": "is",
+        "start": 1361.44,
+        "end": 1361.68
+      },
+      {
+        "word": "why,",
+        "start": 1361.68,
+        "end": 1362.08
+      },
+      {
+        "word": "right?",
+        "start": 1362.08,
+        "end": 1362.3999999999999
+      }
+    ]
+  },
+  {
+    "start": 1362.48,
+    "end": 1391.2,
+    "text": "There's your hook, and then talk a little bit about why you don't feel like you have control.",
+    "words": [
+      {
+        "word": "There's",
+        "start": 1362.48,
+        "end": 1362.72
+      },
+      {
+        "word": "your",
+        "start": 1362.72,
+        "end": 1362.88
+      },
+      {
+        "word": "hook,",
+        "start": 1362.88,
+        "end": 1363.1999999999998
+      },
+      {
+        "word": "and",
+        "start": 1363.2,
+        "end": 1363.3600000000001
+      },
+      {
+        "word": "then",
+        "start": 1363.3600000000001,
+        "end": 1363.5200000000002
+      },
+      {
+        "word": "talk",
+        "start": 1363.52,
+        "end": 1363.6799999999998
+      },
+      {
+        "word": "a",
+        "start": 1363.68,
+        "end": 1363.8400000000001
+      },
+      {
+        "word": "little",
+        "start": 1363.84,
+        "end": 1363.9199999999998
+      },
+      {
+        "word": "bit",
+        "start": 1363.92,
+        "end": 1364.16
+      },
+      {
+        "word": "about",
+        "start": 1364.16,
+        "end": 1364.3200000000002
+      },
+      {
+        "word": "why",
+        "start": 1364.32,
+        "end": 1364.5600000000002
+      },
+      {
+        "word": "you",
+        "start": 1364.56,
+        "end": 1364.72
+      },
+      {
+        "word": "don't",
+        "start": 1364.72,
+        "end": 1364.96
+      },
+      {
+        "word": "feel",
+        "start": 1364.96,
+        "end": 1365.2
+      },
+      {
+        "word": "like",
+        "start": 1365.2,
+        "end": 1365.3600000000001
+      },
+      {
+        "word": "you",
+        "start": 1365.3600000000001,
+        "end": 1365.6000000000001
+      },
+      {
+        "word": "have",
+        "start": 1365.6,
+        "end": 1365.9199999999998
+      },
+      {
+        "word": "control.",
+        "start": 1365.92,
+        "end": 1391.2
+      }
+    ]
+  },
+  {
+    "start": 1427.68,
+    "end": 1437.2,
+    "text": "Like you build for the most regulated use case, but then you give flexibility to allow for innovation still.",
+    "words": [
+      {
+        "word": "Like",
+        "start": 1427.68,
+        "end": 1428.0
+      },
+      {
+        "word": "you",
+        "start": 1428.24,
+        "end": 1428.56
+      },
+      {
+        "word": "build",
+        "start": 1428.56,
+        "end": 1429.2
+      },
+      {
+        "word": "for",
+        "start": 1429.2,
+        "end": 1429.52
+      },
+      {
+        "word": "the",
+        "start": 1430.16,
+        "end": 1430.4
+      },
+      {
+        "word": "most",
+        "start": 1430.72,
+        "end": 1431.04
+      },
+      {
+        "word": "regulated",
+        "start": 1431.3600000000001,
+        "end": 1432.24
+      },
+      {
+        "word": "use",
+        "start": 1432.24,
+        "end": 1432.56
+      },
+      {
+        "word": "case,",
+        "start": 1432.56,
+        "end": 1433.52
+      },
+      {
+        "word": "but",
+        "start": 1433.52,
+        "end": 1433.76
+      },
+      {
+        "word": "then",
+        "start": 1433.76,
+        "end": 1434.0
+      },
+      {
+        "word": "you",
+        "start": 1434.0,
+        "end": 1434.16
+      },
+      {
+        "word": "give",
+        "start": 1434.16,
+        "end": 1434.48
+      },
+      {
+        "word": "flexibility",
+        "start": 1434.48,
+        "end": 1435.36
+      },
+      {
+        "word": "to",
+        "start": 1435.3600000000001,
+        "end": 1435.5200000000002
+      },
+      {
+        "word": "allow",
+        "start": 1435.52,
+        "end": 1435.92
+      },
+      {
+        "word": "for",
+        "start": 1435.92,
+        "end": 1436.16
+      },
+      {
+        "word": "innovation",
+        "start": 1436.16,
+        "end": 1436.64
+      },
+      {
+        "word": "still.",
+        "start": 1436.72,
+        "end": 1437.2
+      }
+    ]
+  },
+  {
+    "start": 1437.2,
+    "end": 1442.52,
+    "text": "Because if you're an enterprise, you've got to cover the EU requirements.",
+    "words": [
+      {
+        "word": "Because",
+        "start": 1437.2,
+        "end": 1437.44
+      },
+      {
+        "word": "if",
+        "start": 1437.44,
+        "end": 1437.6000000000001
+      },
+      {
+        "word": "you're",
+        "start": 1437.6,
+        "end": 1437.84
+      },
+      {
+        "word": "an",
+        "start": 1437.8400000000001,
+        "end": 1438.0000000000002
+      },
+      {
+        "word": "enterprise,",
+        "start": 1438.0,
+        "end": 1438.88
+      },
+      {
+        "word": "you've",
+        "start": 1438.88,
+        "end": 1439.28
+      },
+      {
+        "word": "got",
+        "start": 1439.28,
+        "end": 1439.36
+      },
+      {
+        "word": "to",
+        "start": 1439.3600000000001,
+        "end": 1439.44
+      },
+      {
+        "word": "cover",
+        "start": 1439.44,
+        "end": 1439.84
+      },
+      {
+        "word": "the",
+        "start": 1439.96,
+        "end": 1440.2
+      },
+      {
+        "word": "EU",
+        "start": 1440.2,
+        "end": 1440.52
+      },
+      {
+        "word": "requirements.",
+        "start": 1440.52,
+        "end": 1442.52
+      }
+    ]
+  },
+  {
+    "start": 1442.52,
+    "end": 1447.0,
+    "text": "But you also need to like build a system where your users will still fall within it.",
+    "words": [
+      {
+        "word": "But",
+        "start": 1442.52,
+        "end": 1442.84
+      },
+      {
+        "word": "you",
+        "start": 1442.84,
+        "end": 1443.1599999999999
+      },
+      {
+        "word": "also",
+        "start": 1443.16,
+        "end": 1443.4
+      },
+      {
+        "word": "need",
+        "start": 1443.4,
+        "end": 1443.64
+      },
+      {
+        "word": "to",
+        "start": 1443.64,
+        "end": 1443.8000000000002
+      },
+      {
+        "word": "like",
+        "start": 1443.88,
+        "end": 1444.0400000000002
+      },
+      {
+        "word": "build",
+        "start": 1444.28,
+        "end": 1444.6000000000001
+      },
+      {
+        "word": "a",
+        "start": 1444.6,
+        "end": 1444.84
+      },
+      {
+        "word": "system",
+        "start": 1444.84,
+        "end": 1445.08
+      },
+      {
+        "word": "where",
+        "start": 1445.08,
+        "end": 1445.24
+      },
+      {
+        "word": "your",
+        "start": 1445.24,
+        "end": 1445.48
+      },
+      {
+        "word": "users",
+        "start": 1445.48,
+        "end": 1445.88
+      },
+      {
+        "word": "will",
+        "start": 1445.88,
+        "end": 1446.0400000000002
+      },
+      {
+        "word": "still",
+        "start": 1446.04,
+        "end": 1446.28
+      },
+      {
+        "word": "fall",
+        "start": 1446.28,
+        "end": 1446.4399999999998
+      },
+      {
+        "word": "within",
+        "start": 1446.44,
+        "end": 1446.76
+      },
+      {
+        "word": "it.",
+        "start": 1446.76,
+        "end": 1447.0
+      }
+    ]
+  },
+  {
+    "start": 1447.0,
+    "end": 1471.48,
+    "text": "Because if you get too heavily regulated, all the shadow AI shows up.",
+    "words": [
+      {
+        "word": "Because",
+        "start": 1447.0,
+        "end": 1447.24
+      },
+      {
+        "word": "if",
+        "start": 1447.24,
+        "end": 1447.4
+      },
+      {
+        "word": "you",
+        "start": 1447.4,
+        "end": 1447.48
+      },
+      {
+        "word": "get",
+        "start": 1447.48,
+        "end": 1447.64
+      },
+      {
+        "word": "too",
+        "start": 1447.64,
+        "end": 1447.8
+      },
+      {
+        "word": "heavily",
+        "start": 1447.8,
+        "end": 1448.28
+      },
+      {
+        "word": "regulated,",
+        "start": 1448.28,
+        "end": 1449.0
+      },
+      {
+        "word": "all",
+        "start": 1449.0,
+        "end": 1449.16
+      },
+      {
+        "word": "the",
+        "start": 1449.24,
+        "end": 1449.4
+      },
+      {
+        "word": "shadow",
+        "start": 1449.4,
+        "end": 1449.8000000000002
+      },
+      {
+        "word": "AI",
+        "start": 1449.8,
+        "end": 1450.2
+      },
+      {
+        "word": "shows",
+        "start": 1450.2,
+        "end": 1450.36
+      },
+      {
+        "word": "up.",
+        "start": 1450.52,
+        "end": 1471.48
+      }
+    ]
+  },
+  {
+    "start": 1471.48,
+    "end": 1472.04,
+    "text": "Okay.",
+    "words": [
+      {
+        "word": "Okay.",
+        "start": 1471.48,
+        "end": 1472.04
+      }
+    ]
+  },
+  {
+    "start": 1472.04,
+    "end": 1472.84,
+    "text": "Cool.",
+    "words": [
+      {
+        "word": "Cool.",
+        "start": 1472.04,
+        "end": 1472.84
+      }
+    ]
+  },
+  {
+    "start": 1472.84,
+    "end": 1486.52,
+    "text": "Um the fact that forty percent of enterprise applications will have task specific AI agents inside.",
+    "words": [
+      {
+        "word": "Um",
+        "start": 1472.84,
+        "end": 1473.1599999999999
+      },
+      {
+        "word": "the",
+        "start": 1475.16,
+        "end": 1475.48
+      },
+      {
+        "word": "fact",
+        "start": 1477.4,
+        "end": 1478.04
+      },
+      {
+        "word": "that",
+        "start": 1478.28,
+        "end": 1478.6
+      },
+      {
+        "word": "forty",
+        "start": 1478.84,
+        "end": 1479.16
+      },
+      {
+        "word": "percent",
+        "start": 1479.32,
+        "end": 1479.8799999999999
+      },
+      {
+        "word": "of",
+        "start": 1480.2,
+        "end": 1480.52
+      },
+      {
+        "word": "enterprise",
+        "start": 1480.52,
+        "end": 1481.32
+      },
+      {
+        "word": "applications",
+        "start": 1481.32,
+        "end": 1482.2
+      },
+      {
+        "word": "will",
+        "start": 1482.52,
+        "end": 1482.84
+      },
+      {
+        "word": "have",
+        "start": 1482.84,
+        "end": 1483.1599999999999
+      },
+      {
+        "word": "task",
+        "start": 1483.16,
+        "end": 1483.8
+      },
+      {
+        "word": "specific",
+        "start": 1483.96,
+        "end": 1484.6
+      },
+      {
+        "word": "AI",
+        "start": 1484.6,
+        "end": 1485.08
+      },
+      {
+        "word": "agents",
+        "start": 1485.08,
+        "end": 1485.64
+      },
+      {
+        "word": "inside.",
+        "start": 1485.64,
+        "end": 1486.52
+      }
+    ]
+  },
+  {
+    "start": 1486.52,
+    "end": 1487.56,
+    "text": "This year, right?",
+    "words": [
+      {
+        "word": "This",
+        "start": 1486.52,
+        "end": 1486.76
+      },
+      {
+        "word": "year,",
+        "start": 1486.76,
+        "end": 1487.24
+      },
+      {
+        "word": "right?",
+        "start": 1487.24,
+        "end": 1487.56
+      }
+    ]
+  },
+  {
+    "start": 1487.56,
+    "end": 1489.48,
+    "text": "Last year it was five percent.",
+    "words": [
+      {
+        "word": "Last",
+        "start": 1487.56,
+        "end": 1487.8000000000002
+      },
+      {
+        "word": "year",
+        "start": 1487.8,
+        "end": 1487.96
+      },
+      {
+        "word": "it",
+        "start": 1488.04,
+        "end": 1488.12
+      },
+      {
+        "word": "was",
+        "start": 1488.12,
+        "end": 1488.28
+      },
+      {
+        "word": "five",
+        "start": 1488.28,
+        "end": 1488.68
+      },
+      {
+        "word": "percent.",
+        "start": 1488.68,
+        "end": 1489.48
+      }
+    ]
+  },
+  {
+    "start": 1489.48,
+    "end": 1492.52,
+    "text": "That's that's a that's a jump, dude.",
+    "words": [
+      {
+        "word": "That's",
+        "start": 1489.48,
+        "end": 1490.2
+      },
+      {
+        "word": "that's",
+        "start": 1490.36,
+        "end": 1490.76
+      },
+      {
+        "word": "a",
+        "start": 1490.76,
+        "end": 1490.92
+      },
+      {
+        "word": "that's",
+        "start": 1491.0,
+        "end": 1491.24
+      },
+      {
+        "word": "a",
+        "start": 1491.24,
+        "end": 1491.4
+      },
+      {
+        "word": "jump,",
+        "start": 1491.4,
+        "end": 1491.88
+      },
+      {
+        "word": "dude.",
+        "start": 1491.88,
+        "end": 1492.52
+      }
+    ]
+  },
+  {
+    "start": 1492.52,
+    "end": 1501.24,
+    "text": "Um I think the the framing here, right?",
+    "words": [
+      {
+        "word": "Um",
+        "start": 1492.52,
+        "end": 1492.84
+      },
+      {
+        "word": "I",
+        "start": 1496.52,
+        "end": 1496.84
+      },
+      {
+        "word": "think",
+        "start": 1496.84,
+        "end": 1497.1599999999999
+      },
+      {
+        "word": "the",
+        "start": 1498.68,
+        "end": 1499.0
+      },
+      {
+        "word": "the",
+        "start": 1499.32,
+        "end": 1499.6399999999999
+      },
+      {
+        "word": "framing",
+        "start": 1499.64,
+        "end": 1500.2
+      },
+      {
+        "word": "here,",
+        "start": 1500.2,
+        "end": 1500.68
+      },
+      {
+        "word": "right?",
+        "start": 1500.68,
+        "end": 1501.24
+      }
+    ]
+  },
+  {
+    "start": 1501.24,
+    "end": 1513.24,
+    "text": "Forty percent of enterprise applications are going to be releasing AI agents inside, and you should be freaking out if you don't have some type of governance around them.",
+    "words": [
+      {
+        "word": "Forty",
+        "start": 1501.24,
+        "end": 1501.72
+      },
+      {
+        "word": "percent",
+        "start": 1501.72,
+        "end": 1502.04
+      },
+      {
+        "word": "of",
+        "start": 1502.04,
+        "end": 1502.28
+      },
+      {
+        "word": "enterprise",
+        "start": 1502.28,
+        "end": 1502.8400000000001
+      },
+      {
+        "word": "applications",
+        "start": 1502.84,
+        "end": 1503.56
+      },
+      {
+        "word": "are",
+        "start": 1503.56,
+        "end": 1503.72
+      },
+      {
+        "word": "going",
+        "start": 1503.72,
+        "end": 1503.96
+      },
+      {
+        "word": "to",
+        "start": 1503.96,
+        "end": 1504.04
+      },
+      {
+        "word": "be",
+        "start": 1504.04,
+        "end": 1504.2
+      },
+      {
+        "word": "releasing",
+        "start": 1504.2,
+        "end": 1504.68
+      },
+      {
+        "word": "AI",
+        "start": 1504.68,
+        "end": 1505.08
+      },
+      {
+        "word": "agents",
+        "start": 1505.08,
+        "end": 1505.6399999999999
+      },
+      {
+        "word": "inside,",
+        "start": 1505.64,
+        "end": 1506.6
+      },
+      {
+        "word": "and",
+        "start": 1506.6,
+        "end": 1506.84
+      },
+      {
+        "word": "you",
+        "start": 1506.84,
+        "end": 1507.0
+      },
+      {
+        "word": "should",
+        "start": 1507.0,
+        "end": 1507.24
+      },
+      {
+        "word": "be",
+        "start": 1507.24,
+        "end": 1507.48
+      },
+      {
+        "word": "freaking",
+        "start": 1507.48,
+        "end": 1508.04
+      },
+      {
+        "word": "out",
+        "start": 1508.04,
+        "end": 1508.28
+      },
+      {
+        "word": "if",
+        "start": 1508.28,
+        "end": 1508.52
+      },
+      {
+        "word": "you",
+        "start": 1508.52,
+        "end": 1508.76
+      },
+      {
+        "word": "don't",
+        "start": 1508.76,
+        "end": 1509.08
+      },
+      {
+        "word": "have",
+        "start": 1509.08,
+        "end": 1509.3999999999999
+      },
+      {
+        "word": "some",
+        "start": 1509.4,
+        "end": 1509.72
+      },
+      {
+        "word": "type",
+        "start": 1509.8,
+        "end": 1510.1200000000001
+      },
+      {
+        "word": "of",
+        "start": 1510.12,
+        "end": 1510.28
+      },
+      {
+        "word": "governance",
+        "start": 1510.28,
+        "end": 1510.92
+      },
+      {
+        "word": "around",
+        "start": 1510.92,
+        "end": 1511.56
+      },
+      {
+        "word": "them.",
+        "start": 1511.56,
+        "end": 1513.24
+      }
+    ]
+  },
+  {
+    "start": 1513.24,
+    "end": 1534.2,
+    "text": "And then just talk briefly about what governance means when you have a customer-facing endpoint to make sure that you are not letting the customer-facing endpoints take your data and do stuff you didn't expect with it.",
+    "words": [
+      {
+        "word": "And",
+        "start": 1513.24,
+        "end": 1513.48
+      },
+      {
+        "word": "then",
+        "start": 1513.48,
+        "end": 1513.72
+      },
+      {
+        "word": "just",
+        "start": 1513.72,
+        "end": 1513.96
+      },
+      {
+        "word": "talk",
+        "start": 1513.96,
+        "end": 1514.28
+      },
+      {
+        "word": "briefly",
+        "start": 1514.28,
+        "end": 1515.0
+      },
+      {
+        "word": "about",
+        "start": 1515.0,
+        "end": 1515.32
+      },
+      {
+        "word": "what",
+        "start": 1515.64,
+        "end": 1515.96
+      },
+      {
+        "word": "governance",
+        "start": 1516.2,
+        "end": 1517.1599999999999
+      },
+      {
+        "word": "means",
+        "start": 1517.16,
+        "end": 1517.8
+      },
+      {
+        "word": "when",
+        "start": 1517.8,
+        "end": 1518.12
+      },
+      {
+        "word": "you",
+        "start": 1518.12,
+        "end": 1518.4399999999998
+      },
+      {
+        "word": "have",
+        "start": 1518.44,
+        "end": 1518.68
+      },
+      {
+        "word": "a",
+        "start": 1518.68,
+        "end": 1518.92
+      },
+      {
+        "word": "customer-facing",
+        "start": 1518.92,
+        "end": 1520.04
+      },
+      {
+        "word": "endpoint",
+        "start": 1520.04,
+        "end": 1520.68
+      },
+      {
+        "word": "to",
+        "start": 1520.84,
+        "end": 1521.1599999999999
+      },
+      {
+        "word": "make",
+        "start": 1521.16,
+        "end": 1521.3200000000002
+      },
+      {
+        "word": "sure",
+        "start": 1521.32,
+        "end": 1521.5600000000002
+      },
+      {
+        "word": "that",
+        "start": 1521.56,
+        "end": 1521.72
+      },
+      {
+        "word": "you",
+        "start": 1521.72,
+        "end": 1521.96
+      },
+      {
+        "word": "are",
+        "start": 1521.96,
+        "end": 1522.2
+      },
+      {
+        "word": "not",
+        "start": 1522.2,
+        "end": 1522.44
+      },
+      {
+        "word": "letting",
+        "start": 1522.44,
+        "end": 1523.08
+      },
+      {
+        "word": "the",
+        "start": 1523.24,
+        "end": 1523.56
+      },
+      {
+        "word": "customer-facing",
+        "start": 1523.56,
+        "end": 1524.52
+      },
+      {
+        "word": "endpoints",
+        "start": 1524.52,
+        "end": 1525.24
+      },
+      {
+        "word": "take",
+        "start": 1525.24,
+        "end": 1525.64
+      },
+      {
+        "word": "your",
+        "start": 1525.64,
+        "end": 1525.88
+      },
+      {
+        "word": "data",
+        "start": 1525.88,
+        "end": 1526.1999999999998
+      },
+      {
+        "word": "and",
+        "start": 1526.36,
+        "end": 1526.6
+      },
+      {
+        "word": "do",
+        "start": 1526.6,
+        "end": 1526.76
+      },
+      {
+        "word": "stuff",
+        "start": 1526.76,
+        "end": 1527.16
+      },
+      {
+        "word": "you",
+        "start": 1527.16,
+        "end": 1527.3200000000002
+      },
+      {
+        "word": "didn't",
+        "start": 1527.32,
+        "end": 1527.72
+      },
+      {
+        "word": "expect",
+        "start": 1527.72,
+        "end": 1528.1200000000001
+      },
+      {
+        "word": "with",
+        "start": 1528.12,
+        "end": 1528.4399999999998
+      },
+      {
+        "word": "it.",
+        "start": 1528.44,
+        "end": 1534.2
+      }
+    ]
+  },
+  {
+    "start": 1534.2,
+    "end": 1547.3999999999999,
+    "text": "Okay.",
+    "words": [
+      {
+        "word": "Okay.",
+        "start": 1534.2,
+        "end": 1547.3999999999999
+      }
+    ]
+  },
+  {
+    "start": 1547.4,
+    "end": 1549.72,
+    "text": "Okay.",
+    "words": [
+      {
+        "word": "Okay.",
+        "start": 1547.4,
+        "end": 1549.72
+      }
+    ]
+  },
+  {
+    "start": 1549.72,
+    "end": 1550.44,
+    "text": "Okay.",
+    "words": [
+      {
+        "word": "Okay.",
+        "start": 1549.72,
+        "end": 1550.44
+      }
+    ]
+  },
+  {
+    "start": 1551.4,
+    "end": 1562.52,
+    "text": "Let me pivot this a little bit then, because I think the other thing we are seeing with AI is even with the best governance plans in place internally, third-party vendor risks will end up screwing you.",
+    "words": [
+      {
+        "word": "Let",
+        "start": 1551.4,
+        "end": 1551.56
+      },
+      {
+        "word": "me",
+        "start": 1551.56,
+        "end": 1551.8
+      },
+      {
+        "word": "pivot",
+        "start": 1551.8,
+        "end": 1552.2
+      },
+      {
+        "word": "this",
+        "start": 1552.2,
+        "end": 1552.3600000000001
+      },
+      {
+        "word": "a",
+        "start": 1552.36,
+        "end": 1552.4399999999998
+      },
+      {
+        "word": "little",
+        "start": 1552.44,
+        "end": 1552.52
+      },
+      {
+        "word": "bit",
+        "start": 1552.52,
+        "end": 1552.6
+      },
+      {
+        "word": "then,",
+        "start": 1552.68,
+        "end": 1553.0
+      },
+      {
+        "word": "because",
+        "start": 1553.0,
+        "end": 1553.24
+      },
+      {
+        "word": "I",
+        "start": 1553.24,
+        "end": 1553.48
+      },
+      {
+        "word": "think",
+        "start": 1553.48,
+        "end": 1553.72
+      },
+      {
+        "word": "the",
+        "start": 1553.72,
+        "end": 1554.04
+      },
+      {
+        "word": "other",
+        "start": 1554.04,
+        "end": 1554.36
+      },
+      {
+        "word": "thing",
+        "start": 1554.3600000000001,
+        "end": 1554.84
+      },
+      {
+        "word": "we",
+        "start": 1554.84,
+        "end": 1555.0
+      },
+      {
+        "word": "are",
+        "start": 1555.0,
+        "end": 1555.16
+      },
+      {
+        "word": "seeing",
+        "start": 1555.16,
+        "end": 1555.48
+      },
+      {
+        "word": "with",
+        "start": 1555.48,
+        "end": 1555.72
+      },
+      {
+        "word": "AI",
+        "start": 1555.72,
+        "end": 1556.2
+      },
+      {
+        "word": "is",
+        "start": 1556.28,
+        "end": 1556.52
+      },
+      {
+        "word": "even",
+        "start": 1557.24,
+        "end": 1557.56
+      },
+      {
+        "word": "with",
+        "start": 1557.56,
+        "end": 1557.72
+      },
+      {
+        "word": "the",
+        "start": 1557.72,
+        "end": 1557.88
+      },
+      {
+        "word": "best",
+        "start": 1557.88,
+        "end": 1558.0400000000002
+      },
+      {
+        "word": "governance",
+        "start": 1558.04,
+        "end": 1558.5200000000002
+      },
+      {
+        "word": "plans",
+        "start": 1558.52,
+        "end": 1558.8400000000001
+      },
+      {
+        "word": "in",
+        "start": 1558.84,
+        "end": 1558.9199999999998
+      },
+      {
+        "word": "place",
+        "start": 1558.92,
+        "end": 1559.16
+      },
+      {
+        "word": "internally,",
+        "start": 1559.16,
+        "end": 1559.72
+      },
+      {
+        "word": "third-party",
+        "start": 1559.72,
+        "end": 1560.28
+      },
+      {
+        "word": "vendor",
+        "start": 1560.28,
+        "end": 1560.6000000000001
+      },
+      {
+        "word": "risks",
+        "start": 1560.6,
+        "end": 1560.92
+      },
+      {
+        "word": "will",
+        "start": 1560.92,
+        "end": 1561.0800000000002
+      },
+      {
+        "word": "end",
+        "start": 1561.08,
+        "end": 1561.24
+      },
+      {
+        "word": "up",
+        "start": 1561.24,
+        "end": 1561.4
+      },
+      {
+        "word": "screwing",
+        "start": 1561.4,
+        "end": 1561.8
+      },
+      {
+        "word": "you.",
+        "start": 1562.04,
+        "end": 1562.52
+      }
+    ]
+  },
+  {
+    "start": 1562.52,
+    "end": 1566.04,
+    "text": "There's a couple of instances already where third-party vendors, right?",
+    "words": [
+      {
+        "word": "There's",
+        "start": 1562.52,
+        "end": 1562.9199999999998
+      },
+      {
+        "word": "a",
+        "start": 1562.92,
+        "end": 1563.0
+      },
+      {
+        "word": "couple",
+        "start": 1563.0,
+        "end": 1563.24
+      },
+      {
+        "word": "of",
+        "start": 1563.24,
+        "end": 1563.32
+      },
+      {
+        "word": "instances",
+        "start": 1563.32,
+        "end": 1563.8000000000002
+      },
+      {
+        "word": "already",
+        "start": 1563.8,
+        "end": 1564.12
+      },
+      {
+        "word": "where",
+        "start": 1564.2,
+        "end": 1564.44
+      },
+      {
+        "word": "third-party",
+        "start": 1564.44,
+        "end": 1565.16
+      },
+      {
+        "word": "vendors,",
+        "start": 1565.16,
+        "end": 1565.72
+      },
+      {
+        "word": "right?",
+        "start": 1565.72,
+        "end": 1566.04
+      }
+    ]
+  },
+  {
+    "start": 1566.04,
+    "end": 1578.28,
+    "text": "There was uh Mind Spring here in Montreal, which is where the uh it's the guys behind Pornhub, they got hacked not because of them, but because of a vendor who was breached.",
+    "words": [
+      {
+        "word": "There",
+        "start": 1566.04,
+        "end": 1566.28
+      },
+      {
+        "word": "was",
+        "start": 1566.28,
+        "end": 1566.44
+      },
+      {
+        "word": "uh",
+        "start": 1566.44,
+        "end": 1566.6000000000001
+      },
+      {
+        "word": "Mind",
+        "start": 1566.76,
+        "end": 1567.16
+      },
+      {
+        "word": "Spring",
+        "start": 1567.56,
+        "end": 1568.28
+      },
+      {
+        "word": "here",
+        "start": 1568.44,
+        "end": 1568.68
+      },
+      {
+        "word": "in",
+        "start": 1568.68,
+        "end": 1568.92
+      },
+      {
+        "word": "Montreal,",
+        "start": 1568.92,
+        "end": 1569.6399999999999
+      },
+      {
+        "word": "which",
+        "start": 1569.64,
+        "end": 1569.8000000000002
+      },
+      {
+        "word": "is",
+        "start": 1569.8,
+        "end": 1569.96
+      },
+      {
+        "word": "where",
+        "start": 1569.96,
+        "end": 1570.1200000000001
+      },
+      {
+        "word": "the",
+        "start": 1570.12,
+        "end": 1570.28
+      },
+      {
+        "word": "uh",
+        "start": 1570.28,
+        "end": 1570.36
+      },
+      {
+        "word": "it's",
+        "start": 1570.44,
+        "end": 1570.6799999999998
+      },
+      {
+        "word": "the",
+        "start": 1570.68,
+        "end": 1570.76
+      },
+      {
+        "word": "guys",
+        "start": 1570.76,
+        "end": 1571.0
+      },
+      {
+        "word": "behind",
+        "start": 1571.0,
+        "end": 1571.32
+      },
+      {
+        "word": "Pornhub,",
+        "start": 1571.32,
+        "end": 1572.3600000000001
+      },
+      {
+        "word": "they",
+        "start": 1572.3600000000001,
+        "end": 1572.6000000000001
+      },
+      {
+        "word": "got",
+        "start": 1572.6,
+        "end": 1572.84
+      },
+      {
+        "word": "hacked",
+        "start": 1572.84,
+        "end": 1573.24
+      },
+      {
+        "word": "not",
+        "start": 1573.32,
+        "end": 1573.56
+      },
+      {
+        "word": "because",
+        "start": 1573.56,
+        "end": 1573.8
+      },
+      {
+        "word": "of",
+        "start": 1573.8,
+        "end": 1574.04
+      },
+      {
+        "word": "them,",
+        "start": 1574.04,
+        "end": 1574.3600000000001
+      },
+      {
+        "word": "but",
+        "start": 1574.3600000000001,
+        "end": 1574.68
+      },
+      {
+        "word": "because",
+        "start": 1574.68,
+        "end": 1575.0
+      },
+      {
+        "word": "of",
+        "start": 1575.0,
+        "end": 1575.32
+      },
+      {
+        "word": "a",
+        "start": 1575.32,
+        "end": 1575.6399999999999
+      },
+      {
+        "word": "vendor",
+        "start": 1575.64,
+        "end": 1576.28
+      },
+      {
+        "word": "who",
+        "start": 1576.92,
+        "end": 1577.24
+      },
+      {
+        "word": "was",
+        "start": 1577.24,
+        "end": 1577.48
+      },
+      {
+        "word": "breached.",
+        "start": 1577.48,
+        "end": 1578.28
+      }
+    ]
+  },
+  {
+    "start": 1578.28,
+    "end": 1622.28,
+    "text": "So I think the the other things you talk about then might be even with the best governance for your company, you still have risk from your supply chain, and I think at that point, you need to make sure that even when approached from an outside source, you have the rules for your agents up that they won't do unexpected actions like export everybody's social security number when asked nicely by a third-party vendor.",
+    "words": [
+      {
+        "word": "So",
+        "start": 1578.28,
+        "end": 1578.52
+      },
+      {
+        "word": "I",
+        "start": 1578.6,
+        "end": 1578.9199999999998
+      },
+      {
+        "word": "think",
+        "start": 1578.92,
+        "end": 1579.24
+      },
+      {
+        "word": "the",
+        "start": 1579.24,
+        "end": 1579.56
+      },
+      {
+        "word": "the",
+        "start": 1579.64,
+        "end": 1579.96
+      },
+      {
+        "word": "other",
+        "start": 1579.96,
+        "end": 1580.2
+      },
+      {
+        "word": "things",
+        "start": 1580.2,
+        "end": 1580.6000000000001
+      },
+      {
+        "word": "you",
+        "start": 1580.6,
+        "end": 1580.84
+      },
+      {
+        "word": "talk",
+        "start": 1580.84,
+        "end": 1581.16
+      },
+      {
+        "word": "about",
+        "start": 1581.16,
+        "end": 1581.3200000000002
+      },
+      {
+        "word": "then",
+        "start": 1581.48,
+        "end": 1581.8
+      },
+      {
+        "word": "might",
+        "start": 1582.12,
+        "end": 1582.68
+      },
+      {
+        "word": "be",
+        "start": 1582.68,
+        "end": 1583.0
+      },
+      {
+        "word": "even",
+        "start": 1583.4,
+        "end": 1583.72
+      },
+      {
+        "word": "with",
+        "start": 1583.72,
+        "end": 1583.96
+      },
+      {
+        "word": "the",
+        "start": 1583.96,
+        "end": 1584.2
+      },
+      {
+        "word": "best",
+        "start": 1584.2,
+        "end": 1584.52
+      },
+      {
+        "word": "governance",
+        "start": 1584.52,
+        "end": 1585.3999999999999
+      },
+      {
+        "word": "for",
+        "start": 1585.72,
+        "end": 1586.04
+      },
+      {
+        "word": "your",
+        "start": 1586.04,
+        "end": 1586.36
+      },
+      {
+        "word": "company,",
+        "start": 1586.3600000000001,
+        "end": 1587.8
+      },
+      {
+        "word": "you",
+        "start": 1587.8,
+        "end": 1588.04
+      },
+      {
+        "word": "still",
+        "start": 1588.04,
+        "end": 1588.36
+      },
+      {
+        "word": "have",
+        "start": 1588.3600000000001,
+        "end": 1588.6000000000001
+      },
+      {
+        "word": "risk",
+        "start": 1588.6,
+        "end": 1589.0
+      },
+      {
+        "word": "from",
+        "start": 1589.0,
+        "end": 1589.16
+      },
+      {
+        "word": "your",
+        "start": 1589.16,
+        "end": 1589.4
+      },
+      {
+        "word": "supply",
+        "start": 1589.4,
+        "end": 1589.96
+      },
+      {
+        "word": "chain,",
+        "start": 1589.96,
+        "end": 1591.0
+      },
+      {
+        "word": "and",
+        "start": 1591.0,
+        "end": 1591.32
+      },
+      {
+        "word": "I",
+        "start": 1592.28,
+        "end": 1592.6
+      },
+      {
+        "word": "think",
+        "start": 1592.6,
+        "end": 1592.9199999999998
+      },
+      {
+        "word": "at",
+        "start": 1593.16,
+        "end": 1593.48
+      },
+      {
+        "word": "that",
+        "start": 1593.48,
+        "end": 1593.8
+      },
+      {
+        "word": "point,",
+        "start": 1593.8,
+        "end": 1595.32
+      },
+      {
+        "word": "you",
+        "start": 1595.32,
+        "end": 1595.6399999999999
+      },
+      {
+        "word": "need",
+        "start": 1595.64,
+        "end": 1595.96
+      },
+      {
+        "word": "to",
+        "start": 1596.28,
+        "end": 1596.6
+      },
+      {
+        "word": "make",
+        "start": 1597.56,
+        "end": 1597.8799999999999
+      },
+      {
+        "word": "sure",
+        "start": 1598.2,
+        "end": 1598.84
+      },
+      {
+        "word": "that",
+        "start": 1599.48,
+        "end": 1599.8
+      },
+      {
+        "word": "even",
+        "start": 1599.96,
+        "end": 1600.28
+      },
+      {
+        "word": "when",
+        "start": 1600.28,
+        "end": 1600.6
+      },
+      {
+        "word": "approached",
+        "start": 1600.84,
+        "end": 1601.4
+      },
+      {
+        "word": "from",
+        "start": 1601.4,
+        "end": 1601.5600000000002
+      },
+      {
+        "word": "an",
+        "start": 1601.56,
+        "end": 1601.6399999999999
+      },
+      {
+        "word": "outside",
+        "start": 1601.64,
+        "end": 1602.0400000000002
+      },
+      {
+        "word": "source,",
+        "start": 1602.04,
+        "end": 1602.52
+      },
+      {
+        "word": "you",
+        "start": 1602.52,
+        "end": 1602.68
+      },
+      {
+        "word": "have",
+        "start": 1602.68,
+        "end": 1602.8400000000001
+      },
+      {
+        "word": "the",
+        "start": 1602.84,
+        "end": 1603.0
+      },
+      {
+        "word": "rules",
+        "start": 1603.0,
+        "end": 1603.24
+      },
+      {
+        "word": "for",
+        "start": 1603.24,
+        "end": 1603.4
+      },
+      {
+        "word": "your",
+        "start": 1603.4,
+        "end": 1603.5600000000002
+      },
+      {
+        "word": "agents",
+        "start": 1603.56,
+        "end": 1604.2
+      },
+      {
+        "word": "up",
+        "start": 1604.2,
+        "end": 1604.44
+      },
+      {
+        "word": "that",
+        "start": 1604.6,
+        "end": 1604.84
+      },
+      {
+        "word": "they",
+        "start": 1604.84,
+        "end": 1605.08
+      },
+      {
+        "word": "won't",
+        "start": 1605.08,
+        "end": 1605.48
+      },
+      {
+        "word": "do",
+        "start": 1605.48,
+        "end": 1605.8
+      },
+      {
+        "word": "unexpected",
+        "start": 1605.8,
+        "end": 1606.5200000000002
+      },
+      {
+        "word": "actions",
+        "start": 1606.52,
+        "end": 1606.8400000000001
+      },
+      {
+        "word": "like",
+        "start": 1606.92,
+        "end": 1607.0
+      },
+      {
+        "word": "export",
+        "start": 1607.16,
+        "end": 1607.64
+      },
+      {
+        "word": "everybody's",
+        "start": 1607.64,
+        "end": 1608.2
+      },
+      {
+        "word": "social",
+        "start": 1608.2,
+        "end": 1608.28
+      },
+      {
+        "word": "security",
+        "start": 1608.44,
+        "end": 1608.92
+      },
+      {
+        "word": "number",
+        "start": 1608.92,
+        "end": 1609.32
+      },
+      {
+        "word": "when",
+        "start": 1609.32,
+        "end": 1609.56
+      },
+      {
+        "word": "asked",
+        "start": 1609.56,
+        "end": 1609.96
+      },
+      {
+        "word": "nicely",
+        "start": 1609.96,
+        "end": 1610.3600000000001
+      },
+      {
+        "word": "by",
+        "start": 1610.3600000000001,
+        "end": 1610.44
+      },
+      {
+        "word": "a",
+        "start": 1610.44,
+        "end": 1610.6000000000001
+      },
+      {
+        "word": "third-party",
+        "start": 1610.6,
+        "end": 1611.32
+      },
+      {
+        "word": "vendor.",
+        "start": 1611.32,
+        "end": 1622.28
+      }
+    ]
+  },
+  {
+    "start": 1622.28,
+    "end": 1624.44,
+    "text": "I think most CISOs know what.",
+    "words": [
+      {
+        "word": "I",
+        "start": 1622.28,
+        "end": 1622.6
+      },
+      {
+        "word": "think",
+        "start": 1622.6,
+        "end": 1622.9199999999998
+      },
+      {
+        "word": "most",
+        "start": 1622.92,
+        "end": 1623.16
+      },
+      {
+        "word": "CISOs",
+        "start": 1623.16,
+        "end": 1623.96
+      },
+      {
+        "word": "know",
+        "start": 1623.96,
+        "end": 1624.1200000000001
+      },
+      {
+        "word": "what.",
+        "start": 1624.12,
+        "end": 1624.44
+      }
+    ]
+  },
+  {
+    "start": 1624.44,
+    "end": 1628.9199999999998,
+    "text": "Oh, sorry, go ahead.",
+    "words": [
+      {
+        "word": "Oh,",
+        "start": 1624.44,
+        "end": 1624.6799999999998
+      },
+      {
+        "word": "sorry,",
+        "start": 1624.68,
+        "end": 1625.0
+      },
+      {
+        "word": "go",
+        "start": 1625.0,
+        "end": 1625.16
+      },
+      {
+        "word": "ahead.",
+        "start": 1625.16,
+        "end": 1628.9199999999998
+      }
+    ]
+  },
+  {
+    "start": 1628.92,
+    "end": 1629.8799999999999,
+    "text": "Yeah.",
+    "words": [
+      {
+        "word": "Yeah.",
+        "start": 1628.92,
+        "end": 1629.8799999999999
+      }
+    ]
+  },
+  {
+    "start": 1697.16,
+    "end": 1704.28,
+    "text": "I think as you were explaining this, uh this might be a bad idea for a hook, but let me let me throw it to you.",
+    "words": [
+      {
+        "word": "I",
+        "start": 1697.16,
+        "end": 1697.48
+      },
+      {
+        "word": "think",
+        "start": 1697.48,
+        "end": 1697.72
+      },
+      {
+        "word": "as",
+        "start": 1697.96,
+        "end": 1698.28
+      },
+      {
+        "word": "you",
+        "start": 1698.28,
+        "end": 1698.6
+      },
+      {
+        "word": "were",
+        "start": 1698.6,
+        "end": 1698.84
+      },
+      {
+        "word": "explaining",
+        "start": 1698.8400000000001,
+        "end": 1699.6399999999999
+      },
+      {
+        "word": "this,",
+        "start": 1699.6399999999999,
+        "end": 1700.1200000000001
+      },
+      {
+        "word": "uh",
+        "start": 1700.12,
+        "end": 1700.4399999999998
+      },
+      {
+        "word": "this",
+        "start": 1700.76,
+        "end": 1701.0
+      },
+      {
+        "word": "might",
+        "start": 1701.0,
+        "end": 1701.24
+      },
+      {
+        "word": "be",
+        "start": 1701.24,
+        "end": 1701.48
+      },
+      {
+        "word": "a",
+        "start": 1701.48,
+        "end": 1701.56
+      },
+      {
+        "word": "bad",
+        "start": 1701.56,
+        "end": 1701.8
+      },
+      {
+        "word": "idea",
+        "start": 1701.8,
+        "end": 1702.1200000000001
+      },
+      {
+        "word": "for",
+        "start": 1702.12,
+        "end": 1702.28
+      },
+      {
+        "word": "a",
+        "start": 1702.28,
+        "end": 1702.36
+      },
+      {
+        "word": "hook,",
+        "start": 1702.3600000000001,
+        "end": 1702.6799999999998
+      },
+      {
+        "word": "but",
+        "start": 1702.68,
+        "end": 1702.8400000000001
+      },
+      {
+        "word": "let",
+        "start": 1702.8400000000001,
+        "end": 1702.92
+      },
+      {
+        "word": "me",
+        "start": 1702.92,
+        "end": 1703.0
+      },
+      {
+        "word": "let",
+        "start": 1703.08,
+        "end": 1703.1599999999999
+      },
+      {
+        "word": "me",
+        "start": 1703.16,
+        "end": 1703.24
+      },
+      {
+        "word": "throw",
+        "start": 1703.24,
+        "end": 1703.3999999999999
+      },
+      {
+        "word": "it",
+        "start": 1703.4,
+        "end": 1703.48
+      },
+      {
+        "word": "to",
+        "start": 1703.6399999999999,
+        "end": 1703.8799999999999
+      },
+      {
+        "word": "you.",
+        "start": 1703.88,
+        "end": 1704.28
+      }
+    ]
+  },
+  {
+    "start": 1704.28,
+    "end": 1713.48,
+    "text": "Um in the middle used to be the worst type of security attack, but it's the best way to build secure AI.",
+    "words": [
+      {
+        "word": "Um",
+        "start": 1704.28,
+        "end": 1704.6
+      },
+      {
+        "word": "in",
+        "start": 1705.56,
+        "end": 1705.72
+      },
+      {
+        "word": "the",
+        "start": 1705.72,
+        "end": 1705.96
+      },
+      {
+        "word": "middle",
+        "start": 1705.96,
+        "end": 1706.36
+      },
+      {
+        "word": "used",
+        "start": 1706.6,
+        "end": 1706.92
+      },
+      {
+        "word": "to",
+        "start": 1706.92,
+        "end": 1707.24
+      },
+      {
+        "word": "be",
+        "start": 1707.24,
+        "end": 1707.4
+      },
+      {
+        "word": "the",
+        "start": 1707.4,
+        "end": 1707.64
+      },
+      {
+        "word": "worst",
+        "start": 1707.6399999999999,
+        "end": 1707.96
+      },
+      {
+        "word": "type",
+        "start": 1707.96,
+        "end": 1708.2
+      },
+      {
+        "word": "of",
+        "start": 1708.2,
+        "end": 1708.3600000000001
+      },
+      {
+        "word": "security",
+        "start": 1708.3600000000001,
+        "end": 1708.92
+      },
+      {
+        "word": "attack,",
+        "start": 1708.92,
+        "end": 1709.72
+      },
+      {
+        "word": "but",
+        "start": 1709.72,
+        "end": 1709.96
+      },
+      {
+        "word": "it's",
+        "start": 1709.96,
+        "end": 1710.1999999999998
+      },
+      {
+        "word": "the",
+        "start": 1710.2,
+        "end": 1710.44
+      },
+      {
+        "word": "best",
+        "start": 1710.44,
+        "end": 1710.6000000000001
+      },
+      {
+        "word": "way",
+        "start": 1710.6,
+        "end": 1710.84
+      },
+      {
+        "word": "to",
+        "start": 1710.8400000000001,
+        "end": 1711.0000000000002
+      },
+      {
+        "word": "build",
+        "start": 1711.0,
+        "end": 1711.4
+      },
+      {
+        "word": "secure",
+        "start": 1711.4,
+        "end": 1711.96
+      },
+      {
+        "word": "AI.",
+        "start": 1711.96,
+        "end": 1713.48
+      }
+    ]
+  },
+  {
+    "start": 1713.48,
+    "end": 1713.96,
+    "text": "Right?",
+    "words": [
+      {
+        "word": "Right?",
+        "start": 1713.48,
+        "end": 1713.96
+      }
+    ]
+  },
+  {
+    "start": 1713.96,
+    "end": 1726.08,
+    "text": "That because you always used to worry about man in the middle attacks, and now what we're saying is this is man the middle defense.",
+    "words": [
+      {
+        "word": "That",
+        "start": 1713.96,
+        "end": 1714.2
+      },
+      {
+        "word": "because",
+        "start": 1714.28,
+        "end": 1714.36
+      },
+      {
+        "word": "you",
+        "start": 1714.52,
+        "end": 1714.76
+      },
+      {
+        "word": "always",
+        "start": 1714.76,
+        "end": 1715.0
+      },
+      {
+        "word": "used",
+        "start": 1715.0,
+        "end": 1715.08
+      },
+      {
+        "word": "to",
+        "start": 1715.08,
+        "end": 1715.1599999999999
+      },
+      {
+        "word": "worry",
+        "start": 1715.16,
+        "end": 1715.32
+      },
+      {
+        "word": "about",
+        "start": 1715.32,
+        "end": 1715.48
+      },
+      {
+        "word": "man",
+        "start": 1715.48,
+        "end": 1715.64
+      },
+      {
+        "word": "in",
+        "start": 1715.72,
+        "end": 1715.8
+      },
+      {
+        "word": "the",
+        "start": 1715.8,
+        "end": 1715.8799999999999
+      },
+      {
+        "word": "middle",
+        "start": 1715.88,
+        "end": 1716.04
+      },
+      {
+        "word": "attacks,",
+        "start": 1716.12,
+        "end": 1716.52
+      },
+      {
+        "word": "and",
+        "start": 1716.52,
+        "end": 1716.68
+      },
+      {
+        "word": "now",
+        "start": 1716.68,
+        "end": 1716.8400000000001
+      },
+      {
+        "word": "what",
+        "start": 1716.8400000000001,
+        "end": 1716.92
+      },
+      {
+        "word": "we're",
+        "start": 1716.92,
+        "end": 1717.08
+      },
+      {
+        "word": "saying",
+        "start": 1717.08,
+        "end": 1717.24
+      },
+      {
+        "word": "is",
+        "start": 1717.24,
+        "end": 1717.32
+      },
+      {
+        "word": "this",
+        "start": 1717.4,
+        "end": 1717.48
+      },
+      {
+        "word": "is",
+        "start": 1717.48,
+        "end": 1717.64
+      },
+      {
+        "word": "man",
+        "start": 1717.6399999999999,
+        "end": 1717.8
+      },
+      {
+        "word": "the",
+        "start": 1717.96,
+        "end": 1717.96
+      },
+      {
+        "word": "middle",
+        "start": 1718.04,
+        "end": 1718.28
+      },
+      {
+        "word": "defense.",
+        "start": 1718.3600000000001,
+        "end": 1726.08
+      }
+    ]
+  },
+  {
+    "start": 1724.6,
+    "end": 1726.8000000000002,
+    "text": "Yeah, yeah.",
+    "words": [
+      {
+        "word": ".",
+        "start": 1724.6,
+        "end": 1724.84
+      },
+      {
+        "word": "Yeah,",
+        "start": 1726.08,
+        "end": 1726.48
+      },
+      {
+        "word": "yeah",
+        "start": 1726.48,
+        "end": 1726.8000000000002
+      }
+    ]
+  },
+  {
+    "start": 1733.36,
+    "end": 1734.48,
+    "text": "They are kind.",
+    "words": [
+      {
+        "word": "They",
+        "start": 1733.36,
+        "end": 1733.76
+      },
+      {
+        "word": "are",
+        "start": 1733.76,
+        "end": 1733.92
+      },
+      {
+        "word": "kind.",
+        "start": 1733.92,
+        "end": 1734.48
+      }
+    ]
+  },
+  {
+    "start": 1740.88,
+    "end": 1742.5600000000002,
+    "text": "Okay, that's fair enough.",
+    "words": [
+      {
+        "word": "Okay,",
+        "start": 1740.88,
+        "end": 1741.44
+      },
+      {
+        "word": "that's",
+        "start": 1741.44,
+        "end": 1741.76
+      },
+      {
+        "word": "fair",
+        "start": 1741.76,
+        "end": 1742.0
+      },
+      {
+        "word": "enough.",
+        "start": 1742.0,
+        "end": 1742.5600000000002
+      }
+    ]
+  },
+  {
+    "start": 1742.56,
+    "end": 1752.8,
+    "text": "I was just trying to think of uh a turn of phrase.",
+    "words": [
+      {
+        "word": "I",
+        "start": 1742.56,
+        "end": 1742.8
+      },
+      {
+        "word": "was",
+        "start": 1742.8,
+        "end": 1742.96
+      },
+      {
+        "word": "just",
+        "start": 1742.96,
+        "end": 1743.2
+      },
+      {
+        "word": "trying",
+        "start": 1743.2,
+        "end": 1743.52
+      },
+      {
+        "word": "to",
+        "start": 1743.52,
+        "end": 1743.76
+      },
+      {
+        "word": "think",
+        "start": 1743.76,
+        "end": 1744.0
+      },
+      {
+        "word": "of",
+        "start": 1744.0,
+        "end": 1744.16
+      },
+      {
+        "word": "uh",
+        "start": 1744.24,
+        "end": 1744.56
+      },
+      {
+        "word": "a",
+        "start": 1744.8,
+        "end": 1745.12
+      },
+      {
+        "word": "turn",
+        "start": 1745.12,
+        "end": 1745.44
+      },
+      {
+        "word": "of",
+        "start": 1745.44,
+        "end": 1745.68
+      },
+      {
+        "word": "phrase.",
+        "start": 1745.68,
+        "end": 1752.8
+      }
+    ]
+  },
+  {
+    "start": 1754.88,
+    "end": 1756.1599999999999,
+    "text": "No, no, that's that's fine.",
+    "words": [
+      {
+        "word": "No,",
+        "start": 1754.88,
+        "end": 1755.1999999999998
+      },
+      {
+        "word": "no,",
+        "start": 1755.2,
+        "end": 1755.4399999999998
+      },
+      {
+        "word": "that's",
+        "start": 1755.44,
+        "end": 1755.6
+      },
+      {
+        "word": "that's",
+        "start": 1755.68,
+        "end": 1755.9199999999998
+      },
+      {
+        "word": "fine.",
+        "start": 1755.92,
+        "end": 1756.1599999999999
+      }
+    ]
+  },
+  {
+    "start": 1756.16,
+    "end": 1756.72,
+    "text": "I like it.",
+    "words": [
+      {
+        "word": "I",
+        "start": 1756.16,
+        "end": 1756.24
+      },
+      {
+        "word": "like",
+        "start": 1756.24,
+        "end": 1756.4
+      },
+      {
+        "word": "it.",
+        "start": 1756.4,
+        "end": 1756.72
+      }
+    ]
+  },
+  {
+    "start": 1756.72,
+    "end": 1763.9199999999998,
+    "text": "Um I think the other topic to explore here, we didn't go deeply into this, right?",
+    "words": [
+      {
+        "word": "Um",
+        "start": 1756.72,
+        "end": 1756.96
+      },
+      {
+        "word": "I",
+        "start": 1757.12,
+        "end": 1757.4399999999998
+      },
+      {
+        "word": "think",
+        "start": 1757.44,
+        "end": 1757.76
+      },
+      {
+        "word": "the",
+        "start": 1758.0,
+        "end": 1758.32
+      },
+      {
+        "word": "other",
+        "start": 1759.36,
+        "end": 1759.6799999999998
+      },
+      {
+        "word": "topic",
+        "start": 1760.0,
+        "end": 1760.64
+      },
+      {
+        "word": "to",
+        "start": 1760.64,
+        "end": 1760.88
+      },
+      {
+        "word": "explore",
+        "start": 1760.88,
+        "end": 1761.3600000000001
+      },
+      {
+        "word": "here,",
+        "start": 1761.36,
+        "end": 1761.6
+      },
+      {
+        "word": "we",
+        "start": 1761.6,
+        "end": 1761.76
+      },
+      {
+        "word": "didn't",
+        "start": 1761.76,
+        "end": 1762.08
+      },
+      {
+        "word": "go",
+        "start": 1762.08,
+        "end": 1762.24
+      },
+      {
+        "word": "deeply",
+        "start": 1762.24,
+        "end": 1762.72
+      },
+      {
+        "word": "into",
+        "start": 1762.72,
+        "end": 1762.96
+      },
+      {
+        "word": "this,",
+        "start": 1762.96,
+        "end": 1763.28
+      },
+      {
+        "word": "right?",
+        "start": 1763.28,
+        "end": 1763.9199999999998
+      }
+    ]
+  },
+  {
+    "start": 1763.92,
+    "end": 1769.6799999999998,
+    "text": "Is something around change management, which you deal with every time, right?",
+    "words": [
+      {
+        "word": "Is",
+        "start": 1763.92,
+        "end": 1764.0
+      },
+      {
+        "word": "something",
+        "start": 1764.24,
+        "end": 1764.72
+      },
+      {
+        "word": "around",
+        "start": 1764.72,
+        "end": 1765.36
+      },
+      {
+        "word": "change",
+        "start": 1765.36,
+        "end": 1765.92
+      },
+      {
+        "word": "management,",
+        "start": 1765.92,
+        "end": 1766.88
+      },
+      {
+        "word": "which",
+        "start": 1766.88,
+        "end": 1767.1200000000001
+      },
+      {
+        "word": "you",
+        "start": 1767.12,
+        "end": 1767.28
+      },
+      {
+        "word": "deal",
+        "start": 1767.28,
+        "end": 1767.52
+      },
+      {
+        "word": "with",
+        "start": 1767.52,
+        "end": 1767.76
+      },
+      {
+        "word": "every",
+        "start": 1767.76,
+        "end": 1768.24
+      },
+      {
+        "word": "time,",
+        "start": 1768.24,
+        "end": 1768.72
+      },
+      {
+        "word": "right?",
+        "start": 1768.72,
+        "end": 1769.6799999999998
+      }
+    ]
+  },
+  {
+    "start": 1769.68,
+    "end": 1781.76,
+    "text": "Because the CISO has to change, but also you do have to go from a bunch of cowboys using AI however they want to, no, there's gotta be a few rules.",
+    "words": [
+      {
+        "word": "Because",
+        "start": 1769.68,
+        "end": 1770.08
+      },
+      {
+        "word": "the",
+        "start": 1770.4,
+        "end": 1770.72
+      },
+      {
+        "word": "CISO",
+        "start": 1770.72,
+        "end": 1771.44
+      },
+      {
+        "word": "has",
+        "start": 1771.6,
+        "end": 1771.76
+      },
+      {
+        "word": "to",
+        "start": 1771.76,
+        "end": 1772.0
+      },
+      {
+        "word": "change,",
+        "start": 1772.0,
+        "end": 1772.8
+      },
+      {
+        "word": "but",
+        "start": 1772.8,
+        "end": 1773.12
+      },
+      {
+        "word": "also",
+        "start": 1773.12,
+        "end": 1773.4399999999998
+      },
+      {
+        "word": "you",
+        "start": 1773.92,
+        "end": 1774.24
+      },
+      {
+        "word": "do",
+        "start": 1774.24,
+        "end": 1774.48
+      },
+      {
+        "word": "have",
+        "start": 1774.48,
+        "end": 1774.72
+      },
+      {
+        "word": "to",
+        "start": 1774.72,
+        "end": 1774.96
+      },
+      {
+        "word": "go",
+        "start": 1774.96,
+        "end": 1775.28
+      },
+      {
+        "word": "from",
+        "start": 1775.28,
+        "end": 1775.6
+      },
+      {
+        "word": "a",
+        "start": 1775.84,
+        "end": 1776.08
+      },
+      {
+        "word": "bunch",
+        "start": 1776.08,
+        "end": 1776.4
+      },
+      {
+        "word": "of",
+        "start": 1776.4,
+        "end": 1776.5600000000002
+      },
+      {
+        "word": "cowboys",
+        "start": 1776.56,
+        "end": 1777.28
+      },
+      {
+        "word": "using",
+        "start": 1777.28,
+        "end": 1777.52
+      },
+      {
+        "word": "AI",
+        "start": 1777.52,
+        "end": 1777.92
+      },
+      {
+        "word": "however",
+        "start": 1778.0,
+        "end": 1778.3200000000002
+      },
+      {
+        "word": "they",
+        "start": 1778.32,
+        "end": 1778.56
+      },
+      {
+        "word": "want",
+        "start": 1778.56,
+        "end": 1778.72
+      },
+      {
+        "word": "to,",
+        "start": 1778.8,
+        "end": 1779.28
+      },
+      {
+        "word": "no,",
+        "start": 1779.28,
+        "end": 1779.6
+      },
+      {
+        "word": "there's",
+        "start": 1779.6,
+        "end": 1780.0
+      },
+      {
+        "word": "gotta",
+        "start": 1780.0,
+        "end": 1780.1599999999999
+      },
+      {
+        "word": "be",
+        "start": 1780.16,
+        "end": 1780.3200000000002
+      },
+      {
+        "word": "a",
+        "start": 1780.32,
+        "end": 1780.48
+      },
+      {
+        "word": "few",
+        "start": 1780.48,
+        "end": 1780.8
+      },
+      {
+        "word": "rules.",
+        "start": 1780.8,
+        "end": 1781.76
+      }
+    ]
+  },
+  {
+    "start": 1781.76,
+    "end": 1782.24,
+    "text": "Right.",
+    "words": [
+      {
+        "word": "Right.",
+        "start": 1781.76,
+        "end": 1782.24
+      }
+    ]
+  },
+  {
+    "start": 1782.24,
+    "end": 1795.52,
+    "text": "So how do you as a leader drive change to be more secure throughout the org without them just going back to never mind, I'm gonna go to my personal chat GPT anyway.",
+    "words": [
+      {
+        "word": "So",
+        "start": 1782.24,
+        "end": 1782.48
+      },
+      {
+        "word": "how",
+        "start": 1782.56,
+        "end": 1782.8
+      },
+      {
+        "word": "do",
+        "start": 1782.8,
+        "end": 1783.04
+      },
+      {
+        "word": "you",
+        "start": 1783.04,
+        "end": 1783.2
+      },
+      {
+        "word": "as",
+        "start": 1783.36,
+        "end": 1783.52
+      },
+      {
+        "word": "a",
+        "start": 1783.52,
+        "end": 1783.76
+      },
+      {
+        "word": "leader",
+        "start": 1783.76,
+        "end": 1784.56
+      },
+      {
+        "word": "drive",
+        "start": 1784.88,
+        "end": 1785.6799999999998
+      },
+      {
+        "word": "change",
+        "start": 1785.68,
+        "end": 1786.32
+      },
+      {
+        "word": "to",
+        "start": 1786.56,
+        "end": 1786.8799999999999
+      },
+      {
+        "word": "be",
+        "start": 1786.88,
+        "end": 1787.1200000000001
+      },
+      {
+        "word": "more",
+        "start": 1787.12,
+        "end": 1787.4399999999998
+      },
+      {
+        "word": "secure",
+        "start": 1787.44,
+        "end": 1788.08
+      },
+      {
+        "word": "throughout",
+        "start": 1788.08,
+        "end": 1788.72
+      },
+      {
+        "word": "the",
+        "start": 1788.72,
+        "end": 1788.96
+      },
+      {
+        "word": "org",
+        "start": 1789.2,
+        "end": 1789.84
+      },
+      {
+        "word": "without",
+        "start": 1790.16,
+        "end": 1790.72
+      },
+      {
+        "word": "them",
+        "start": 1790.72,
+        "end": 1790.88
+      },
+      {
+        "word": "just",
+        "start": 1790.88,
+        "end": 1791.1200000000001
+      },
+      {
+        "word": "going",
+        "start": 1791.12,
+        "end": 1791.4399999999998
+      },
+      {
+        "word": "back",
+        "start": 1791.44,
+        "end": 1791.52
+      },
+      {
+        "word": "to",
+        "start": 1791.68,
+        "end": 1791.8400000000001
+      },
+      {
+        "word": "never",
+        "start": 1791.92,
+        "end": 1792.24
+      },
+      {
+        "word": "mind,",
+        "start": 1792.24,
+        "end": 1792.56
+      },
+      {
+        "word": "I'm",
+        "start": 1792.56,
+        "end": 1792.72
+      },
+      {
+        "word": "gonna",
+        "start": 1792.72,
+        "end": 1792.88
+      },
+      {
+        "word": "go",
+        "start": 1792.96,
+        "end": 1793.1200000000001
+      },
+      {
+        "word": "to",
+        "start": 1793.12,
+        "end": 1793.1999999999998
+      },
+      {
+        "word": "my",
+        "start": 1793.2,
+        "end": 1793.28
+      },
+      {
+        "word": "personal",
+        "start": 1793.28,
+        "end": 1793.6000000000001
+      },
+      {
+        "word": "chat",
+        "start": 1793.6,
+        "end": 1793.92
+      },
+      {
+        "word": "GPT",
+        "start": 1793.92,
+        "end": 1794.48
+      },
+      {
+        "word": "anyway.",
+        "start": 1794.56,
+        "end": 1795.52
+      }
+    ]
+  },
+  {
+    "start": 1904.56,
+    "end": 1905.28,
+    "text": "Okay.",
+    "words": [
+      {
+        "word": "Okay.",
+        "start": 1904.56,
+        "end": 1905.28
+      }
+    ]
+  },
+  {
+    "start": 1905.28,
+    "end": 1906.4,
+    "text": "I like that.",
+    "words": [
+      {
+        "word": "I",
+        "start": 1905.28,
+        "end": 1905.6
+      },
+      {
+        "word": "like",
+        "start": 1905.6,
+        "end": 1905.9199999999998
+      },
+      {
+        "word": "that.",
+        "start": 1905.92,
+        "end": 1906.4
+      }
+    ]
+  },
+  {
+    "start": 1906.4,
+    "end": 1931.52,
+    "text": "Um I think this is for a lot of CISOs and senior security leaders, they have deep anxiety because the speed and the lack of control.",
+    "words": [
+      {
+        "word": "Um",
+        "start": 1906.4,
+        "end": 1906.72
+      },
+      {
+        "word": "I",
+        "start": 1907.92,
+        "end": 1908.24
+      },
+      {
+        "word": "think",
+        "start": 1908.24,
+        "end": 1908.56
+      },
+      {
+        "word": "this",
+        "start": 1912.32,
+        "end": 1912.6399999999999
+      },
+      {
+        "word": "is",
+        "start": 1912.96,
+        "end": 1913.28
+      },
+      {
+        "word": "for",
+        "start": 1917.3600000000001,
+        "end": 1917.6000000000001
+      },
+      {
+        "word": "a",
+        "start": 1917.6,
+        "end": 1917.6799999999998
+      },
+      {
+        "word": "lot",
+        "start": 1917.68,
+        "end": 1917.8400000000001
+      },
+      {
+        "word": "of",
+        "start": 1917.84,
+        "end": 1918.08
+      },
+      {
+        "word": "CISOs",
+        "start": 1918.08,
+        "end": 1919.04
+      },
+      {
+        "word": "and",
+        "start": 1919.6,
+        "end": 1919.9199999999998
+      },
+      {
+        "word": "senior",
+        "start": 1919.92,
+        "end": 1920.48
+      },
+      {
+        "word": "security",
+        "start": 1920.48,
+        "end": 1921.04
+      },
+      {
+        "word": "leaders,",
+        "start": 1921.04,
+        "end": 1923.4399999999998
+      },
+      {
+        "word": "they",
+        "start": 1923.44,
+        "end": 1923.76
+      },
+      {
+        "word": "have",
+        "start": 1923.76,
+        "end": 1924.08
+      },
+      {
+        "word": "deep",
+        "start": 1924.4,
+        "end": 1924.96
+      },
+      {
+        "word": "anxiety",
+        "start": 1924.96,
+        "end": 1926.08
+      },
+      {
+        "word": "because",
+        "start": 1927.2,
+        "end": 1927.52
+      },
+      {
+        "word": "the",
+        "start": 1928.32,
+        "end": 1928.6399999999999
+      },
+      {
+        "word": "speed",
+        "start": 1928.64,
+        "end": 1929.2
+      },
+      {
+        "word": "and",
+        "start": 1929.2,
+        "end": 1929.3600000000001
+      },
+      {
+        "word": "the",
+        "start": 1929.3600000000001,
+        "end": 1929.5200000000002
+      },
+      {
+        "word": "lack",
+        "start": 1929.52,
+        "end": 1929.92
+      },
+      {
+        "word": "of",
+        "start": 1929.92,
+        "end": 1930.24
+      },
+      {
+        "word": "control.",
+        "start": 1930.24,
+        "end": 1931.52
+      }
+    ]
+  },
+  {
+    "start": 1931.52,
+    "end": 1936.3999999999999,
+    "text": "And uh some of this is answerable with tooling, right?",
+    "words": [
+      {
+        "word": "And",
+        "start": 1931.52,
+        "end": 1931.84
+      },
+      {
+        "word": "uh",
+        "start": 1932.56,
+        "end": 1932.8799999999999
+      },
+      {
+        "word": "some",
+        "start": 1933.68,
+        "end": 1934.0
+      },
+      {
+        "word": "of",
+        "start": 1934.0,
+        "end": 1934.24
+      },
+      {
+        "word": "this",
+        "start": 1934.24,
+        "end": 1934.48
+      },
+      {
+        "word": "is",
+        "start": 1934.48,
+        "end": 1934.64
+      },
+      {
+        "word": "answerable",
+        "start": 1934.64,
+        "end": 1935.36
+      },
+      {
+        "word": "with",
+        "start": 1935.3600000000001,
+        "end": 1935.6000000000001
+      },
+      {
+        "word": "tooling,",
+        "start": 1935.6,
+        "end": 1936.08
+      },
+      {
+        "word": "right?",
+        "start": 1936.08,
+        "end": 1936.3999999999999
+      }
+    ]
+  },
+  {
+    "start": 1936.4,
+    "end": 1946.8,
+    "text": "With stuff like augment, but even still, how do you address that anxiety that keeps the CIOS up CIS up at night?",
+    "words": [
+      {
+        "word": "With",
+        "start": 1936.4,
+        "end": 1936.64
+      },
+      {
+        "word": "stuff",
+        "start": 1936.64,
+        "end": 1936.8799999999999
+      },
+      {
+        "word": "like",
+        "start": 1936.88,
+        "end": 1937.1200000000001
+      },
+      {
+        "word": "augment,",
+        "start": 1937.12,
+        "end": 1938.8799999999999
+      },
+      {
+        "word": "but",
+        "start": 1938.88,
+        "end": 1939.2
+      },
+      {
+        "word": "even",
+        "start": 1939.52,
+        "end": 1939.84
+      },
+      {
+        "word": "still,",
+        "start": 1939.84,
+        "end": 1941.6
+      },
+      {
+        "word": "how",
+        "start": 1941.6,
+        "end": 1941.9199999999998
+      },
+      {
+        "word": "do",
+        "start": 1941.92,
+        "end": 1942.16
+      },
+      {
+        "word": "you",
+        "start": 1942.16,
+        "end": 1942.3200000000002
+      },
+      {
+        "word": "address",
+        "start": 1942.32,
+        "end": 1942.8
+      },
+      {
+        "word": "that",
+        "start": 1942.8,
+        "end": 1943.04
+      },
+      {
+        "word": "anxiety",
+        "start": 1943.04,
+        "end": 1943.68
+      },
+      {
+        "word": "that",
+        "start": 1943.68,
+        "end": 1943.92
+      },
+      {
+        "word": "keeps",
+        "start": 1943.92,
+        "end": 1944.24
+      },
+      {
+        "word": "the",
+        "start": 1944.24,
+        "end": 1944.4
+      },
+      {
+        "word": "CIOS",
+        "start": 1944.4,
+        "end": 1945.12
+      },
+      {
+        "word": "up",
+        "start": 1945.28,
+        "end": 1945.44
+      },
+      {
+        "word": "CIS",
+        "start": 1945.6,
+        "end": 1946.0
+      },
+      {
+        "word": "up",
+        "start": 1946.32,
+        "end": 1946.48
+      },
+      {
+        "word": "at",
+        "start": 1946.48,
+        "end": 1946.56
+      },
+      {
+        "word": "night?",
+        "start": 1946.56,
+        "end": 1946.8
+      }
+    ]
+  },
+  {
+    "start": 1946.8,
+    "end": 1952.24,
+    "text": "Like you're you're kept up at night every night now, worried about when the next breach will happen.",
+    "words": [
+      {
+        "word": "Like",
+        "start": 1946.8,
+        "end": 1947.04
+      },
+      {
+        "word": "you're",
+        "start": 1947.12,
+        "end": 1947.28
+      },
+      {
+        "word": "you're",
+        "start": 1947.44,
+        "end": 1947.6799999999998
+      },
+      {
+        "word": "kept",
+        "start": 1947.68,
+        "end": 1947.92
+      },
+      {
+        "word": "up",
+        "start": 1947.92,
+        "end": 1948.0800000000002
+      },
+      {
+        "word": "at",
+        "start": 1948.08,
+        "end": 1948.1599999999999
+      },
+      {
+        "word": "night",
+        "start": 1948.16,
+        "end": 1948.4
+      },
+      {
+        "word": "every",
+        "start": 1948.4,
+        "end": 1948.6399999999999
+      },
+      {
+        "word": "night",
+        "start": 1948.64,
+        "end": 1948.8
+      },
+      {
+        "word": "now,",
+        "start": 1948.88,
+        "end": 1949.2
+      },
+      {
+        "word": "worried",
+        "start": 1949.2,
+        "end": 1949.6000000000001
+      },
+      {
+        "word": "about",
+        "start": 1949.6,
+        "end": 1949.84
+      },
+      {
+        "word": "when",
+        "start": 1949.84,
+        "end": 1950.08
+      },
+      {
+        "word": "the",
+        "start": 1950.08,
+        "end": 1950.1599999999999
+      },
+      {
+        "word": "next",
+        "start": 1950.16,
+        "end": 1950.4
+      },
+      {
+        "word": "breach",
+        "start": 1950.4,
+        "end": 1950.88
+      },
+      {
+        "word": "will",
+        "start": 1950.88,
+        "end": 1951.1200000000001
+      },
+      {
+        "word": "happen.",
+        "start": 1951.12,
+        "end": 1952.24
+      }
+    ]
+  },
+  {
+    "start": 1952.24,
+    "end": 1955.6,
+    "text": "And yeah, of course you are.",
+    "words": [
+      {
+        "word": "And",
+        "start": 1952.24,
+        "end": 1952.56
+      },
+      {
+        "word": "yeah,",
+        "start": 1952.8,
+        "end": 1953.1999999999998
+      },
+      {
+        "word": "of",
+        "start": 1953.2,
+        "end": 1953.3600000000001
+      },
+      {
+        "word": "course",
+        "start": 1953.3600000000001,
+        "end": 1953.6
+      },
+      {
+        "word": "you",
+        "start": 1953.76,
+        "end": 1954.08
+      },
+      {
+        "word": "are.",
+        "start": 1954.08,
+        "end": 1955.6
+      }
+    ]
+  },
+  {
+    "start": 1955.6,
+    "end": 1965.6000000000001,
+    "text": "Some of this will be fixed, but some of this you're just gonna have to live with.",
+    "words": [
+      {
+        "word": "Some",
+        "start": 1955.6,
+        "end": 1956.0
+      },
+      {
+        "word": "of",
+        "start": 1956.0,
+        "end": 1956.24
+      },
+      {
+        "word": "this",
+        "start": 1956.24,
+        "end": 1956.48
+      },
+      {
+        "word": "will",
+        "start": 1956.48,
+        "end": 1956.64
+      },
+      {
+        "word": "be",
+        "start": 1956.64,
+        "end": 1956.8000000000002
+      },
+      {
+        "word": "fixed,",
+        "start": 1956.8,
+        "end": 1957.1999999999998
+      },
+      {
+        "word": "but",
+        "start": 1957.2,
+        "end": 1957.44
+      },
+      {
+        "word": "some",
+        "start": 1957.44,
+        "end": 1957.6000000000001
+      },
+      {
+        "word": "of",
+        "start": 1957.6,
+        "end": 1957.6799999999998
+      },
+      {
+        "word": "this",
+        "start": 1957.68,
+        "end": 1957.8400000000001
+      },
+      {
+        "word": "you're",
+        "start": 1957.92,
+        "end": 1958.08
+      },
+      {
+        "word": "just",
+        "start": 1958.08,
+        "end": 1958.24
+      },
+      {
+        "word": "gonna",
+        "start": 1958.24,
+        "end": 1958.48
+      },
+      {
+        "word": "have",
+        "start": 1958.48,
+        "end": 1958.64
+      },
+      {
+        "word": "to",
+        "start": 1958.64,
+        "end": 1958.88
+      },
+      {
+        "word": "live",
+        "start": 1958.88,
+        "end": 1959.2
+      },
+      {
+        "word": "with.",
+        "start": 1959.2,
+        "end": 1965.6000000000001
+      }
+    ]
+  },
+  {
+    "start": 1965.92,
+    "end": 1966.72,
+    "text": "Yeah, exactly.",
+    "words": [
+      {
+        "word": "Yeah,",
+        "start": 1965.92,
+        "end": 1966.24
+      },
+      {
+        "word": "exactly.",
+        "start": 1966.24,
+        "end": 1966.72
+      }
+    ]
+  },
+  {
+    "start": 1966.72,
+    "end": 2010.0000000000002,
+    "text": "That's the how do you like some of this is, yes, of course, we'll solve this with tool, but some of this is also just you've gotta, you've gotta change.",
+    "words": [
+      {
+        "word": "That's",
+        "start": 1966.72,
+        "end": 1966.96
+      },
+      {
+        "word": "the",
+        "start": 1966.96,
+        "end": 1967.1200000000001
+      },
+      {
+        "word": "how",
+        "start": 1967.2,
+        "end": 1967.44
+      },
+      {
+        "word": "do",
+        "start": 1967.44,
+        "end": 1967.68
+      },
+      {
+        "word": "you",
+        "start": 1967.68,
+        "end": 1967.92
+      },
+      {
+        "word": "like",
+        "start": 1968.08,
+        "end": 1968.32
+      },
+      {
+        "word": "some",
+        "start": 1968.4,
+        "end": 1968.64
+      },
+      {
+        "word": "of",
+        "start": 1968.6399999999999,
+        "end": 1968.8
+      },
+      {
+        "word": "this",
+        "start": 1968.8,
+        "end": 1968.96
+      },
+      {
+        "word": "is,",
+        "start": 1968.96,
+        "end": 1969.1999999999998
+      },
+      {
+        "word": "yes,",
+        "start": 1969.2,
+        "end": 1969.44
+      },
+      {
+        "word": "of",
+        "start": 1969.44,
+        "end": 1969.52
+      },
+      {
+        "word": "course,",
+        "start": 1969.52,
+        "end": 1969.76
+      },
+      {
+        "word": "we'll",
+        "start": 1969.76,
+        "end": 1969.92
+      },
+      {
+        "word": "solve",
+        "start": 1969.92,
+        "end": 1970.16
+      },
+      {
+        "word": "this",
+        "start": 1970.16,
+        "end": 1970.24
+      },
+      {
+        "word": "with",
+        "start": 1970.24,
+        "end": 1970.4
+      },
+      {
+        "word": "tool,",
+        "start": 1970.4,
+        "end": 1970.8799999999999
+      },
+      {
+        "word": "but",
+        "start": 1970.88,
+        "end": 1971.0400000000002
+      },
+      {
+        "word": "some",
+        "start": 1971.04,
+        "end": 1971.12
+      },
+      {
+        "word": "of",
+        "start": 1971.12,
+        "end": 1971.1999999999998
+      },
+      {
+        "word": "this",
+        "start": 1971.2,
+        "end": 1971.3600000000001
+      },
+      {
+        "word": "is",
+        "start": 1971.3600000000001,
+        "end": 1971.5200000000002
+      },
+      {
+        "word": "also",
+        "start": 1971.52,
+        "end": 1971.76
+      },
+      {
+        "word": "just",
+        "start": 1971.76,
+        "end": 1971.92
+      },
+      {
+        "word": "you've",
+        "start": 1972.08,
+        "end": 1972.4
+      },
+      {
+        "word": "gotta,",
+        "start": 1972.4,
+        "end": 1973.36
+      },
+      {
+        "word": "you've",
+        "start": 1973.3600000000001,
+        "end": 1973.8400000000001
+      },
+      {
+        "word": "gotta",
+        "start": 1973.8400000000001,
+        "end": 1974.24
+      },
+      {
+        "word": "change.",
+        "start": 1974.24,
+        "end": 2010.0000000000002
+      }
+    ]
+  },
+  {
+    "start": 2087.16,
+    "end": 2087.72,
+    "text": "All right.",
+    "words": [
+      {
+        "word": "All",
+        "start": 2087.16,
+        "end": 2087.3199999999997
+      },
+      {
+        "word": "right.",
+        "start": 2087.32,
+        "end": 2087.72
+      }
+    ]
+  },
+  {
+    "start": 2087.72,
+    "end": 2088.52,
+    "text": "Awesome.",
+    "words": [
+      {
+        "word": "Awesome.",
+        "start": 2087.72,
+        "end": 2088.52
+      }
+    ]
+  },
+  {
+    "start": 2088.52,
+    "end": 2090.04,
+    "text": "Uh that's what are we at?",
+    "words": [
+      {
+        "word": "Uh",
+        "start": 2088.52,
+        "end": 2088.76
+      },
+      {
+        "word": "that's",
+        "start": 2088.84,
+        "end": 2089.08
+      },
+      {
+        "word": "what",
+        "start": 2089.32,
+        "end": 2089.48
+      },
+      {
+        "word": "are",
+        "start": 2089.56,
+        "end": 2089.64
+      },
+      {
+        "word": "we",
+        "start": 2089.64,
+        "end": 2089.7999999999997
+      },
+      {
+        "word": "at?",
+        "start": 2089.8,
+        "end": 2090.04
+      }
+    ]
+  },
+  {
+    "start": 2090.04,
+    "end": 2091.4,
+    "text": "Thirty-five minutes worth of content.",
+    "words": [
+      {
+        "word": "Thirty-five",
+        "start": 2090.04,
+        "end": 2090.44
+      },
+      {
+        "word": "minutes",
+        "start": 2090.44,
+        "end": 2090.68
+      },
+      {
+        "word": "worth",
+        "start": 2090.76,
+        "end": 2090.92
+      },
+      {
+        "word": "of",
+        "start": 2090.92,
+        "end": 2091.0
+      },
+      {
+        "word": "content.",
+        "start": 2091.08,
+        "end": 2091.4
+      }
+    ]
+  },
+  {
+    "start": 2091.4,
+    "end": 2096.12,
+    "text": "I think we've got a good chunk for our next go around.",
+    "words": [
+      {
+        "word": "I",
+        "start": 2091.4,
+        "end": 2091.56
+      },
+      {
+        "word": "think",
+        "start": 2091.56,
+        "end": 2091.72
+      },
+      {
+        "word": "we've",
+        "start": 2091.72,
+        "end": 2091.96
+      },
+      {
+        "word": "got",
+        "start": 2092.28,
+        "end": 2092.52
+      },
+      {
+        "word": "a",
+        "start": 2092.76,
+        "end": 2093.0800000000004
+      },
+      {
+        "word": "good",
+        "start": 2093.08,
+        "end": 2093.24
+      },
+      {
+        "word": "chunk",
+        "start": 2093.24,
+        "end": 2093.72
+      },
+      {
+        "word": "for",
+        "start": 2093.72,
+        "end": 2093.9599999999996
+      },
+      {
+        "word": "our",
+        "start": 2093.96,
+        "end": 2094.2
+      },
+      {
+        "word": "next",
+        "start": 2094.2,
+        "end": 2094.6
+      },
+      {
+        "word": "go",
+        "start": 2094.76,
+        "end": 2095.0
+      },
+      {
+        "word": "around.",
+        "start": 2095.16,
+        "end": 2096.12
+      }
+    ]
+  },
+  {
+    "start": 2096.12,
+    "end": 2099.96,
+    "text": "Uh this is our first time recording in Zencaster, so",
+    "words": [
+      {
+        "word": "Uh",
+        "start": 2096.12,
+        "end": 2096.44
+      },
+      {
+        "word": "this",
+        "start": 2096.6,
+        "end": 2096.8399999999997
+      },
+      {
+        "word": "is",
+        "start": 2096.84,
+        "end": 2097.08
+      },
+      {
+        "word": "our",
+        "start": 2097.08,
+        "end": 2097.4
+      },
+      {
+        "word": "first",
+        "start": 2097.4,
+        "end": 2097.64
+      },
+      {
+        "word": "time",
+        "start": 2097.64,
+        "end": 2097.8799999999997
+      },
+      {
+        "word": "recording",
+        "start": 2097.88,
+        "end": 2098.44
+      },
+      {
+        "word": "in",
+        "start": 2098.44,
+        "end": 2098.68
+      },
+      {
+        "word": "Zencaster,",
+        "start": 2098.68,
+        "end": 2099.7999999999997
+      },
+      {
+        "word": "so",
+        "start": 2099.8,
+        "end": 2099.96
+      }
+    ]
+  }
+]

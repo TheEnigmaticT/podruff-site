@@ -1,0 +1,152 @@
+{
+  "title": "Talk Title - Speaker Name",
+  "sections": [
+    {
+      "heading": "Challenges of AI Autonomy and Shadow AI",
+      "start": 14.16,
+      "end": 25.439999999999998,
+      "points": [
+        {
+          "text": "CISOs face challenges balancing AI autonomy with security controls.",
+          "start": 14.16,
+          "end": 25.439999999999998
+        }
+      ]
+    },
+    {
+      "heading": "Designing Secure AI Workflows",
+      "start": 55.12,
+      "end": 113.6,
+      "points": [
+        {
+          "text": "AI workflows require sandboxing to limit agent actions.",
+          "start": 55.12,
+          "end": 65.19999999999999
+        },
+        {
+          "text": "Visibility into agent actions is essential for auditing and prevention.",
+          "start": 65.19999999999999,
+          "end": 113.6
+        }
+      ]
+    },
+    {
+      "heading": "Accountability in AI Systems",
+      "start": 127.2,
+      "end": 185.36,
+      "points": [
+        {
+          "text": "CISOs must trace AI actions back to human operators.",
+          "start": 127.2,
+          "end": 141.36
+        },
+        {
+          "text": "Human errors in AI setup require continuous guardrail adjustments.",
+          "start": 141.36,
+          "end": 185.36
+        }
+      ]
+    },
+    {
+      "heading": "Cost of Blocking AI vs. Governed Use",
+      "start": 266.0,
+      "end": 348.52,
+      "points": [
+        {
+          "text": "Blocking AI leads to shadow AI and increased risks.",
+          "start": 266.0,
+          "end": 312.91999999999996
+        },
+        {
+          "text": "Governance enables controlled AI use without full restriction.",
+          "start": 312.91999999999996,
+          "end": 348.52
+        }
+      ]
+    },
+    {
+      "heading": "Cultural Shift for CISOs",
+      "start": 349.0,
+      "end": 381.4,
+      "points": [
+        {
+          "text": "CISOs must shift from 'no' to balanced risk management.",
+          "start": 349.0,
+          "end": 381.4
+        }
+      ]
+    },
+    {
+      "heading": "Governance as Risk Management",
+      "start": 382.04,
+      "end": 435.32,
+      "points": [
+        {
+          "text": "Governance requires risk-reward calculations and control layers.",
+          "start": 382.04,
+          "end": 435.32
+        }
+      ]
+    },
+    {
+      "heading": "EU vs. US Regulatory Landscapes",
+      "start": 673.84,
+      "end": 777.6800000000001,
+      "points": [
+        {
+          "text": "EU regulations (e.g., AI Act) drive stricter governance compliance.",
+          "start": 673.84,
+          "end": 777.6800000000001
+        }
+      ]
+    },
+    {
+      "heading": "AI Governance Lifecycle",
+      "start": 855.56,
+      "end": 995.88,
+      "points": [
+        {
+          "text": "Governance is often adopted reactively after AI experimentation.",
+          "start": 855.56,
+          "end": 995.88
+        }
+      ]
+    },
+    {
+      "heading": "Certification vs. Actual Security",
+      "start": 982.12,
+      "end": 1033.48,
+      "points": [
+        {
+          "text": "Certifications lag behind AI capabilities; governance requires real controls.",
+          "start": 982.12,
+          "end": 1033.48
+        }
+      ]
+    },
+    {
+      "heading": "Designing Effective Governance Frameworks",
+      "start": 1033.48,
+      "end": 1117.24,
+      "points": [
+        {
+          "text": "Governance must enforce rules at tool and agent levels.",
+          "start": 1033.48,
+          "end": 1117.24
+        }
+      ]
+    },
+    {
+      "heading": "CISO Anxiety and Risk Management",
+      "start": 1955.6,
+      "end": 2087.72,
+      "points": [
+        {
+          "text": "CISOs face anxiety due to rapid AI innovation and lack of standards.",
+          "start": 1955.6,
+          "end": 2087.72
+        }
+      ]
+    }
+  ]
+}

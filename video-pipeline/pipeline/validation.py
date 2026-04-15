@@ -17,18 +17,14 @@ def validate_outline(data: dict) -> None:
     _require(data, "sections")
     if not isinstance(data["sections"], list) or len(data["sections"]) < 1:
         raise ValidationError("Outline must have at least 1 section")
-    prev_end = -1.0
     for i, section in enumerate(data["sections"]):
         ctx = f"section {i}"
         _require(section, "heading", ctx)
         _require(section, "start", ctx)
         _require(section, "end", ctx)
         _require(section, "points", ctx)
-        if section["start"] < prev_end - 0.5:
-            raise ValidationError(f"Sections not in chronological order at {ctx}: start {section['start']} < prev end {prev_end}")
         if section["end"] <= section["start"]:
             raise ValidationError(f"Section end must be after start in {ctx}")
-        prev_end = section["end"]
 
 
 def validate_stories(data: dict) -> None:

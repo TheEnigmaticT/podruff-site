@@ -123,7 +123,7 @@ class DriveClient:
             q_parts.append(f"({mime_clauses})")
 
         if modified_after is not None:
-            ts = modified_after.strftime("%Y-%m-%dT%H:%M:%S")
+            ts = modified_after.isoformat()
             q_parts.append(f"modifiedTime > '{ts}'")
 
         params = urllib.parse.urlencode({

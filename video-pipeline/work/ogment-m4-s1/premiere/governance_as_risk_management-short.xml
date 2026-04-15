@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="5">
+  <sequence id="seq-1">
+    <name>governance_as_risk_management-short</name>
+    <duration>914</duration>
+    <rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+    <timecode>
+      <string>00:00:00:00</string>
+      <frame>0</frame>
+      <displayformat>NDF</displayformat>
+      <rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+    </timecode>
+    <media>
+      <video>
+        <track>
+          <clipitem id="clip-v1">
+            <name>Segment 1</name>
+            <duration>63018</duration>
+            <rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+            <start>0</start>
+            <end>273</end>
+            <in>11927</in>
+            <out>12200</out>
+            <file id="file-1">
+              <name>teo.mov</name>
+              <pathurl>file://localhost/teo.mov</pathurl>
+              <duration>63018</duration>
+              <rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+              <media>
+                <video>
+                  <samplecharacteristics>
+                    <width>1280</width>
+                    <height>720</height>
+                  </samplecharacteristics>
+                </video>
+                <audio>
+                  <samplecharacteristics>
+                    <depth>16</depth>
+                    <samplerate>48000</samplerate>
+                  </samplecharacteristics>
+                </audio>
+              </media>
+            </file>
+          </clipitem>
+          <clipitem id="clip-v2">
+            <name>Segment 2</name>
+            <duration>63018</duration>
+            <rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+            <start>273</start>
+            <end>561</end>
+            <in>12203</in>
+            <out>12491</out>
+            <file id="file-1"/>
+          </clipitem>
+          <clipitem id="clip-v3">
+            <name>Segment 3</name>
+            <duration>63018</duration>
+            <rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+            <start>561</start>
+            <end>914</end>
+            <in>12611</in>
+            <out>12964</out>
+            <file id="file-1"/>
+          </clipitem>
+        </track>
+      </video>
+      <audio>
+        <track>
+          <clipitem id="clip-a1">
+            <name>Segment 1</name>
+            <duration>63018</duration>
+            <rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+            <start>0</start>
+            <end>273</end>
+            <in>11927</in>
+            <out>12200</out>
+            <file id="file-1"/>
+            <sourcetrack>
+              <mediatype>audio</mediatype>
+              <trackindex>1</trackindex>
+            </sourcetrack>
+          </clipitem>
+          <clipitem id="clip-a2">
+            <name>Segment 2</name>
+            <duration>63018</duration>
+            <rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+            <start>273</start>
+            <end>561</end>
+            <in>12203</in>
+            <out>12491</out>
+            <file id="file-1"/>
+            <sourcetrack>
+              <mediatype>audio</mediatype>
+              <trackindex>1</trackindex>
+            </sourcetrack>
+          </clipitem>
+          <clipitem id="clip-a3">
+            <name>Segment 3</name>
+            <duration>63018</duration>
+            <rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+            <start>561</start>
+            <end>914</end>
+            <in>12611</in>
+            <out>12964</out>
+            <file id="file-1"/>
+            <sourcetrack>
+              <mediatype>audio</mediatype>
+              <trackindex>1</trackindex>
+            </sourcetrack>
+          </clipitem>
+        </track>
+      </audio>
+    </media>
+  </sequence>
+</xmeml>

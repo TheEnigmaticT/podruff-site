@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:12,800
+Uh and today the minimal control in places is really um having not only an LLM provider that you know you have secure data flows, but then after to make the AI powerful, you need to connect it to tools.
+
+2
+00:00:12,800 --> 00:00:23,040
+And so the minimum I would recommend is that not only the LM provider's data is is safe and and so you know it's not used for training, so you actually set it up in that way.
+
+3
+00:00:23,040 --> 00:00:26,320
+But then after the tools you provide needs to be governed as well.
+
+4
+00:00:26,320 --> 00:00:27,840
+And so for that it's quite simple.
+
+5
+00:00:27,840 --> 00:00:38,320
+You can have a man in the middle, so it's uh it's a bit of a gateway that will filter what comes in and out of these tools and will be able to enforce the rules that you that you want it to do.
+
+6
+00:00:38,320 --> 00:00:43,840
+A simple example is you want the agent to only be able to read and draft, but not send.
+
+7
+00:00:43,840 --> 00:00:49,360
+And so you make sure that with one toggle, you can just remove all the delete, all the send tools.
+
+8
+00:00:49,360 --> 00:00:53,760
+So it it will work within you know at least a constraining environment.
+
+9
+00:00:53,760 --> 00:01:23,760
+And the good news is that when you start with this, you will learn to see you know how well it works, what what breaks, what what what are your wins, and from there you will be able to build up and loosen up a little bit the governance and make sure that your AI starts to become more and more productive with confidence.
+
+10
+00:01:23,779 --> 00:01:36,579
+Uh and today the minimal control in places is really um having not only an LLM provider that you know you have secure data flows, but then after to make the AI powerful, you need to connect it to tools.
+
+11
+00:01:36,579 --> 00:01:46,819
+And so the minimum I would recommend is that not only the LM provider's data is is safe and and so you know it's not used for training, so you actually set it up in that way.
+
+12
+00:01:46,819 --> 00:01:50,099
+But then after the tools you provide needs to be governed as well.
+
+13
+00:01:50,099 --> 00:01:51,619
+And so for that it's quite simple.
+
+14
+00:01:51,619 --> 00:02:02,099
+You can have a man in the middle, so it's uh it's a bit of a gateway that will filter what comes in and out of these tools and will be able to enforce the rules that you that you want it to do.
+
+15
+00:02:02,099 --> 00:02:07,619
+A simple example is you want the agent to only be able to read and draft, but not send.
+
+16
+00:02:07,619 --> 00:02:13,139
+And so you make sure that with one toggle, you can just remove all the delete, all the send tools.
+
+17
+00:02:13,139 --> 00:02:17,539
+So it it will work within you know at least a constraining environment.
+
+18
+00:02:17,539 --> 00:02:47,539
+And the good news is that when you start with this, you will learn to see you know how well it works, what what breaks, what what what are your wins, and from there you will be able to build up and loosen up a little bit the governance and make sure that your AI starts to become more and more productive with confidence.

@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:13,600
+Yeah, you know, we always say it's not that you're certified that you're safe, because uh sometimes certification is a bit of a checkbox check mark, and you're like, okay, I've done that, put that in place, and then uh if you don't enforce it again, I think you know that's where problems arises.
+
+2
+00:00:13,625 --> 00:00:21,545
+And so for CISOs, um the small issues that today indeed the certifications are not moving as fast as what the AI capabilities are providing.
+
+3
+00:00:21,554 --> 00:00:32,434
+And so you have a bit this gap between okay, I these are my stamps to be secure as an enterprise, yet it doesn't really address what is it to be secure for an AI and for AI agents.
+
+4
+00:00:32,434 --> 00:00:37,634
+Uh and so today the this year is really where things are forming up.

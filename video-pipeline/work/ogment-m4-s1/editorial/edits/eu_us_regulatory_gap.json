@@ -1,0 +1,53 @@
+{
+  "story_id": "eu_us_regulatory_gap",
+  "versions": {
+    "short": {
+      "target_duration": 55,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 772.4,
+          "end": 777.6800000000001,
+          "narrative_bridge": "Strong closing statement establishes the core takeaway about Europe's regulatory impact"
+        },
+        {
+          "type": "body",
+          "start": 759.52,
+          "end": 772.4
+        }
+      ],
+      "trims": [
+        {
+          "start": 708.96,
+          "end": 759.52,
+          "reason": "Trim setup context to focus on direct regulatory comparison"
+        },
+        {
+          "start": 739.12,
+          "end": 746.72,
+          "reason": "Remove filler about US innovation to maintain narrative focus"
+        }
+      ],
+      "estimated_duration": 21.1
+    },
+    "long": {
+      "target_duration": null,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 772.4,
+          "end": 777.6800000000001,
+          "narrative_bridge": "Strong closing statement establishes the core takeaway about Europe's regulatory impact"
+        },
+        {
+          "type": "body",
+          "start": 708.96,
+          "end": 777.6800000000001
+        }
+      ],
+      "trims": [],
+      "estimated_duration": 68.7
+    }
+  },
+  "source_video": "/Users/ct-mac-mini/dev/podruff-site/video-pipeline/work/ogment-m4-s1/teo.mp3"
+}

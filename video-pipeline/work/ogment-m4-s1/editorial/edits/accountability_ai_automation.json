@@ -1,0 +1,53 @@
+{
+  "story_id": "accountability_ai_automation",
+  "versions": {
+    "short": {
+      "target_duration": 55,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 149.12,
+          "end": 161.68,
+          "narrative_bridge": "Establishes the core problem of AI accountability immediately"
+        },
+        {
+          "type": "body",
+          "start": 161.68,
+          "end": 176.4
+        }
+      ],
+      "trims": [
+        {
+          "start": 176.4,
+          "end": 180.0,
+          "reason": "Filler phrase 'um of course is visibility' adds no new information"
+        },
+        {
+          "start": 180.0,
+          "end": 183.44,
+          "reason": "Apology and redundant context about forgotten answer"
+        }
+      ],
+      "estimated_duration": 27.28
+    },
+    "long": {
+      "target_duration": null,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 149.12,
+          "end": 161.68,
+          "narrative_bridge": "Establishes the core problem of AI accountability immediately"
+        },
+        {
+          "type": "body",
+          "start": 149.12,
+          "end": 185.36
+        }
+      ],
+      "trims": [],
+      "estimated_duration": 36.28
+    }
+  },
+  "source_video": "/Users/ct-mac-mini/dev/podruff-site/video-pipeline/work/ogment-m4-s1/teo.mp3"
+}

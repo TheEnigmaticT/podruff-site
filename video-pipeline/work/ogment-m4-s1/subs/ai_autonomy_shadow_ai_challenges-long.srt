@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:06,000
+So it's true that the more you give capabilities to AI, the more it's actually useful, right?
+
+2
+00:00:06,016 --> 00:00:19,696
+Right.
+
+3
+00:00:19,709 --> 00:00:26,989
+Right.
+
+4
+00:00:26,993 --> 00:00:42,033
+Right.
+
+5
+00:00:42,041 --> 00:00:56,601
+Uh and so for a CISO um the important part will be to really uh define a sandbox, a set of actions that an agent is allowed to do, and within this set of actions, just let the agent free.

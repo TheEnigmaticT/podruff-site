@@ -26,6 +26,13 @@
                 "linkedin": { "provider": "late", "account_id": "69c2a0f06cb7b8cf4c960764" },
                 "youtube": { "provider": "late", "account_id": "69c2a1026cb7b8cf4c9607a3" }
             }
+        },
+        "crestway": {
+            "notion_database_id": "33cf778746cb81628955dfeba1e7ff0e",
+            "platforms": {
+                "linkedin": { "provider": "late", "account_id": "69cd1f5d3e56aceadd9f311f" },
+                "instagram": { "provider": "late", "account_id": "69cd22a33e56aceadd9f3e67" }
+            }
         }
     }
 }

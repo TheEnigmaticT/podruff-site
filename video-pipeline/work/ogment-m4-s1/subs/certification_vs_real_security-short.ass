@@ -1,0 +1,30 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Raleway,120,&H00F5981B,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,3,15,0,2,40,40,320,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.60,Default,,0,0,0,,{\k32}Yeah, {\k16}you {\k16}know, {\k16}we {\k24}always {\k16}say {\k24}it's {\k16}not
+Dialogue: 0,0:00:01.60,0:00:03.60,Default,,0,0,0,,{\k8}that {\k24}you're {\k48}certified {\k16}that {\k24}you're {\k48}safe, {\k24}because {\k16}uh
+Dialogue: 0,0:00:03.68,0:00:05.84,Default,,0,0,0,,{\k56}sometimes {\k56}certification {\k8}is {\k8}a {\k16}bit {\k8}of {\k16}a {\k56}checkbox
+Dialogue: 0,0:00:05.92,0:00:07.44,Default,,0,0,0,,{\k24}check {\k24}mark, {\k16}and {\k16}you're {\k16}like, {\k24}okay, {\k16}I've {\k16}done
+Dialogue: 0,0:00:07.44,0:00:09.20,Default,,0,0,0,,{\k32}that, {\k16}put {\k24}that {\k16}in {\k32}place, {\k24}and {\k24}then {\k24}uh
+Dialogue: 0,0:00:09.36,0:00:11.36,Default,,0,0,0,,{\k16}if {\k16}you {\k24}don't {\k48}enforce {\k16}it {\k40}again, {\k24}I {\k24}think
+Dialogue: 0,0:00:11.44,0:00:13.60,Default,,0,0,0,,{\k16}you {\k24}know {\k24}that's {\k32}where {\k40}problems {\k80}arises.
+Dialogue: 0,0:00:13.62,0:00:16.91,Default,,0,0,0,,{\k16}And {\k16}so {\k24}for {\k96}CISOs, {\k48}um {\k64}the {\k32}small {\k48}issues
+Dialogue: 0,0:00:17.07,0:00:19.14,Default,,0,0,0,,{\k16}that {\k32}today {\k32}indeed {\k8}the {\k64}certifications {\k16}are {\k16}not {\k24}moving
+Dialogue: 0,0:00:19.14,0:00:20.99,Default,,0,0,0,,{\k8}as {\k16}fast {\k16}as {\k24}what {\k8}the {\k40}AI {\k48}capabilities {\k24}are
+Dialogue: 0,0:00:20.99,0:00:21.54,Default,,0,0,0,,{\k56}providing.
+Dialogue: 0,0:00:21.55,0:00:22.91,Default,,0,0,0,,{\k16}And {\k16}so {\k8}you {\k16}have {\k8}a {\k24}bit {\k16}this {\k32}gap
+Dialogue: 0,0:00:22.91,0:00:25.39,Default,,0,0,0,,{\k56}between {\k40}okay, {\k40}I {\k24}these {\k16}are {\k24}my {\k40}stamps {\k8}to
+Dialogue: 0,0:00:25.39,0:00:27.47,Default,,0,0,0,,{\k8}be {\k32}secure {\k16}as {\k16}an {\k56}enterprise, {\k32}yet {\k16}it {\k32}doesn't
+Dialogue: 0,0:00:27.47,0:00:30.11,Default,,0,0,0,,{\k24}really {\k80}address {\k24}what {\k16}is {\k24}it {\k16}to {\k16}be {\k64}secure
+Dialogue: 0,0:00:30.11,0:00:32.43,Default,,0,0,0,,{\k24}for {\k16}an {\k40}AI {\k8}and {\k24}for {\k40}AI {\k80}agents.
+Dialogue: 0,0:00:32.43,0:00:35.71,Default,,0,0,0,,{\k24}Uh {\k32}and {\k40}so {\k80}today {\k64}the {\k40}this {\k32}year {\k16}is
+Dialogue: 0,0:00:35.71,0:00:37.63,Default,,0,0,0,,{\k24}really {\k24}where {\k24}things {\k24}are {\k56}forming {\k40}up.

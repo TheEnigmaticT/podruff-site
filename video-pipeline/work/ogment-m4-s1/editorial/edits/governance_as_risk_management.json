@@ -1,0 +1,63 @@
+{
+  "story_id": "governance_as_risk_management",
+  "versions": {
+    "short": {
+      "target_duration": 55,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 397.56,
+          "end": 406.68,
+          "narrative_bridge": "introduces the core concept of risk reward ratio, setting up the discussion on strategic risk management"
+        },
+        {
+          "type": "body",
+          "start": 406.76,
+          "end": 416.36
+        },
+        {
+          "type": "body",
+          "start": 420.36,
+          "end": 432.12
+        }
+      ],
+      "trims": [
+        {
+          "start": 382.04,
+          "end": 397.56,
+          "reason": "setup before the hook"
+        },
+        {
+          "start": 416.36,
+          "end": 420.36,
+          "reason": "too short to include"
+        }
+      ],
+      "estimated_duration": 30.4
+    },
+    "long": {
+      "target_duration": null,
+      "segments": [
+        {
+          "type": "hook",
+          "start": 397.56,
+          "end": 406.68,
+          "narrative_bridge": "introduces the core concept of risk reward ratio, setting up the discussion on strategic risk management"
+        },
+        {
+          "type": "body",
+          "start": 382.04,
+          "end": 397.56
+        },
+        {
+          "type": "body",
+          "start": 406.68,
+          "end": 435.32
+        }
+      ],
+      "trims": [],
+      "estimated_duration": 53.3
+    }
+  },
+  "source_video": "/Users/ct-mac-mini/dev/podruff-site/video-pipeline/work/ogment-m4-s1/teo.mp3"
+}
