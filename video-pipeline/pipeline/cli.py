@@ -1,6 +1,10 @@
+import json
+import logging
 import os
 import click
 from pipeline.poller import process_video, publish_scheduled, poll_and_process
+
+logger = logging.getLogger(__name__)
 
 
 @click.group()
@@ -165,3 +169,180 @@ def editorial(url, output_dir, max_clips, min_score):
                 f.write(fcp7_xml)
 
     click.echo(f"\nDone! Output in {output_dir}")
+
+
+# ---------------------------------------------------------------------------
+# Drive-based ingest helpers
+# ---------------------------------------------------------------------------
+
+def _process_session(drive, session: dict, client_slug: str, state) -> None:
+    """Process one Zencastr Drive session through the full editorial pipeline.
+
+    Steps (each is skipped if already completed per state):
+    1. Download source video
+    2. Transcribe with Parakeet
+    3. Run editorial pipeline (LLM 3-pass)
+    4. Generate FCP 7 XML for each story/version
+    5. Upload video + XMLs to client Drive folder
+    6. Notify Slack
+    7. Mark complete in state
+    """
+    from pipeline.drive import DriveClient
+    from pipeline.client_config import load_soul, get_drive_folder
+    from pipeline.config import WORK_DIR
+    from pipeline.transcribe import transcribe_video
+    from pipeline.editorial import run_editorial_pipeline
+    from pipeline.fcp7 import generate_fcp7_xml
+    from pipeline.notify import post_message
+
+    folder_id = session["folder_id"]
+    folder_name = session["folder_name"]
+    resume_step = state.get_step(folder_id)
+
+    work_dir = os.path.join(WORK_DIR, folder_id)
+    cache_dir = os.path.join(work_dir, "cache")
+    clips_dir = os.path.join(work_dir, "clips")
+    os.makedirs(cache_dir, exist_ok=True)
+    os.makedirs(clips_dir, exist_ok=True)
+
+    # ------------------------------------------------------------------ #
+    # Step 1: Download source video
+    # ------------------------------------------------------------------ #
+    video_file = session["video_files"][0]
+    video_name = video_file.get("name", f"{folder_id}.mp4")
+    video_path = os.path.join(cache_dir, video_name)
+
+    if resume_step < "downloaded" or not os.path.exists(video_path):
+        click.echo(f"  Downloading {video_name}...")
+        drive.download_file(video_file["id"], video_path)
+        state.mark_step(folder_id, "downloaded")
+    else:
+        click.echo(f"  Video already downloaded: {video_name}")
+
+    # ------------------------------------------------------------------ #
+    # Step 2: Transcribe
+    # ------------------------------------------------------------------ #
+    transcript_path = os.path.join(cache_dir, "transcript.json")
+
+    if resume_step < "transcribed" or not os.path.exists(transcript_path):
+        click.echo("  Transcribing with Parakeet...")
+        transcript = transcribe_video(video_path)
+        with open(transcript_path, "w") as f:
+            json.dump(transcript, f, ensure_ascii=False, indent=2)
+        state.mark_step(folder_id, "transcribed")
+    else:
+        click.echo("  Loading cached transcript...")
+        with open(transcript_path) as f:
+            transcript = json.load(f)
+
+    # ------------------------------------------------------------------ #
+    # Step 3: Editorial pipeline
+    # ------------------------------------------------------------------ #
+    click.echo("  Running editorial pipeline...")
+    edls = run_editorial_pipeline(transcript, video_path, work_dir, min_score=7)
+    state.mark_step(folder_id, "editorial")
+
+    # ------------------------------------------------------------------ #
+    # Step 4: Generate FCP 7 XMLs
+    # ------------------------------------------------------------------ #
+    xml_paths = []
+    for edl in edls:
+        story_id = edl["story_id"]
+        for version_name, version in edl["versions"].items():
+            fcp7_xml = generate_fcp7_xml(
+                version, video_path, sequence_name=f"{story_id}-{version_name}",
+            )
+            xml_filename = f"{story_id}-{version_name}.xml"
+            xml_path = os.path.join(clips_dir, xml_filename)
+            with open(xml_path, "w") as f:
+                f.write(fcp7_xml)
+            xml_paths.append(xml_path)
+            click.echo(f"  Generated XML: {xml_filename}")
+    state.mark_step(folder_id, "fcp7")
+
+    # ------------------------------------------------------------------ #
+    # Step 5: Upload to client Drive folder
+    # ------------------------------------------------------------------ #
+    client_drive_folder = get_drive_folder(client_slug)
+    session_folder_id = drive.create_folder(folder_name, client_drive_folder)
+    clips_folder_id = drive.create_folder("clips", session_folder_id)
+
+    click.echo(f"  Uploading video to Drive...")
+    drive.upload_file(video_path, session_folder_id)
+
+    for xml_path in xml_paths:
+        click.echo(f"  Uploading {os.path.basename(xml_path)}...")
+        drive.upload_file(xml_path, clips_folder_id)
+
+    state.mark_step(folder_id, "uploaded")
+
+    # ------------------------------------------------------------------ #
+    # Step 6: Notify Slack
+    # ------------------------------------------------------------------ #
+    soul = load_soul(client_slug)
+    slack_channel = soul.get("slack_channel", "")
+    n_clips = len(xml_paths)
+    message = (
+        f"Found {n_clips} clips for {folder_name}. "
+        "XMLs uploaded to Drive — ready for editing."
+    )
+    if slack_channel:
+        try:
+            post_message(message, channel=slack_channel)
+            click.echo(f"  Notified Slack channel {slack_channel}")
+        except Exception as exc:
+            logger.warning("Slack notification failed (non-blocking): %s", exc)
+    else:
+        click.echo(f"  No Slack channel configured for {client_slug}, skipping notification")
+
+    # ------------------------------------------------------------------ #
+    # Step 7: Mark complete
+    # ------------------------------------------------------------------ #
+    state.mark_complete(folder_id)
+    click.echo(f"  Session {folder_name} complete.")
+
+
+@cli.command("poll-all")
+@click.option("--zencastr-folder", default=None, help="Zencastr root folder ID in Drive")
+@click.option("--dry-run", is_flag=True, help="Show what would be processed without doing it")
+def poll_all(zencastr_folder, dry_run):
+    """Scan Zencastr Drive folder and process all new sessions."""
+    from pipeline.drive import DriveClient
+    from pipeline.drive_poller import ProcessingState, scan_zencastr_sessions
+    from pipeline.client_config import match_client
+    from pipeline.config import ZENCASTR_FOLDER_ID, WORK_DIR
+
+    folder_id = zencastr_folder or ZENCASTR_FOLDER_ID
+    if not folder_id:
+        click.echo("ERROR: ZENCASTR_FOLDER_ID not set. Pass --zencastr-folder or set env var.", err=True)
+        raise SystemExit(1)
+
+    click.echo(f"Initializing Drive client...")
+    drive = DriveClient()
+
+    state_path = os.path.join(WORK_DIR, "processing_state.json")
+    os.makedirs(WORK_DIR, exist_ok=True)
+    state = ProcessingState(state_path)
+
+    click.echo(f"Scanning Zencastr folder {folder_id}...")
+    sessions = scan_zencastr_sessions(drive, folder_id, state)
+    click.echo(f"Found {len(sessions)} unprocessed session(s).")
+
+    for session in sessions:
+        folder_name = session["folder_name"]
+        client_slug = match_client(folder_name)
+
+        if not client_slug:
+            click.echo(f"  WARNING: No client match for session '{folder_name}', skipping.")
+            continue
+
+        if dry_run:
+            n_videos = len(session["video_files"])
+            click.echo(
+                f"  [dry-run] Would process '{folder_name}' "
+                f"({n_videos} video file(s)) for client '{client_slug}'"
+            )
+            continue
+
+        click.echo(f"\nProcessing session '{folder_name}' for client '{client_slug}'...")
+        _process_session(drive, session, client_slug, state)
