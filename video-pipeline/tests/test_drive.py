@@ -339,3 +339,304 @@ class TestListFolders:
                 folders = client.list_folders("empty-parent")
 
         assert folders == []
+
+
+# ---------------------------------------------------------------------------
+# download_file tests
+# ---------------------------------------------------------------------------
+
+class TestDownloadFile:
+    def _make_client(self, tmp_path):
+        creds_file = tmp_path / "creds.json"
+        creds = dict(FAKE_CREDS)
+        creds["expiry"] = (datetime.now(timezone.utc) + timedelta(hours=1)).isoformat()
+        creds_file.write_text(json.dumps(creds))
+        return DriveClient(str(creds_file))
+
+    def test_download_file_writes_content_to_disk(self, tmp_path):
+        client = self._make_client(tmp_path)
+        dest = tmp_path / "output" / "file.mp4"
+
+        fake_content = b"fake video content"
+        mock_resp = MagicMock()
+        mock_resp.read.side_effect = [fake_content, b""]
+        mock_resp.__enter__ = lambda s: s
+        mock_resp.__exit__ = MagicMock(return_value=False)
+
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            with patch("urllib.request.Request") as mock_req:
+                client.download_file("file-abc", str(dest))
+
+        assert dest.exists()
+        assert dest.read_bytes() == fake_content
+
+    def test_download_file_creates_parent_directories(self, tmp_path):
+        client = self._make_client(tmp_path)
+        dest = tmp_path / "deep" / "nested" / "dir" / "file.mp4"
+
+        fake_content = b"data"
+        mock_resp = MagicMock()
+        mock_resp.read.side_effect = [fake_content, b""]
+        mock_resp.__enter__ = lambda s: s
+        mock_resp.__exit__ = MagicMock(return_value=False)
+
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            with patch("urllib.request.Request"):
+                client.download_file("file-abc", str(dest))
+
+        assert dest.parent.exists()
+
+    def test_download_file_requests_correct_url(self, tmp_path):
+        client = self._make_client(tmp_path)
+        dest = tmp_path / "file.mp4"
+        captured_urls = []
+
+        def capture_req(url, *args, **kwargs):
+            captured_urls.append(url)
+            req = MagicMock()
+            req.add_header = MagicMock()
+            return req
+
+        mock_resp = MagicMock()
+        mock_resp.read.side_effect = [b"data", b""]
+        mock_resp.__enter__ = lambda s: s
+        mock_resp.__exit__ = MagicMock(return_value=False)
+
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.download_file("file-xyz", str(dest))
+
+        assert len(captured_urls) == 1
+        assert "file-xyz" in captured_urls[0]
+        assert "alt=media" in captured_urls[0]
+
+    def test_download_file_sends_bearer_token(self, tmp_path):
+        client = self._make_client(tmp_path)
+        dest = tmp_path / "file.mp4"
+        captured_headers = {}
+
+        def capture_req(url, *args, **kwargs):
+            req = MagicMock()
+            req.add_header = lambda k, v: captured_headers.update({k: v})
+            return req
+
+        mock_resp = MagicMock()
+        mock_resp.read.side_effect = [b"data", b""]
+        mock_resp.__enter__ = lambda s: s
+        mock_resp.__exit__ = MagicMock(return_value=False)
+
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.download_file("file-xyz", str(dest))
+
+        assert "Authorization" in captured_headers
+        assert captured_headers["Authorization"].startswith("Bearer ")
+
+
+# ---------------------------------------------------------------------------
+# upload_file tests
+# ---------------------------------------------------------------------------
+
+class TestUploadFile:
+    def _make_client(self, tmp_path):
+        creds_file = tmp_path / "creds.json"
+        creds = dict(FAKE_CREDS)
+        creds["expiry"] = (datetime.now(timezone.utc) + timedelta(hours=1)).isoformat()
+        creds_file.write_text(json.dumps(creds))
+        return DriveClient(str(creds_file))
+
+    def test_upload_file_returns_new_file_id(self, tmp_path):
+        client = self._make_client(tmp_path)
+        src = tmp_path / "clip.mp4"
+        src.write_bytes(b"video data")
+
+        upload_resp = make_mock_urlopen({"id": "new-file-id-123"})
+
+        with patch("urllib.request.urlopen", return_value=upload_resp):
+            with patch("urllib.request.Request"):
+                file_id = client.upload_file(str(src), "parent-folder-id")
+
+        assert file_id == "new-file-id-123"
+
+    def test_upload_file_sends_multipart_body(self, tmp_path):
+        client = self._make_client(tmp_path)
+        src = tmp_path / "clip.mp4"
+        src.write_bytes(b"video data")
+        captured_requests = []
+
+        def capture_req(url, data=None, headers=None, method=None, **kwargs):
+            req = MagicMock()
+            req.add_header = lambda k, v: captured_requests.append({"header": k, "value": v, "url": url, "data": data})
+            return req
+
+        upload_resp = make_mock_urlopen({"id": "new-file-id-123"})
+
+        with patch("urllib.request.urlopen", return_value=upload_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.upload_file(str(src), "parent-folder-id")
+
+        # Should hit the multipart upload endpoint
+        urls = [r["url"] for r in captured_requests]
+        assert any("uploadType=multipart" in u for u in urls)
+
+    def test_upload_file_uses_filename_as_default_name(self, tmp_path):
+        client = self._make_client(tmp_path)
+        src = tmp_path / "my_clip.mp4"
+        src.write_bytes(b"data")
+        captured_bodies = []
+
+        def capture_req(url, data=None, **kwargs):
+            req = MagicMock()
+            req.add_header = MagicMock()
+            captured_bodies.append(data)
+            return req
+
+        upload_resp = make_mock_urlopen({"id": "fid"})
+
+        with patch("urllib.request.urlopen", return_value=upload_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.upload_file(str(src), "parent-folder-id")
+
+        # The multipart body should contain the filename
+        body = b"".join(b for b in captured_bodies if b is not None)
+        assert b"my_clip.mp4" in body
+
+    def test_upload_file_uses_custom_name_when_provided(self, tmp_path):
+        client = self._make_client(tmp_path)
+        src = tmp_path / "my_clip.mp4"
+        src.write_bytes(b"data")
+        captured_bodies = []
+
+        def capture_req(url, data=None, **kwargs):
+            req = MagicMock()
+            req.add_header = MagicMock()
+            captured_bodies.append(data)
+            return req
+
+        upload_resp = make_mock_urlopen({"id": "fid"})
+
+        with patch("urllib.request.urlopen", return_value=upload_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.upload_file(str(src), "parent-folder-id", name="custom_name.mp4")
+
+        body = b"".join(b for b in captured_bodies if b is not None)
+        assert b"custom_name.mp4" in body
+
+    def test_upload_file_includes_parent_in_metadata(self, tmp_path):
+        client = self._make_client(tmp_path)
+        src = tmp_path / "clip.mp4"
+        src.write_bytes(b"data")
+        captured_bodies = []
+
+        def capture_req(url, data=None, **kwargs):
+            req = MagicMock()
+            req.add_header = MagicMock()
+            captured_bodies.append(data)
+            return req
+
+        upload_resp = make_mock_urlopen({"id": "fid"})
+
+        with patch("urllib.request.urlopen", return_value=upload_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.upload_file(str(src), "my-parent-folder")
+
+        body = b"".join(b for b in captured_bodies if b is not None)
+        assert b"my-parent-folder" in body
+
+
+# ---------------------------------------------------------------------------
+# create_folder tests
+# ---------------------------------------------------------------------------
+
+class TestCreateFolder:
+    def _make_client(self, tmp_path):
+        creds_file = tmp_path / "creds.json"
+        creds = dict(FAKE_CREDS)
+        creds["expiry"] = (datetime.now(timezone.utc) + timedelta(hours=1)).isoformat()
+        creds_file.write_text(json.dumps(creds))
+        return DriveClient(str(creds_file))
+
+    def test_create_folder_returns_folder_id(self, tmp_path):
+        client = self._make_client(tmp_path)
+        folder_resp = make_mock_urlopen({"id": "new-folder-id-456"})
+
+        with patch("urllib.request.urlopen", return_value=folder_resp):
+            with patch("urllib.request.Request"):
+                folder_id = client.create_folder("My Folder", "parent-id-789")
+
+        assert folder_id == "new-folder-id-456"
+
+    def test_create_folder_sends_correct_mime_type(self, tmp_path):
+        client = self._make_client(tmp_path)
+        captured_bodies = []
+
+        def capture_req(url, data=None, **kwargs):
+            req = MagicMock()
+            req.add_header = MagicMock()
+            captured_bodies.append(data)
+            return req
+
+        folder_resp = make_mock_urlopen({"id": "fid"})
+
+        with patch("urllib.request.urlopen", return_value=folder_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.create_folder("My Folder", "parent-id")
+
+        body = b"".join(b for b in captured_bodies if b is not None)
+        assert b"application/vnd.google-apps.folder" in body
+
+    def test_create_folder_sends_folder_name(self, tmp_path):
+        client = self._make_client(tmp_path)
+        captured_bodies = []
+
+        def capture_req(url, data=None, **kwargs):
+            req = MagicMock()
+            req.add_header = MagicMock()
+            captured_bodies.append(data)
+            return req
+
+        folder_resp = make_mock_urlopen({"id": "fid"})
+
+        with patch("urllib.request.urlopen", return_value=folder_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.create_folder("Episode 42", "parent-id")
+
+        body = b"".join(b for b in captured_bodies if b is not None)
+        assert b"Episode 42" in body
+
+    def test_create_folder_sends_parent_id(self, tmp_path):
+        client = self._make_client(tmp_path)
+        captured_bodies = []
+
+        def capture_req(url, data=None, **kwargs):
+            req = MagicMock()
+            req.add_header = MagicMock()
+            captured_bodies.append(data)
+            return req
+
+        folder_resp = make_mock_urlopen({"id": "fid"})
+
+        with patch("urllib.request.urlopen", return_value=folder_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.create_folder("My Folder", "specific-parent-id-xyz")
+
+        body = b"".join(b for b in captured_bodies if b is not None)
+        assert b"specific-parent-id-xyz" in body
+
+    def test_create_folder_posts_to_files_endpoint(self, tmp_path):
+        client = self._make_client(tmp_path)
+        captured_urls = []
+
+        def capture_req(url, data=None, **kwargs):
+            captured_urls.append(url)
+            req = MagicMock()
+            req.add_header = MagicMock()
+            return req
+
+        folder_resp = make_mock_urlopen({"id": "fid"})
+
+        with patch("urllib.request.urlopen", return_value=folder_resp):
+            with patch("urllib.request.Request", side_effect=capture_req):
+                client.create_folder("My Folder", "parent-id")
+
+        assert any("drive/v3/files" in u for u in captured_urls)
