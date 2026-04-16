@@ -35,6 +35,11 @@ POST_TYPES = {
     },
 }
 
+# Default number of Text Insight posts to render as quote cards (speaker still +
+# pull-quote) rather than generative risograph images. Override via CLI
+# (--quote-cards N) or per-client config (client.quote_card_count).
+DEFAULT_QUOTE_CARD_COUNT = 7
+
 
 def load_manifest(session_folder):
     """Load final/manifest.json or fall back to scanning *.mp4 files.
@@ -172,12 +177,22 @@ def provision_video_clips(clips, stories, database_id, default_platforms, notion
     return created_ids
 
 
-def provision_text_insights(stories, target_count, database_id, default_platforms, notion_client, force=False):
-    """Phase 2: Create Social DB cards for text insight posts."""
-    selected = select_text_insights(stories, target_count)
-    created_ids = []
+def provision_text_insights(stories, target_count, database_id, default_platforms, notion_client,
+                             session_folder=None, clips_by_story_id=None,
+                             quote_card_count=0, brand_attribution="",
+                             force=False):
+    """Phase 2: Create Social DB cards for text insight posts.
 
-    for story in selected:
+    Returns a list of dicts: {page_id, style, context}
+      - style is "quote_card" (top `quote_card_count` stories) or "risograph" (rest)
+      - context (for quote_card only) carries clip_path, quote, attribution, variant
+        so Phase 3 can render without reconstructing from Notion
+    """
+    selected = select_text_insights(stories, target_count)
+    created = []
+    variants = ("dark", "light")
+
+    for idx, story in enumerate(selected):
         title = story.get("title", "Untitled Insight")
         hooks = story.get("hook_candidates", [])
         hook = hooks[0]["text"] if hooks else ""
@@ -200,16 +215,56 @@ def provision_text_insights(stories, target_count, database_id, default_platform
         )
         result = notion_client.create_page(database_id, props)
         page_id = result["id"]
-        created_ids.append(page_id)
-        log.info("Created Text Insight card: %s (%s)", title, page_id)
+
+        # Decide graphic style: top `quote_card_count` stories (by engagement,
+        # already sorted descending by select_text_insights) get quote cards.
+        style = "quote_card" if idx < quote_card_count else "risograph"
+        context = {}
+        if style == "quote_card":
+            story_id = story.get("id", "")
+            clip = (clips_by_story_id or {}).get(story_id)
+            if clip and session_folder:
+                clip_path = os.path.join(session_folder, "final", clip.get("filename", ""))
+                if os.path.exists(clip_path):
+                    context = {
+                        "clip_path": clip_path,
+                        "quote": hook or title,
+                        "attribution": brand_attribution,
+                        "variant": variants[idx % len(variants)],
+                    }
+                else:
+                    log.warning(
+                        "Quote card for story %s requested but clip file missing: %s. "
+                        "Falling back to risograph.", story_id, clip_path,
+                    )
+                    style = "risograph"
+            else:
+                log.warning(
+                    "Quote card for story %s requested but no matching clip in manifest. "
+                    "Falling back to risograph.", story_id,
+                )
+                style = "risograph"
+
+        created.append({"page_id": page_id, "style": style, "context": context})
+        log.info("Created Text Insight card [%s]: %s (%s)", style, title, page_id)
         time.sleep(0.35)
 
-    return created_ids
+    return created
 
 
-def generate_content_for_cards(page_ids, notion_client, config):
-    """Phase 3: Generate copy (and graphics for text insights) for all new cards."""
-    for page_id in page_ids:
+def generate_content_for_cards(cards, notion_client, config):
+    """Phase 3: Generate copy (and graphics for text insights) for all new cards.
+
+    `cards` is a list of dicts: {page_id, style?, context?}.
+    For backwards compat, bare page_id strings are also accepted.
+    """
+    for card in cards:
+        if isinstance(card, str):
+            card = {"page_id": card, "style": "", "context": {}}
+        page_id = card["page_id"]
+        style = card.get("style", "")
+        context = card.get("context", {})
+
         row = notion_client.get_page(page_id)
         gen_status = row.get("Generation Status", "")
 
@@ -221,7 +276,10 @@ def generate_content_for_cards(page_ids, notion_client, config):
             generate_social_copy(page_id, notion_client, config)
 
             if row.get("Post Type", "") == "Text Insight":
-                generate_graphic_for_card(page_id, row, notion_client, config)
+                if style == "quote_card" and context.get("clip_path"):
+                    generate_quote_card_for_card(page_id, row, notion_client, config, context)
+                else:
+                    generate_graphic_for_card(page_id, row, notion_client, config)
 
             notion_client.update_page(page_id, {
                 "Generation Status": {"select": {"name": "Complete"}},
@@ -234,6 +292,68 @@ def generate_content_for_cards(page_ids, notion_client, config):
             })
 
         time.sleep(1)
+
+
+def generate_quote_card_for_card(page_id, row, notion_client, config, context):
+    """Generate a quote card via social_quotecard (face-detected, brand-palette-driven).
+
+    context = {clip_path, quote, attribution, variant}
+    """
+    import sys
+    import tempfile
+    from datetime import datetime
+    from pathlib import Path
+
+    # social_quotecard lives in this same directory
+    from social_quotecard import (
+        load_brand, extract_candidate_frames, pick_best_frame,
+        auto_crop_params, render_card,
+    )
+    # storage lives in video-pipeline
+    sys.path.insert(0, os.path.expanduser("~/dev/podruff-site/video-pipeline"))
+    from pipeline.storage import upload_file  # type: ignore
+
+    client_name = config.get("client_name", "")
+    try:
+        brand = load_brand(client_name)
+    except (KeyError, ValueError) as e:
+        log.error("No brand config for %s: %s — skipping quote card for %s",
+                  client_name, e, page_id)
+        return
+
+    clip_path = Path(context["clip_path"])
+    quote = context.get("quote", "")
+    attribution = context.get("attribution", "")
+    variant = context.get("variant", "light")
+    if not quote:
+        log.warning("Quote card has no quote text for %s", page_id); return
+    if not attribution:
+        log.warning("Quote card has no attribution for %s — using client name", page_id)
+        attribution = client_name.replace("-", " ").title()
+
+    subtitle_trim = float(config.get("clients", {}).get(client_name, {})
+                          .get("brand", {}).get("subtitle_trim", 0.65))
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmp = Path(tmpdir)
+        frames = extract_candidate_frames(clip_path, tmp / "frames", count=5)
+        best = pick_best_frame(frames, subtitle_trim=subtitle_trim)
+        params = auto_crop_params(best, subtitle_trim, 1200, 630)
+
+        out_path = tmp / f"card_{page_id[:8]}.png"
+        render_card(brand, best, quote, attribution,
+                    variant=variant, aspect="landscape",
+                    out_path=out_path, logo_width=200,
+                    subtitle_trim=subtitle_trim,
+                    **params)
+
+        date_prefix = datetime.now().strftime("%Y/%m/%d")
+        remote_key = f"social-posts/{date_prefix}/quote-card-{page_id[:8]}.png"
+        url = upload_file(str(out_path), remote_key)
+
+    if url:
+        notion_client.update_page(page_id, {"Thumbnail URL": {"url": url}})
+        log.info("Uploaded quote card for %s: %s", page_id, url)
 
 
 def generate_graphic_for_card(page_id, row, notion_client, config):
@@ -309,8 +429,13 @@ def generate_graphic_for_card(page_id, row, notion_client, config):
             os.unlink(tmp_path)
 
 
-def provision_session(session_folder, client_name, config, force=False):
-    """Main entry point: provision all social posts for a completed session."""
+def provision_session(session_folder, client_name, config, force=False, quote_card_count=None):
+    """Main entry point: provision all social posts for a completed session.
+
+    quote_card_count: how many of the Text Insight posts to render as quote cards
+        (speaker still + pull-quote). The rest go through the risograph / Gemini path.
+        Resolution order: explicit arg → client_cfg.quote_card_count → DEFAULT_QUOTE_CARD_COUNT.
+    """
     client_cfg = config.get("clients", {}).get(client_name, {})
     database_id = client_cfg.get("notion_database_id", "")
     if not database_id:
@@ -332,13 +457,30 @@ def provision_session(session_folder, client_name, config, force=False):
     video_ids = provision_video_clips(clips, stories, database_id, default_platforms, notion, force=force)
     log.info("Phase 1 complete: %d video clip cards created", len(video_ids))
 
-    text_ids = provision_text_insights(stories, len(clips), database_id, default_platforms, notion, force=force)
-    log.info("Phase 2 complete: %d text insight cards created", len(text_ids))
+    # Resolve quote-card split
+    if quote_card_count is None:
+        quote_card_count = client_cfg.get("quote_card_count", DEFAULT_QUOTE_CARD_COUNT)
+    brand_attribution = client_cfg.get("brand", {}).get("attribution_default", "")
+    clips_by_story_id = {c.get("story_id", ""): c for c in clips}
 
-    all_ids = video_ids + text_ids
-    if all_ids:
-        generate_content_for_cards(all_ids, notion, config)
-        log.info("Phase 3 complete: content generated for %d cards", len(all_ids))
+    text_cards = provision_text_insights(
+        stories, len(clips), database_id, default_platforms, notion,
+        session_folder=session_folder,
+        clips_by_story_id=clips_by_story_id,
+        quote_card_count=quote_card_count,
+        brand_attribution=brand_attribution,
+        force=force,
+    )
+    log.info("Phase 2 complete: %d text insight cards created (%d quote_card, %d risograph)",
+             len(text_cards),
+             sum(1 for c in text_cards if c["style"] == "quote_card"),
+             sum(1 for c in text_cards if c["style"] == "risograph"))
+
+    all_cards = [{"page_id": vid, "style": "video_clip", "context": {}} for vid in video_ids]
+    all_cards.extend(text_cards)
+    if all_cards:
+        generate_content_for_cards(all_cards, notion, config)
+        log.info("Phase 3 complete: content generated for %d cards", len(all_cards))
     else:
         log.info("No new cards to generate content for")
 
@@ -353,13 +495,18 @@ def main():
     parser.add_argument("session_folder", help="Path to session folder (must contain final/)")
     parser.add_argument("--client", required=True, help="Client name from social_config.json")
     parser.add_argument("--force", action="store_true", help="Skip idempotency checks")
+    parser.add_argument("--quote-cards", type=int, default=None,
+                        help="Number of Text Insight posts to render as quote cards "
+                             "(speaker still + pull-quote). Default: client.quote_card_count "
+                             f"or {DEFAULT_QUOTE_CARD_COUNT}. Remaining insights use risograph.")
     args = parser.parse_args()
 
     config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "social_config.json")
     with open(config_path) as f:
         config = json.load(f)
 
-    provision_session(args.session_folder, args.client, config, force=args.force)
+    provision_session(args.session_folder, args.client, config,
+                      force=args.force, quote_card_count=args.quote_cards)
 
 
 if __name__ == "__main__":

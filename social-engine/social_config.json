@@ -28,10 +28,58 @@
             }
         },
         "crestway": {
-            "notion_database_id": "33cf778746cb81628955dfeba1e7ff0e",
+            "notion_database_id": "344f778746cb80329212cb19fd93b9e9",
             "platforms": {
                 "linkedin": { "provider": "late", "account_id": "69cd1f5d3e56aceadd9f311f" },
                 "instagram": { "provider": "late", "account_id": "69cd22a33e56aceadd9f3e67" }
+            },
+            "brand": {
+                "fonts": {
+                    "serif_italic": "Fraunces-Italic.ttf",
+                    "sans": "SpaceGrotesk.ttf"
+                },
+                "light": {
+                    "bg": "#F0EDE8",
+                    "quote": "#192E41",
+                    "rule": "#29738E",
+                    "attrib": "#7F6F62",
+                    "logo": "~/Documents/Obsidian/CrowdTamers Obsidian Vault/work/CrowdTamers/Clients/Crestway/brand/Crestway Simple Logo Dark.png"
+                },
+                "dark": {
+                    "bg": "#192E41",
+                    "quote": "#F7F1CF",
+                    "rule": "#29738E",
+                    "attrib": "#C8C0A0",
+                    "logo": "~/Documents/Obsidian/CrowdTamers Obsidian Vault/work/CrowdTamers/Clients/Crestway/brand/Crestway Simple Logo Light.png"
+                },
+                "wash": { "color": "#29738E", "alpha": 0.12 }
+            }
+        },
+        "jonathan-brill": {
+            "notion_database_id": "342f778746cb80ae821dc8bd79ae7506",
+            "zernio_profile_id": "69d0202493614cf329745e79",
+            "platforms": {},
+            "brand": {
+                "fonts": {
+                    "serif_italic": "Inter-Italic.ttf",
+                    "sans": "Inter.ttf"
+                },
+                "light": {
+                    "bg": "#FFFFFF",
+                    "quote": "#111111",
+                    "rule": "#E38533",
+                    "attrib": "#6B6B6B",
+                    "logo": "~/Documents/Obsidian/CrowdTamers Obsidian Vault/work/CrowdTamers/Clients/Jonathan Brill/brand/logo-dark.png"
+                },
+                "dark": {
+                    "bg": "#111111",
+                    "quote": "#FFFFFF",
+                    "rule": "#E38533",
+                    "attrib": "#A8A8A8",
+                    "logo": "~/Documents/Obsidian/CrowdTamers Obsidian Vault/work/CrowdTamers/Clients/Jonathan Brill/brand/logo-light.png"
+                },
+                "wash": { "color": "#E38533", "alpha": 0.10 },
+                "attribution_default": "Jonathan Brill, Business Futurist"
             }
         }
     }
