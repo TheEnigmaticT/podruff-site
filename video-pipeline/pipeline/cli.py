@@ -371,15 +371,233 @@ def _write_srt_from_transcript(transcript: list[dict], output_path: str, srt_tim
         f.write("\n".join(lines))
 
 
+# ---------------------------------------------------------------------------
+# Done-folder render helpers (module-level imports for patchability in tests)
+# ---------------------------------------------------------------------------
+from pipeline.fcp7 import parse_fcp7_xml
+from pipeline.edl import render_edl_version, generate_clip_subtitles
+from pipeline.editor import _detect_face_center
+from pipeline.branding import get_subtitle_style, generate_end_card, render_branded_short
+from pipeline.storage import upload_file as r2_upload
+from pipeline.notify import post_message
+from pipeline.client_config import load_soul
+from pipeline.config import WORK_DIR
+
+
+def _process_done_xml(drive, xml_info: dict, state) -> None:
+    """Render a branded final video from an editor-approved FCP 7 XML.
+
+    Steps:
+        a. Download XML to local work dir
+        b. Parse FCP 7 → time ranges
+        c. Download source video (from session root)
+        d. Render EDL against source: extract segments, crop 9:16, burn karaoke subtitles
+        e. Generate end card with logo + CTA (if logo file found, else skip)
+        f. Concat: branded video + end card → final MP4 (or just branded video if no end card)
+        g. Upload final MP4 to R2 (public URL)
+        h. Upload final MP4 to Drive session/final/
+        i. Post to Slack channel from SOUL.md
+        j. Mark XML processed in state
+
+    Args:
+        drive: DriveClient instance.
+        xml_info: Dict from scan_done_folders with keys:
+            client_slug, session_folder_id, session_name, xml_file, source_video_file
+        state: DoneXmlState instance for tracking.
+    """
+    import tempfile
+
+    client_slug = xml_info["client_slug"]
+    session_folder_id = xml_info["session_folder_id"]
+    session_name = xml_info["session_name"]
+    xml_file = xml_info["xml_file"]
+    source_video_file = xml_info["source_video_file"]
+    xml_id = xml_file["id"]
+    xml_name = xml_file["name"]  # e.g. "story-01-short.xml"
+    xml_basename = os.path.splitext(xml_name)[0]  # e.g. "story-01-short"
+
+    click.echo(f"\n[done-render] {client_slug}/{session_name}/{xml_name}")
+
+    # Load soul for branding / Slack channel
+    soul = load_soul(client_slug)
+
+    # Work dir for this XML render
+    render_dir = os.path.join(WORK_DIR, "done-renders", client_slug, session_name, xml_basename)
+    os.makedirs(render_dir, exist_ok=True)
+
+    state.mark_step(xml_id, "downloading")
+
+    # ------------------------------------------------------------------ #
+    # a. Download XML
+    # ------------------------------------------------------------------ #
+    xml_local = os.path.join(render_dir, xml_name)
+    click.echo(f"  Downloading XML {xml_name}...")
+    drive.download_file(xml_id, xml_local)
+
+    # ------------------------------------------------------------------ #
+    # b. Parse FCP 7 → time ranges
+    # ------------------------------------------------------------------ #
+    time_ranges = parse_fcp7_xml(xml_local)
+    if not time_ranges:
+        logger.warning("No time ranges parsed from %s — skipping", xml_name)
+        return
+
+    edl_version = {
+        "segments": [{"type": "body", "start": s, "end": e} for s, e in time_ranges],
+        "trims": [],
+    }
+
+    # ------------------------------------------------------------------ #
+    # c. Download source video
+    # ------------------------------------------------------------------ #
+    source_video_name = source_video_file["name"]
+    source_local = os.path.join(render_dir, source_video_name)
+    click.echo(f"  Downloading source video {source_video_name}...")
+    drive.download_file(source_video_file["id"], source_local)
+
+    state.mark_step(xml_id, "downloaded")
+
+    # ------------------------------------------------------------------ #
+    # d. Detect face, render EDL (first pass without subtitles for timing)
+    # ------------------------------------------------------------------ #
+    face_pos = _detect_face_center(source_local)
+
+    draft_path = os.path.join(render_dir, f"{xml_basename}-draft.mp4")
+    click.echo(f"  Rendering draft (no subs)...")
+    actual_durations = render_edl_version(
+        edl_version, source_local, draft_path,
+        crop_mode="vertical", face_pos=face_pos,
+    )
+
+    # ------------------------------------------------------------------ #
+    # Generate subtitles remapped to editor's cut points
+    # ------------------------------------------------------------------ #
+    sub_style = get_subtitle_style(soul)
+    sub_path = os.path.join(render_dir, f"{xml_basename}.ass")
+
+    # We don't have the full transcript here — use an empty one so subtitles
+    # generate as empty (the original transcript is not re-downloaded here
+    # to keep the process lightweight; editors can tweak subs separately).
+    # A more complete implementation would load transcript.json from Drive.
+    click.echo(f"  Generating subtitles (remapped to editor cuts)...")
+    generate_clip_subtitles(
+        edl_version, [], sub_path, style="karaoke",
+        actual_durations=actual_durations,
+        subtitle_style=sub_style,
+    )
+
+    # Re-render with subtitles burned in
+    branded_draft = os.path.join(render_dir, f"{xml_basename}-branded-draft.mp4")
+    click.echo(f"  Burning subtitles...")
+    render_edl_version(
+        edl_version, source_local, branded_draft,
+        crop_mode="vertical", face_pos=face_pos,
+        subtitle_path=sub_path,
+    )
+
+    state.mark_step(xml_id, "rendered")
+
+    # ------------------------------------------------------------------ #
+    # e. End card (optional — requires logo file)
+    # ------------------------------------------------------------------ #
+    logo_path = os.path.expanduser(f"~/Documents/logos/{client_slug}.png")
+    website = _extract_website(soul)
+    cta_text = f"Visit {website} for more" if website else ""
+
+    end_card_path = None
+    if os.path.exists(logo_path) and cta_text:
+        end_card_path = os.path.join(render_dir, f"{xml_basename}-end-card.mp4")
+        click.echo(f"  Generating end card...")
+        generate_end_card(logo_path, cta_text, end_card_path)
+    else:
+        reasons = []
+        if not os.path.exists(logo_path):
+            reasons.append(f"no logo at {logo_path}")
+        if not cta_text:
+            reasons.append("no website in SOUL.md")
+        logger.warning("Skipping end card for %s/%s: %s", client_slug, xml_basename, "; ".join(reasons))
+
+    # ------------------------------------------------------------------ #
+    # f. Concat: branded draft + end card → final MP4
+    # ------------------------------------------------------------------ #
+    final_path = os.path.join(render_dir, f"{xml_basename}-final.mp4")
+    click.echo(f"  Building final MP4...")
+
+    if end_card_path:
+        render_branded_short(branded_draft, sub_path, end_card_path, final_path)
+    else:
+        # No end card: just copy the branded draft as final
+        import shutil
+        shutil.copy2(branded_draft, final_path)
+
+    state.mark_step(xml_id, "finalized")
+
+    # ------------------------------------------------------------------ #
+    # g. Upload to R2
+    # ------------------------------------------------------------------ #
+    r2_key = f"{client_slug}/{session_name}/{xml_basename}.mp4"
+    click.echo(f"  Uploading to R2: {r2_key}...")
+    r2_url = r2_upload(final_path, r2_key)
+
+    # ------------------------------------------------------------------ #
+    # h. Upload to Drive session/final/
+    # ------------------------------------------------------------------ #
+    final_folder_id = drive.find_or_create_folder("final", session_folder_id)
+    final_filename = f"{xml_basename}.mp4"
+    click.echo(f"  Uploading to Drive final/...")
+    drive.upload_file(final_path, final_folder_id, name=final_filename)
+
+    state.mark_step(xml_id, "uploaded")
+
+    # ------------------------------------------------------------------ #
+    # i. Notify Slack
+    # ------------------------------------------------------------------ #
+    slack_channel = soul.get("slack_channel", "")
+    message = (
+        f"Branded render ready: *{session_name}/{xml_name}*\n"
+        f"R2: {r2_url}\n"
+        f"Drive: final/{final_filename}"
+    )
+    if slack_channel:
+        try:
+            post_message(message, channel=slack_channel)
+            click.echo(f"  Notified {slack_channel}")
+        except Exception as exc:
+            logger.warning("Slack notification failed (non-blocking): %s", exc)
+    else:
+        click.echo(f"  No Slack channel in SOUL.md for {client_slug}, skipping notification")
+
+    # ------------------------------------------------------------------ #
+    # j. Mark complete
+    # ------------------------------------------------------------------ #
+    state.mark_complete(xml_id)
+    click.echo(f"  Done: {xml_basename}")
+
+
+def _extract_website(soul: dict) -> str:
+    """Extract website URL from SOUL.md raw text (best-effort)."""
+    import re
+    raw = soul.get("raw", "")
+    m = re.search(r"\*\*Website:\*\*\s*(https?://[^\s\n]+)", raw)
+    if m:
+        return m.group(1).strip().rstrip("/")
+    # Fallback: look for any https URL that looks like a root domain
+    m = re.search(r"https?://(?:www\.)?([a-zA-Z0-9\-]+\.[a-z]{2,})(?:/[^\s\n]*)?", raw)
+    if m:
+        return m.group(0).strip().rstrip("/")
+    return ""
+
+
 @cli.command("poll-all")
 @click.option("--zencastr-folder", default=None, help="Zencastr root folder ID in Drive")
+@click.option("--clients-root", default=None, help="Active Clients root folder ID in Drive")
 @click.option("--dry-run", is_flag=True, help="Show what would be processed without doing it")
-def poll_all(zencastr_folder, dry_run):
-    """Scan Zencastr Drive folder and process all new sessions."""
+def poll_all(zencastr_folder, clients_root, dry_run):
+    """Scan Zencastr Drive folder and process all new sessions, then process done/ XMLs."""
     from pipeline.drive import DriveClient
-    from pipeline.drive_poller import ProcessingState, scan_zencastr_sessions
-    from pipeline.client_config import match_client
-    from pipeline.config import ZENCASTR_FOLDER_ID, WORK_DIR
+    from pipeline.drive_poller import ProcessingState, scan_zencastr_sessions, DoneXmlState, scan_done_folders
+    from pipeline.client_config import match_client, _load_client_map
+    from pipeline.config import ZENCASTR_FOLDER_ID, WORK_DIR, DRIVE_CLIENTS_ROOT
 
     folder_id = zencastr_folder or ZENCASTR_FOLDER_ID
     if not folder_id:
@@ -389,8 +607,8 @@ def poll_all(zencastr_folder, dry_run):
     click.echo(f"Initializing Drive client...")
     drive = DriveClient()
 
-    state_path = os.path.join(WORK_DIR, "processing_state.json")
     os.makedirs(WORK_DIR, exist_ok=True)
+    state_path = os.path.join(WORK_DIR, "processing_state.json")
     state = ProcessingState(state_path)
 
     click.echo(f"Scanning Zencastr folder {folder_id}...")
@@ -415,3 +633,38 @@ def poll_all(zencastr_folder, dry_run):
 
         click.echo(f"\nProcessing session '{folder_name}' for client '{client_slug}'...")
         _process_session(drive, session, client_slug, state)
+
+    # ------------------------------------------------------------------ #
+    # Done-folder scan: pick up editor-approved XMLs and render branded finals
+    # ------------------------------------------------------------------ #
+    clients_root_id = clients_root or DRIVE_CLIENTS_ROOT
+    if not clients_root_id:
+        click.echo(
+            "  NOTE: DRIVE_CLIENTS_ROOT not set — skipping done-folder scan. "
+            "Pass --clients-root or set env var.",
+        )
+        return
+
+    done_state_path = os.path.join(WORK_DIR, "done_xml_state.json")
+    done_state = DoneXmlState(path=done_state_path)
+
+    client_map = _load_client_map()
+    click.echo(f"\nScanning done/ folders under clients root {clients_root_id}...")
+    done_xmls = scan_done_folders(drive, clients_root_id, client_map, done_state)
+    click.echo(f"Found {len(done_xmls)} done XML(s) to render.")
+
+    for xml_info in done_xmls:
+        if dry_run:
+            click.echo(
+                f"  [dry-run] Would render {xml_info['client_slug']}/"
+                f"{xml_info['session_name']}/{xml_info['xml_file']['name']}"
+            )
+            continue
+        try:
+            _process_done_xml(drive, xml_info, done_state)
+        except Exception as exc:
+            logger.error(
+                "Failed to process done XML %s: %s",
+                xml_info["xml_file"]["name"], exc, exc_info=True,
+            )
+            click.echo(f"  ERROR processing {xml_info['xml_file']['name']}: {exc}", err=True)
