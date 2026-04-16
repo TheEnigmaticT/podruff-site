@@ -375,6 +375,7 @@ def _write_srt_from_transcript(transcript: list[dict], output_path: str, srt_tim
 # Done-folder render helpers (module-level imports for patchability in tests)
 # ---------------------------------------------------------------------------
 from pipeline.fcp7 import parse_fcp7_xml
+from pipeline.mlt import parse_kdenlive_mlt
 from pipeline.edl import render_edl_version, generate_clip_subtitles
 from pipeline.editor import _detect_face_center
 from pipeline.branding import get_subtitle_style, generate_end_card, render_branded_short
@@ -435,9 +436,15 @@ def _process_done_xml(drive, xml_info: dict, state) -> None:
     drive.download_file(xml_id, xml_local)
 
     # ------------------------------------------------------------------ #
-    # b. Parse FCP 7 → time ranges
+    # b. Parse edit file → time ranges (dispatch by extension)
     # ------------------------------------------------------------------ #
-    time_ranges = parse_fcp7_xml(xml_local)
+    file_name = xml_file["name"].lower()
+    if file_name.endswith(".kdenlive"):
+        time_ranges = parse_kdenlive_mlt(xml_local)
+    elif file_name.endswith(".xml"):
+        time_ranges = parse_fcp7_xml(xml_local)
+    else:
+        raise ValueError(f"Unsupported edit file type: {xml_file['name']}")
     if not time_ranges:
         logger.warning("No time ranges parsed from %s — skipping", xml_name)
         return

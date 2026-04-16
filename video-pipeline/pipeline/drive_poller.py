@@ -24,6 +24,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_STATE_PATH = "~/.openclaw/video-pipeline-state.json"
 DEFAULT_DONE_STATE_PATH = "~/.openclaw/video-pipeline-done-state.json"
 VIDEO_EXTENSIONS = {".mp4", ".webm", ".mkv", ".mov"}
+EDIT_FILE_EXTENSIONS = {".xml", ".kdenlive"}
 UPLOAD_SETTLE_SECONDS = 60  # skip XMLs newer than this to avoid mid-upload reads
 
 
@@ -260,7 +261,7 @@ def scan_done_folders(
         clients_root → each client folder → Video/ → each session → done/ → XMLs
 
     Filters applied:
-    - Only files with .xml extension
+    - Only files with .xml or .kdenlive extension
     - Only files modified > UPLOAD_SETTLE_SECONDS ago (skip in-progress uploads)
     - Only files not already marked complete in DoneXmlState
 
@@ -336,7 +337,7 @@ def scan_done_folders(
             done_files = drive_client.list_files(done_folder_id)
             xml_files = [
                 f for f in done_files
-                if os.path.splitext(f["name"])[1].lower() == ".xml"
+                if os.path.splitext(f["name"])[1].lower() in EDIT_FILE_EXTENSIONS
             ]
 
             if not xml_files:
