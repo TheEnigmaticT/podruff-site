@@ -179,21 +179,28 @@ def _process_session(drive, session: dict, client_slug: str, state) -> None:
     """Process one Zencastr Drive session through the full editorial pipeline.
 
     Steps (each is skipped if already completed per state):
-    1. Download source video
+    1. Download ALL source video tracks
     2. Transcribe with Parakeet
     3. Run editorial pipeline (LLM 3-pass)
     4. Generate FCP 7 XML for each story/version
-    5. Upload video + XMLs to client Drive folder
+    5. Upload to client Drive folder with full spec structure:
+         Active Clients/[Client]/Video/[session-name]/
+           source-*.mov         <- all video tracks
+           transcript.srt       <- SRT format transcript
+           clips/               <- FCP 7 XMLs
+           editorial/           <- outline.json + stories.json
+           done/                <- empty; editor drops tweaked XMLs here
+           final/               <- empty; branded renders go here
     6. Notify Slack
     7. Mark complete in state
     """
-    from pipeline.drive import DriveClient
     from pipeline.client_config import load_soul, get_drive_folder
     from pipeline.config import WORK_DIR
     from pipeline.transcribe import transcribe_video
     from pipeline.editorial import run_editorial_pipeline
     from pipeline.fcp7 import generate_fcp7_xml
     from pipeline.notify import post_message
+    from pipeline.edl import _srt_time
 
     folder_id = session["folder_id"]
     folder_name = session["folder_name"]
@@ -206,18 +213,24 @@ def _process_session(drive, session: dict, client_slug: str, state) -> None:
     os.makedirs(clips_dir, exist_ok=True)
 
     # ------------------------------------------------------------------ #
-    # Step 1: Download source video
+    # Step 1: Download ALL source video tracks
     # ------------------------------------------------------------------ #
-    video_file = session["video_files"][0]
-    video_name = video_file.get("name", f"{folder_id}.mp4")
-    video_path = os.path.join(cache_dir, video_name)
+    video_paths = []
+    for video_file in session["video_files"]:
+        video_name = video_file.get("name", f"{folder_id}.mp4")
+        video_path = os.path.join(cache_dir, video_name)
+        if resume_step < "downloaded" or not os.path.exists(video_path):
+            click.echo(f"  Downloading {video_name}...")
+            drive.download_file(video_file["id"], video_path)
+        else:
+            click.echo(f"  Video already downloaded: {video_name}")
+        video_paths.append(video_path)
 
-    if resume_step < "downloaded" or not os.path.exists(video_path):
-        click.echo(f"  Downloading {video_name}...")
-        drive.download_file(video_file["id"], video_path)
+    if resume_step < "downloaded":
         state.mark_step(folder_id, "downloaded")
-    else:
-        click.echo(f"  Video already downloaded: {video_name}")
+
+    # Use first video track for transcription and EDL generation
+    primary_video_path = video_paths[0]
 
     # ------------------------------------------------------------------ #
     # Step 2: Transcribe
@@ -226,7 +239,7 @@ def _process_session(drive, session: dict, client_slug: str, state) -> None:
 
     if resume_step < "transcribed" or not os.path.exists(transcript_path):
         click.echo("  Transcribing with Parakeet...")
-        transcript = transcribe_video(video_path)
+        transcript = transcribe_video(primary_video_path)
         with open(transcript_path, "w") as f:
             json.dump(transcript, f, ensure_ascii=False, indent=2)
         state.mark_step(folder_id, "transcribed")
@@ -239,7 +252,7 @@ def _process_session(drive, session: dict, client_slug: str, state) -> None:
     # Step 3: Editorial pipeline
     # ------------------------------------------------------------------ #
     click.echo("  Running editorial pipeline...")
-    edls = run_editorial_pipeline(transcript, video_path, work_dir, min_score=7)
+    edls = run_editorial_pipeline(transcript, primary_video_path, work_dir, min_score=7)
     state.mark_step(folder_id, "editorial")
 
     # ------------------------------------------------------------------ #
@@ -250,7 +263,7 @@ def _process_session(drive, session: dict, client_slug: str, state) -> None:
         story_id = edl["story_id"]
         for version_name, version in edl["versions"].items():
             fcp7_xml = generate_fcp7_xml(
-                version, video_path, sequence_name=f"{story_id}-{version_name}",
+                version, primary_video_path, sequence_name=f"{story_id}-{version_name}",
             )
             xml_filename = f"{story_id}-{version_name}.xml"
             xml_path = os.path.join(clips_dir, xml_filename)
@@ -261,17 +274,48 @@ def _process_session(drive, session: dict, client_slug: str, state) -> None:
     state.mark_step(folder_id, "fcp7")
 
     # ------------------------------------------------------------------ #
-    # Step 5: Upload to client Drive folder
+    # Step 5: Upload to client Drive folder (full spec structure)
     # ------------------------------------------------------------------ #
     client_drive_folder = get_drive_folder(client_slug)
-    session_folder_id = drive.create_folder(folder_name, client_drive_folder)
-    clips_folder_id = drive.create_folder("clips", session_folder_id)
 
-    click.echo(f"  Uploading video to Drive...")
-    drive.upload_file(video_path, session_folder_id)
+    # Active Clients/[Client]/Video/
+    video_root_id = drive.find_or_create_folder("Video", client_drive_folder)
 
+    # Active Clients/[Client]/Video/[session-name]/
+    session_folder_id = drive.find_or_create_folder(folder_name, video_root_id)
+
+    # Create subfolders (idempotent)
+    clips_folder_id = drive.find_or_create_folder("clips", session_folder_id)
+    editorial_folder_id = drive.find_or_create_folder("editorial", session_folder_id)
+    drive.find_or_create_folder("done", session_folder_id)
+    drive.find_or_create_folder("final", session_folder_id)
+
+    # Upload all video tracks as source-*.ext
+    for video_path in video_paths:
+        original_name = os.path.basename(video_path)
+        ext = os.path.splitext(original_name)[1]
+        source_name = f"source-{original_name}" if not original_name.startswith("source-") else original_name
+        click.echo(f"  Uploading {source_name} to Drive...")
+        drive.upload_file(video_path, session_folder_id, name=source_name)
+
+    # Generate and upload transcript.srt
+    srt_path = os.path.join(cache_dir, "transcript.srt")
+    _write_srt_from_transcript(transcript, srt_path, _srt_time)
+    click.echo("  Uploading transcript.srt to Drive...")
+    drive.upload_file(srt_path, session_folder_id, name="transcript.srt")
+
+    # Upload editorial outputs (outline.json, stories.json)
+    for editorial_file in ("outline.json", "stories.json"):
+        local_path = os.path.join(work_dir, editorial_file)
+        if os.path.exists(local_path):
+            click.echo(f"  Uploading editorial/{editorial_file} to Drive...")
+            drive.upload_file(local_path, editorial_folder_id, name=editorial_file)
+        else:
+            logger.warning("Editorial file not found, skipping upload: %s", local_path)
+
+    # Upload FCP 7 XMLs to clips/
     for xml_path in xml_paths:
-        click.echo(f"  Uploading {os.path.basename(xml_path)}...")
+        click.echo(f"  Uploading clips/{os.path.basename(xml_path)}...")
         drive.upload_file(xml_path, clips_folder_id)
 
     state.mark_step(folder_id, "uploaded")
@@ -300,6 +344,31 @@ def _process_session(drive, session: dict, client_slug: str, state) -> None:
     # ------------------------------------------------------------------ #
     state.mark_complete(folder_id)
     click.echo(f"  Session {folder_name} complete.")
+
+
+def _write_srt_from_transcript(transcript: list[dict], output_path: str, srt_time_fn) -> None:
+    """Write a plain SRT subtitle file from a transcript segment list.
+
+    Args:
+        transcript: List of segment dicts with 'start', 'end', 'text' keys.
+        output_path: Destination .srt file path.
+        srt_time_fn: Callable(seconds: float) -> str in HH:MM:SS,mmm format.
+    """
+    lines = []
+    seq = 0
+    for seg in transcript:
+        text = seg["text"].strip()
+        if not text:
+            continue
+        seq += 1
+        start = srt_time_fn(seg["start"])
+        end = srt_time_fn(seg["end"])
+        lines.append(str(seq))
+        lines.append(f"{start} --> {end}")
+        lines.append(text)
+        lines.append("")
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
 
 
 @cli.command("poll-all")

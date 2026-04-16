@@ -640,3 +640,90 @@ class TestCreateFolder:
                 client.create_folder("My Folder", "parent-id")
 
         assert any("drive/v3/files" in u for u in captured_urls)
+
+
+# ---------------------------------------------------------------------------
+# find_or_create_folder tests
+# ---------------------------------------------------------------------------
+
+class TestFindOrCreateFolder:
+    def _make_client(self, tmp_path):
+        creds_file = tmp_path / "creds.json"
+        creds = dict(FAKE_CREDS)
+        creds["expiry"] = (datetime.now(timezone.utc) + timedelta(hours=1)).isoformat()
+        creds_file.write_text(json.dumps(creds))
+        return DriveClient(str(creds_file))
+
+    def test_returns_existing_folder_id_when_found(self, tmp_path):
+        """When a matching folder already exists, returns its ID without creating."""
+        client = self._make_client(tmp_path)
+
+        folders_resp = make_mock_urlopen({
+            "files": [
+                {"id": "existing-video-folder", "name": "Video",
+                 "mimeType": "application/vnd.google-apps.folder",
+                 "modifiedTime": "2026-04-10T09:00:00Z"},
+            ]
+        })
+
+        with patch("urllib.request.urlopen", return_value=folders_resp):
+            with patch("urllib.request.Request"):
+                folder_id = client.find_or_create_folder("Video", "client-root-id")
+
+        assert folder_id == "existing-video-folder"
+
+    def test_creates_folder_when_not_found(self, tmp_path):
+        """When no matching folder exists, creates one and returns the new ID."""
+        client = self._make_client(tmp_path)
+
+        # First call: list_folders returns nothing
+        list_resp = make_mock_urlopen({"files": []})
+        # Second call: create_folder returns new ID
+        create_resp = make_mock_urlopen({"id": "new-folder-id-abc"})
+
+        responses = [list_resp, create_resp]
+        with patch("urllib.request.urlopen", side_effect=responses):
+            with patch("urllib.request.Request"):
+                folder_id = client.find_or_create_folder("Video", "client-root-id")
+
+        assert folder_id == "new-folder-id-abc"
+
+    def test_skips_folders_with_different_name(self, tmp_path):
+        """Does not reuse a folder whose name doesn't match exactly."""
+        client = self._make_client(tmp_path)
+
+        # Folder named "Videos" (plural) should NOT match "Video"
+        list_resp = make_mock_urlopen({
+            "files": [
+                {"id": "wrong-folder", "name": "Videos",
+                 "mimeType": "application/vnd.google-apps.folder",
+                 "modifiedTime": "2026-04-10T09:00:00Z"},
+            ]
+        })
+        create_resp = make_mock_urlopen({"id": "correct-new-folder"})
+
+        responses = [list_resp, create_resp]
+        with patch("urllib.request.urlopen", side_effect=responses):
+            with patch("urllib.request.Request"):
+                folder_id = client.find_or_create_folder("Video", "client-root-id")
+
+        assert folder_id == "correct-new-folder"
+
+    def test_idempotent_returns_same_id_on_second_call(self, tmp_path):
+        """Calling twice with same args returns same existing folder both times."""
+        client = self._make_client(tmp_path)
+
+        existing_folder = {
+            "id": "stable-folder-id", "name": "session-abc",
+            "mimeType": "application/vnd.google-apps.folder",
+            "modifiedTime": "2026-04-10T09:00:00Z",
+        }
+        list_resp_1 = make_mock_urlopen({"files": [existing_folder]})
+        list_resp_2 = make_mock_urlopen({"files": [existing_folder]})
+
+        with patch("urllib.request.urlopen", side_effect=[list_resp_1, list_resp_2]):
+            with patch("urllib.request.Request"):
+                id1 = client.find_or_create_folder("session-abc", "video-root-id")
+                id2 = client.find_or_create_folder("session-abc", "video-root-id")
+
+        assert id1 == id2 == "stable-folder-id"

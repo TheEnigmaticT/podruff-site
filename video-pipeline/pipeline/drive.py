@@ -253,3 +253,23 @@ class DriveClient:
             result = json.loads(resp.read())
 
         return result["id"]
+
+    def find_or_create_folder(self, name: str, parent_id: str) -> str:
+        """Find a folder by name under parent_id, or create it if absent.
+
+        Idempotent: re-running on the same session will reuse the existing
+        folder rather than creating a duplicate.
+
+        Args:
+            name: Folder name to find or create.
+            parent_id: Parent folder ID to search within.
+
+        Returns:
+            The folder's Drive ID (existing or newly created).
+        """
+        existing = [f for f in self.list_folders(parent_id) if f["name"] == name]
+        if existing:
+            logger.debug("find_or_create_folder: found existing '%s' id=%s", name, existing[0]["id"])
+            return existing[0]["id"]
+        logger.debug("find_or_create_folder: creating '%s' under parent=%s", name, parent_id)
+        return self.create_folder(name, parent_id)
