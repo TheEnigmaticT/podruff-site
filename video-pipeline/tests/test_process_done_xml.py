@@ -1,4 +1,5 @@
 """Tests for _process_done_xml end-to-end flow."""
+import json
 import os
 import pytest
 from unittest.mock import MagicMock, patch, call
@@ -24,6 +25,51 @@ def _make_xml_info(
     }
 
 
+def _make_drive_mock(transcript_segments=None, include_transcript=True):
+    """Build a DriveClient mock that returns a session file listing.
+
+    Args:
+        transcript_segments: List of segment dicts to return as the transcript.
+            If None, uses a minimal single-segment transcript.
+        include_transcript: If False, list_files returns no transcript.json
+            (simulates sessions where the file wasn't uploaded yet).
+    """
+    mock_drive = MagicMock()
+    if include_transcript:
+        session_files = [{"id": "transcript-file-id", "name": "transcript.json"}]
+        mock_drive.list_files.return_value = session_files
+        if transcript_segments is None:
+            transcript_segments = [{"start": 0.0, "end": 5.0, "text": "Hello world"}]
+        mock_drive._transcript_segments = transcript_segments
+    else:
+        mock_drive.list_files.return_value = []
+        mock_drive._transcript_segments = None
+    return mock_drive
+
+
+def _patch_open_for_transcript(transcript_segments):
+    """Return a context manager that patches builtins.open so that opening a
+    path ending in 'transcript.json' returns a StringIO with the JSON payload,
+    while all other open() calls are passed through to the real implementation.
+
+    Usage::
+        with _patch_open_for_transcript(segments):
+            _process_done_xml(...)
+    """
+    import io
+    import builtins
+
+    _real_open = builtins.open
+    transcript_json_str = json.dumps(transcript_segments)
+
+    def patched_open(path, *args, **kwargs):
+        if str(path).endswith("transcript.json"):
+            return io.StringIO(transcript_json_str)
+        return _real_open(path, *args, **kwargs)
+
+    return patch("builtins.open", side_effect=patched_open)
+
+
 class TestProcessDoneXml:
     """End-to-end test: mock everything, verify the full flow executes."""
 
@@ -36,8 +82,8 @@ class TestProcessDoneXml:
 
         xml_info = _make_xml_info()
 
-        # Mock drive client
-        mock_drive = MagicMock()
+        # Mock drive client — returns transcript.json in session file listing
+        mock_drive = _make_drive_mock()
 
         # Mock soul — include website so end card CTA is generated
         mock_soul = {
@@ -51,10 +97,9 @@ class TestProcessDoneXml:
 
         time_ranges = [(0.0, 10.0), (15.0, 25.0)]
         actual_durations = [10.0, 10.0]
-        end_card_path = str(tmp_path / "end_card.mp4")
         sub_path = str(tmp_path / "sub.ass")
-        rendered_path = str(tmp_path / "rendered.mp4")
-        final_path = str(tmp_path / "final.mp4")
+
+        transcript_segments = mock_drive._transcript_segments
 
         with (
             patch("pipeline.cli.load_soul", return_value=mock_soul) as mock_load_soul,
@@ -68,14 +113,18 @@ class TestProcessDoneXml:
             patch("pipeline.cli.post_message") as mock_post,
             patch("pipeline.cli._detect_face_center", return_value=(0.5, 0.3)),
             patch("pipeline.cli.WORK_DIR", str(tmp_path)),
-            patch("os.makedirs"),  # don't create real dirs in tests
-            patch("os.path.exists", return_value=True),  # logo exists
-            patch("shutil.copy2"),  # in case end-card branch is skipped, no-op copy
+            _patch_open_for_transcript(transcript_segments),  # intercept transcript.json read
+            patch("os.path.exists", return_value=True),  # logo exists; makedirs not called (os.makedirs still real)
+            patch("os.makedirs"),  # no-op to prevent real dir creation
+            patch("shutil.copy2"),  # concat step no-op
         ):
             _process_done_xml(mock_drive, xml_info, state)
 
-        # Verify drive downloads were called
-        assert mock_drive.download_file.call_count >= 2  # XML + source video
+        # Verify drive downloads were called (XML + transcript.json + source video)
+        assert mock_drive.download_file.call_count >= 2
+
+        # Verify list_files was called to look up transcript.json
+        mock_drive.list_files.assert_called_once_with("sess-1")
 
         # Verify render was called with the EDL-shaped version
         mock_render_edl.assert_called()
@@ -84,8 +133,12 @@ class TestProcessDoneXml:
         assert "segments" in edl_version
         assert len(edl_version["segments"]) == 2
 
-        # Verify subtitle generation was called
+        # Verify subtitle generation was called with the real transcript (not [])
         mock_gen_subs.assert_called_once()
+        gen_subs_call = mock_gen_subs.call_args
+        passed_transcript = gen_subs_call[0][1]
+        assert len(passed_transcript) == 1  # one segment from _make_drive_mock default
+        assert passed_transcript[0]["text"] == "Hello world"
 
         # Verify R2 upload was called
         mock_r2.assert_called_once()
@@ -105,12 +158,62 @@ class TestProcessDoneXml:
         # Verify state marked complete
         assert state.is_processed("xml-1") is True
 
+    def test_falls_back_to_empty_transcript_when_not_in_drive(self, tmp_path):
+        """If transcript.json is missing from Drive, subtitles are generated with [] and a warning is logged."""
+        from pipeline.cli import _process_done_xml
+        import logging
+
+        state = DoneXmlState(path=str(tmp_path / "state.json"))
+        xml_info = _make_xml_info(xml_id="xml-no-transcript")
+
+        # Drive has no transcript.json in the session folder
+        mock_drive = _make_drive_mock(include_transcript=False)
+
+        mock_soul = {
+            "slack_channel": "",
+            "subtitle_highlight": "",
+            "subtitle_font": "",
+            "raw": "",
+            "brand_color": "#FFFFFF",
+            "notion_db": "",
+        }
+
+        captured_gen_subs_calls = []
+
+        def capture_gen_subs(edl_version, transcript, *args, **kwargs):
+            captured_gen_subs_calls.append(transcript)
+
+        with (
+            patch("pipeline.cli.load_soul", return_value=mock_soul),
+            patch("pipeline.cli.parse_fcp7_xml", return_value=[(0.0, 5.0)]),
+            patch("pipeline.cli.render_edl_version", return_value=[5.0]),
+            patch("pipeline.cli.generate_clip_subtitles", side_effect=capture_gen_subs),
+            patch("pipeline.cli.get_subtitle_style", return_value={"highlight_color": "#FFFFFF", "font": "Inter", "font_size": 120}),
+            patch("pipeline.cli.generate_end_card"),
+            patch("pipeline.cli.render_branded_short"),
+            patch("pipeline.cli.r2_upload", return_value="https://r2.example.com/x"),
+            patch("pipeline.cli.post_message"),
+            patch("pipeline.cli._detect_face_center", return_value=None),
+            patch("pipeline.cli.WORK_DIR", str(tmp_path)),
+            patch("os.makedirs"),
+            patch("os.path.exists", return_value=False),
+            patch("shutil.copy2"),
+        ):
+            # Should not raise even though transcript.json is missing from Drive
+            _process_done_xml(mock_drive, xml_info, state)
+
+        # generate_clip_subtitles was still called, but with an empty transcript
+        assert len(captured_gen_subs_calls) == 1
+        assert captured_gen_subs_calls[0] == []
+
     def test_skips_end_card_when_no_logo(self, tmp_path):
         """If no logo found, end card is skipped and branded render uses no end card."""
         from pipeline.cli import _process_done_xml
 
         state = DoneXmlState(path=str(tmp_path / "state.json"))
         xml_info = _make_xml_info(xml_id="xml-no-logo")
+
+        mock_drive = _make_drive_mock()
 
         mock_soul = {
             "slack_channel": "",
@@ -133,11 +236,12 @@ class TestProcessDoneXml:
             patch("pipeline.cli.post_message"),
             patch("pipeline.cli._detect_face_center", return_value=None),
             patch("pipeline.cli.WORK_DIR", str(tmp_path)),
+            _patch_open_for_transcript(mock_drive._transcript_segments),
             patch("os.makedirs"),
             patch("os.path.exists", return_value=False),  # no logo file
             patch("shutil.copy2"),  # don't actually copy files
         ):
-            _process_done_xml(mock_drive := MagicMock(), xml_info, state)
+            _process_done_xml(mock_drive, xml_info, state)
 
         # End card should NOT be generated when logo is missing
         mock_end_card.assert_not_called()
@@ -148,6 +252,8 @@ class TestProcessDoneXml:
 
         state = DoneXmlState(path=str(tmp_path / "state.json"))
         xml_info = _make_xml_info(xml_id="xml-slack-fail")
+
+        mock_drive = _make_drive_mock()
 
         mock_soul = {
             "slack_channel": "#channel",
@@ -170,12 +276,13 @@ class TestProcessDoneXml:
             patch("pipeline.cli.post_message", side_effect=Exception("Slack is down")),
             patch("pipeline.cli._detect_face_center", return_value=None),
             patch("pipeline.cli.WORK_DIR", str(tmp_path)),
+            _patch_open_for_transcript(mock_drive._transcript_segments),
             patch("os.makedirs"),
             patch("os.path.exists", return_value=False),
             patch("shutil.copy2"),
         ):
             # Should not raise
-            _process_done_xml(MagicMock(), xml_info, state)
+            _process_done_xml(mock_drive, xml_info, state)
 
         assert state.is_processed("xml-slack-fail") is True
 
@@ -206,6 +313,8 @@ class TestProcessDoneXml:
             "notion_db": "",
         }
 
+        mock_drive = _make_drive_mock()
+
         with (
             patch("pipeline.cli.load_soul", return_value=mock_soul),
             patch("pipeline.cli.parse_fcp7_xml", return_value=[(0.0, 5.0)]),
@@ -218,11 +327,12 @@ class TestProcessDoneXml:
             patch("pipeline.cli.post_message"),
             patch("pipeline.cli._detect_face_center", return_value=None),
             patch("pipeline.cli.WORK_DIR", str(tmp_path)),
+            _patch_open_for_transcript(mock_drive._transcript_segments),
             patch("os.makedirs"),
             patch("os.path.exists", return_value=False),
             patch("shutil.copy2"),
         ):
-            _process_done_xml(MagicMock(), xml_info, state)
+            _process_done_xml(mock_drive, xml_info, state)
 
         assert len(captured_r2_calls) == 1
         key = captured_r2_calls[0]

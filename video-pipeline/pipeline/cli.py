@@ -304,6 +304,10 @@ def _process_session(drive, session: dict, client_slug: str, state) -> None:
     click.echo("  Uploading transcript.srt to Drive...")
     drive.upload_file(srt_path, session_folder_id, name="transcript.srt")
 
+    # Upload transcript.json (word-level timing — needed for karaoke subtitle rendering)
+    click.echo("  Uploading transcript.json to Drive...")
+    drive.upload_file(transcript_path, session_folder_id, name="transcript.json")
+
     # Upload editorial outputs (outline.json, stories.json)
     for editorial_file in ("outline.json", "stories.json"):
         local_path = os.path.join(work_dir, editorial_file)
@@ -477,18 +481,29 @@ def _process_done_xml(drive, xml_info: dict, state) -> None:
     )
 
     # ------------------------------------------------------------------ #
+    # Fetch transcript.json from session folder for subtitle generation
+    # ------------------------------------------------------------------ #
+    transcript = []
+    session_files = drive.list_files(session_folder_id)
+    transcript_file = next((f for f in session_files if f["name"] == "transcript.json"), None)
+    if transcript_file:
+        tmp_transcript_path = os.path.join(render_dir, "transcript.json")
+        drive.download_file(transcript_file["id"], tmp_transcript_path)
+        with open(tmp_transcript_path) as f:
+            transcript = json.load(f)
+        logger.info("Loaded transcript: %d segments", len(transcript))
+    else:
+        logger.warning("No transcript.json in session folder; subtitles will be empty")
+
+    # ------------------------------------------------------------------ #
     # Generate subtitles remapped to editor's cut points
     # ------------------------------------------------------------------ #
     sub_style = get_subtitle_style(soul)
     sub_path = os.path.join(render_dir, f"{xml_basename}.ass")
 
-    # We don't have the full transcript here — use an empty one so subtitles
-    # generate as empty (the original transcript is not re-downloaded here
-    # to keep the process lightweight; editors can tweak subs separately).
-    # A more complete implementation would load transcript.json from Drive.
     click.echo(f"  Generating subtitles (remapped to editor cuts)...")
     generate_clip_subtitles(
-        edl_version, [], sub_path, style="karaoke",
+        edl_version, transcript, sub_path, style="karaoke",
         actual_durations=actual_durations,
         subtitle_style=sub_style,
     )
