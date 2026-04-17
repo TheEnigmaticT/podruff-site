@@ -52,8 +52,15 @@ def load_soul(client_slug: str, workspaces_dir=None) -> dict:
     subtitle_font = m.group(1).strip() if m else _DEFAULT_FONT
 
     # Slack internal channel: "**Internal:** `#channel-name` (CHANNEL_ID)"
-    m = re.search(r"\*\*Internal:\*\*\s*`(#[\w-]+)`", raw)
-    slack_channel = m.group(1) if m else ""
+    # Prefer the channel ID (what Slack API needs); fall back to name if no ID present.
+    m = re.search(r"\*\*Internal:\*\*\s*`(#[\w-]+)`\s*\(([A-Z0-9]+)\)", raw)
+    if m:
+        slack_channel_name = m.group(1)
+        slack_channel = m.group(2)
+    else:
+        m = re.search(r"\*\*Internal:\*\*\s*`(#[\w-]+)`", raw)
+        slack_channel_name = m.group(1) if m else ""
+        slack_channel = slack_channel_name
 
     # Notion DB: URL containing crowdtamers/{id}
     m = re.search(r"notion\.so/crowdtamers/([a-f0-9]{32})", raw)
@@ -64,6 +71,7 @@ def load_soul(client_slug: str, workspaces_dir=None) -> dict:
         "subtitle_highlight": subtitle_highlight,
         "subtitle_font": subtitle_font,
         "slack_channel": slack_channel,
+        "slack_channel_name": slack_channel_name,
         "notion_db": notion_db,
         "raw": raw,
     }

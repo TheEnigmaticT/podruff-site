@@ -45,7 +45,8 @@ def test_load_soul(tmp_path):
     assert data["brand_color"] == "#E38533"
     assert data["subtitle_highlight"] == "#E38533"
     assert data["subtitle_font"] == "Inter"
-    assert data["slack_channel"] == "#jonathan-brill"
+    assert data["slack_channel"] == "C05SGKQAQGK"
+    assert data["slack_channel_name"] == "#jonathan-brill"
     assert data["notion_db"] == "342f778746cb80ae821dc8bd79ae7506"
     assert data["raw"] == SAMPLE_SOUL_MD
 
