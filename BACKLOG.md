@@ -10,7 +10,6 @@ kanban-plugin: board
 
 ## In Progress
 
-- [ ] Commit uncommitted core file modifications #podruff/hooks [added::2026-02-26]
 
 
 ## In Review
@@ -34,6 +33,7 @@ kanban-plugin: board
 
 ## Done
 
+- [x] Commit uncommitted core file modifications #podruff/hooks [added::2026-02-26] [done::2026-04-16]
 - [x] Merge shorts pipeline from ~/video-pipeline into ~/dev/video-pipeline #podruff/video [added::2026-03-10]
 - [x] Short clip extraction — topic segmentation, hook detection, face-centered 9:16 crop, per-word karaoke subtitles #podruff/video [added::2026-03-10]
 - [x] Pipeline script iteration #podruff/video [added::2026-02-26]
