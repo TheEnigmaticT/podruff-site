@@ -4,3 +4,9 @@
 .vercel
 __pycache__/
 *__pycache__*
+
+# Large media / scratch work dirs — never commit video/audio binaries
+video-pipeline/work/
+video-pipeline/logs/
+*.mov
+*.mp4
